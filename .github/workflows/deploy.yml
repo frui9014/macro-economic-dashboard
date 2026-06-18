@@ -1,12 +1,7 @@
 name: Update and deploy macro dashboard
 
 on:
-  schedule:
-    # GitHub Actions uses UTC. 10:30 UTC = 18:30 Asia/Shanghai.
-    - cron: "30 10 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: read
