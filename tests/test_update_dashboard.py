@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import unittest
+from datetime import datetime
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "src" / "update_dashboard.py"
@@ -41,6 +42,39 @@ class DashboardCalculationsTest(unittest.TestCase):
         statuses = {item["name"]: item["status"] for item in dimensions}
         self.assertEqual(statuses["中国内需"], "待宏观数据")
         self.assertEqual(statuses["创新升级"], "待结构数据")
+
+    def test_release_window_scheduler(self):
+        item = {"frequency": "monthly", "release_days": [9, 10, 11]}
+        previous = {"status": "ok"}
+        due, reason = MODULE.should_scan(item, datetime(2026, 6, 10), previous)
+        self.assertTrue(due)
+        self.assertEqual(reason, "release_window")
+        due, reason = MODULE.should_scan(item, datetime(2026, 6, 20), previous)
+        self.assertFalse(due)
+        self.assertEqual(reason, "outside_release_window")
+
+    def test_first_scan_ignores_release_window(self):
+        item = {"frequency": "annual", "release_months": [9]}
+        due, reason = MODULE.should_scan(item, datetime(2026, 6, 20), None)
+        self.assertTrue(due)
+        self.assertEqual(reason, "initial_or_forced")
+
+    def test_same_day_failure_is_not_retried(self):
+        item = {"frequency": "monthly", "release_days": [19]}
+        failed = {"status": "failed", "last_attempt": "2026-06-19"}
+        due, reason = MODULE.should_scan(item, datetime(2026, 6, 19), failed)
+        self.assertFalse(due)
+        self.assertEqual(reason, "same_day_failure_backoff")
+
+    def test_stale_data_is_excluded_from_signals(self):
+        items = [{"id": "x", "status": "ok", "freshness_status": "stale"}]
+        self.assertIsNone(MODULE.get_indicator(items, "x"))
+
+    def test_monthly_freshness(self):
+        items = [{"id": "x", "date": "2026年05月份", "frequency": "monthly", "status": "ok"}]
+        MODULE.annotate_freshness(items, datetime(2026, 6, 19, tzinfo=MODULE.BEIJING))
+        self.assertEqual(items[0]["freshness_status"], "current")
+        self.assertTrue(items[0]["eligible_for_signal"])
 
 
 if __name__ == "__main__":
