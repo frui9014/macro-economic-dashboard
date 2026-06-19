@@ -503,6 +503,7 @@ def write_outputs(payload: dict[str, Any], public_root: Path) -> None:
 
     latest_json = json.dumps(payload, ensure_ascii=False, indent=2)
     (DATA_ROOT / "latest.json").write_text(latest_json, encoding="utf-8")
+    (PROJECT_ROOT / "data" / "daily_snapshot.json").write_text(latest_json, encoding="utf-8")
     snapshots = DATA_ROOT / "snapshots"
     snapshots.mkdir(exist_ok=True)
     snapshot_name = datetime.now(BEIJING).strftime("%Y-%m-%d_%H%M%S.json")
