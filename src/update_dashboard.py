@@ -13,6 +13,9 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from macro_catalog import CATALOG, fetch_catalog_item, period_key, should_scan
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 WEB_ROOT = PROJECT_ROOT / "src" / "web"
@@ -251,13 +254,42 @@ def build_indicator(
         "consequence": consequence,
         "source": config["source"],
         "source_url": source_url,
+        "frequency": "daily",
+        "frequency_en": "Daily",
         "history": points[-260:],
         "status": "ok",
     }
 
 
 def get_indicator(indicators: list[dict[str, Any]], indicator_id: str) -> dict[str, Any] | None:
-    return next((item for item in indicators if item.get("id") == indicator_id and item.get("status") == "ok"), None)
+    return next((item for item in indicators if item.get("id") == indicator_id and item.get("status") == "ok" and item.get("freshness_status", "current") == "current"), None)
+
+
+FRESHNESS_LIMITS = {"daily": 7, "weekly": 21, "monthly": 75, "quarterly": 160, "annual": 900}
+
+
+def annotate_freshness(indicators: list[dict[str, Any]], now: datetime) -> None:
+    for item in indicators:
+        frequency = item.get("frequency", "daily")
+        limit = int(item.get("freshness_limit_days", FRESHNESS_LIMITS.get(frequency, 75)))
+        year, month, day = period_key(item.get("date"))
+        if frequency == "monthly":
+            day = 28
+        elif frequency == "quarterly":
+            month, day = min(12, max(1, month) * 3), 28
+        elif frequency == "annual":
+            month, day = 12, 31
+        try:
+            observed = datetime(year, max(1, month), max(1, day), tzinfo=BEIJING).date()
+            age = max(0, (now.date() - observed).days)
+            freshness = "current" if age <= limit else "stale"
+        except ValueError:
+            age = None
+            freshness = "unknown"
+        item["freshness_status"] = freshness
+        item["age_days"] = age
+        item["freshness_limit_days"] = limit
+        item["eligible_for_signal"] = item.get("status") == "ok" and freshness == "current"
 
 
 def move_score(item: dict[str, Any] | None, threshold: float, inverse: bool = False) -> int:
@@ -367,8 +399,9 @@ def load_previous() -> dict[str, Any] | None:
         return None
 
 
-def assemble() -> dict[str, Any]:
+def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict[str, Any]:
     now = datetime.now(BEIJING)
+    force_ids = force_ids or set()
     indicators: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
     try:
@@ -384,13 +417,56 @@ def assemble() -> dict[str, Any]:
     previous = load_previous()
     if previous:
         existing_ids = {item["id"] for item in indicators}
+        catalog_ids = {item["id"] for item in CATALOG}
         for old in previous.get("indicators", []):
-            if old.get("id") not in existing_ids and old.get("status") == "ok":
+            if old.get("id") not in existing_ids and old.get("id") not in catalog_ids and old.get("status") == "ok":
                 stale = dict(old)
                 stale["status"] = "stale"
                 stale["stale_reason"] = "本次抓取失败，保留上次有效值"
                 indicators.append(stale)
 
+    previous_catalog = {
+        item.get("id"): item
+        for item in (previous or {}).get("indicators", [])
+        if item.get("id") in {entry["id"] for entry in CATALOG}
+    }
+    previous_scans = {item.get("id"): item for item in (previous or {}).get("scan_log", [])}
+    previous_pending = {item.get("name"): item for item in (previous or {}).get("pending", [])}
+    pending: list[dict[str, str]] = []
+    scan_log: list[dict[str, str]] = []
+    for catalog_item in CATALOG:
+        old = previous_catalog.get(catalog_item["id"])
+        last_scan = previous_scans.get(catalog_item["id"])
+        schedule_state = last_scan if last_scan and last_scan.get("status") == "failed" else old or last_scan
+        due, reason = should_scan(catalog_item, now, schedule_state, force=force_all or catalog_item["id"] in force_ids)
+        if not due:
+            if old:
+                indicators.append(old)
+            elif catalog_item["name"] in previous_pending:
+                pending.append(previous_pending[catalog_item["name"]])
+            scan_log.append({"id": catalog_item["id"], "action": "kept", "reason": reason, "status": schedule_state.get("status", "ok") if schedule_state else "pending", "last_attempt": schedule_state.get("last_attempt", "") if schedule_state else ""})
+            continue
+        try:
+            current = fetch_catalog_item(catalog_item)
+            indicators.append(current)
+            scan_log.append({"id": catalog_item["id"], "action": "updated", "reason": reason, "status": "ok", "last_attempt": now.date().isoformat()})
+        except Exception as exc:  # noqa: BLE001
+            if old:
+                stale = dict(old)
+                stale["status"] = "stale"
+                stale["stale_reason"] = "本次扫描失败，保留上次有效值"
+                indicators.append(stale)
+            else:
+                pending.append({
+                    "name": catalog_item["name"],
+                    "name_en": catalog_item["name_en"],
+                    "reason": f"首次扫描未取得有效值：{exc}",
+                    "reason_en": f"Initial scan returned no valid value: {exc}",
+                })
+            errors.append({"source": catalog_item["name"], "error": str(exc)})
+            scan_log.append({"id": catalog_item["id"], "action": "failed", "reason": reason, "status": "failed", "last_attempt": now.date().isoformat()})
+
+    annotate_freshness(indicators, now)
     indicators.sort(key=lambda item: (item.get("group", ""), item.get("name", "")))
     dimensions = build_dimensions(indicators)
     combinations = build_combinations(indicators, dimensions)
@@ -404,6 +480,10 @@ def assemble() -> dict[str, Any]:
             "status": status,
             "error_count": len(errors),
             "indicator_count": len(indicators),
+            "registered_count": 9 + len(CATALOG),
+            "scan_count": sum(1 for item in scan_log if item["action"] in {"updated", "failed"}) + 9,
+            "fresh_count": sum(1 for item in indicators if item.get("freshness_status") == "current"),
+            "stale_count": sum(1 for item in indicators if item.get("freshness_status") == "stale"),
             "notice": "用于宏观学习与公共政策研究，不构成投资建议。",
         },
         "dimensions": dimensions,
@@ -411,11 +491,8 @@ def assemble() -> dict[str, Any]:
         "combinations": combinations,
         "learning_note": build_learning_note(dimensions),
         "errors": errors,
-        "pending": [
-            {"name": "中国 10 年期国债", "reason": "待验证稳定、合规的公开接口"},
-            {"name": "中国内部月度宏观", "reason": "第二阶段接入官方发布数据"},
-            {"name": "创新升级指标", "reason": "第四阶段接入月度与年度数据"},
-        ],
+        "pending": pending,
+        "scan_log": scan_log,
     }
 
 
@@ -444,8 +521,11 @@ def write_outputs(payload: dict[str, Any], public_root: Path) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Update the static macro dashboard")
     parser.add_argument("--output", type=Path, default=DEFAULT_PUBLIC_ROOT)
+    parser.add_argument("--force-all", action="store_true", help="Scan every registered source, ignoring release windows")
+    parser.add_argument("--force-ids", default="", help="Comma-separated indicator IDs to scan regardless of release windows")
     args = parser.parse_args()
-    payload = assemble()
+    force_ids = {item.strip() for item in args.force_ids.split(",") if item.strip()}
+    payload = assemble(force_all=args.force_all, force_ids=force_ids)
     write_outputs(payload, args.output.resolve())
     print(json.dumps(payload["meta"], ensure_ascii=False))
     return 0 if payload["meta"]["status"] != "failed" else 2

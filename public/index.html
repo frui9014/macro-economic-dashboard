@@ -14,50 +14,53 @@
         <p class="eyebrow">MACRO OBSERVATORY</p>
         <h1>宏观经济观察</h1>
       </div>
-      <div class="update-meta">
-        <span id="health-dot" class="health-dot"></span>
-        <span id="update-time">读取数据…</span>
+      <div class="topbar-actions">
+        <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch language">EN</button>
+        <div class="update-meta">
+          <span id="health-dot" class="health-dot"></span>
+          <span id="update-time">读取数据…</span>
+        </div>
       </div>
     </header>
 
     <nav class="tabs" aria-label="Dashboard 视图">
-      <button class="tab active" data-tab="today">当日数据</button>
-      <button class="tab" data-tab="trends">时间变化</button>
+      <button class="tab active" data-tab="today" data-i18n="tabToday">当日数据</button>
+      <button class="tab" data-tab="trends" data-i18n="tabTrends">时间变化</button>
     </nav>
 
     <section id="today" class="panel active">
       <section class="hero">
-        <p class="section-label">今日总判断</p>
+        <p class="section-label" data-i18n="todayView">今日总判断</p>
         <h2 id="daily-summary">正在生成今日判断…</h2>
         <p id="data-notice" class="muted"></p>
       </section>
 
       <section>
         <div class="section-heading">
-          <h3>八维状态</h3>
-          <p>市场信号与宏观事实分层展示</p>
+          <h3 data-i18n="dimensions">八维状态</h3>
+          <p data-i18n="dimensionsHint">市场信号与宏观事实分层展示</p>
         </div>
         <div id="dimensions" class="dimension-grid"></div>
       </section>
 
       <section>
         <div class="section-heading">
-          <h3>今日温度计</h3>
-          <p>点击指标查看可能原因与后果</p>
+          <h3 data-i18n="thermometer">今日温度计</h3>
+          <p data-i18n="thermometerHint">点击指标查看可能原因与后果</p>
         </div>
         <div id="indicator-groups"></div>
       </section>
 
       <section>
         <div class="section-heading">
-          <h3>组合观察</h3>
-          <p>共振比单一指标更重要</p>
+          <h3 data-i18n="combinations">组合观察</h3>
+          <p data-i18n="combinationsHint">共振比单一指标更重要</p>
         </div>
         <div id="combinations" class="combination-grid"></div>
       </section>
 
       <section class="learning-note">
-        <p class="section-label">宏观学习笔记</p>
+        <p class="section-label" data-i18n="learningNote">宏观学习笔记</p>
         <p id="learning-note"></p>
       </section>
     </section>
@@ -65,14 +68,14 @@
     <section id="trends" class="panel">
       <div class="trend-controls">
         <label>
-          <span>指标</span>
+          <span data-i18n="indicator">指标</span>
           <select id="indicator-select"></select>
         </label>
         <div class="range-switch" aria-label="时间范围">
-          <button data-days="7">7日</button>
-          <button data-days="30" class="active">1月</button>
-          <button data-days="90">3月</button>
-          <button data-days="365">1年</button>
+          <button data-days="7" data-i18n="range7">7日</button>
+          <button data-days="30" class="active" data-i18n="range30">1月</button>
+          <button data-days="90" data-i18n="range90">3月</button>
+          <button data-days="365" data-i18n="range365">1年</button>
         </div>
       </div>
       <section class="trend-card">
@@ -88,15 +91,15 @@
       </section>
       <section>
         <div class="section-heading">
-          <h3>待接入数据</h3>
-          <p>缺失不会被伪造或静默填充</p>
+          <h3 data-i18n="pending">待接入数据</h3>
+          <p data-i18n="pendingHint">缺失不会被伪造或静默填充</p>
         </div>
         <div id="pending" class="pending-list"></div>
       </section>
     </section>
 
     <footer>
-      <span>每日 18:30（北京时间）更新</span>
+      <span data-i18n="schedule">每日 18:30（北京时间）更新</span>
       <span id="footer-notice"></span>
     </footer>
   </main>
