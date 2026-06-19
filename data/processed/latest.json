@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-06-19T15:33:58+08:00",
-    "generated_label": "2026-06-19 15:33",
+    "generated_at": "2026-06-19T22:35:58+08:00",
+    "generated_label": "2026-06-19 22:35",
     "timezone": "Asia/Shanghai",
     "scheduled_time": "18:30",
     "status": "healthy",
@@ -4337,13 +4337,13 @@
       "id": "usdcny",
       "name": "USD/CNY",
       "group": "中国市场",
-      "value": 6.7675,
+      "value": 6.7681,
       "unit": "人民币/美元",
       "decimals": 4,
       "date": "2026-06-19",
-      "day_change": 0.1524,
-      "five_change": -0.1181,
-      "twenty_change": -0.5145,
+      "day_change": 0.1613,
+      "five_change": -0.1092,
+      "twenty_change": -0.5057,
       "change_unit": "%",
       "direction": "up",
       "reason": "数值上升表示人民币对美元走弱，需结合美元指数共同判断。",
@@ -5391,7 +5391,7 @@
         },
         {
           "date": "2026-06-19",
-          "value": 6.7675
+          "value": 6.7681
         }
       ],
       "status": "ok",
@@ -5404,13 +5404,13 @@
       "id": "hsi",
       "name": "恒生指数",
       "group": "中国市场",
-      "value": 23924.810547,
+      "value": 24312.160156,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-06-18",
-      "day_change": -1.5932,
-      "five_change": -1.3381,
-      "twenty_change": -6.73,
+      "date": "2026-06-17",
+      "day_change": -0.7422,
+      "five_change": -0.3925,
+      "twenty_change": -5.759,
       "change_unit": "%",
       "direction": "down",
       "reason": "同时受中国增长预期和全球美元流动性影响。",
@@ -6403,15 +6403,11 @@
         {
           "date": "2026-06-17",
           "value": 24312.160156
-        },
-        {
-          "date": "2026-06-18",
-          "value": 23924.810547
         }
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 2,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -11622,13 +11618,13 @@
       "id": "brent",
       "name": "Brent 原油",
       "group": "全球市场",
-      "value": 80.139999,
+      "value": 79.879997,
       "unit": "美元/桶",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": 0.3632,
-      "five_change": -8.2331,
-      "twenty_change": -21.8756,
+      "day_change": 0.0376,
+      "five_change": -8.5309,
+      "twenty_change": -22.1291,
       "change_unit": "%",
       "direction": "up",
       "reason": "油价同时受全球需求、供给约束和地缘事件影响。",
@@ -12648,7 +12644,7 @@
         },
         {
           "date": "2026-06-19",
-          "value": 80.139999
+          "value": 79.879997
         }
       ],
       "status": "ok",
@@ -12661,17 +12657,17 @@
       "id": "vix",
       "name": "VIX",
       "group": "全球市场",
-      "value": 17.030001,
+      "value": 16.84,
       "unit": "点",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": 3.8415,
-      "five_change": -3.6765,
-      "twenty_change": 1.976,
+      "day_change": -8.6768,
+      "five_change": -13.3745,
+      "twenty_change": 0.4773,
       "change_unit": "%",
-      "direction": "up",
+      "direction": "down",
       "reason": "VIX 反映美股期权隐含波动和全球避险温度。",
-      "consequence": "若持续上升，风险资产估值与跨境风险偏好可能承压。",
+      "consequence": "若持续下降，通常意味着市场风险偏好趋于稳定。",
       "source": "Yahoo Finance / CBOE",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=1y&interval=1d&events=history",
       "frequency": "daily",
@@ -13682,12 +13678,8 @@
           "value": 18.440001
         },
         {
-          "date": "2026-06-18",
-          "value": 16.4
-        },
-        {
           "date": "2026-06-19",
-          "value": 17.030001
+          "value": 16.84
         }
       ],
       "status": "ok",
@@ -13700,13 +13692,13 @@
       "id": "dxy",
       "name": "美元指数",
       "group": "全球市场",
-      "value": 100.926003,
+      "value": 100.832001,
       "unit": "点",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": 0.0754,
-      "five_change": 1.179,
-      "twenty_change": 1.7502,
+      "day_change": 0.7413,
+      "five_change": 0.9734,
+      "twenty_change": 1.7375,
       "change_unit": "%",
       "direction": "up",
       "reason": "美元走强通常收紧非美经济体的金融条件。",
@@ -14717,12 +14709,8 @@
           "value": 100.089996
         },
         {
-          "date": "2026-06-18",
-          "value": 100.849998
-        },
-        {
           "date": "2026-06-19",
-          "value": 100.926003
+          "value": 100.832001
         }
       ],
       "status": "ok",
@@ -14735,13 +14723,13 @@
       "id": "copper",
       "name": "铜",
       "group": "全球市场",
-      "value": 6.332,
+      "value": 6.3325,
       "unit": "美分/磅",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": -0.6667,
-      "five_change": -1.5318,
-      "twenty_change": 1.1987,
+      "day_change": -0.6589,
+      "five_change": -1.524,
+      "twenty_change": 1.2066,
       "change_unit": "%",
       "direction": "down",
       "reason": "铜价常被用于观察全球制造业与基建需求预期。",
@@ -15761,7 +15749,7 @@
         },
         {
           "date": "2026-06-19",
-          "value": 6.332
+          "value": 6.3325
         }
       ],
       "status": "ok",
