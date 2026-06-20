@@ -66,29 +66,31 @@
     </section>
 
     <section id="trends" class="panel">
-      <div class="trend-controls">
-        <div class="trend-selectors">
-          <label>
-            <span data-i18n="frequencyFilter">更新频次</span>
-            <select id="frequency-filter">
-              <option value="all" data-i18n="frequencyAll">全部</option>
-              <option value="daily" data-i18n="frequencyDaily">每日</option>
-              <option value="monthly" data-i18n="frequencyMonthly">月度</option>
-              <option value="quarterly" data-i18n="frequencyQuarterly">季度</option>
-              <option value="annual" data-i18n="frequencyAnnual">年度</option>
-            </select>
-          </label>
-          <label>
-            <span data-i18n="indicator">指标</span>
-            <select id="indicator-select"></select>
-          </label>
+      <div class="trend-toolbar">
+        <div class="trend-controls">
+          <div class="trend-selectors">
+            <label>
+              <span data-i18n="frequencyFilter">更新频次</span>
+              <select id="frequency-filter">
+                <option value="all" data-i18n="frequencyAll">全部</option>
+                <option value="daily" data-i18n="frequencyDaily">每日</option>
+                <option value="monthly" data-i18n="frequencyMonthly">月度</option>
+                <option value="quarterly" data-i18n="frequencyQuarterly">季度</option>
+                <option value="annual" data-i18n="frequencyAnnual">年度</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="indicator">指标</span>
+              <select id="indicator-select"></select>
+            </label>
+          </div>
+          <div id="range-switch" class="range-switch" aria-label="时间范围"></div>
         </div>
-        <div id="range-switch" class="range-switch" aria-label="时间范围"></div>
-      </div>
-      <div class="date-controls">
-        <label><span data-i18n="startPeriod">起始时间</span><span id="start-control"></span></label>
-        <span class="date-separator">—</span>
-        <label><span data-i18n="endPeriod">终止时间</span><span id="end-control"></span></label>
+        <div class="date-controls">
+          <label><span data-i18n="startPeriod">起始时间</span><span id="start-control"></span></label>
+          <span class="date-separator">—</span>
+          <label><span data-i18n="endPeriod">终止时间</span><span id="end-control"></span></label>
+        </div>
       </div>
       <section class="trend-card">
         <div class="trend-head">
