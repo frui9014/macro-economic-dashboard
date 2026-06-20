@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-06-20T01:32:13+08:00",
-    "generated_label": "2026-06-20 01:32",
+    "generated_at": "2026-06-20T10:45:32+08:00",
+    "generated_label": "2026-06-20 10:45",
     "timezone": "Asia/Shanghai",
     "scheduled_time": "18:30",
     "status": "healthy",
@@ -4341,22 +4341,18 @@
       "unit": "人民币/美元",
       "decimals": 4,
       "date": "2026-06-19",
-      "day_change": 0.1613,
-      "five_change": -0.1092,
-      "twenty_change": -0.5057,
+      "day_change": -0.0074,
+      "five_change": 0.031,
+      "twenty_change": -0.3885,
       "change_unit": "%",
-      "direction": "up",
+      "direction": "flat",
       "reason": "数值上升表示人民币对美元走弱，需结合美元指数共同判断。",
-      "consequence": "若与美元同步走强，外部金融约束可能加大。",
+      "consequence": "当前变化较小，暂不足以单独改变宏观判断。",
       "source": "Yahoo Finance / 公开外汇行情",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=1y&interval=1d&events=history",
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-06-18",
-          "value": 7.1888
-        },
         {
           "date": "2025-06-19",
           "value": 7.188
@@ -5388,6 +5384,10 @@
         {
           "date": "2026-06-17",
           "value": 6.7572
+        },
+        {
+          "date": "2026-06-18",
+          "value": 6.7686
         },
         {
           "date": "2026-06-19",
@@ -13700,17 +13700,17 @@
       "id": "dxy",
       "name": "美元指数",
       "group": "全球市场",
-      "value": 100.769997,
+      "value": 100.848999,
       "unit": "点",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": -0.0793,
-      "five_change": 1.0226,
-      "twenty_change": 1.5929,
+      "day_change": -0.001,
+      "five_change": 1.1018,
+      "twenty_change": 1.6725,
       "change_unit": "%",
-      "direction": "down",
+      "direction": "flat",
       "reason": "美元走强通常收紧非美经济体的金融条件。",
-      "consequence": "若持续回落，非美资产和跨境流动性压力可能缓解。",
+      "consequence": "当前变化较小，暂不足以单独改变宏观判断。",
       "source": "Yahoo Finance / ICE DXY",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1y&interval=1d&events=history",
       "frequency": "daily",
@@ -14722,7 +14722,7 @@
         },
         {
           "date": "2026-06-19",
-          "value": 100.769997
+          "value": 100.848999
         }
       ],
       "status": "ok",
@@ -16244,7 +16244,7 @@
     },
     {
       "title": "美元—人民币联动",
-      "signal": "联动分化",
+      "signal": "外部压力缓和",
       "analysis": "美元与 USD/CNY 同向上升时，人民币走弱更可能包含全球美元因素；若二者分化，应更多检查中国自身预期与跨境资金因素。"
     },
     {
