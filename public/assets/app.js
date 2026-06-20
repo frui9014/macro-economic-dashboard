@@ -9,7 +9,9 @@
 
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
-  let rangeDays = 30;
+  let frequencyFilter = "all";
+  let activePreset = null;
+  let rangeState = null;
   let language = localStorage.getItem("macro-language") === "en" ? "en" : "zh";
 
   const UI = {
@@ -17,10 +19,10 @@
       title: "宏观经济观察", tabToday: "当日数据", tabTrends: "时间变化", todayView: "今日总判断",
       dimensions: "八维状态", dimensionsHint: "市场信号与宏观事实分层展示", thermometer: "今日温度计",
       thermometerHint: "点击指标查看可能原因与后果", combinations: "组合观察", combinationsHint: "共振比单一指标更重要",
-      learningNote: "宏观学习笔记", indicator: "指标", range7: "7日", range30: "1月", range90: "3月", range365: "1年",
-      pending: "待接入数据", pendingHint: "缺失不会被伪造或静默填充", schedule: "当前为按需手动更新",
-      updated: "更新于", beijing: "北京时间", source: "来源", frequency: "日频", confidence: "置信度", daily: "日", day5: "5日", day20: "20日", previous: "前值", forecast: "预期", fresh: "最新", staleData: "陈旧", unknownFreshness: "日期未知",
-      reason: "可能原因", consequence: "可能后果", stale: "保留上次有效值", latestMove: "最新日变动", intervalMove: "区间变化",
+      learningNote: "宏观学习笔记", indicator: "指标", frequencyFilter: "更新频次", frequencyAll: "全部", frequencyDaily: "每日", frequencyMonthly: "月度", frequencyQuarterly: "季度", frequencyAnnual: "年度", startPeriod: "起始时间", endPeriod: "终止时间",
+      pending: "待接入数据", pendingHint: "缺失不会被伪造或静默填充", schedule: "每日 18:30（北京时间）更新",
+      updated: "更新于", beijing: "北京时间", source: "来源", frequency: "日频", daily: "日", day5: "5日", day20: "20日", previous: "前值", forecast: "预期", fresh: "最新", staleData: "陈旧", unknownFreshness: "日期未知",
+      reason: "可能原因", consequence: "可能后果", stale: "保留上次有效值", latestMove: "最新日变动", periodMove: "较前值", intervalMove: "区间变化",
       intervalRange: "区间范围", insufficient: "历史观测不足。", noErrors: (n) => `共更新 ${n} 项日频序列；低频指标只在发布日进入当日页。`,
       errors: (n) => `${n} 个数据源本次扫描未取得新值；已有数据保持不变。`, notice: "用于宏观学习与公共政策研究，不构成投资建议。"
     },
@@ -28,10 +30,10 @@
       title: "Macro Observatory", tabToday: "Today", tabTrends: "Trends", todayView: "Today’s Macro View",
       dimensions: "Eight Dimensions", dimensionsHint: "Market signals separated from macro facts", thermometer: "Daily Indicators",
       thermometerHint: "Open a card for possible drivers and implications", combinations: "Combined Signals", combinationsHint: "Co-movement matters more than one series",
-      learningNote: "Macro Learning Note", indicator: "Indicator", range7: "7D", range30: "1M", range90: "3M", range365: "1Y",
-      pending: "Pending Data", pendingHint: "Missing observations are never fabricated or silently filled", schedule: "Currently updated manually on request",
-      updated: "Updated", beijing: "Beijing time", source: "Source", frequency: "Daily", confidence: "Confidence", daily: "1D", day5: "5D", day20: "20D", previous: "Previous", forecast: "Forecast", fresh: "Current", staleData: "Stale", unknownFreshness: "Date unknown",
-      reason: "Possible driver", consequence: "Possible implication", stale: "Last valid value retained", latestMove: "Latest daily move", intervalMove: "Period change",
+      learningNote: "Macro Learning Note", indicator: "Indicator", frequencyFilter: "Frequency", frequencyAll: "All", frequencyDaily: "Daily", frequencyMonthly: "Monthly", frequencyQuarterly: "Quarterly", frequencyAnnual: "Annual", startPeriod: "Start", endPeriod: "End",
+      pending: "Pending Data", pendingHint: "Missing observations are never fabricated or silently filled", schedule: "Updated daily at 18:30 Beijing time",
+      updated: "Updated", beijing: "Beijing time", source: "Source", frequency: "Daily", daily: "1D", day5: "5D", day20: "20D", previous: "Previous", forecast: "Forecast", fresh: "Current", staleData: "Stale", unknownFreshness: "Date unknown",
+      reason: "Possible driver", consequence: "Possible implication", stale: "Last valid value retained", latestMove: "Latest daily move", periodMove: "Vs. previous", intervalMove: "Period change",
       intervalRange: "Range", insufficient: "Insufficient history.", noErrors: (n) => `${n} daily series updated; lower-frequency data appear only on release days.`,
       errors: (n) => `${n} source(s) failed in this run; last valid values were retained.`, notice: "For macro learning and public-policy research; not investment advice."
     }
@@ -146,7 +148,7 @@
   }
 
   function renderDimensions() {
-    $("#dimensions").innerHTML = data.dimensions.map((item) => `<article class="dimension"><span class="dimension-name">${escapeHtml(dimensionName(item.name))}</span><strong class="dimension-status">${escapeHtml(term(item.status))}</strong><span class="dimension-meta">${t("confidence")} ${escapeHtml(term(item.confidence))} · ${escapeHtml(term(item.freshness))}</span></article>`).join("");
+    $("#dimensions").innerHTML = data.dimensions.map((item) => `<article class="dimension"><span class="dimension-name">${escapeHtml(dimensionName(item.name))}</span><strong class="dimension-status">${escapeHtml(term(item.status))}</strong><span class="dimension-meta">${escapeHtml(term(item.freshness))}</span></article>`).join("");
   }
 
   function renderIndicators() {
@@ -184,34 +186,115 @@
   }
 
   const PENDING_EN = { "中国 10 年期国债": ["China 10Y Government Bond", "Stable, compliant public interface under review"], "中国内部月度宏观": ["China Monthly Macro", "Official releases planned for phase two"], "创新升级指标": ["Innovation & Upgrading", "Monthly and annual series planned for phase four"] };
-  function renderSelectAndPending() {
+  const RANGE_PRESETS = {
+    daily: [{ id: "7d", span: 7, zh: "7日", en: "7D" }, { id: "1m", span: 30, zh: "1月", en: "1M" }, { id: "3m", span: 90, zh: "3月", en: "3M", default: true }, { id: "1y", span: 365, zh: "1年", en: "1Y" }],
+    monthly: [{ id: "1y", span: 12, zh: "1年", en: "1Y" }, { id: "3y", span: 36, zh: "3年", en: "3Y" }, { id: "5y", span: 60, zh: "5年", en: "5Y", default: true }, { id: "10y", span: 120, zh: "10年", en: "10Y" }],
+    quarterly: [{ id: "3y", span: 12, zh: "3年", en: "3Y" }, { id: "5y", span: 20, zh: "5年", en: "5Y" }, { id: "10y", span: 40, zh: "10年", en: "10Y", default: true }, { id: "20y", span: 80, zh: "20年", en: "20Y" }],
+    annual: [{ id: "5y", span: 5, zh: "5年", en: "5Y" }, { id: "10y", span: 10, zh: "10年", en: "10Y" }, { id: "15y", span: 15, zh: "15年", en: "15Y", default: true }, { id: "all", span: null, zh: "全部", en: "All" }]
+  };
+
+  function trendFrequency(item) { return ["daily", "monthly", "quarterly", "annual"].includes(item.frequency) ? item.frequency : "daily"; }
+  function periodKey(value, frequency) {
+    const text = String(value ?? ""); const nums = (text.match(/\d+/g) || []).map(Number); if (!nums.length) return null;
+    let year = nums[0], month = nums[1] || 1, day = nums[2] || 1;
+    if (year >= 100000) { month = year % 100; year = Math.floor(year / 100); }
+    if (frequency === "annual") return year;
+    if (frequency === "quarterly") { const quarter = /q|季度|季/i.test(text) && nums[1] ? nums[1] : Math.ceil(month / 3); return year * 4 + Math.max(0, Math.min(3, quarter - 1)); }
+    if (frequency === "monthly") return year * 12 + Math.max(0, Math.min(11, month - 1));
+    return Math.floor(Date.UTC(year, Math.max(0, month - 1), Math.max(1, day)) / 86400000);
+  }
+  function currentPeriodKey(frequency) {
+    const now = new Date();
+    if (frequency === "annual") return now.getFullYear();
+    if (frequency === "quarterly") return now.getFullYear() * 4 + Math.floor(now.getMonth() / 3);
+    if (frequency === "monthly") return now.getFullYear() * 12 + now.getMonth();
+    return Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+  }
+  function periodLabel(key, frequency) {
+    if (frequency === "annual") return String(key);
+    if (frequency === "quarterly") return `${Math.floor(key / 4)}-Q${key % 4 + 1}`;
+    if (frequency === "monthly") { const year = Math.floor(key / 12), month = key % 12 + 1; return `${year}-${String(month).padStart(2, "0")}`; }
+    return new Date(key * 86400000).toISOString().slice(0, 10);
+  }
+  function axisLabel(key, frequency) {
+    const label = periodLabel(key, frequency);
+    if (frequency === "daily" && rangeState && rangeState.end - rangeState.start <= 120) return label.slice(5);
+    return label;
+  }
+  function historyBounds(item) {
+    const frequency = trendFrequency(item); const keys = item.history.map((point) => periodKey(point.date, frequency)).filter(Number.isFinite);
+    return { min: Math.min(...keys), max: Math.max(...keys) };
+  }
+  function setDefaultRange(item) {
+    const frequency = trendFrequency(item), presets = RANGE_PRESETS[frequency], preset = presets.find((entry) => entry.default) || presets[0], end = currentPeriodKey(frequency), bounds = historyBounds(item);
+    activePreset = preset.id;
+    rangeState = { frequency, start: preset.span == null ? bounds.min : end - preset.span + 1, end };
+  }
+  function renderRangeSwitch(item) {
+    const frequency = trendFrequency(item), container = $("#range-switch");
+    container.innerHTML = RANGE_PRESETS[frequency].map((preset) => `<button type="button" data-preset="${preset.id}" class="${activePreset === preset.id ? "active" : ""}">${preset[language]}</button>`).join("");
+    container.querySelectorAll("button").forEach((button) => button.addEventListener("click", () => {
+      const preset = RANGE_PRESETS[frequency].find((entry) => entry.id === button.dataset.preset), end = currentPeriodKey(frequency), bounds = historyBounds(item);
+      activePreset = preset.id; rangeState = { frequency, start: preset.span == null ? bounds.min : end - preset.span + 1, end }; renderTrend();
+    }));
+  }
+  function periodControl(target, item, boundary) {
+    const frequency = trendFrequency(item), value = rangeState[boundary], bounds = historyBounds(item); let control;
+    if (frequency === "daily" || frequency === "monthly") {
+      control = document.createElement("input"); control.type = frequency === "daily" ? "date" : "month"; control.value = periodLabel(value, frequency);
+    } else {
+      control = document.createElement("select"); const first = Math.min(bounds.min, rangeState.start), last = Math.max(currentPeriodKey(frequency), bounds.max, rangeState.end);
+      for (let key = last; key >= first; key -= 1) { const option = document.createElement("option"); option.value = periodLabel(key, frequency); option.textContent = periodLabel(key, frequency); control.appendChild(option); }
+      control.value = periodLabel(value, frequency);
+    }
+    control.className = "period-control"; control.setAttribute("aria-label", boundary === "start" ? t("startPeriod") : t("endPeriod"));
+    control.addEventListener("change", () => {
+      const next = periodKey(control.value, frequency); if (!Number.isFinite(next)) return;
+      rangeState[boundary] = next;
+      if (rangeState.start > rangeState.end) rangeState[boundary === "start" ? "end" : "start"] = next;
+      activePreset = null; renderTrend();
+    });
+    const host = $(target); host.innerHTML = ""; host.appendChild(control);
+  }
+  function renderDateControls(item) { periodControl("#start-control", item, "start"); periodControl("#end-control", item, "end"); }
+
+  function renderSelectAndPending(resetSelection = false) {
     const select = $("#indicator-select"); const chosen = select.value;
-    select.innerHTML = [...data.indicators].filter((item) => item.history?.length).sort((a, b) => priorityRank(a) - priorityRank(b)).map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(displayName(item))}</option>`).join("");
-    if ([...select.options].some((option) => option.value === chosen)) select.value = chosen;
+    const candidates = [...data.indicators].filter((item) => item.history?.length && (frequencyFilter === "all" || trendFrequency(item) === frequencyFilter)).sort((a, b) => priorityRank(a) - priorityRank(b));
+    select.innerHTML = candidates.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(displayName(item))}</option>`).join("");
+    if (!resetSelection && [...select.options].some((option) => option.value === chosen)) select.value = chosen;
+    else if (select.options.length) select.selectedIndex = 0;
     $("#pending").innerHTML = data.pending.map((item) => { const en = PENDING_EN[item.name]; const name = language === "en" ? (item.name_en || en?.[0] || item.name) : item.name; const reason = language === "en" ? (item.reason_en || en?.[1] || item.reason) : item.reason; return `<div class="pending-item"><strong>${escapeHtml(name)}</strong><span>${escapeHtml(reason)}</span></div>`; }).join("");
+    if (resetSelection) rangeState = null;
   }
 
   function initTrendControls() {
-    $("#indicator-select").addEventListener("change", renderTrend);
-    $$(".range-switch button").forEach((button) => button.addEventListener("click", () => { $$(".range-switch button").forEach((item) => item.classList.remove("active")); button.classList.add("active"); rangeDays = Number(button.dataset.days); renderTrend(); }));
+    $("#frequency-filter").addEventListener("change", (event) => { frequencyFilter = event.target.value; renderSelectAndPending(true); renderTrend(); });
+    $("#indicator-select").addEventListener("change", () => { rangeState = null; renderTrend(); });
   }
 
   function renderTrend() {
     const item = data.indicators.find((indicator) => indicator.id === $("#indicator-select").value); if (!item) return;
-    const points = item.history.slice(-rangeDays); $("#trend-name").textContent = displayName(item); $("#trend-value").innerHTML = `${formatValue(item)} <span class="unit">${escapeHtml(displayUnit(item))}</span>`;
-    $("#trend-change").className = `trend-change ${moveClass(item.day_change)}`; $("#trend-change").textContent = `${t("latestMove")} ${formatMove(item.day_change, item.change_unit)}`; drawChart(points, item.decimals);
+    const frequency = trendFrequency(item); if (!rangeState || rangeState.frequency !== frequency) setDefaultRange(item); renderRangeSwitch(item); renderDateControls(item);
+    const points = item.history.map((point) => ({ ...point, periodKey: periodKey(point.date, frequency) })).filter((point) => Number.isFinite(point.periodKey) && point.periodKey >= rangeState.start && point.periodKey <= rangeState.end).sort((a, b) => a.periodKey - b.periodKey);
+    $("#trend-name").textContent = displayName(item); $("#trend-value").innerHTML = `${formatValue(item)} <span class="unit">${escapeHtml(displayUnit(item))}</span>`;
+    const latestMove = frequency === "daily" ? item.day_change : (item.previous_value == null ? null : pct(item.value, item.previous_value));
+    $("#trend-change").className = `trend-change ${moveClass(latestMove)}`; $("#trend-change").textContent = `${frequency === "daily" ? t("latestMove") : t("periodMove")} ${formatMove(latestMove, frequency === "daily" ? item.change_unit : "%")}`; drawChart(points, item.decimals, frequency);
+    if (!points.length) { $("#trend-details").innerHTML = `<p class="muted">${t("insufficient")}</p>`; return; }
     const values = points.map((point) => point.value); const low = Math.min(...values); const high = Math.max(...values); const intervalMove = pct(values.at(-1), values[0]);
     $("#trend-details").innerHTML = `<div class="trend-detail"><span>${t("intervalMove")}</span><strong class="${moveClass(intervalMove)}">${formatMove(intervalMove, "%")}</strong></div><div class="trend-detail"><span>${t("intervalRange")}</span><strong>${low.toFixed(item.decimals)} — ${high.toFixed(item.decimals)}</strong></div><div class="trend-detail"><span>${t("source")} · ${frequencyLabel(item)}</span><strong>${escapeHtml(displaySource(item))}</strong></div>`;
   }
 
   function pct(current, previous) { return previous ? (current / previous - 1) * 100 : null; }
-  function drawChart(points, decimals) {
+  function drawChart(points, decimals, frequency) {
     const chart = $("#chart"); if (points.length < 2) { chart.innerHTML = `<p class="muted">${t("insufficient")}</p>`; return; }
     const width = 1000, height = 330, pad = { top: 20, right: 20, bottom: 30, left: 55 }; const values = points.map((point) => point.value); let min = Math.min(...values), max = Math.max(...values); const spread = max - min || Math.abs(max) * .02 || 1; min -= spread * .12; max += spread * .12;
-    const x = (index) => pad.left + index * (width - pad.left - pad.right) / (points.length - 1); const y = (value) => pad.top + (max - value) * (height - pad.top - pad.bottom) / (max - min);
-    const line = points.map((point, index) => `${index ? "L" : "M"}${x(index).toFixed(1)},${y(point.value).toFixed(1)}`).join(" "); const area = `${line} L${x(points.length - 1)},${height - pad.bottom} L${x(0)},${height - pad.bottom} Z`;
+    const domainStart = rangeState.start, domainEnd = Math.max(rangeState.end, domainStart + 1); const x = (key) => pad.left + (key - domainStart) * (width - pad.left - pad.right) / (domainEnd - domainStart); const y = (value) => pad.top + (max - value) * (height - pad.top - pad.bottom) / (max - min);
+    const line = points.map((point, index) => `${index ? "L" : "M"}${x(point.periodKey).toFixed(1)},${y(point.value).toFixed(1)}`).join(" "); const area = `${line} L${x(points.at(-1).periodKey)},${height - pad.bottom} L${x(points[0].periodKey)},${height - pad.bottom} Z`;
     const ticks = [0, .25, .5, .75, 1].map((ratio) => { const value = min + (max - min) * ratio, yy = y(value); return `<line class="chart-grid" x1="${pad.left}" x2="${width - pad.right}" y1="${yy}" y2="${yy}"/><text class="chart-label" x="${pad.left - 8}" y="${yy + 3}" text-anchor="end">${value.toFixed(decimals)}</text>`; }).join("");
-    chart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none"><defs><linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#175c45" stop-opacity=".16"/><stop offset="1" stop-color="#175c45" stop-opacity="0"/></linearGradient></defs>${ticks}<path class="chart-area" d="${area}"/><path class="chart-line" d="${line}"/><text class="chart-label" x="${pad.left}" y="${height - 8}">${escapeHtml(points[0].date)}</text><text class="chart-label" x="${width - pad.right}" y="${height - 8}" text-anchor="end">${escapeHtml(points.at(-1).date)}</text></svg>`;
+    const xTickKeys = [...new Set([0, .25, .5, .75, 1].map((ratio) => Math.round(domainStart + (domainEnd - domainStart) * ratio)))];
+    const xTicks = xTickKeys.map((key, index) => `<line class="chart-grid x-grid" x1="${x(key)}" x2="${x(key)}" y1="${pad.top}" y2="${height - pad.bottom}"/><text class="chart-label" x="${x(key)}" y="${height - 8}" text-anchor="${index === 0 ? "start" : index === xTickKeys.length - 1 ? "end" : "middle"}">${escapeHtml(axisLabel(key, frequency))}</text>`).join("");
+    chart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none"><defs><linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#175c45" stop-opacity=".16"/><stop offset="1" stop-color="#175c45" stop-opacity="0"/></linearGradient></defs>${ticks}${xTicks}<path class="chart-area" d="${area}"/><path class="chart-line" d="${line}"/></svg>`;
   }
 
   function applyLanguage() {
