@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "src" / "update_dashboard.py"
+WEB_ROOT = Path(__file__).resolve().parents[1] / "src" / "web"
 SPEC = importlib.util.spec_from_file_location("update_dashboard", MODULE_PATH)
 MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
@@ -75,6 +76,25 @@ class DashboardCalculationsTest(unittest.TestCase):
         MODULE.annotate_freshness(items, datetime(2026, 6, 19, tzinfo=MODULE.BEIJING))
         self.assertEqual(items[0]["freshness_status"], "current")
         self.assertTrue(items[0]["eligible_for_signal"])
+
+
+class DashboardFrontendContractTest(unittest.TestCase):
+    def test_trend_frequency_and_period_controls_exist(self):
+        html = (WEB_ROOT / "index.html").read_text(encoding="utf-8")
+        for control_id in ("frequency-filter", "indicator-select", "range-switch", "start-control", "end-control"):
+            self.assertIn(f'id="{control_id}"', html)
+        for frequency in ("all", "daily", "monthly", "quarterly", "annual"):
+            self.assertIn(f'value="{frequency}"', html)
+
+    def test_confidence_is_not_rendered(self):
+        app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertNotIn('t("confidence")', app)
+        self.assertNotIn("item.confidence", app)
+
+    def test_frequency_specific_presets_and_axis_are_present(self):
+        app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
+        for marker in ("RANGE_PRESETS", "daily:", "monthly:", "quarterly:", "annual:", "axisLabel", "periodKey"):
+            self.assertIn(marker, app)
 
 
 if __name__ == "__main__":
