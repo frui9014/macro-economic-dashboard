@@ -80,18 +80,21 @@ section + section { margin-top: 34px; }
 .combination p { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .learning-note { padding: 24px 26px; border-left: 3px solid var(--accent); border-radius: 0 14px 14px 0; background: var(--accent-soft); }
 .learning-note > p:last-child { margin: 0; max-width: 920px; font-size: 14px; line-height: 1.8; }
-.trend-controls { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 16px; }
+.trend-toolbar { margin-bottom: 16px; padding: 16px 17px 14px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.68); box-shadow: 0 6px 20px rgba(23,32,28,.025); }
+.trend-controls { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
 .trend-selectors { display: flex; align-items: flex-end; gap: 10px; }
 .trend-controls label > span, .date-controls label > span:first-child { display: block; margin-bottom: 7px; color: var(--muted); font-size: 11px; }
-select { min-width: 230px; padding: 10px 34px 10px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--surface); }
+select { min-width: 230px; padding: 10px 34px 10px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--surface); transition: border-color .16s ease, box-shadow .16s ease; }
 #frequency-filter { min-width: 112px; }
-.range-switch { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
-.range-switch button { padding: 7px 10px; border: 0; border-radius: 7px; color: var(--muted); background: transparent; cursor: pointer; font-size: 12px; }
+.range-switch { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: rgba(246,247,244,.9); }
+.range-switch button { min-width: 43px; padding: 7px 10px; border: 0; border-radius: 7px; color: var(--muted); background: transparent; cursor: pointer; font-size: 12px; transition: color .16s ease, background .16s ease; }
+.range-switch button:hover { color: var(--ink); background: rgba(255,255,255,.85); }
 .range-switch button.active { color: white; background: var(--accent); }
-.date-controls { display: flex; align-items: flex-end; justify-content: flex-end; gap: 9px; margin: -5px 0 16px; }
+.date-controls { display: flex; align-items: flex-end; justify-content: flex-end; gap: 9px; margin-top: 13px; padding-top: 12px; border-top: 1px solid #e8ebe8; }
 .date-controls label { display: block; }
 .date-separator { padding-bottom: 10px; color: #9aa19d; }
-.period-control { width: 138px; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: var(--surface); font-size: 12px; }
+.period-control { width: 138px; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: var(--surface); font-size: 12px; transition: border-color .16s ease, box-shadow .16s ease; }
+select:focus-visible, input:focus-visible, button:focus-visible { outline: none; border-color: #8aafa0; box-shadow: 0 0 0 3px rgba(23,92,69,.10); }
 .x-grid { stroke: #f0f2f0; }
 .trend-card { margin-top: 0; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
 .trend-head { display: flex; justify-content: space-between; align-items: flex-end; }
@@ -125,12 +128,14 @@ footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 3
   .tabs { margin-top: 24px; }
   .hero { padding: 22px 20px; }
   .dimension-grid { grid-template-columns: 1fr 1fr; }
+  .trend-toolbar { padding: 14px; }
   .trend-controls { align-items: stretch; flex-direction: column; }
   .trend-selectors { align-items: stretch; flex-direction: column; }
   select { width: 100%; }
   .range-switch { justify-content: space-between; }
-  .date-controls { justify-content: flex-start; margin-top: 0; }
-  .period-control { width: min(42vw, 160px); }
+  .date-controls { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); justify-content: stretch; margin-top: 13px; }
+  .date-separator { display: none; }
+  .period-control { width: 100%; }
   .trend-details { grid-template-columns: 1fr; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
   footer { flex-direction: column; }
