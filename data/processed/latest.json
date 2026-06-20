@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-06-20T10:50:42+08:00",
-    "generated_label": "2026-06-20 10:50",
+    "generated_at": "2026-06-21T00:00:16+08:00",
+    "generated_label": "2026-06-21 00:00",
     "timezone": "Asia/Shanghai",
     "scheduled_time": "18:30",
     "status": "healthy",
@@ -16,7 +16,7 @@
   "dimensions": [
     {
       "name": "全球流动性",
-      "status": "中性",
+      "status": "收紧",
       "confidence": "中",
       "freshness": "日频市场信号"
     },
@@ -325,7 +325,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -590,7 +590,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -855,7 +855,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1120,7 +1120,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1385,7 +1385,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1650,7 +1650,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1915,7 +1915,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 84,
+      "age_days": 85,
       "freshness_limit_days": 160,
       "eligible_for_signal": true
     },
@@ -2180,7 +2180,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "stale",
-      "age_days": 296,
+      "age_days": 297,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -2445,7 +2445,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -2710,7 +2710,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -2975,7 +2975,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3004,7 +3004,7 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260616_1963954.html",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3269,7 +3269,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3534,7 +3534,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "stale",
-      "age_days": 174,
+      "age_days": 175,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -3799,7 +3799,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -4064,7 +4064,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -4329,7 +4329,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 53,
+      "age_days": 54,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -5396,7 +5396,7 @@
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 2,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -5404,13 +5404,13 @@
       "id": "hsi",
       "name": "恒生指数",
       "group": "中国市场",
-      "value": 23924.810547,
+      "value": 24312.160156,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-06-18",
-      "day_change": -1.5932,
-      "five_change": -1.3381,
-      "twenty_change": -6.73,
+      "date": "2026-06-17",
+      "day_change": -0.7422,
+      "five_change": -0.3925,
+      "twenty_change": -5.759,
       "change_unit": "%",
       "direction": "down",
       "reason": "同时受中国增长预期和全球美元流动性影响。",
@@ -6403,15 +6403,11 @@
         {
           "date": "2026-06-17",
           "value": 24312.160156
-        },
-        {
-          "date": "2026-06-18",
-          "value": 23924.810547
         }
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 2,
+      "age_days": 4,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -7398,7 +7394,7 @@
       ],
       "status": "ok",
       "freshness_status": "stale",
-      "age_days": 8,
+      "age_days": 9,
       "freshness_limit_days": 7,
       "eligible_for_signal": false
     },
@@ -8463,7 +8459,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "current",
-      "age_days": 2,
+      "age_days": 3,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -8729,7 +8725,7 @@
       "source_url": "https://www.cpb.nl/system/files/cpbmedia/cpb-world-trade-monitor-march-2026.xlsx",
       "freshness_limit_days": 120,
       "freshness_status": "current",
-      "age_days": 84,
+      "age_days": 85,
       "eligible_for_signal": true
     },
     {
@@ -8993,7 +8989,7 @@
       "status": "ok",
       "source_url": "https://sdmx.oecd.org/public/rest/v1/data/OECD.SDD.STES,DSD_STES@DF_CLI,4.1/G20.M.LI.IX._Z.AA.IX._Z.H?startPeriod=2018-01",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -9178,7 +9174,7 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -9443,7 +9439,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "stale",
-      "age_days": 265,
+      "age_days": 266,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -9708,7 +9704,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "stale",
-      "age_days": 265,
+      "age_days": 266,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -9941,7 +9937,7 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -10126,7 +10122,7 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -10391,7 +10387,7 @@
       "status": "ok",
       "source_url": "#",
       "freshness_status": "stale",
-      "age_days": 296,
+      "age_days": 297,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -10624,7 +10620,7 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -11119,7 +11115,7 @@
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 2,
+      "age_days": 3,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -11614,7 +11610,7 @@
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 2,
+      "age_days": 3,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -12653,7 +12649,7 @@
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 2,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -12661,13 +12657,13 @@
       "id": "vix",
       "name": "VIX",
       "group": "全球市场",
-      "value": 16.780001,
+      "value": 18.440001,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-06-19",
-      "day_change": 2.3171,
-      "five_change": -5.0905,
-      "twenty_change": 0.479,
+      "date": "2026-06-17",
+      "day_change": 12.3705,
+      "five_change": -17.0117,
+      "twenty_change": 5.7339,
       "change_unit": "%",
       "direction": "up",
       "reason": "VIX 反映美股期权隐含波动和全球避险温度。",
@@ -13680,19 +13676,11 @@
         {
           "date": "2026-06-17",
           "value": 18.440001
-        },
-        {
-          "date": "2026-06-18",
-          "value": 16.4
-        },
-        {
-          "date": "2026-06-19",
-          "value": 16.780001
         }
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 4,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -13704,13 +13692,13 @@
       "unit": "点",
       "decimals": 2,
       "date": "2026-06-19",
-      "day_change": -0.001,
-      "five_change": 1.1018,
-      "twenty_change": 1.6725,
+      "day_change": 0.7583,
+      "five_change": 0.9904,
+      "twenty_change": 1.7546,
       "change_unit": "%",
-      "direction": "flat",
+      "direction": "up",
       "reason": "美元走强通常收紧非美经济体的金融条件。",
-      "consequence": "当前变化较小，暂不足以单独改变宏观判断。",
+      "consequence": "若持续走强，人民币与新兴市场资产通常面临更大外部压力。",
       "source": "Yahoo Finance / ICE DXY",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1y&interval=1d&events=history",
       "frequency": "daily",
@@ -14717,17 +14705,13 @@
           "value": 100.089996
         },
         {
-          "date": "2026-06-18",
-          "value": 100.849998
-        },
-        {
           "date": "2026-06-19",
           "value": 100.848999
         }
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 2,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -15766,7 +15750,7 @@
       ],
       "status": "ok",
       "freshness_status": "current",
-      "age_days": 1,
+      "age_days": 2,
       "freshness_limit_days": 7,
       "eligible_for_signal": true
     },
@@ -15903,7 +15887,7 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=100",
       "freshness_status": "stale",
-      "age_days": 902,
+      "age_days": 903,
       "freshness_limit_days": 900,
       "eligible_for_signal": false
     },
@@ -16076,7 +16060,7 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/IP.PAT.RESD?format=json&per_page=100",
       "freshness_status": "stale",
-      "age_days": 1632,
+      "age_days": 1633,
       "freshness_limit_days": 900,
       "eligible_for_signal": false
     },
@@ -16105,7 +16089,7 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260616_1963954.html",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -16202,7 +16186,7 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/TX.VAL.TECH.MF.ZS?format=json&per_page=100",
       "freshness_status": "current",
-      "age_days": 536,
+      "age_days": 537,
       "freshness_limit_days": 900,
       "eligible_for_signal": true
     },
@@ -16231,7 +16215,7 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260616_1963954.html",
       "freshness_status": "current",
-      "age_days": 23,
+      "age_days": 24,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     }
@@ -16239,12 +16223,12 @@
   "combinations": [
     {
       "title": "全球金融条件",
-      "signal": "中性",
+      "signal": "收紧",
       "analysis": "由美国 10 年期收益率、美元和 VIX 的同向或分化变化共同判断；它描述市场金融条件，不替代美联储政策判断。"
     },
     {
       "title": "美元—人民币联动",
-      "signal": "外部压力缓和",
+      "signal": "联动分化",
       "analysis": "美元与 USD/CNY 同向上升时，人民币走弱更可能包含全球美元因素；若二者分化，应更多检查中国自身预期与跨境资金因素。"
     },
     {
@@ -16253,7 +16237,7 @@
       "analysis": "铜和原油只提供高频需求线索，价格也会受到供给与地缘事件影响，必须等待贸易和景气数据确认。"
     }
   ],
-  "learning_note": "今天的全球金融条件信号总体分化。分化本身很重要：它说明市场尚未形成单一宏观叙事，此时不宜用某一个价格变化概括经济方向，应继续观察利率、美元与波动率能否形成持续共振。",
+  "learning_note": "今天最值得观察的是全球金融条件偏紧。利率、美元和波动率若持续共振上行，会同时抬升融资成本、压低资产估值并增加新兴市场汇率压力。单日变化仍不足以证明趋势，接下来要看这种共振能否延续到一周以上。",
   "errors": [],
   "pending": [
     {
@@ -16269,7 +16253,7 @@
       "action": "updated",
       "reason": "daily",
       "status": "ok",
-      "last_attempt": "2026-06-20"
+      "last_attempt": "2026-06-21"
     },
     {
       "id": "china_gdp",
@@ -16451,14 +16435,14 @@
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-06-20"
+      "last_attempt": "2026-06-21"
     },
     {
       "id": "global_trade",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-06-20"
+      "last_attempt": "2026-06-21"
     },
     {
       "id": "china_rd",
@@ -16472,14 +16456,14 @@
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-06-20"
+      "last_attempt": "2026-06-21"
     },
     {
       "id": "china_hightech_exports",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-06-20"
+      "last_attempt": "2026-06-21"
     },
     {
       "id": "china_hightech_output",
