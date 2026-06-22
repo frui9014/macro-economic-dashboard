@@ -19,8 +19,11 @@
       "美国 2 年期国债走弱"
     ],
     "updated_indicators": [
+      "美国 10 年期国债",
       "美元指数",
-      "VIX"
+      "VIX",
+      "USD/CNY",
+      "美国 2 年期国债"
     ],
     "stale_indicators": [],
     "missing_indicators": [
