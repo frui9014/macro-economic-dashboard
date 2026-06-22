@@ -1,9 +1,14 @@
 {
   "date": "2026-06-23",
-  "generated_at": "2026-06-23T01:09:35+08:00",
+  "generated_at": "2026-06-23T01:16:27+08:00",
   "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
   "data_freshness": {
-    "new_updates_today": [],
+    "new_updates_today": [
+      "Brent 原油",
+      "VIX",
+      "美元指数",
+      "铜"
+    ],
     "recent_indicators": [
       "70 城新房价格",
       "M2 增速",
@@ -32,10 +37,6 @@
       "美国非农新增就业",
       "美国 10 年期国债",
       "美国 2 年期国债",
-      "Brent 原油",
-      "VIX",
-      "美元指数",
-      "铜",
       "高技术产业投资",
       "高技术产品出口占比",
       "高技术制造业增加值"
@@ -431,7 +432,7 @@
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
       "released_at": "2026-06-22",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "Yahoo Finance / 公开外汇行情",
       "base_change": "flat",
@@ -452,7 +453,7 @@
       "date": "2026-06-18",
       "observation_period": "2026-06-18",
       "released_at": "2026-06-18",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "Yahoo Finance / 恒生指数公司",
       "base_change": "down",
@@ -473,7 +474,7 @@
       "date": "2026-06-18",
       "observation_period": "2026-06-18",
       "released_at": "2026-06-18",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "Yahoo Finance / 中证指数",
       "base_change": "up",
@@ -493,8 +494,8 @@
       "frequency": "daily",
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
-      "released_at": null,
-      "fetched_at": null,
+      "released_at": "2026-06-22",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "中债 / AkShare",
       "base_change": null,
@@ -513,7 +514,7 @@
       "date": "2026-03-01",
       "observation_period": "2026-03",
       "released_at": null,
-      "fetched_at": null,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "荷兰经济政策分析局 CPB",
       "base_change": "down",
@@ -534,7 +535,7 @@
       "date": "2026-05",
       "observation_period": "2026-05",
       "released_at": null,
-      "fetched_at": null,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "OECD SDMX",
       "base_change": "up",
@@ -692,7 +693,7 @@
       "date": "2026-06-18",
       "observation_period": "2026-06-18",
       "released_at": "2026-06-18",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "U.S. Department of the Treasury",
       "base_change": "flat",
@@ -713,7 +714,7 @@
       "date": "2026-06-18",
       "observation_period": "2026-06-18",
       "released_at": "2026-06-18",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "U.S. Department of the Treasury",
       "base_change": "up",
@@ -729,13 +730,13 @@
     {
       "indicator_id": "brent",
       "indicator_name": "Brent 原油",
-      "value": 77.82,
+      "value": 77.860001,
       "frequency": "daily",
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
       "released_at": "2026-06-22",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
-      "value_changed_since_last_run": false,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
+      "value_changed_since_last_run": true,
       "source": "Yahoo Finance / ICE Brent",
       "base_change": "down",
       "comparison_method": "5d_20d_direction",
@@ -751,13 +752,13 @@
     {
       "indicator_id": "vix",
       "indicator_name": "VIX",
-      "value": 17.450001,
+      "value": 17.23,
       "frequency": "daily",
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
       "released_at": "2026-06-22",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
-      "value_changed_since_last_run": false,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
+      "value_changed_since_last_run": true,
       "source": "Yahoo Finance / CBOE",
       "base_change": "flat",
       "comparison_method": "5d_20d_direction",
@@ -772,13 +773,13 @@
     {
       "indicator_id": "dxy",
       "indicator_name": "美元指数",
-      "value": 101.031998,
+      "value": 100.990997,
       "frequency": "daily",
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
       "released_at": "2026-06-22",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
-      "value_changed_since_last_run": false,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
+      "value_changed_since_last_run": true,
       "source": "Yahoo Finance / ICE DXY",
       "base_change": "up",
       "comparison_method": "5d_20d_direction",
@@ -793,13 +794,13 @@
     {
       "indicator_id": "copper",
       "indicator_name": "铜",
-      "value": 6.3635,
+      "value": 6.36,
       "frequency": "daily",
       "date": "2026-06-22",
       "observation_period": "2026-06-22",
       "released_at": "2026-06-22",
-      "fetched_at": "2026-06-23T01:09:35+08:00",
-      "value_changed_since_last_run": false,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
+      "value_changed_since_last_run": true,
       "source": "Yahoo Finance / COMEX",
       "base_change": "flat",
       "comparison_method": "5d_20d_direction",
@@ -839,7 +840,7 @@
       "date": "2021",
       "observation_period": "2021",
       "released_at": null,
-      "fetched_at": null,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "世界银行 / WIPO",
       "base_change": "up",
@@ -877,7 +878,7 @@
       "date": "2024",
       "observation_period": "2024",
       "released_at": null,
-      "fetched_at": null,
+      "fetched_at": "2026-06-23T01:16:27+08:00",
       "value_changed_since_last_run": false,
       "source": "世界银行 / 海关总署",
       "base_change": "down",
@@ -930,7 +931,10 @@
         "美元指数走弱",
         "美国 2 年期国债走弱"
       ],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "美元指数",
+        "VIX"
+      ],
       "stale_indicators": [],
       "missing_indicators": [
         "cfets_rmb"
@@ -960,7 +964,10 @@
         "美国非农新增就业走弱",
         "Brent 原油走弱"
       ],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "铜",
+        "Brent 原油"
+      ],
       "stale_indicators": [
         "美国 ISM 制造业 PMI",
         "美国 ISM 服务业 PMI"
@@ -1114,7 +1121,10 @@
         "工业增加值改善"
       ],
       "top_negative_drivers": [],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "Brent 原油",
+        "铜"
+      ],
       "stale_indicators": [],
       "missing_indicators": [],
       "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标有效。"
@@ -1257,7 +1267,28 @@
       "can_be_macro_state": true
     }
   ],
-  "important_data_updates": [],
+  "important_data_updates": [
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-06-22",
+      "score": -1
+    },
+    {
+      "indicator": "VIX",
+      "date": "2026-06-22",
+      "score": 0
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-06-22",
+      "score": -1
+    },
+    {
+      "indicator": "铜",
+      "date": "2026-06-22",
+      "score": 0
+    }
+  ],
   "missing_or_stale_data": [
     "中国贸易差额",
     "房地产景气指数",
@@ -1288,13 +1319,13 @@
     {
       "indicator": "Brent 原油",
       "date": "2026-06-22",
-      "value": 77.82,
+      "value": 77.860001,
       "score": -1
     },
     {
       "indicator": "美元指数",
       "date": "2026-06-22",
-      "value": 101.031998,
+      "value": 100.990997,
       "score": -1
     },
     {

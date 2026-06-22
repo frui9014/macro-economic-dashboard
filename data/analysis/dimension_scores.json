@@ -18,7 +18,10 @@
       "美元指数走弱",
       "美国 2 年期国债走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "美元指数",
+      "VIX"
+    ],
     "stale_indicators": [],
     "missing_indicators": [
       "cfets_rmb"
@@ -48,7 +51,10 @@
       "美国非农新增就业走弱",
       "Brent 原油走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "铜",
+      "Brent 原油"
+    ],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
       "美国 ISM 服务业 PMI"
@@ -202,7 +208,10 @@
       "工业增加值改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "Brent 原油",
+      "铜"
+    ],
     "stale_indicators": [],
     "missing_indicators": [],
     "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标有效。"
