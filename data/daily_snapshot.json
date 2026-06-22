@@ -327,7 +327,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_m2",
@@ -592,7 +596,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_cpi",
@@ -857,7 +865,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_ppi",
@@ -1122,7 +1134,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_exports",
@@ -1387,7 +1403,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_pmi_man",
@@ -1652,7 +1672,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_gdp",
@@ -1917,7 +1941,11 @@
       "freshness_status": "current",
       "age_days": 87,
       "freshness_limit_days": 160,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-Q1",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_trade_balance",
@@ -2182,7 +2210,11 @@
       "freshness_status": "stale",
       "age_days": 299,
       "freshness_limit_days": 75,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2025-08",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_imports",
@@ -2447,7 +2479,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_pmi_nonman",
@@ -2712,7 +2748,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_fai",
@@ -2977,7 +3017,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_unemployment",
@@ -3006,7 +3050,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_industrial",
@@ -3271,7 +3319,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_property",
@@ -3536,7 +3588,11 @@
       "freshness_status": "stale",
       "age_days": 177,
       "freshness_limit_days": 75,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2025-12",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_new_loans",
@@ -3801,7 +3857,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_retail",
@@ -4066,7 +4126,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_tsf",
@@ -4331,7 +4395,11 @@
       "freshness_status": "current",
       "age_days": 56,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-04",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "usdcny",
@@ -5394,7 +5462,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-22",
+      "value_changed_since_last_run": false
     },
     {
       "id": "hsi",
@@ -6397,7 +6469,11 @@
       "freshness_status": "current",
       "age_days": 5,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-18",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-18",
+      "value_changed_since_last_run": false
     },
     {
       "id": "csi300",
@@ -7388,7 +7464,11 @@
       "freshness_status": "current",
       "age_days": 5,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-18",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-18",
+      "value_changed_since_last_run": false
     },
     {
       "id": "china10y",
@@ -8453,7 +8533,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "global_trade",
@@ -8718,7 +8802,11 @@
       "freshness_limit_days": 120,
       "freshness_status": "current",
       "age_days": 87,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-03",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "oecd_cli",
@@ -8983,7 +9071,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_cpi",
@@ -9168,7 +9260,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_ism_man",
@@ -9433,7 +9529,11 @@
       "freshness_status": "stale",
       "age_days": 268,
       "freshness_limit_days": 75,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2025-09",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_ism_services",
@@ -9698,7 +9798,11 @@
       "freshness_status": "stale",
       "age_days": 268,
       "freshness_limit_days": 75,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2025-09",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_unemployment",
@@ -9931,7 +10035,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_core_cpi",
@@ -10116,7 +10224,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_core_pce",
@@ -10381,7 +10493,11 @@
       "freshness_status": "stale",
       "age_days": 299,
       "freshness_limit_days": 75,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2025-08",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us_nonfarm",
@@ -10614,7 +10730,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "us10y",
@@ -11109,7 +11229,11 @@
       "freshness_status": "current",
       "age_days": 5,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-18",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-18",
+      "value_changed_since_last_run": false
     },
     {
       "id": "us2y",
@@ -11604,7 +11728,11 @@
       "freshness_status": "current",
       "age_days": 5,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-18",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-18",
+      "value_changed_since_last_run": false
     },
     {
       "id": "brent",
@@ -12639,7 +12767,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-22",
+      "value_changed_since_last_run": false
     },
     {
       "id": "vix",
@@ -13674,7 +13806,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-22",
+      "value_changed_since_last_run": false
     },
     {
       "id": "dxy",
@@ -14705,7 +14841,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-22",
+      "value_changed_since_last_run": false
     },
     {
       "id": "copper",
@@ -15740,7 +15880,11 @@
       "freshness_status": "current",
       "age_days": 1,
       "freshness_limit_days": 7,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-06-22",
+      "fetched_at": "2026-06-23T01:09:35+08:00",
+      "released_at": "2026-06-22",
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_rd",
@@ -15877,7 +16021,11 @@
       "freshness_status": "stale",
       "age_days": 905,
       "freshness_limit_days": 900,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2023",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_patents",
@@ -16050,7 +16198,11 @@
       "freshness_status": "stale",
       "age_days": 1635,
       "freshness_limit_days": 900,
-      "eligible_for_signal": false
+      "eligible_for_signal": false,
+      "observation_period": "2021",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_hightech_investment",
@@ -16079,7 +16231,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_hightech_exports",
@@ -16176,7 +16332,11 @@
       "freshness_status": "current",
       "age_days": 539,
       "freshness_limit_days": 900,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2024",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     },
     {
       "id": "china_hightech_output",
@@ -16205,7 +16365,11 @@
       "freshness_status": "current",
       "age_days": 26,
       "freshness_limit_days": 75,
-      "eligible_for_signal": true
+      "eligible_for_signal": true,
+      "observation_period": "2026-05",
+      "fetched_at": null,
+      "released_at": null,
+      "value_changed_since_last_run": false
     }
   ],
   "combinations": [
@@ -16470,17 +16634,10 @@
   ],
   "analysis": {
     "date": "2026-06-23",
-    "generated_at": "2026-06-23T00:40:47+08:00",
+    "generated_at": "2026-06-23T01:09:35+08:00",
     "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
     "data_freshness": {
-      "new_updates_today": [
-        "USD/CNY",
-        "中国 10 年期国债",
-        "Brent 原油",
-        "VIX",
-        "美元指数",
-        "铜"
-      ],
+      "new_updates_today": [],
       "recent_indicators": [
         "70 城新房价格",
         "M2 增速",
@@ -16496,37 +16653,43 @@
         "工业增加值",
         "新增人民币贷款",
         "社会消费品零售",
+        "社会融资规模增量",
+        "USD/CNY",
+        "恒生指数",
+        "沪深 300",
+        "中国 10 年期国债",
+        "CPB 全球贸易量",
         "OECD G20 综合领先指标",
         "美国 CPI",
         "美国失业率",
         "美国核心 CPI",
         "美国非农新增就业",
+        "美国 10 年期国债",
+        "美国 2 年期国债",
+        "Brent 原油",
+        "VIX",
+        "美元指数",
+        "铜",
         "高技术产业投资",
+        "高技术产品出口占比",
         "高技术制造业增加值"
       ],
       "stale_indicators": [
         "中国贸易差额",
         "房地产景气指数",
-        "社会融资规模增量",
-        "恒生指数",
-        "沪深 300",
-        "CPB 全球贸易量",
         "美国 ISM 制造业 PMI",
         "美国 ISM 服务业 PMI",
         "美国核心 PCE",
-        "美国 10 年期国债",
-        "美国 2 年期国债",
         "中国 R&D 经费强度",
-        "中国居民发明专利申请",
-        "高技术产品出口占比"
+        "中国居民发明专利申请"
       ],
       "missing_indicators": [
         "美国 PCE 价格指数",
         "cfets_rmb",
         "china_pmi_composite",
+        "china_youth_unemployment",
         "china_fai_manufacturing",
         "china_fai_infrastructure",
-        "china_youth_unemployment",
         "china_corp_long_loans",
         "china_household_long_loans",
         "china_gov_bonds",
@@ -16535,600 +16698,1017 @@
         "china_property_sales_value",
         "china_property_investment",
         "china_property_starts",
+        "china_mechanical_exports",
         "china_pct_patents",
-        "china_triadic_patents",
-        "china_mechanical_exports"
+        "china_triadic_patents"
       ]
     },
     "indicator_scores": [
       {
         "indicator_id": "china_house_price",
         "indicator_name": "70 城新房价格",
+        "value": 100.55,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 100.55,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "down",
+        "comparison_method": "level_trend",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "real_estate_cycle": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_m2",
         "indicator_name": "M2 增速",
+        "value": 8.6,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 8.6,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "中国人民银行 / AkShare",
+        "base_change": "flat",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "credit_expansion": 0
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_cpi",
         "indicator_name": "中国 CPI",
+        "value": 1.2,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 1.2,
-        "indicator_score": 1,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "flat",
+        "comparison_method": "direct_previous_period",
+        "indicator_score": 0,
+        "dimension_contributions": {
+          "price_pressure": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_ppi",
         "indicator_name": "中国 PPI",
+        "value": 3.9,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 3.9,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "up",
+        "comparison_method": "direct_previous_period",
         "indicator_score": 1,
+        "dimension_contributions": {
+          "price_pressure": 0
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_exports",
         "indicator_name": "中国出口",
+        "value": 19.4,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 19.4,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "海关总署 / AkShare",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 1,
+        "dimension_contributions": {
+          "global_demand": 1,
+          "china_production": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_pmi_man",
         "indicator_name": "中国制造业 PMI",
+        "value": 50.0,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 50.0,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "down",
+        "comparison_method": "direct_previous_period",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "china_production": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_gdp",
         "indicator_name": "中国实际 GDP 增速",
+        "value": 5.0,
         "frequency": "quarterly",
         "date": "2026年第1季度",
-        "value": 5.0,
+        "observation_period": "2026-Q1",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "flat",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "china_production": 0
+        },
         "status": "current",
         "age_days": 87,
-        "freshness_limit_days": 120
+        "freshness_limit_days": 160
       },
       {
         "indicator_id": "china_trade_balance",
         "indicator_name": "中国贸易差额",
+        "value": 982.4,
         "frequency": "monthly",
         "date": "2025-08-07",
-        "value": 982.4,
+        "observation_period": "2025-08",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "海关总署 / AkShare",
+        "base_change": "flat",
+        "comparison_method": "level_trend",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 299,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_imports",
         "indicator_name": "中国进口",
+        "value": 27.4,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 27.4,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "海关总署 / AkShare",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
+        "indicator_score": 1,
+        "dimension_contributions": {
+          "china_domestic_demand": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_pmi_nonman",
         "indicator_name": "中国非制造业 PMI",
+        "value": 50.1,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 50.1,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "up",
+        "comparison_method": "direct_previous_period",
         "indicator_score": 1,
+        "dimension_contributions": {
+          "china_production": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_fai",
         "indicator_name": "固定资产投资",
+        "value": -17.15,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": -17.15,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "down",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "china_domestic_demand": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_unemployment",
         "indicator_name": "城镇调查失业率",
+        "value": 5.1,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 5.1,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局",
+        "base_change": null,
+        "comparison_method": "direct_previous_period",
+        "indicator_score": null,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_industrial",
         "indicator_name": "工业增加值",
+        "value": 4.5,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 4.5,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
+        "indicator_score": 1,
+        "dimension_contributions": {
+          "china_production": 1,
+          "price_pressure": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_property",
         "indicator_name": "房地产景气指数",
+        "value": 91.45,
         "frequency": "monthly",
         "date": "2025-12-01",
-        "value": 91.45,
+        "observation_period": "2025-12",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "down",
+        "comparison_method": "level_trend",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 177,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_new_loans",
         "indicator_name": "新增人民币贷款",
+        "value": 4965.0,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": 4965.0,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "中国人民银行 / AkShare",
+        "base_change": "down",
+        "comparison_method": "same_period_yoy_and_3m_average",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "credit_expansion": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_retail",
         "indicator_name": "社会消费品零售",
+        "value": -0.6,
         "frequency": "monthly",
         "date": "2026年05月份",
-        "value": -0.6,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局 / AkShare",
+        "base_change": "down",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "china_domestic_demand": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_tsf",
         "indicator_name": "社会融资规模增量",
+        "value": 6245.0,
         "frequency": "monthly",
         "date": "202604",
-        "value": 6245.0,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-04",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "中国人民银行 / AkShare",
+        "base_change": "down",
+        "comparison_method": "same_period_yoy_and_3m_average",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "credit_expansion": -1
+        },
+        "status": "current",
         "age_days": 56,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "usdcny",
         "indicator_name": "USD/CNY",
+        "value": 6.7641,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 6.7641,
+        "observation_period": "2026-06-22",
+        "released_at": "2026-06-22",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / 公开外汇行情",
+        "base_change": "flat",
+        "comparison_method": "5d_20d_direction",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "external_financial_pressure": 0
+        },
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "hsi",
         "indicator_name": "恒生指数",
+        "value": 23924.810547,
         "frequency": "daily",
         "date": "2026-06-18",
-        "value": 23924.810547,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-06-18",
+        "released_at": "2026-06-18",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / 恒生指数公司",
+        "base_change": "down",
+        "comparison_method": "5d_20d_direction",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "china_domestic_demand": -1
+        },
+        "status": "current",
         "age_days": 5,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "csi300",
         "indicator_name": "沪深 300",
+        "value": 4941.600098,
         "frequency": "daily",
         "date": "2026-06-18",
-        "value": 4941.600098,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-06-18",
+        "released_at": "2026-06-18",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / 中证指数",
+        "base_change": "up",
+        "comparison_method": "5d_20d_direction",
+        "indicator_score": 1,
+        "dimension_contributions": {
+          "china_domestic_demand": 1
+        },
+        "status": "current",
         "age_days": 5,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "china10y",
         "indicator_name": "中国 10 年期国债",
+        "value": 1.7375,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 1.7375,
-        "indicator_score": 0,
+        "observation_period": "2026-06-22",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "中债 / AkShare",
+        "base_change": null,
+        "comparison_method": "insufficient_5d_20d_history",
+        "indicator_score": null,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "global_trade",
         "indicator_name": "CPB 全球贸易量",
+        "value": 113.269189,
         "frequency": "monthly",
         "date": "2026-03-01",
-        "value": 113.269189,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-03",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "荷兰经济政策分析局 CPB",
+        "base_change": "down",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "global_demand": -1
+        },
+        "status": "current",
         "age_days": 87,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 135
       },
       {
         "indicator_id": "oecd_cli",
         "indicator_name": "OECD G20 综合领先指标",
+        "value": 100.6695,
         "frequency": "monthly",
         "date": "2026-05",
-        "value": 100.6695,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "OECD SDMX",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 1,
+        "dimension_contributions": {
+          "global_demand": 1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 105
       },
       {
         "indicator_id": "us_cpi",
         "indicator_name": "美国 CPI",
+        "value": 4.466404,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 4.466404,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "美国劳工统计局 BLS",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 1,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_ism_man",
         "indicator_name": "美国 ISM 制造业 PMI",
+        "value": 48.7,
         "frequency": "monthly",
         "date": "2025-09-02",
-        "value": 48.7,
+        "observation_period": "2025-09",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "ISM / AkShare",
+        "base_change": "up",
+        "comparison_method": "direct_previous_period",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 268,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_ism_services",
         "indicator_name": "美国 ISM 服务业 PMI",
+        "value": 52.0,
         "frequency": "monthly",
         "date": "2025-09-04",
-        "value": 52.0,
+        "observation_period": "2025-09",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "ISM / AkShare",
+        "base_change": "up",
+        "comparison_method": "direct_previous_period",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 268,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_unemployment",
         "indicator_name": "美国失业率",
+        "value": 4.3,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 4.3,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "美国劳工统计局 BLS",
+        "base_change": "flat",
+        "comparison_method": "direct_previous_period",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "global_demand": 0
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_core_cpi",
         "indicator_name": "美国核心 CPI",
+        "value": 2.957114,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 2.957114,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "美国劳工统计局 BLS",
+        "base_change": "flat",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 0,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_core_pce",
         "indicator_name": "美国核心 PCE",
+        "value": 2.9,
         "frequency": "monthly",
         "date": "2025-08-29",
-        "value": 2.9,
+        "observation_period": "2025-08",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "BEA / AkShare",
+        "base_change": "up",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 299,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us_nonfarm",
         "indicator_name": "美国非农新增就业",
+        "value": 17.2,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 17.2,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "美国劳工统计局 BLS",
+        "base_change": "down",
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "global_demand": -1
+        },
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "us10y",
         "indicator_name": "美国 10 年期国债",
+        "value": 4.46,
         "frequency": "daily",
         "date": "2026-06-18",
-        "value": 4.46,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-06-18",
+        "released_at": "2026-06-18",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "U.S. Department of the Treasury",
+        "base_change": "flat",
+        "comparison_method": "5d_20d_direction",
+        "indicator_score": 0,
+        "dimension_contributions": {
+          "external_financial_pressure": 0
+        },
+        "status": "current",
         "age_days": 5,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "us2y",
         "indicator_name": "美国 2 年期国债",
+        "value": 4.19,
         "frequency": "daily",
         "date": "2026-06-18",
-        "value": 4.19,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2026-06-18",
+        "released_at": "2026-06-18",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "U.S. Department of the Treasury",
+        "base_change": "up",
+        "comparison_method": "5d_20d_direction",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "external_financial_pressure": -1
+        },
+        "status": "current",
         "age_days": 5,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "brent",
         "indicator_name": "Brent 原油",
+        "value": 77.82,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 77.82,
+        "observation_period": "2026-06-22",
+        "released_at": "2026-06-22",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / ICE Brent",
+        "base_change": "down",
+        "comparison_method": "5d_20d_direction",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "global_demand": -1,
+          "price_pressure": 0
+        },
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "vix",
         "indicator_name": "VIX",
+        "value": 17.450001,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 17.450001,
+        "observation_period": "2026-06-22",
+        "released_at": "2026-06-22",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / CBOE",
+        "base_change": "flat",
+        "comparison_method": "5d_20d_direction",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "external_financial_pressure": 0
+        },
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "dxy",
         "indicator_name": "美元指数",
+        "value": 101.031998,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 101.031998,
+        "observation_period": "2026-06-22",
+        "released_at": "2026-06-22",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / ICE DXY",
+        "base_change": "up",
+        "comparison_method": "5d_20d_direction",
         "indicator_score": -1,
+        "dimension_contributions": {
+          "external_financial_pressure": -1
+        },
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "copper",
         "indicator_name": "铜",
+        "value": 6.3635,
         "frequency": "daily",
         "date": "2026-06-22",
-        "value": 6.3635,
+        "observation_period": "2026-06-22",
+        "released_at": "2026-06-22",
+        "fetched_at": "2026-06-23T01:09:35+08:00",
+        "value_changed_since_last_run": false,
+        "source": "Yahoo Finance / COMEX",
+        "base_change": "flat",
+        "comparison_method": "5d_20d_direction",
         "indicator_score": 0,
+        "dimension_contributions": {
+          "global_demand": 0,
+          "price_pressure": 0
+        },
         "status": "current",
         "age_days": 1,
-        "freshness_limit_days": 3
+        "freshness_limit_days": 7
       },
       {
         "indicator_id": "china_rd",
         "indicator_name": "中国 R&D 经费强度",
+        "value": 2.57729,
         "frequency": "annual",
         "date": "2023",
-        "value": 2.57729,
+        "observation_period": "2023",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "世界银行 / 国家统计局",
+        "base_change": "up",
+        "comparison_method": "level_trend",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 905,
-        "freshness_limit_days": 450
+        "freshness_limit_days": 900
       },
       {
         "indicator_id": "china_patents",
         "indicator_name": "中国居民发明专利申请",
+        "value": 1426644.0,
         "frequency": "annual",
         "date": "2021",
-        "value": 1426644.0,
+        "observation_period": "2021",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "世界银行 / WIPO",
+        "base_change": "up",
+        "comparison_method": "level_trend",
         "indicator_score": null,
+        "dimension_contributions": {},
         "status": "stale",
         "age_days": 1635,
-        "freshness_limit_days": 450
+        "freshness_limit_days": 900
       },
       {
         "indicator_id": "china_hightech_investment",
         "indicator_name": "高技术产业投资",
+        "value": 4.5,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 4.5,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局",
+        "base_change": null,
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
+        "indicator_score": null,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       },
       {
         "indicator_id": "china_hightech_exports",
         "indicator_name": "高技术产品出口占比",
+        "value": 26.277738,
         "frequency": "annual",
         "date": "2024",
-        "value": 26.277738,
-        "indicator_score": null,
-        "status": "stale",
+        "observation_period": "2024",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "世界银行 / 海关总署",
+        "base_change": "down",
+        "comparison_method": "level_trend",
+        "indicator_score": -1,
+        "dimension_contributions": {
+          "innovation_upgrade": -1
+        },
+        "status": "current",
         "age_days": 539,
-        "freshness_limit_days": 450
+        "freshness_limit_days": 900
       },
       {
         "indicator_id": "china_hightech_output",
         "indicator_name": "高技术制造业增加值",
+        "value": 15.1,
         "frequency": "monthly",
         "date": "2026-05-01",
-        "value": 15.1,
-        "indicator_score": 0,
+        "observation_period": "2026-05",
+        "released_at": null,
+        "fetched_at": null,
+        "value_changed_since_last_run": false,
+        "source": "国家统计局",
+        "base_change": null,
+        "comparison_method": "yoy_rate_change_and_3_period_trend",
+        "indicator_score": null,
+        "dimension_contributions": {},
         "status": "current",
         "age_days": 26,
-        "freshness_limit_days": 45
+        "freshness_limit_days": 75
       }
     ],
     "dimension_scores": [
       {
         "dimension_id": "external_financial_pressure",
         "dimension_name": "外部金融压力",
-        "score": -0.33,
+        "score": -0.35,
         "label": "外部金融中性",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": false,
+        "can_be_macro_state": true,
         "coverage": 0.83,
-        "freshness": 0.6,
-        "agreement": 0.67,
+        "freshness": 1.0,
+        "agreement": 0.65,
+        "usable_core_indicators": 4,
+        "expected_core_indicators": 4,
         "top_positive_drivers": [],
         "top_negative_drivers": [
-          "美元指数走弱"
+          "美元指数走弱",
+          "美国 2 年期国债走弱"
         ],
-        "updated_indicators": [
-          "美元指数",
-          "VIX",
-          "USD/CNY"
-        ],
-        "stale_indicators": [
-          "美国 10 年期国债",
-          "美国 2 年期国债"
-        ],
+        "updated_indicators": [],
+        "stale_indicators": [],
         "missing_indicators": [
           "cfets_rmb"
         ],
-        "short_explanation": "基于3/6项有效指标，正向0项、负向1项。"
+        "short_explanation": "按核心/次要/辅助权重计算；4/4项核心指标有效。"
       },
       {
         "dimension_id": "global_demand",
         "dimension_name": "全球需求 / 外需",
-        "score": 0.0,
+        "score": 0.02,
         "label": "外需中性",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": false,
+        "can_be_macro_state": true,
         "coverage": 1.0,
-        "freshness": 0.67,
-        "agreement": 0.33,
+        "freshness": 0.78,
+        "agreement": 0.24,
+        "usable_core_indicators": 3,
+        "expected_core_indicators": 4,
         "top_positive_drivers": [
           "OECD G20 综合领先指标改善",
           "中国出口改善"
         ],
         "top_negative_drivers": [
+          "CPB 全球贸易量走弱",
           "美国非农新增就业走弱",
           "Brent 原油走弱"
         ],
-        "updated_indicators": [
-          "铜",
-          "Brent 原油"
-        ],
+        "updated_indicators": [],
         "stale_indicators": [
           "美国 ISM 制造业 PMI",
-          "美国 ISM 服务业 PMI",
-          "CPB 全球贸易量"
+          "美国 ISM 服务业 PMI"
         ],
         "missing_indicators": [],
-        "short_explanation": "基于6/9项有效指标，正向2项、负向2项。"
+        "short_explanation": "按核心/次要/辅助权重计算；3/4项核心指标有效。"
       },
       {
         "dimension_id": "china_production",
         "dimension_name": "中国生产 / 景气",
-        "score": 0.33,
+        "score": 0.23,
         "label": "生产平稳",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": false,
+        "can_be_macro_state": true,
         "coverage": 0.86,
-        "freshness": 1.0,
-        "agreement": 0.67,
+        "freshness": 0.83,
+        "agreement": 0.26,
+        "usable_core_indicators": 3,
+        "expected_core_indicators": 3,
         "top_positive_drivers": [
-          "中国非制造业 PMI改善",
-          "中国出口改善"
+          "工业增加值改善",
+          "中国出口改善",
+          "中国非制造业 PMI改善"
         ],
-        "top_negative_drivers": [],
+        "top_negative_drivers": [
+          "中国制造业 PMI走弱"
+        ],
         "updated_indicators": [],
         "stale_indicators": [],
         "missing_indicators": [
           "china_pmi_composite"
         ],
-        "short_explanation": "基于6/7项有效指标，正向2项、负向0项。"
+        "short_explanation": "按核心/次要/辅助权重计算；3/3项核心指标有效。"
       },
       {
         "dimension_id": "china_domestic_demand",
         "dimension_name": "中国内需 / 居民需求",
-        "score": -0.5,
-        "label": "内需偏弱",
+        "score": -0.19,
+        "label": "内需平稳",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": false,
+        "can_be_macro_state": true,
         "coverage": 0.67,
-        "freshness": 0.67,
-        "agreement": 0.5,
-        "top_positive_drivers": [],
+        "freshness": 0.83,
+        "agreement": 0.0,
+        "usable_core_indicators": 2,
+        "expected_core_indicators": 3,
+        "top_positive_drivers": [
+          "中国进口改善",
+          "沪深 300改善"
+        ],
         "top_negative_drivers": [
           "社会消费品零售走弱",
-          "固定资产投资走弱"
+          "固定资产投资走弱",
+          "恒生指数走弱"
         ],
         "updated_indicators": [],
-        "stale_indicators": [
-          "沪深 300",
-          "恒生指数"
-        ],
+        "stale_indicators": [],
         "missing_indicators": [
+          "china_youth_unemployment",
           "china_fai_manufacturing",
-          "china_fai_infrastructure",
-          "china_youth_unemployment"
+          "china_fai_infrastructure"
         ],
-        "short_explanation": "基于4/9项有效指标，正向0项、负向2项。"
+        "short_explanation": "按核心/次要/辅助权重计算；2/3项核心指标有效。"
       },
       {
         "dimension_id": "credit_expansion",
         "dimension_name": "信用扩张",
-        "score": 0.0,
-        "label": "信用中性 / 结构分化",
+        "score": -0.77,
+        "label": "信用偏弱",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true,
+        "can_be_macro_state": true,
         "coverage": 0.43,
-        "freshness": 0.67,
-        "agreement": 1.0,
+        "freshness": 1.0,
+        "agreement": 0.77,
+        "usable_core_indicators": 2,
+        "expected_core_indicators": 4,
         "top_positive_drivers": [],
-        "top_negative_drivers": [],
-        "updated_indicators": [],
-        "stale_indicators": [
-          "社会融资规模增量"
+        "top_negative_drivers": [
+          "社会融资规模增量走弱",
+          "新增人民币贷款走弱"
         ],
+        "updated_indicators": [],
+        "stale_indicators": [],
         "missing_indicators": [
           "china_corp_long_loans",
           "china_household_long_loans",
           "china_gov_bonds",
           "china_bill_financing"
         ],
-        "short_explanation": "基于2/7项有效指标，正向0项、负向0项。"
+        "short_explanation": "按核心/次要/辅助权重计算；2/4项核心指标有效。",
+        "total_judgement": "偏弱",
+        "structure_judgement": "结构待验证",
+        "effective_expansion": false
       },
       {
         "dimension_id": "real_estate_cycle",
         "dimension_name": "地产周期",
         "score": -1.0,
-        "label": "地产继续拖累",
+        "label": "地产信号偏弱，但证据不足",
         "confidence": "低",
+        "evidence_quality": "weak",
+        "can_enter_summary": false,
+        "can_be_macro_state": false,
         "coverage": 0.29,
         "freshness": 0.5,
         "agreement": 1.0,
+        "usable_core_indicators": 0,
+        "expected_core_indicators": 4,
         "top_positive_drivers": [],
         "top_negative_drivers": [
           "70 城新房价格走弱"
@@ -17144,55 +17724,64 @@
           "china_property_starts",
           "china_household_long_loans"
         ],
-        "short_explanation": "基于1/7项有效指标，正向0项、负向1项。"
+        "short_explanation": "按核心/次要/辅助权重计算；0/4项核心指标有效。",
+        "sales_side": "数据不足",
+        "development_side": "数据不足",
+        "price_side": "走弱"
       },
       {
         "dimension_id": "price_pressure",
         "dimension_name": "价格 / 通胀通缩压力",
-        "score": 0.2,
+        "score": 0.37,
         "label": "价格平稳 / 分化",
         "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": false,
+        "can_be_macro_state": true,
         "coverage": 1.0,
         "freshness": 1.0,
-        "agreement": 0.4,
+        "agreement": 0.63,
+        "usable_core_indicators": 2,
+        "expected_core_indicators": 2,
         "top_positive_drivers": [
           "中国 CPI改善",
-          "中国 PPI改善"
+          "工业增加值改善"
         ],
-        "top_negative_drivers": [
-          "Brent 原油走弱"
-        ],
-        "updated_indicators": [
-          "Brent 原油",
-          "铜"
-        ],
+        "top_negative_drivers": [],
+        "updated_indicators": [],
         "stale_indicators": [],
         "missing_indicators": [],
-        "short_explanation": "基于5/5项有效指标，正向2项、负向1项。"
+        "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标有效。"
       },
       {
         "dimension_id": "innovation_upgrade",
         "dimension_name": "创新升级",
-        "score": 0.0,
-        "label": "创新升级平稳",
+        "score": -1.0,
+        "label": "创新升级放缓",
         "confidence": "低",
+        "evidence_quality": "weak",
+        "can_enter_summary": false,
+        "can_be_macro_state": false,
         "coverage": 0.62,
-        "freshness": 0.4,
+        "freshness": 0.2,
         "agreement": 1.0,
+        "usable_core_indicators": 0,
+        "expected_core_indicators": 3,
         "top_positive_drivers": [],
-        "top_negative_drivers": [],
+        "top_negative_drivers": [
+          "高技术产品出口占比走弱"
+        ],
         "updated_indicators": [],
         "stale_indicators": [
           "中国 R&D 经费强度",
-          "中国居民发明专利申请",
-          "高技术产品出口占比"
+          "中国居民发明专利申请"
         ],
         "missing_indicators": [
+          "china_mechanical_exports",
           "china_pct_patents",
-          "china_triadic_patents",
-          "china_mechanical_exports"
+          "china_triadic_patents"
         ],
-        "short_explanation": "基于2/8项有效指标，正向0项、负向0项。创新升级属于慢变量，仅在相关数据更新时重点解读。"
+        "short_explanation": "按核心/次要/辅助权重计算；0/3项核心指标有效。"
       }
     ],
     "relation_diagnostics": [
@@ -17201,137 +17790,122 @@
         "relation_name": "生产 vs 内需",
         "conclusion": "生产与内需信号尚未形成明确共振",
         "evidence": [
-          "中国生产 / 景气：生产平稳（0.33）",
-          "中国内需 / 居民需求：内需偏弱（-0.5）"
+          "中国生产 / 景气：生产平稳（0.23）",
+          "中国内需 / 居民需求：内需平稳（-0.19）"
         ],
         "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
-        "confidence": "中"
+        "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true
       },
       {
         "relation_id": "credit_vs_domestic_demand",
         "relation_name": "信用 vs 内需",
         "conclusion": "信用与内需结构分化或处于中性区间",
         "evidence": [
-          "信用扩张：信用中性 / 结构分化（0.0）",
-          "中国内需 / 居民需求：内需偏弱（-0.5）"
+          "信用扩张：信用偏弱（-0.77）",
+          "中国内需 / 居民需求：内需平稳（-0.19）"
         ],
         "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
-        "confidence": "中"
+        "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true
       },
       {
         "relation_id": "credit_vs_real_estate",
         "relation_name": "信用 vs 地产",
-        "conclusion": "信用与地产均未形成明确方向",
+        "conclusion": "地产与融资需求均弱",
         "evidence": [
-          "信用扩张：信用中性 / 结构分化（0.0）",
-          "地产周期：地产继续拖累（-1.0）"
+          "信用扩张：信用偏弱（-0.77）",
+          "地产周期：地产信号偏弱，但证据不足（-1.0）"
         ],
         "risk_note": "缺少贷款结构时，不能确认资金最终流向。",
-        "confidence": "低"
+        "confidence": "低",
+        "evidence_quality": "weak",
+        "can_enter_summary": false
       },
       {
         "relation_id": "growth_vs_price",
         "relation_name": "增长 vs 价格",
         "conclusion": "增长与价格信号分化",
         "evidence": [
-          "中国生产 / 景气：生产平稳（0.33）",
-          "中国内需 / 居民需求：内需偏弱（-0.5）",
-          "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
+          "中国生产 / 景气：生产平稳（0.23）",
+          "中国内需 / 居民需求：内需平稳（-0.19）",
+          "价格 / 通胀通缩压力：价格平稳 / 分化（0.37）"
         ],
         "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
-        "confidence": "中"
+        "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true
       },
       {
         "relation_id": "global_demand_vs_china_exports",
         "relation_name": "全球需求 vs 中国出口",
         "conclusion": "全球需求与中国出口尚未形成明确组合",
         "evidence": [
-          "全球需求 / 外需：外需中性（0.0）",
+          "全球需求 / 外需：外需中性（0.02）",
           "中国出口单项得分：1"
         ],
         "risk_note": "出口还会受到价格、基数和贸易结构影响。",
-        "confidence": "中"
+        "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true
       },
       {
         "relation_id": "external_financial_pressure_vs_china_assets",
         "relation_name": "外部金融压力 vs 中国资产",
         "conclusion": "外部条件与中国资产信号分化",
         "evidence": [
-          "外部金融压力：外部金融中性（-0.33）",
+          "外部金融压力：外部金融中性（-0.35）",
           "中国资产合成方向：0"
         ],
         "risk_note": "市场价格反映预期，不能替代基本面数据。",
-        "confidence": "低"
+        "confidence": "中",
+        "evidence_quality": "medium",
+        "can_enter_summary": true
       },
       {
         "relation_id": "innovation_vs_hightech_exports",
         "relation_name": "创新升级 vs 高技术出口",
-        "conclusion": "创新投入与转化信号尚不充分",
+        "conclusion": "创新升级整体偏弱",
         "evidence": [
-          "创新升级：创新升级平稳（0.0）",
-          "高技术产业与出口合成方向：0"
+          "创新升级：创新升级放缓（-1.0）",
+          "高技术产业与出口合成方向：-1"
         ],
         "risk_note": "创新是慢变量，不宜根据单日或单月数据过度解读。",
-        "confidence": "低"
+        "confidence": "低",
+        "evidence_quality": "weak",
+        "can_enter_summary": false
       }
     ],
     "detected_divergences": [],
     "candidate_macro_states": [
-      "地产拖累"
+      "数据分化、暂难判断"
     ],
-    "important_data_updates": [
+    "candidate_macro_state_details": [
       {
-        "indicator": "USD/CNY",
-        "date": "2026-06-22",
-        "score": 0
-      },
-      {
-        "indicator": "中国 10 年期国债",
-        "date": "2026-06-22",
-        "score": 0
-      },
-      {
-        "indicator": "Brent 原油",
-        "date": "2026-06-22",
-        "score": -1
-      },
-      {
-        "indicator": "VIX",
-        "date": "2026-06-22",
-        "score": 0
-      },
-      {
-        "indicator": "美元指数",
-        "date": "2026-06-22",
-        "score": -1
-      },
-      {
-        "indicator": "铜",
-        "date": "2026-06-22",
-        "score": 0
+        "state_id": "mixed_data",
+        "state_name": "数据分化、暂难判断",
+        "supporting_dimensions": [],
+        "evidence_quality": "medium",
+        "can_be_macro_state": true
       }
     ],
+    "important_data_updates": [],
     "missing_or_stale_data": [
       "中国贸易差额",
       "房地产景气指数",
-      "社会融资规模增量",
-      "恒生指数",
-      "沪深 300",
-      "CPB 全球贸易量",
       "美国 ISM 制造业 PMI",
       "美国 ISM 服务业 PMI",
       "美国核心 PCE",
-      "美国 10 年期国债",
-      "美国 2 年期国债",
       "中国 R&D 经费强度",
       "中国居民发明专利申请",
-      "高技术产品出口占比",
       "美国 PCE 价格指数",
       "cfets_rmb",
       "china_pmi_composite",
+      "china_youth_unemployment",
       "china_fai_manufacturing",
       "china_fai_infrastructure",
-      "china_youth_unemployment",
       "china_corp_long_loans",
       "china_household_long_loans",
       "china_gov_bonds",
@@ -17340,9 +17914,9 @@
       "china_property_sales_value",
       "china_property_investment",
       "china_property_starts",
+      "china_mechanical_exports",
       "china_pct_patents",
-      "china_triadic_patents",
-      "china_mechanical_exports"
+      "china_triadic_patents"
     ],
     "raw_key_values_summary": [
       {
@@ -17358,16 +17932,28 @@
         "score": -1
       },
       {
+        "indicator": "恒生指数",
+        "date": "2026-06-18",
+        "value": 23924.810547,
+        "score": -1
+      },
+      {
+        "indicator": "沪深 300",
+        "date": "2026-06-18",
+        "value": 4941.600098,
+        "score": 1
+      },
+      {
+        "indicator": "美国 2 年期国债",
+        "date": "2026-06-18",
+        "value": 4.19,
+        "score": -1
+      },
+      {
         "indicator": "70 城新房价格",
         "date": "2026-05-01",
         "value": 100.55,
         "score": -1
-      },
-      {
-        "indicator": "中国 CPI",
-        "date": "2026年05月份",
-        "value": 1.2,
-        "score": 1
       },
       {
         "indicator": "中国 PPI",
@@ -17382,6 +17968,18 @@
         "score": 1
       },
       {
+        "indicator": "中国制造业 PMI",
+        "date": "2026年05月份",
+        "value": 50.0,
+        "score": -1
+      },
+      {
+        "indicator": "中国进口",
+        "date": "2026年05月份",
+        "value": 27.4,
+        "score": 1
+      },
+      {
         "indicator": "中国非制造业 PMI",
         "date": "2026年05月份",
         "value": 50.1,
@@ -17392,38 +17990,14 @@
         "date": "2026年05月份",
         "value": -17.15,
         "score": -1
-      },
-      {
-        "indicator": "社会消费品零售",
-        "date": "2026年05月份",
-        "value": -0.6,
-        "score": -1
-      },
-      {
-        "indicator": "OECD G20 综合领先指标",
-        "date": "2026-05",
-        "value": 100.6695,
-        "score": 1
-      },
-      {
-        "indicator": "美国 CPI",
-        "date": "2026-05-01",
-        "value": 4.466404,
-        "score": 1
-      },
-      {
-        "indicator": "美国非农新增就业",
-        "date": "2026-05-01",
-        "value": 17.2,
-        "score": -1
       }
     ],
-    "rule_summary": "当前更接近“地产拖累”；主要约束来自中国内需 / 居民需求、地产周期。"
+    "rule_summary": "当前更接近“数据分化、暂难判断”；主要约束来自信用扩张。"
   },
   "macro_judgement": {
-    "one_sentence_summary": "当前更接近“地产拖累”；主要约束来自中国内需 / 居民需求、地产周期。",
+    "one_sentence_summary": "当前更接近“数据分化、暂难判断”；主要约束来自信用扩张。",
     "macro_state_labels": [
-      "地产拖累"
+      "数据分化、暂难判断"
     ],
     "overall_tone": "中性",
     "dimension_interpretations": [],
@@ -17431,15 +18005,14 @@
     "top_divergences": [],
     "main_judgement": "未启用 GPT 解读，当前显示规则引擎分析结果。",
     "next_watchlist": [
-      "美国 10 年期国债",
       "美国 ISM 制造业 PMI",
-      "沪深 300",
-      "社会融资规模增量",
       "房地产景气指数",
       "中国 R&D 经费强度"
     ],
     "risk_notes": [
       "当前报告未包含 GPT 自然语言解读。",
+      "地产周期虽出现方向性信号，但证据质量较弱，不进入主判断。",
+      "创新升级虽出现方向性信号，但证据质量较弱，不进入主判断。",
       "规则得分不构成投资建议。"
     ],
     "data_confidence": "中",

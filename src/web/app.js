@@ -28,7 +28,7 @@
       analysisEyebrow: "规则化宏观诊断", analysisDisclaimer: "本页面基于公开宏观数据、固定规则打分和 GPT 辅助解读生成。本系统用于宏观学习和研究观察，不构成投资建议。",
       scoreCards: "8 个维度打分", scoreHint: "+1 顺风 · 0 中性 · -1 逆风", relationTitle: "7 个组合关系", relationHint: "跨维度共振与传导诊断",
       relationName: "关系", conclusion: "结论", evidence: "证据", risk: "风险提示", confidence: "置信度", divergenceTitle: "今日背离信号", divergenceHint: "优先展示最值得复核的三条",
-      mainAnalysis: "主体分析", watchlist: "后续观察指标", dataQuality: "数据质量", analysisLearning: "今日宏观学习笔记", positiveDriver: "正向", negativeDriver: "拖累", none: "暂无", currentData: "有效", staleCount: "陈旧", missingCount: "缺失", ruleMode: "规则分析 · GPT 未启用", gptMode: "规则分析 + GPT 解读", noDivergence: "暂未检测到达到阈值的重要背离。"
+      mainAnalysis: "主体分析", watchlist: "后续观察指标", dataQuality: "数据质量", analysisLearning: "今日宏观学习笔记", positiveDriver: "正向", negativeDriver: "拖累", none: "暂无", currentData: "有效", staleCount: "陈旧", missingCount: "缺失", ruleMode: "规则分析 · GPT 未启用", gptMode: "规则分析 + GPT 解读", noDivergence: "暂未检测到达到阈值的重要背离。", insufficientEvidence: "证据不足，不进入主判断", staleBackground: "数据较旧，仅作背景", missingExcluded: "数据缺失，未参与打分", totalSignal: "总量", structureSignal: "结构", effectiveCredit: "有效扩张", salesSide: "销售端", developmentSide: "开发端", priceSide: "价格端", evidenceQuality: "证据质量", yes: "是", no: "否"
     },
     en: {
       title: "Macro Observatory", tabToday: "Today", tabTrends: "Trends", tabAnalysis: "Analysis", todayView: "Today’s Macro View",
@@ -43,7 +43,7 @@
       analysisEyebrow: "RULE-BASED MACRO DIAGNOSIS", analysisDisclaimer: "Built from public macro data, fixed scoring rules, and optional GPT interpretation. For research and learning only; not investment advice.",
       scoreCards: "Eight Dimension Scores", scoreHint: "+1 tailwind · 0 neutral · -1 headwind", relationTitle: "Seven Combined Diagnostics", relationHint: "Cross-dimension co-movement and transmission",
       relationName: "Relation", conclusion: "Conclusion", evidence: "Evidence", risk: "Risk note", confidence: "Confidence", divergenceTitle: "Key Divergences", divergenceHint: "The three signals most worth reviewing",
-      mainAnalysis: "Main Analysis", watchlist: "Next Watchlist", dataQuality: "Data Quality", analysisLearning: "Macro Learning Note", positiveDriver: "Support", negativeDriver: "Drag", none: "None", currentData: "current", staleCount: "stale", missingCount: "missing", ruleMode: "Rules only · GPT off", gptMode: "Rules + GPT interpretation", noDivergence: "No divergence has crossed the configured threshold."
+      mainAnalysis: "Main Analysis", watchlist: "Next Watchlist", dataQuality: "Data Quality", analysisLearning: "Macro Learning Note", positiveDriver: "Support", negativeDriver: "Drag", none: "None", currentData: "current", staleCount: "stale", missingCount: "missing", ruleMode: "Rules only · GPT off", gptMode: "Rules + GPT interpretation", noDivergence: "No divergence has crossed the configured threshold.", insufficientEvidence: "Insufficient evidence · excluded from the main view", staleBackground: "Older data · background only", missingExcluded: "Missing · excluded from scoring", totalSignal: "Total", structureSignal: "Structure", effectiveCredit: "Effective", salesSide: "Sales", developmentSide: "Development", priceSide: "Prices", evidenceQuality: "Evidence", yes: "Yes", no: "No"
     }
   };
 
@@ -201,7 +201,13 @@
   function confidenceText(value) { return language === "en" ? ({ "高": "High", "中": "Medium", "低": "Low" }[value] || value) : value; }
   function stateName(value) { return language === "en" ? (STATE_NAMES[value] || value) : value; }
   function scoreClass(value) { return value >= .5 ? "positive-score" : value <= -.5 ? "negative-score" : "neutral-score"; }
-  function listText(items) { return items?.length ? items.join("、") : t("none"); }
+  function listText(items) { return items?.length ? items.join(language === "en" ? ", " : "、") : t("none"); }
+
+  function dimensionDiagnostics(item) {
+    if (item.dimension_id === "credit_expansion") return `<div class="dimension-diagnostics"><span>${t("totalSignal")} <b>${escapeHtml(item.total_judgement || "—")}</b></span><span>${t("structureSignal")} <b>${escapeHtml(item.structure_judgement || "—")}</b></span><span>${t("effectiveCredit")} <b>${item.effective_expansion ? t("yes") : t("no")}</b></span></div>`;
+    if (item.dimension_id === "real_estate_cycle") return `<div class="dimension-diagnostics four"><span>${t("salesSide")} <b>${escapeHtml(item.sales_side || "—")}</b></span><span>${t("developmentSide")} <b>${escapeHtml(item.development_side || "—")}</b></span><span>${t("priceSide")} <b>${escapeHtml(item.price_side || "—")}</b></span><span>${t("evidenceQuality")} <b>${escapeHtml(item.evidence_quality || "—")}</b></span></div>`;
+    return "";
+  }
 
   function renderAnalysis() {
     const analysis = data.analysis; const judgement = data.macro_judgement;
@@ -211,9 +217,11 @@
     $("#analysis-mode").textContent = judgement.gpt_enabled ? t("gptMode") : t("ruleMode");
     $("#analysis-dimensions").innerHTML = analysis.dimension_scores.map((item) => {
       const confidenceClass = item.confidence === "低" ? "confidence-low" : ""; const score = item.score == null ? "—" : `${item.score > 0 ? "+" : ""}${Number(item.score).toFixed(2)}`;
-      return `<article class="score-card ${scoreClass(item.score)}"><div class="score-head"><span class="score-name">${escapeHtml(analysisName(item))}</span><strong class="score-number">${score}</strong></div><strong class="score-label">${escapeHtml(item.label)}</strong><div class="score-meta"><span class="confidence-chip ${confidenceClass}">${t("confidence")} ${escapeHtml(confidenceText(item.confidence))}</span><span>${Math.round((item.coverage || 0) * 100)}% coverage</span></div><div class="driver-block"><p class="driver-line"><b>${t("positiveDriver")}：</b>${escapeHtml(listText(item.top_positive_drivers))}</p><p class="driver-line"><b>${t("negativeDriver")}：</b>${escapeHtml(listText(item.top_negative_drivers))}</p></div><p class="freshness-line">${t("currentData")} ${item.updated_indicators.length} · ${t("staleCount")} ${item.stale_indicators.length} · ${t("missingCount")} ${item.missing_indicators.length}</p></article>`;
+      const weak = item.evidence_quality === "weak" || !item.can_be_macro_state;
+      const dataNotes = `${(item.stale_indicators || []).length ? `<span title="${escapeHtml(listText(item.stale_indicators))}">${t("staleBackground")}</span>` : ""}${(item.missing_indicators || []).length ? `<span title="${escapeHtml(listText(item.missing_indicators))}">${t("missingExcluded")}</span>` : ""}`;
+      return `<article class="score-card ${scoreClass(item.score)} ${weak ? "evidence-insufficient" : ""}"><div class="score-head"><span class="score-name">${escapeHtml(analysisName(item))}</span><strong class="score-number">${score}</strong></div><strong class="score-label">${escapeHtml(item.label)}</strong>${weak ? `<p class="evidence-notice">${t("insufficientEvidence")}</p>` : ""}<div class="score-meta"><span class="confidence-chip ${confidenceClass}">${t("confidence")} ${escapeHtml(confidenceText(item.confidence))}</span><span>${Math.round((item.coverage || 0) * 100)}% coverage</span></div>${dimensionDiagnostics(item)}<div class="driver-block"><p class="driver-line"><b>${t("positiveDriver")}：</b>${escapeHtml(listText(item.top_positive_drivers))}</p><p class="driver-line"><b>${t("negativeDriver")}：</b>${escapeHtml(listText(item.top_negative_drivers))}</p></div><p class="freshness-line">${t("currentData")} ${(item.updated_indicators || []).length} · ${t("staleCount")} ${(item.stale_indicators || []).length} · ${t("missingCount")} ${(item.missing_indicators || []).length}</p>${dataNotes ? `<p class="data-evidence-notes">${dataNotes}</p>` : ""}</article>`;
     }).join("");
-    $("#analysis-relations").innerHTML = analysis.relation_diagnostics.map((item) => `<tr><td>${escapeHtml(relationName(item))}</td><td>${escapeHtml(item.conclusion)}</td><td>${escapeHtml(listText(item.evidence))}</td><td>${escapeHtml(item.risk_note)}</td><td>${escapeHtml(confidenceText(item.confidence))}</td></tr>`).join("");
+    $("#analysis-relations").innerHTML = analysis.relation_diagnostics.map((item) => `<tr class="${item.evidence_quality === "weak" ? "evidence-row-weak" : ""}"><td>${escapeHtml(relationName(item))}</td><td>${escapeHtml(item.conclusion)}${item.can_enter_summary ? "" : `<span class="table-evidence-note">${t("insufficientEvidence")}</span>`}</td><td>${escapeHtml(listText(item.evidence))}</td><td>${escapeHtml(item.risk_note)}</td><td>${escapeHtml(confidenceText(item.confidence))}</td></tr>`).join("");
     const divergences = analysis.detected_divergences.slice(0, 3);
     $("#analysis-divergences").innerHTML = divergences.length ? divergences.map((item) => `<article class="divergence-card"><div class="divergence-head"><h4>${escapeHtml(item.title)}</h4><span class="severity ${item.severity === "高" ? "high" : ""}">${escapeHtml(item.severity)}</span></div><p>${escapeHtml(item.interpretation)}</p><div class="divergence-watch">${t("watchlist")} · ${escapeHtml(listText(item.what_to_watch_next))}</div></article>`).join("") : `<div class="empty-analysis">${t("noDivergence")}</div>`;
     $("#analysis-main").textContent = judgement.main_judgement || analysis.rule_summary;

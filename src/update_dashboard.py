@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import shutil
 import sys
 import urllib.parse
@@ -275,6 +276,50 @@ def get_indicator(indicators: list[dict[str, Any]], indicator_id: str) -> dict[s
 FRESHNESS_LIMITS = {"daily": 7, "weekly": 21, "monthly": 75, "quarterly": 160, "annual": 900}
 
 
+def observation_period(item: dict[str, Any]) -> str | None:
+    raw = str(item.get("date") or "")
+    year, month, _ = period_key(raw)
+    if not year:
+        return None
+    frequency = item.get("frequency", "daily")
+    if frequency == "annual":
+        return str(year)
+    if frequency == "quarterly":
+        numbers = [int(value) for value in re.findall(r"\d+", raw)]
+        quarter = numbers[1] if re.search(r"Q|季度|季", raw, re.I) and len(numbers) > 1 else max(1, min(4, (max(1, month) + 2) // 3))
+        return f"{year}-Q{quarter}"
+    if frequency == "monthly":
+        return f"{year}-{max(1, month):02d}"
+    _, _, day = period_key(raw)
+    return f"{year}-{max(1, month):02d}-{max(1, day):02d}"
+
+
+def annotate_run_metadata(
+    indicators: list[dict[str, Any]],
+    previous: dict[str, Any] | None,
+    scan_log: list[dict[str, Any]],
+    now: datetime,
+) -> None:
+    old_map = {item.get("id"): item for item in (previous or {}).get("indicators", [])}
+    successful_ids = {item.get("id") for item in scan_log if item.get("action") == "updated" and item.get("status") == "ok"}
+    catalog_ids = {item["id"] for item in CATALOG}
+    successful_ids.update(item.get("id") for item in indicators if item.get("id") not in catalog_ids and item.get("status") == "ok")
+    fetched_at = now.isoformat(timespec="seconds")
+    today = now.date().isoformat()
+    for item in indicators:
+        old = old_map.get(item.get("id"))
+        changed = None if old is None else old.get("date") != item.get("date") or old.get("value") != item.get("value")
+        fetched_now = item.get("id") in successful_ids
+        item["observation_period"] = observation_period(item)
+        item["fetched_at"] = fetched_at if fetched_now else (old or {}).get("fetched_at")
+        item["released_at"] = (
+            item["observation_period"] if fetched_now and item.get("frequency", "daily") == "daily"
+            else today if fetched_now and changed is not False
+            else (old or {}).get("released_at")
+        )
+        item["value_changed_since_last_run"] = changed
+
+
 def annotate_freshness(indicators: list[dict[str, Any]], now: datetime) -> None:
     for item in indicators:
         frequency = item.get("frequency", "daily")
@@ -408,10 +453,11 @@ def load_previous() -> dict[str, Any] | None:
 
 def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[str, str]], now: datetime) -> tuple[dict[str, Any], dict[str, Any]]:
     indicator_scores = score_indicators(indicators)
-    dimensions = build_dimension_scores(indicators, indicator_scores)
+    dimensions = build_dimension_scores(indicators, indicator_scores, now)
     relations = build_relation_diagnostics(dimensions, indicator_scores)
     divergences = detect_divergences(dimensions, indicator_scores)
-    states = detect_macro_states(dimensions, indicator_scores, divergences)
+    state_details = detect_macro_states(dimensions, indicator_scores, divergences)
+    states = [item["state_name"] for item in state_details if item.get("can_be_macro_state")]
     freshness = build_data_freshness(indicator_scores, now)
     dimension_missing = [name for item in dimensions for name in item.get("missing_indicators", [])]
     pending_missing = [item.get("name", "未知指标") for item in pending]
@@ -432,6 +478,7 @@ def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[
         "relation_diagnostics": relations,
         "detected_divergences": divergences,
         "candidate_macro_states": states,
+        "candidate_macro_state_details": state_details,
         "important_data_updates": [{"indicator": item["indicator_name"], "date": item["date"], "score": item["indicator_score"]} for item in important_updates],
         "missing_or_stale_data": freshness["stale_indicators"] + freshness["missing_indicators"],
         "raw_key_values_summary": [{"indicator": item["indicator_name"], "date": item["date"], "value": item["value"], "score": item["indicator_score"]} for item in key_values],
@@ -508,6 +555,7 @@ def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict
             errors.append({"source": catalog_item["name"], "error": str(exc)})
             scan_log.append({"id": catalog_item["id"], "action": "failed", "reason": reason, "status": "failed", "last_attempt": now.date().isoformat()})
 
+    annotate_run_metadata(indicators, previous, scan_log, now)
     annotate_freshness(indicators, now)
     indicators.sort(key=lambda item: (item.get("group", ""), item.get("name", "")))
     dimensions = build_dimensions(indicators)

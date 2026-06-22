@@ -4,6 +4,8 @@
 
 不要重新计算分数，不要修改 score、label、confidence，不要引入 JSON 中没有的数据，不要做投资建议。输出必须是合法 JSON，字段为：one_sentence_summary、macro_state_labels、overall_tone、dimension_interpretations、key_relation_interpretations、top_divergences、main_judgement、next_watchlist、risk_notes、data_confidence、learning_note。
 
+硬约束：主判断仅使用 can_enter_summary=true 的内容；状态仅选择 can_be_macro_state=true 的候选项。弱证据、陈旧数据和结构缺失只能进入风险提示，并明确写出“证据不足”。
+
 数据包如下：
 
 {{DAILY_MACRO_PAYLOAD_JSON}}
