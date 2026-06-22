@@ -15,12 +15,19 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from macro_catalog import CATALOG, fetch_catalog_item, period_key, should_scan
+from analysis_scoring import build_data_freshness, build_dimension_scores, score_indicators
+from divergence_detector import detect_divergences
+from gpt_macro_report import generate_gpt_judgement, render_markdown, rule_summary
+from macro_state_detector import detect_macro_states
+from relation_diagnostics import build_relation_diagnostics
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 WEB_ROOT = PROJECT_ROOT / "src" / "web"
 SITE_ROOT = PROJECT_ROOT / "site"
 DATA_ROOT = PROJECT_ROOT / "data" / "processed"
+ANALYSIS_ROOT = PROJECT_ROOT / "data" / "analysis"
+PROMPTS_ROOT = PROJECT_ROOT / "prompts"
 DEFAULT_PUBLIC_ROOT = PROJECT_ROOT.parents[1] / "outputs" / "macro-economic-dashboard"
 BEIJING = ZoneInfo("Asia/Shanghai")
 
@@ -399,6 +406,41 @@ def load_previous() -> dict[str, Any] | None:
         return None
 
 
+def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[str, str]], now: datetime) -> tuple[dict[str, Any], dict[str, Any]]:
+    indicator_scores = score_indicators(indicators)
+    dimensions = build_dimension_scores(indicators, indicator_scores)
+    relations = build_relation_diagnostics(dimensions, indicator_scores)
+    divergences = detect_divergences(dimensions, indicator_scores)
+    states = detect_macro_states(dimensions, indicator_scores, divergences)
+    freshness = build_data_freshness(indicator_scores, now)
+    dimension_missing = [name for item in dimensions for name in item.get("missing_indicators", [])]
+    pending_missing = [item.get("name", "未知指标") for item in pending]
+    freshness["missing_indicators"] = list(dict.fromkeys(pending_missing + dimension_missing))
+    important_updates = [item for item in indicator_scores if item["indicator_name"] in freshness["new_updates_today"]]
+    key_values = sorted(
+        [item for item in indicator_scores if item.get("indicator_score") is not None],
+        key=lambda item: (abs(item["indicator_score"]), -(item.get("age_days") or 0)),
+        reverse=True,
+    )[:12]
+    payload = {
+        "date": now.date().isoformat(),
+        "generated_at": now.isoformat(timespec="seconds"),
+        "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
+        "data_freshness": freshness,
+        "indicator_scores": indicator_scores,
+        "dimension_scores": dimensions,
+        "relation_diagnostics": relations,
+        "detected_divergences": divergences,
+        "candidate_macro_states": states,
+        "important_data_updates": [{"indicator": item["indicator_name"], "date": item["date"], "score": item["indicator_score"]} for item in important_updates],
+        "missing_or_stale_data": freshness["stale_indicators"] + freshness["missing_indicators"],
+        "raw_key_values_summary": [{"indicator": item["indicator_name"], "date": item["date"], "value": item["value"], "score": item["indicator_score"]} for item in key_values],
+    }
+    payload["rule_summary"] = rule_summary(payload)
+    judgement = generate_gpt_judgement(payload, PROMPTS_ROOT)
+    return payload, judgement
+
+
 def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict[str, Any]:
     now = datetime.now(BEIJING)
     force_ids = force_ids or set()
@@ -470,6 +512,7 @@ def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict
     indicators.sort(key=lambda item: (item.get("group", ""), item.get("name", "")))
     dimensions = build_dimensions(indicators)
     combinations = build_combinations(indicators, dimensions)
+    analysis_payload, macro_judgement = build_analysis_payload(indicators, pending, now)
     status = "healthy" if not errors else "partial" if indicators else "failed"
     return {
         "meta": {
@@ -493,6 +536,8 @@ def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict
         "errors": errors,
         "pending": pending,
         "scan_log": scan_log,
+        "analysis": analysis_payload,
+        "macro_judgement": macro_judgement,
     }
 
 
@@ -500,6 +545,7 @@ def write_outputs(payload: dict[str, Any], public_root: Path) -> None:
     DATA_ROOT.mkdir(parents=True, exist_ok=True)
     SITE_ROOT.mkdir(parents=True, exist_ok=True)
     public_root.mkdir(parents=True, exist_ok=True)
+    ANALYSIS_ROOT.mkdir(parents=True, exist_ok=True)
 
     latest_json = json.dumps(payload, ensure_ascii=False, indent=2)
     (DATA_ROOT / "latest.json").write_text(latest_json, encoding="utf-8")
@@ -508,6 +554,20 @@ def write_outputs(payload: dict[str, Any], public_root: Path) -> None:
     snapshots.mkdir(exist_ok=True)
     snapshot_name = datetime.now(BEIJING).strftime("%Y-%m-%d_%H%M%S.json")
     (snapshots / snapshot_name).write_text(latest_json, encoding="utf-8")
+
+    analysis_payload = payload["analysis"]
+    analysis_outputs = {
+        "dimension_scores.json": analysis_payload["dimension_scores"],
+        "relation_diagnostics.json": analysis_payload["relation_diagnostics"],
+        "detected_divergences.json": analysis_payload["detected_divergences"],
+        "daily_macro_payload.json": analysis_payload,
+        "macro_judgement.json": payload["macro_judgement"],
+    }
+    for name, content in analysis_outputs.items():
+        (ANALYSIS_ROOT / name).write_text(json.dumps(content, ensure_ascii=False, indent=2), encoding="utf-8")
+    reports_root = PROJECT_ROOT / "outputs"
+    reports_root.mkdir(exist_ok=True)
+    (reports_root / "daily_macro_report.md").write_text(render_markdown(analysis_payload, payload["macro_judgement"]), encoding="utf-8")
 
     for target in (SITE_ROOT, public_root):
         assets = target / "assets"

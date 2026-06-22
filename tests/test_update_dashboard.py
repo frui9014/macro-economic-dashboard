@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 from datetime import datetime
 
 
@@ -77,6 +78,28 @@ class DashboardCalculationsTest(unittest.TestCase):
         self.assertEqual(items[0]["freshness_status"], "current")
         self.assertTrue(items[0]["eligible_for_signal"])
 
+    def test_analysis_has_eight_dimensions_and_seven_relations(self):
+        indicators = [
+            {"id": "us10y", "name": "美国10年期", "frequency": "daily", "status": "ok", "age_days": 0, "five_change": -8, "twenty_change": -10, "date": "2026-06-23", "value": 4.1},
+            {"id": "dxy", "name": "美元指数", "frequency": "daily", "status": "ok", "age_days": 0, "five_change": -1, "twenty_change": -2, "date": "2026-06-23", "value": 98},
+            {"id": "vix", "name": "VIX", "frequency": "daily", "status": "ok", "age_days": 0, "five_change": -8, "twenty_change": -10, "date": "2026-06-23", "value": 15},
+        ]
+        payload, judgement = MODULE.build_analysis_payload(indicators, [], datetime(2026, 6, 23, tzinfo=MODULE.BEIJING))
+        self.assertEqual(len(payload["dimension_scores"]), 8)
+        self.assertEqual(len(payload["relation_diagnostics"]), 7)
+        self.assertFalse(judgement["gpt_enabled"])
+
+    def test_analysis_missing_is_not_scored_as_zero(self):
+        scores = MODULE.score_indicators([{"id": "x", "name": "缺失", "frequency": "monthly", "status": "failed", "age_days": None}])
+        self.assertIsNone(scores[0]["indicator_score"])
+        self.assertEqual(scores[0]["status"], "stale")
+
+    def test_optional_gpt_falls_back_without_key(self):
+        with patch.dict("os.environ", {}, clear=True):
+            result = MODULE.generate_gpt_judgement({"dimension_scores": [], "candidate_macro_states": []}, MODULE.PROMPTS_ROOT)
+        self.assertFalse(result["gpt_enabled"])
+        self.assertEqual(result["gpt_status"], "not_configured")
+
 
 class DashboardFrontendContractTest(unittest.TestCase):
     def test_trend_frequency_and_period_controls_exist(self):
@@ -88,13 +111,21 @@ class DashboardFrontendContractTest(unittest.TestCase):
 
     def test_confidence_is_not_rendered(self):
         app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertNotIn('t("confidence")', app)
-        self.assertNotIn("item.confidence", app)
+        legacy_dimension_renderer = app.split("function renderDimensions()", 1)[1].split("function renderIndicators()", 1)[0]
+        self.assertNotIn("item.confidence", legacy_dimension_renderer)
 
     def test_frequency_specific_presets_and_axis_are_present(self):
         app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
         for marker in ("RANGE_PRESETS", "daily:", "monthly:", "quarterly:", "annual:", "axisLabel", "periodKey"):
             self.assertIn(marker, app)
+
+    def test_analysis_tab_and_contract_exist(self):
+        html = (WEB_ROOT / "index.html").read_text(encoding="utf-8")
+        app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn('data-tab="analysis"', html)
+        for target in ("analysis-dimensions", "analysis-relations", "analysis-divergences", "analysis-quality"):
+            self.assertIn(f'id="{target}"', html)
+        self.assertIn("function renderAnalysis()", app)
 
 
 if __name__ == "__main__":

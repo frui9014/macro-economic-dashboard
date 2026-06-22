@@ -36,13 +36,16 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Fetch data and build static dashboard
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
         run: python src/update_dashboard.py --output public
 
       - name: Commit updated snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/daily_snapshot.json data/processed/latest.json public
+          git add data/daily_snapshot.json data/processed/latest.json data/analysis outputs/daily_macro_report.md public
           if git diff --cached --quiet; then
             echo "No dashboard changes to commit."
           else
