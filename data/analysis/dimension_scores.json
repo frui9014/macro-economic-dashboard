@@ -2,27 +2,29 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": 0.0,
+    "score": -0.33,
     "label": "外部金融中性",
-    "confidence": "低",
+    "confidence": "中",
     "coverage": 0.83,
-    "freshness": 0.2,
-    "agreement": 1.0,
+    "freshness": 0.6,
+    "agreement": 0.67,
     "top_positive_drivers": [],
-    "top_negative_drivers": [],
+    "top_negative_drivers": [
+      "美元指数走弱"
+    ],
     "updated_indicators": [
+      "美元指数",
+      "VIX",
       "USD/CNY"
     ],
     "stale_indicators": [
       "美国 10 年期国债",
-      "美国 2 年期国债",
-      "美元指数",
-      "VIX"
+      "美国 2 年期国债"
     ],
     "missing_indicators": [
       "cfets_rmb"
     ],
-    "short_explanation": "基于1/6项有效指标，正向0项、负向0项。"
+    "short_explanation": "基于3/6项有效指标，正向0项、负向1项。"
   },
   {
     "dimension_id": "global_demand",
@@ -41,7 +43,10 @@
       "美国非农新增就业走弱",
       "Brent 原油走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "铜",
+      "Brent 原油"
+    ],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
       "美国 ISM 服务业 PMI",
@@ -162,7 +167,10 @@
     "top_negative_drivers": [
       "Brent 原油走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "Brent 原油",
+      "铜"
+    ],
     "stale_indicators": [],
     "missing_indicators": [],
     "short_explanation": "基于5/5项有效指标，正向2项、负向1项。"
