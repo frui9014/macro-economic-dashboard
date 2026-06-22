@@ -16,7 +16,7 @@
 
   const UI = {
     zh: {
-      title: "宏观经济观察", tabToday: "当日数据", tabTrends: "时间变化", todayView: "今日总判断",
+      title: "宏观经济观察", tabToday: "当日数据", tabTrends: "时间变化", tabAnalysis: "分析判断", todayView: "今日总判断",
       dimensions: "八维状态", dimensionsHint: "市场信号与宏观事实分层展示", thermometer: "今日温度计",
       thermometerHint: "点击指标查看可能原因与后果", combinations: "组合观察", combinationsHint: "共振比单一指标更重要",
       learningNote: "宏观学习笔记", indicator: "指标", frequencyFilter: "更新频次", frequencyAll: "全部", frequencyDaily: "每日", frequencyMonthly: "月度", frequencyQuarterly: "季度", frequencyAnnual: "年度", startPeriod: "起始时间", endPeriod: "终止时间",
@@ -24,10 +24,14 @@
       updated: "更新于", beijing: "北京时间", source: "来源", frequency: "日频", daily: "日", day5: "5日", day20: "20日", previous: "前值", forecast: "预期", fresh: "最新", staleData: "陈旧", unknownFreshness: "日期未知",
       reason: "可能原因", consequence: "可能后果", stale: "保留上次有效值", latestMove: "最新日变动", periodMove: "较前值", intervalMove: "区间变化",
       intervalRange: "区间范围", insufficient: "历史观测不足。", noErrors: (n) => `共更新 ${n} 项日频序列；低频指标只在发布日进入当日页。`,
-      errors: (n) => `${n} 个数据源本次扫描未取得新值；已有数据保持不变。`, notice: "用于宏观学习与公共政策研究，不构成投资建议。"
+      errors: (n) => `${n} 个数据源本次扫描未取得新值；已有数据保持不变。`, notice: "用于宏观学习与公共政策研究，不构成投资建议。",
+      analysisEyebrow: "规则化宏观诊断", analysisDisclaimer: "本页面基于公开宏观数据、固定规则打分和 GPT 辅助解读生成。本系统用于宏观学习和研究观察，不构成投资建议。",
+      scoreCards: "8 个维度打分", scoreHint: "+1 顺风 · 0 中性 · -1 逆风", relationTitle: "7 个组合关系", relationHint: "跨维度共振与传导诊断",
+      relationName: "关系", conclusion: "结论", evidence: "证据", risk: "风险提示", confidence: "置信度", divergenceTitle: "今日背离信号", divergenceHint: "优先展示最值得复核的三条",
+      mainAnalysis: "主体分析", watchlist: "后续观察指标", dataQuality: "数据质量", analysisLearning: "今日宏观学习笔记", positiveDriver: "正向", negativeDriver: "拖累", none: "暂无", currentData: "有效", staleCount: "陈旧", missingCount: "缺失", ruleMode: "规则分析 · GPT 未启用", gptMode: "规则分析 + GPT 解读", noDivergence: "暂未检测到达到阈值的重要背离。"
     },
     en: {
-      title: "Macro Observatory", tabToday: "Today", tabTrends: "Trends", todayView: "Today’s Macro View",
+      title: "Macro Observatory", tabToday: "Today", tabTrends: "Trends", tabAnalysis: "Analysis", todayView: "Today’s Macro View",
       dimensions: "Eight Dimensions", dimensionsHint: "Market signals separated from macro facts", thermometer: "Daily Indicators",
       thermometerHint: "Open a card for possible drivers and implications", combinations: "Combined Signals", combinationsHint: "Co-movement matters more than one series",
       learningNote: "Macro Learning Note", indicator: "Indicator", frequencyFilter: "Frequency", frequencyAll: "All", frequencyDaily: "Daily", frequencyMonthly: "Monthly", frequencyQuarterly: "Quarterly", frequencyAnnual: "Annual", startPeriod: "Start", endPeriod: "End",
@@ -35,7 +39,11 @@
       updated: "Updated", beijing: "Beijing time", source: "Source", frequency: "Daily", daily: "1D", day5: "5D", day20: "20D", previous: "Previous", forecast: "Forecast", fresh: "Current", staleData: "Stale", unknownFreshness: "Date unknown",
       reason: "Possible driver", consequence: "Possible implication", stale: "Last valid value retained", latestMove: "Latest daily move", periodMove: "Vs. previous", intervalMove: "Period change",
       intervalRange: "Range", insufficient: "Insufficient history.", noErrors: (n) => `${n} daily series updated; lower-frequency data appear only on release days.`,
-      errors: (n) => `${n} source(s) failed in this run; last valid values were retained.`, notice: "For macro learning and public-policy research; not investment advice."
+      errors: (n) => `${n} source(s) failed in this run; last valid values were retained.`, notice: "For macro learning and public-policy research; not investment advice.",
+      analysisEyebrow: "RULE-BASED MACRO DIAGNOSIS", analysisDisclaimer: "Built from public macro data, fixed scoring rules, and optional GPT interpretation. For research and learning only; not investment advice.",
+      scoreCards: "Eight Dimension Scores", scoreHint: "+1 tailwind · 0 neutral · -1 headwind", relationTitle: "Seven Combined Diagnostics", relationHint: "Cross-dimension co-movement and transmission",
+      relationName: "Relation", conclusion: "Conclusion", evidence: "Evidence", risk: "Risk note", confidence: "Confidence", divergenceTitle: "Key Divergences", divergenceHint: "The three signals most worth reviewing",
+      mainAnalysis: "Main Analysis", watchlist: "Next Watchlist", dataQuality: "Data Quality", analysisLearning: "Macro Learning Note", positiveDriver: "Support", negativeDriver: "Drag", none: "None", currentData: "current", staleCount: "stale", missingCount: "missing", ruleMode: "Rules only · GPT off", gptMode: "Rules + GPT interpretation", noDivergence: "No divergence has crossed the configured threshold."
     }
   };
 
@@ -105,6 +113,9 @@
   function priorityRank(item) { return PRIORITY.has(item.id) ? PRIORITY.get(item.id) : 10000; }
 
   const DIMENSION_NAMES = { "全球流动性": "Global Liquidity", "全球需求": "Global Demand", "中国增长": "China Growth", "中国内需": "China Domestic Demand", "中国地产": "China Property", "中国信用": "China Credit", "通胀压力": "Inflation Pressure", "创新升级": "Innovation & Upgrading" };
+  const ANALYSIS_DIMENSION_NAMES = { external_financial_pressure: "External Financial Pressure", global_demand: "Global Demand / External Demand", china_production: "China Production / Activity", china_domestic_demand: "China Domestic Demand", credit_expansion: "Credit Expansion", real_estate_cycle: "Real Estate Cycle", price_pressure: "Price / Deflation Pressure", innovation_upgrade: "Innovation & Upgrading" };
+  const RELATION_NAMES = { production_vs_domestic_demand: "Production vs Domestic Demand", credit_vs_domestic_demand: "Credit vs Domestic Demand", credit_vs_real_estate: "Credit vs Real Estate", growth_vs_price: "Growth vs Prices", global_demand_vs_china_exports: "Global Demand vs China Exports", external_financial_pressure_vs_china_assets: "External Pressure vs China Assets", innovation_vs_hightech_exports: "Innovation vs High-tech Exports" };
+  const STATE_NAMES = { "真复苏": "Broad-based Recovery", "供给强、需求弱": "Strong Supply, Weak Demand", "政策托底型增长": "Policy-supported Growth", "信用传导不畅": "Weak Credit Transmission", "地产拖累": "Real Estate Drag", "通缩压力": "Deflation Pressure", "外部逆风": "External Headwinds", "外需顺风": "External-demand Tailwind", "创新升级增强": "Stronger Innovation Upgrading", "数据分化、暂难判断": "Mixed Data, No Clear Regime" };
   const TERMS = { "收紧": "Tightening", "宽松": "Easing", "中性": "Neutral", "上行": "Rising", "下行": "Falling", "平稳": "Stable", "预期改善": "Expectations Improving", "预期承压": "Expectations Under Pressure", "预期平稳": "Expectations Stable", "待宏观数据": "Awaiting Macro Data", "待结构数据": "Awaiting Structural Data", "市场压力上升": "Market Pressure Rising", "市场压力下降": "Market Pressure Falling", "稳定": "Stable", "中": "Medium", "低": "Low", "日频市场信号": "Daily market signals", "大宗商品代理": "Commodity proxies", "仅市场预期": "Market expectations only", "月度": "Monthly", "能源市场代理": "Energy-market proxy", "月度/年度": "Monthly / annual", "—": "—", "同向": "Aligned", "分化": "Divergent", "外部压力同向": "External Pressure Aligned", "联动分化": "Linkage Divergent", "外部压力缓和": "External Pressure Easing" };
 
   function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;"); }
@@ -127,9 +138,9 @@
   function dimensionName(value) { return language === "en" ? (DIMENSION_NAMES[value] || value) : value; }
 
   function initTabs() {
-    const activate = (name) => { $$(".tab").forEach((item) => item.classList.toggle("active", item.dataset.tab === name)); $$(".panel").forEach((panel) => panel.classList.toggle("active", panel.id === name)); if (name === "trends") renderTrend(); };
+    const activate = (name) => { $$(".tab").forEach((item) => item.classList.toggle("active", item.dataset.tab === name)); $$(".panel").forEach((panel) => panel.classList.toggle("active", panel.id === name)); if (name === "trends") renderTrend(); if (name === "analysis") renderAnalysis(); };
     $$(".tab").forEach((button) => button.addEventListener("click", () => { window.location.hash = button.dataset.tab; activate(button.dataset.tab); }));
-    if (window.location.hash === "#trends") activate("trends");
+    const requested = window.location.hash.replace("#", ""); if (["today", "trends", "analysis"].includes(requested)) activate(requested);
   }
 
   function renderMeta() {
@@ -183,6 +194,36 @@
     if (status === "收紧") return "Global financial conditions look tighter today. If yields, the dollar, and volatility continue rising together, they can raise financing costs, compress valuations, and pressure emerging-market currencies. One day is not a trend; watch whether the co-movement lasts for at least a week.";
     if (status === "宽松") return "The market mix points to marginally easier global financial conditions. Falling yields, dollar, and volatility often support risk assets and non-U.S. currencies, but the key question is whether this reflects easing inflation or growth fears and expected rate cuts.";
     return "Global financial-condition signals are mixed today. Divergence matters: markets have not settled on one macro narrative, so no single price move should define the outlook. Watch whether yields, the dollar, and volatility form a persistent joint signal.";
+  }
+
+  function analysisName(item) { return language === "en" ? (ANALYSIS_DIMENSION_NAMES[item.dimension_id] || item.dimension_name) : item.dimension_name; }
+  function relationName(item) { return language === "en" ? (RELATION_NAMES[item.relation_id] || item.relation_name) : item.relation_name; }
+  function confidenceText(value) { return language === "en" ? ({ "高": "High", "中": "Medium", "低": "Low" }[value] || value) : value; }
+  function stateName(value) { return language === "en" ? (STATE_NAMES[value] || value) : value; }
+  function scoreClass(value) { return value >= .5 ? "positive-score" : value <= -.5 ? "negative-score" : "neutral-score"; }
+  function listText(items) { return items?.length ? items.join("、") : t("none"); }
+
+  function renderAnalysis() {
+    const analysis = data.analysis; const judgement = data.macro_judgement;
+    if (!analysis || !judgement) { $("#analysis-summary").textContent = language === "zh" ? "分析数据尚未生成。" : "Analysis data have not been generated yet."; return; }
+    $("#analysis-summary").textContent = judgement.one_sentence_summary || analysis.rule_summary;
+    $("#macro-states").innerHTML = (judgement.macro_state_labels?.length ? judgement.macro_state_labels : analysis.candidate_macro_states).map((item) => `<span class="state-tag">${escapeHtml(stateName(item))}</span>`).join("");
+    $("#analysis-mode").textContent = judgement.gpt_enabled ? t("gptMode") : t("ruleMode");
+    $("#analysis-dimensions").innerHTML = analysis.dimension_scores.map((item) => {
+      const confidenceClass = item.confidence === "低" ? "confidence-low" : ""; const score = item.score == null ? "—" : `${item.score > 0 ? "+" : ""}${Number(item.score).toFixed(2)}`;
+      return `<article class="score-card ${scoreClass(item.score)}"><div class="score-head"><span class="score-name">${escapeHtml(analysisName(item))}</span><strong class="score-number">${score}</strong></div><strong class="score-label">${escapeHtml(item.label)}</strong><div class="score-meta"><span class="confidence-chip ${confidenceClass}">${t("confidence")} ${escapeHtml(confidenceText(item.confidence))}</span><span>${Math.round((item.coverage || 0) * 100)}% coverage</span></div><div class="driver-block"><p class="driver-line"><b>${t("positiveDriver")}：</b>${escapeHtml(listText(item.top_positive_drivers))}</p><p class="driver-line"><b>${t("negativeDriver")}：</b>${escapeHtml(listText(item.top_negative_drivers))}</p></div><p class="freshness-line">${t("currentData")} ${item.updated_indicators.length} · ${t("staleCount")} ${item.stale_indicators.length} · ${t("missingCount")} ${item.missing_indicators.length}</p></article>`;
+    }).join("");
+    $("#analysis-relations").innerHTML = analysis.relation_diagnostics.map((item) => `<tr><td>${escapeHtml(relationName(item))}</td><td>${escapeHtml(item.conclusion)}</td><td>${escapeHtml(listText(item.evidence))}</td><td>${escapeHtml(item.risk_note)}</td><td>${escapeHtml(confidenceText(item.confidence))}</td></tr>`).join("");
+    const divergences = analysis.detected_divergences.slice(0, 3);
+    $("#analysis-divergences").innerHTML = divergences.length ? divergences.map((item) => `<article class="divergence-card"><div class="divergence-head"><h4>${escapeHtml(item.title)}</h4><span class="severity ${item.severity === "高" ? "high" : ""}">${escapeHtml(item.severity)}</span></div><p>${escapeHtml(item.interpretation)}</p><div class="divergence-watch">${t("watchlist")} · ${escapeHtml(listText(item.what_to_watch_next))}</div></article>`).join("") : `<div class="empty-analysis">${t("noDivergence")}</div>`;
+    $("#analysis-main").textContent = judgement.main_judgement || analysis.rule_summary;
+    const interpretations = judgement.dimension_interpretations || [];
+    $("#analysis-interpretations").innerHTML = interpretations.slice(0, 4).map((item) => `<div class="analysis-interpretation"><strong>${escapeHtml(language === "en" ? (ANALYSIS_DIMENSION_NAMES[item.dimension_id] || item.dimension_name) : item.dimension_name)}</strong><p>${escapeHtml(item.interpretation)}</p></div>`).join("");
+    const watchlist = judgement.next_watchlist || [];
+    $("#analysis-watchlist").innerHTML = (watchlist.length ? watchlist : [language === "zh" ? "等待下一批关键数据更新" : "Wait for the next key data releases"]).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const freshness = analysis.data_freshness;
+    $("#analysis-quality").innerHTML = `<div class="quality-row"><span>${t("currentData")}</span><strong>${freshness.new_updates_today.length + freshness.recent_indicators.length}</strong></div><div class="quality-row"><span>${t("staleCount")}</span><strong>${freshness.stale_indicators.length}</strong></div><div class="quality-row"><span>${t("missingCount")}</span><strong>${freshness.missing_indicators.length}</strong></div><div class="quality-row"><span>${t("confidence")}</span><strong>${escapeHtml(confidenceText(judgement.data_confidence))}</strong></div>`;
+    $("#analysis-learning-note").textContent = judgement.learning_note || (language === "zh" ? "先观察信号是否跨频率共振，再判断单项变化是否代表趋势。" : "Look for cross-frequency confirmation before treating one move as a trend.");
   }
 
   const PENDING_EN = { "中国 10 年期国债": ["China 10Y Government Bond", "Stable, compliant public interface under review"], "中国内部月度宏观": ["China Monthly Macro", "Official releases planned for phase two"], "创新升级指标": ["Innovation & Upgrading", "Monthly and annual series planned for phase four"] };
@@ -299,7 +340,7 @@
 
   function applyLanguage() {
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en"; document.title = t("title"); $("h1").textContent = t("title"); $("#language-toggle").textContent = language === "zh" ? "EN" : "中文";
-    $$('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); }); renderMeta(); renderSummary(); renderDimensions(); renderIndicators(); renderCombinations(); renderSelectAndPending(); renderTrend();
+    $$('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); }); renderMeta(); renderSummary(); renderDimensions(); renderIndicators(); renderCombinations(); renderSelectAndPending(); renderTrend(); renderAnalysis();
   }
 
   $("#language-toggle").addEventListener("click", () => { language = language === "zh" ? "en" : "zh"; localStorage.setItem("macro-language", language); applyLanguage(); });

@@ -16491,5 +16491,956 @@
       "status": "ok",
       "last_attempt": ""
     }
-  ]
+  ],
+  "analysis": {
+    "date": "2026-06-23",
+    "generated_at": "2026-06-23T00:36:56+08:00",
+    "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
+    "data_freshness": {
+      "new_updates_today": [
+        "USD/CNY"
+      ],
+      "recent_indicators": [
+        "70 城新房价格",
+        "M2 增速",
+        "中国 CPI",
+        "中国 PPI",
+        "中国出口",
+        "中国制造业 PMI",
+        "中国实际 GDP 增速",
+        "中国进口",
+        "中国非制造业 PMI",
+        "固定资产投资",
+        "城镇调查失业率",
+        "工业增加值",
+        "新增人民币贷款",
+        "社会消费品零售",
+        "OECD G20 综合领先指标",
+        "美国 CPI",
+        "美国失业率",
+        "美国核心 CPI",
+        "美国非农新增就业",
+        "Brent 原油",
+        "铜",
+        "高技术产业投资",
+        "高技术制造业增加值"
+      ],
+      "stale_indicators": [
+        "中国贸易差额",
+        "房地产景气指数",
+        "社会融资规模增量",
+        "恒生指数",
+        "沪深 300",
+        "中国 10 年期国债",
+        "CPB 全球贸易量",
+        "美国 ISM 制造业 PMI",
+        "美国 ISM 服务业 PMI",
+        "美国核心 PCE",
+        "美国 10 年期国债",
+        "美国 2 年期国债",
+        "VIX",
+        "美元指数",
+        "中国 R&D 经费强度",
+        "中国居民发明专利申请",
+        "高技术产品出口占比"
+      ],
+      "missing_indicators": [
+        "美国 PCE 价格指数",
+        "cfets_rmb",
+        "china_pmi_composite",
+        "china_fai_manufacturing",
+        "china_fai_infrastructure",
+        "china_youth_unemployment",
+        "china_corp_long_loans",
+        "china_household_long_loans",
+        "china_gov_bonds",
+        "china_bill_financing",
+        "china_property_sales",
+        "china_property_sales_value",
+        "china_property_investment",
+        "china_property_starts",
+        "china_pct_patents",
+        "china_triadic_patents",
+        "china_mechanical_exports"
+      ]
+    },
+    "indicator_scores": [
+      {
+        "indicator_id": "china_house_price",
+        "indicator_name": "70 城新房价格",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 100.55,
+        "indicator_score": -1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_m2",
+        "indicator_name": "M2 增速",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 8.6,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_cpi",
+        "indicator_name": "中国 CPI",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 1.2,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_ppi",
+        "indicator_name": "中国 PPI",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 3.9,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_exports",
+        "indicator_name": "中国出口",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 19.4,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_pmi_man",
+        "indicator_name": "中国制造业 PMI",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 50.0,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_gdp",
+        "indicator_name": "中国实际 GDP 增速",
+        "frequency": "quarterly",
+        "date": "2026年第1季度",
+        "value": 5.0,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 86,
+        "freshness_limit_days": 120
+      },
+      {
+        "indicator_id": "china_trade_balance",
+        "indicator_name": "中国贸易差额",
+        "frequency": "monthly",
+        "date": "2025-08-07",
+        "value": 982.4,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 298,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_imports",
+        "indicator_name": "中国进口",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 27.4,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_pmi_nonman",
+        "indicator_name": "中国非制造业 PMI",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 50.1,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_fai",
+        "indicator_name": "固定资产投资",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": -17.15,
+        "indicator_score": -1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_unemployment",
+        "indicator_name": "城镇调查失业率",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 5.1,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_industrial",
+        "indicator_name": "工业增加值",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 4.5,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_property",
+        "indicator_name": "房地产景气指数",
+        "frequency": "monthly",
+        "date": "2025-12-01",
+        "value": 91.45,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 176,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_new_loans",
+        "indicator_name": "新增人民币贷款",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": 4965.0,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_retail",
+        "indicator_name": "社会消费品零售",
+        "frequency": "monthly",
+        "date": "2026年05月份",
+        "value": -0.6,
+        "indicator_score": -1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_tsf",
+        "indicator_name": "社会融资规模增量",
+        "frequency": "monthly",
+        "date": "202604",
+        "value": 6245.0,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 55,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "usdcny",
+        "indicator_name": "USD/CNY",
+        "frequency": "daily",
+        "date": "2026-06-21",
+        "value": 6.7681,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 1,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "hsi",
+        "indicator_name": "恒生指数",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 23924.810547,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "csi300",
+        "indicator_name": "沪深 300",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 4941.600098,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "china10y",
+        "indicator_name": "中国 10 年期国债",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 1.7299,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "global_trade",
+        "indicator_name": "CPB 全球贸易量",
+        "frequency": "monthly",
+        "date": "2026-03-01",
+        "value": 113.269189,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 86,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "oecd_cli",
+        "indicator_name": "OECD G20 综合领先指标",
+        "frequency": "monthly",
+        "date": "2026-05",
+        "value": 100.6695,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_cpi",
+        "indicator_name": "美国 CPI",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 4.466404,
+        "indicator_score": 1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_ism_man",
+        "indicator_name": "美国 ISM 制造业 PMI",
+        "frequency": "monthly",
+        "date": "2025-09-02",
+        "value": 48.7,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 267,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_ism_services",
+        "indicator_name": "美国 ISM 服务业 PMI",
+        "frequency": "monthly",
+        "date": "2025-09-04",
+        "value": 52.0,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 267,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_unemployment",
+        "indicator_name": "美国失业率",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 4.3,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_core_cpi",
+        "indicator_name": "美国核心 CPI",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 2.957114,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_core_pce",
+        "indicator_name": "美国核心 PCE",
+        "frequency": "monthly",
+        "date": "2025-08-29",
+        "value": 2.9,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 298,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us_nonfarm",
+        "indicator_name": "美国非农新增就业",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 17.2,
+        "indicator_score": -1,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "us10y",
+        "indicator_name": "美国 10 年期国债",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 4.46,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "us2y",
+        "indicator_name": "美国 2 年期国债",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 4.19,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "brent",
+        "indicator_name": "Brent 原油",
+        "frequency": "daily",
+        "date": "2026-06-19",
+        "value": 80.589996,
+        "indicator_score": -1,
+        "status": "current",
+        "age_days": 3,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "vix",
+        "indicator_name": "VIX",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 16.4,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "dxy",
+        "indicator_name": "美元指数",
+        "frequency": "daily",
+        "date": "2026-06-18",
+        "value": 100.849998,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 4,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "copper",
+        "indicator_name": "铜",
+        "frequency": "daily",
+        "date": "2026-06-19",
+        "value": 6.337,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 3,
+        "freshness_limit_days": 3
+      },
+      {
+        "indicator_id": "china_rd",
+        "indicator_name": "中国 R&D 经费强度",
+        "frequency": "annual",
+        "date": "2023",
+        "value": 2.57729,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 904,
+        "freshness_limit_days": 450
+      },
+      {
+        "indicator_id": "china_patents",
+        "indicator_name": "中国居民发明专利申请",
+        "frequency": "annual",
+        "date": "2021",
+        "value": 1426644.0,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 1634,
+        "freshness_limit_days": 450
+      },
+      {
+        "indicator_id": "china_hightech_investment",
+        "indicator_name": "高技术产业投资",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 4.5,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      },
+      {
+        "indicator_id": "china_hightech_exports",
+        "indicator_name": "高技术产品出口占比",
+        "frequency": "annual",
+        "date": "2024",
+        "value": 26.277738,
+        "indicator_score": null,
+        "status": "stale",
+        "age_days": 538,
+        "freshness_limit_days": 450
+      },
+      {
+        "indicator_id": "china_hightech_output",
+        "indicator_name": "高技术制造业增加值",
+        "frequency": "monthly",
+        "date": "2026-05-01",
+        "value": 15.1,
+        "indicator_score": 0,
+        "status": "current",
+        "age_days": 25,
+        "freshness_limit_days": 45
+      }
+    ],
+    "dimension_scores": [
+      {
+        "dimension_id": "external_financial_pressure",
+        "dimension_name": "外部金融压力",
+        "score": 0.0,
+        "label": "外部金融中性",
+        "confidence": "低",
+        "coverage": 0.83,
+        "freshness": 0.2,
+        "agreement": 1.0,
+        "top_positive_drivers": [],
+        "top_negative_drivers": [],
+        "updated_indicators": [
+          "USD/CNY"
+        ],
+        "stale_indicators": [
+          "美国 10 年期国债",
+          "美国 2 年期国债",
+          "美元指数",
+          "VIX"
+        ],
+        "missing_indicators": [
+          "cfets_rmb"
+        ],
+        "short_explanation": "基于1/6项有效指标，正向0项、负向0项。"
+      },
+      {
+        "dimension_id": "global_demand",
+        "dimension_name": "全球需求 / 外需",
+        "score": 0.0,
+        "label": "外需中性",
+        "confidence": "中",
+        "coverage": 1.0,
+        "freshness": 0.67,
+        "agreement": 0.33,
+        "top_positive_drivers": [
+          "OECD G20 综合领先指标改善",
+          "中国出口改善"
+        ],
+        "top_negative_drivers": [
+          "美国非农新增就业走弱",
+          "Brent 原油走弱"
+        ],
+        "updated_indicators": [],
+        "stale_indicators": [
+          "美国 ISM 制造业 PMI",
+          "美国 ISM 服务业 PMI",
+          "CPB 全球贸易量"
+        ],
+        "missing_indicators": [],
+        "short_explanation": "基于6/9项有效指标，正向2项、负向2项。"
+      },
+      {
+        "dimension_id": "china_production",
+        "dimension_name": "中国生产 / 景气",
+        "score": 0.33,
+        "label": "生产平稳",
+        "confidence": "中",
+        "coverage": 0.86,
+        "freshness": 1.0,
+        "agreement": 0.67,
+        "top_positive_drivers": [
+          "中国非制造业 PMI改善",
+          "中国出口改善"
+        ],
+        "top_negative_drivers": [],
+        "updated_indicators": [],
+        "stale_indicators": [],
+        "missing_indicators": [
+          "china_pmi_composite"
+        ],
+        "short_explanation": "基于6/7项有效指标，正向2项、负向0项。"
+      },
+      {
+        "dimension_id": "china_domestic_demand",
+        "dimension_name": "中国内需 / 居民需求",
+        "score": -0.5,
+        "label": "内需偏弱",
+        "confidence": "中",
+        "coverage": 0.67,
+        "freshness": 0.67,
+        "agreement": 0.5,
+        "top_positive_drivers": [],
+        "top_negative_drivers": [
+          "社会消费品零售走弱",
+          "固定资产投资走弱"
+        ],
+        "updated_indicators": [],
+        "stale_indicators": [
+          "沪深 300",
+          "恒生指数"
+        ],
+        "missing_indicators": [
+          "china_fai_manufacturing",
+          "china_fai_infrastructure",
+          "china_youth_unemployment"
+        ],
+        "short_explanation": "基于4/9项有效指标，正向0项、负向2项。"
+      },
+      {
+        "dimension_id": "credit_expansion",
+        "dimension_name": "信用扩张",
+        "score": 0.0,
+        "label": "信用中性 / 结构分化",
+        "confidence": "中",
+        "coverage": 0.43,
+        "freshness": 0.67,
+        "agreement": 1.0,
+        "top_positive_drivers": [],
+        "top_negative_drivers": [],
+        "updated_indicators": [],
+        "stale_indicators": [
+          "社会融资规模增量"
+        ],
+        "missing_indicators": [
+          "china_corp_long_loans",
+          "china_household_long_loans",
+          "china_gov_bonds",
+          "china_bill_financing"
+        ],
+        "short_explanation": "基于2/7项有效指标，正向0项、负向0项。"
+      },
+      {
+        "dimension_id": "real_estate_cycle",
+        "dimension_name": "地产周期",
+        "score": -1.0,
+        "label": "地产继续拖累",
+        "confidence": "低",
+        "coverage": 0.29,
+        "freshness": 0.5,
+        "agreement": 1.0,
+        "top_positive_drivers": [],
+        "top_negative_drivers": [
+          "70 城新房价格走弱"
+        ],
+        "updated_indicators": [],
+        "stale_indicators": [
+          "房地产景气指数"
+        ],
+        "missing_indicators": [
+          "china_property_sales",
+          "china_property_sales_value",
+          "china_property_investment",
+          "china_property_starts",
+          "china_household_long_loans"
+        ],
+        "short_explanation": "基于1/7项有效指标，正向0项、负向1项。"
+      },
+      {
+        "dimension_id": "price_pressure",
+        "dimension_name": "价格 / 通胀通缩压力",
+        "score": 0.2,
+        "label": "价格平稳 / 分化",
+        "confidence": "中",
+        "coverage": 1.0,
+        "freshness": 1.0,
+        "agreement": 0.4,
+        "top_positive_drivers": [
+          "中国 CPI改善",
+          "中国 PPI改善"
+        ],
+        "top_negative_drivers": [
+          "Brent 原油走弱"
+        ],
+        "updated_indicators": [],
+        "stale_indicators": [],
+        "missing_indicators": [],
+        "short_explanation": "基于5/5项有效指标，正向2项、负向1项。"
+      },
+      {
+        "dimension_id": "innovation_upgrade",
+        "dimension_name": "创新升级",
+        "score": 0.0,
+        "label": "创新升级平稳",
+        "confidence": "低",
+        "coverage": 0.62,
+        "freshness": 0.4,
+        "agreement": 1.0,
+        "top_positive_drivers": [],
+        "top_negative_drivers": [],
+        "updated_indicators": [],
+        "stale_indicators": [
+          "中国 R&D 经费强度",
+          "中国居民发明专利申请",
+          "高技术产品出口占比"
+        ],
+        "missing_indicators": [
+          "china_pct_patents",
+          "china_triadic_patents",
+          "china_mechanical_exports"
+        ],
+        "short_explanation": "基于2/8项有效指标，正向0项、负向0项。创新升级属于慢变量，仅在相关数据更新时重点解读。"
+      }
+    ],
+    "relation_diagnostics": [
+      {
+        "relation_id": "production_vs_domestic_demand",
+        "relation_name": "生产 vs 内需",
+        "conclusion": "生产与内需信号尚未形成明确共振",
+        "evidence": [
+          "中国生产 / 景气：生产平稳（0.33）",
+          "中国内需 / 居民需求：内需偏弱（-0.5）"
+        ],
+        "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
+        "confidence": "中"
+      },
+      {
+        "relation_id": "credit_vs_domestic_demand",
+        "relation_name": "信用 vs 内需",
+        "conclusion": "信用与内需结构分化或处于中性区间",
+        "evidence": [
+          "信用扩张：信用中性 / 结构分化（0.0）",
+          "中国内需 / 居民需求：内需偏弱（-0.5）"
+        ],
+        "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
+        "confidence": "中"
+      },
+      {
+        "relation_id": "credit_vs_real_estate",
+        "relation_name": "信用 vs 地产",
+        "conclusion": "信用与地产均未形成明确方向",
+        "evidence": [
+          "信用扩张：信用中性 / 结构分化（0.0）",
+          "地产周期：地产继续拖累（-1.0）"
+        ],
+        "risk_note": "缺少贷款结构时，不能确认资金最终流向。",
+        "confidence": "低"
+      },
+      {
+        "relation_id": "growth_vs_price",
+        "relation_name": "增长 vs 价格",
+        "conclusion": "增长与价格信号分化",
+        "evidence": [
+          "中国生产 / 景气：生产平稳（0.33）",
+          "中国内需 / 居民需求：内需偏弱（-0.5）",
+          "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
+        ],
+        "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
+        "confidence": "中"
+      },
+      {
+        "relation_id": "global_demand_vs_china_exports",
+        "relation_name": "全球需求 vs 中国出口",
+        "conclusion": "全球需求与中国出口尚未形成明确组合",
+        "evidence": [
+          "全球需求 / 外需：外需中性（0.0）",
+          "中国出口单项得分：1"
+        ],
+        "risk_note": "出口还会受到价格、基数和贸易结构影响。",
+        "confidence": "中"
+      },
+      {
+        "relation_id": "external_financial_pressure_vs_china_assets",
+        "relation_name": "外部金融压力 vs 中国资产",
+        "conclusion": "外部条件与中国资产信号分化",
+        "evidence": [
+          "外部金融压力：外部金融中性（0.0）",
+          "中国资产合成方向：0"
+        ],
+        "risk_note": "市场价格反映预期，不能替代基本面数据。",
+        "confidence": "低"
+      },
+      {
+        "relation_id": "innovation_vs_hightech_exports",
+        "relation_name": "创新升级 vs 高技术出口",
+        "conclusion": "创新投入与转化信号尚不充分",
+        "evidence": [
+          "创新升级：创新升级平稳（0.0）",
+          "高技术产业与出口合成方向：0"
+        ],
+        "risk_note": "创新是慢变量，不宜根据单日或单月数据过度解读。",
+        "confidence": "低"
+      }
+    ],
+    "detected_divergences": [],
+    "candidate_macro_states": [
+      "地产拖累",
+      "数据分化、暂难判断"
+    ],
+    "important_data_updates": [
+      {
+        "indicator": "USD/CNY",
+        "date": "2026-06-21",
+        "score": 0
+      }
+    ],
+    "missing_or_stale_data": [
+      "中国贸易差额",
+      "房地产景气指数",
+      "社会融资规模增量",
+      "恒生指数",
+      "沪深 300",
+      "中国 10 年期国债",
+      "CPB 全球贸易量",
+      "美国 ISM 制造业 PMI",
+      "美国 ISM 服务业 PMI",
+      "美国核心 PCE",
+      "美国 10 年期国债",
+      "美国 2 年期国债",
+      "VIX",
+      "美元指数",
+      "中国 R&D 经费强度",
+      "中国居民发明专利申请",
+      "高技术产品出口占比",
+      "美国 PCE 价格指数",
+      "cfets_rmb",
+      "china_pmi_composite",
+      "china_fai_manufacturing",
+      "china_fai_infrastructure",
+      "china_youth_unemployment",
+      "china_corp_long_loans",
+      "china_household_long_loans",
+      "china_gov_bonds",
+      "china_bill_financing",
+      "china_property_sales",
+      "china_property_sales_value",
+      "china_property_investment",
+      "china_property_starts",
+      "china_pct_patents",
+      "china_triadic_patents",
+      "china_mechanical_exports"
+    ],
+    "raw_key_values_summary": [
+      {
+        "indicator": "Brent 原油",
+        "date": "2026-06-19",
+        "value": 80.589996,
+        "score": -1
+      },
+      {
+        "indicator": "70 城新房价格",
+        "date": "2026-05-01",
+        "value": 100.55,
+        "score": -1
+      },
+      {
+        "indicator": "中国 CPI",
+        "date": "2026年05月份",
+        "value": 1.2,
+        "score": 1
+      },
+      {
+        "indicator": "中国 PPI",
+        "date": "2026年05月份",
+        "value": 3.9,
+        "score": 1
+      },
+      {
+        "indicator": "中国出口",
+        "date": "2026年05月份",
+        "value": 19.4,
+        "score": 1
+      },
+      {
+        "indicator": "中国非制造业 PMI",
+        "date": "2026年05月份",
+        "value": 50.1,
+        "score": 1
+      },
+      {
+        "indicator": "固定资产投资",
+        "date": "2026年05月份",
+        "value": -17.15,
+        "score": -1
+      },
+      {
+        "indicator": "社会消费品零售",
+        "date": "2026年05月份",
+        "value": -0.6,
+        "score": -1
+      },
+      {
+        "indicator": "OECD G20 综合领先指标",
+        "date": "2026-05",
+        "value": 100.6695,
+        "score": 1
+      },
+      {
+        "indicator": "美国 CPI",
+        "date": "2026-05-01",
+        "value": 4.466404,
+        "score": 1
+      },
+      {
+        "indicator": "美国非农新增就业",
+        "date": "2026-05-01",
+        "value": 17.2,
+        "score": -1
+      },
+      {
+        "indicator": "USD/CNY",
+        "date": "2026-06-21",
+        "value": 6.7681,
+        "score": 0
+      }
+    ],
+    "rule_summary": "当前更接近“地产拖累、数据分化、暂难判断”；主要约束来自中国内需 / 居民需求、地产周期。"
+  },
+  "macro_judgement": {
+    "one_sentence_summary": "当前更接近“地产拖累、数据分化、暂难判断”；主要约束来自中国内需 / 居民需求、地产周期。",
+    "macro_state_labels": [
+      "地产拖累",
+      "数据分化、暂难判断"
+    ],
+    "overall_tone": "中性",
+    "dimension_interpretations": [],
+    "key_relation_interpretations": [],
+    "top_divergences": [],
+    "main_judgement": "未启用 GPT 解读，当前显示规则引擎分析结果。",
+    "next_watchlist": [
+      "美国 10 年期国债",
+      "美国 ISM 制造业 PMI",
+      "沪深 300",
+      "社会融资规模增量",
+      "房地产景气指数",
+      "中国 R&D 经费强度"
+    ],
+    "risk_notes": [
+      "当前报告未包含 GPT 自然语言解读。",
+      "规则得分不构成投资建议。"
+    ],
+    "data_confidence": "中",
+    "learning_note": "先观察信号是否跨频率共振，再判断单项变化是否代表趋势。",
+    "gpt_enabled": false,
+    "gpt_status": "not_configured"
+  }
 }

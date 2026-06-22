@@ -1,0 +1,80 @@
+[
+  {
+    "relation_id": "production_vs_domestic_demand",
+    "relation_name": "生产 vs 内需",
+    "conclusion": "生产与内需信号尚未形成明确共振",
+    "evidence": [
+      "中国生产 / 景气：生产平稳（0.33）",
+      "中国内需 / 居民需求：内需偏弱（-0.5）"
+    ],
+    "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
+    "confidence": "中"
+  },
+  {
+    "relation_id": "credit_vs_domestic_demand",
+    "relation_name": "信用 vs 内需",
+    "conclusion": "信用与内需结构分化或处于中性区间",
+    "evidence": [
+      "信用扩张：信用中性 / 结构分化（0.0）",
+      "中国内需 / 居民需求：内需偏弱（-0.5）"
+    ],
+    "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
+    "confidence": "中"
+  },
+  {
+    "relation_id": "credit_vs_real_estate",
+    "relation_name": "信用 vs 地产",
+    "conclusion": "信用与地产均未形成明确方向",
+    "evidence": [
+      "信用扩张：信用中性 / 结构分化（0.0）",
+      "地产周期：地产继续拖累（-1.0）"
+    ],
+    "risk_note": "缺少贷款结构时，不能确认资金最终流向。",
+    "confidence": "低"
+  },
+  {
+    "relation_id": "growth_vs_price",
+    "relation_name": "增长 vs 价格",
+    "conclusion": "增长与价格信号分化",
+    "evidence": [
+      "中国生产 / 景气：生产平稳（0.33）",
+      "中国内需 / 居民需求：内需偏弱（-0.5）",
+      "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
+    ],
+    "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
+    "confidence": "中"
+  },
+  {
+    "relation_id": "global_demand_vs_china_exports",
+    "relation_name": "全球需求 vs 中国出口",
+    "conclusion": "全球需求与中国出口尚未形成明确组合",
+    "evidence": [
+      "全球需求 / 外需：外需中性（0.0）",
+      "中国出口单项得分：1"
+    ],
+    "risk_note": "出口还会受到价格、基数和贸易结构影响。",
+    "confidence": "中"
+  },
+  {
+    "relation_id": "external_financial_pressure_vs_china_assets",
+    "relation_name": "外部金融压力 vs 中国资产",
+    "conclusion": "外部条件与中国资产信号分化",
+    "evidence": [
+      "外部金融压力：外部金融中性（0.0）",
+      "中国资产合成方向：0"
+    ],
+    "risk_note": "市场价格反映预期，不能替代基本面数据。",
+    "confidence": "低"
+  },
+  {
+    "relation_id": "innovation_vs_hightech_exports",
+    "relation_name": "创新升级 vs 高技术出口",
+    "conclusion": "创新投入与转化信号尚不充分",
+    "evidence": [
+      "创新升级：创新升级平稳（0.0）",
+      "高技术产业与出口合成方向：0"
+    ],
+    "risk_note": "创新是慢变量，不宜根据单日或单月数据过度解读。",
+    "confidence": "低"
+  }
+]

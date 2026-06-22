@@ -1,0 +1,194 @@
+[
+  {
+    "dimension_id": "external_financial_pressure",
+    "dimension_name": "外部金融压力",
+    "score": 0.0,
+    "label": "外部金融中性",
+    "confidence": "低",
+    "coverage": 0.83,
+    "freshness": 0.2,
+    "agreement": 1.0,
+    "top_positive_drivers": [],
+    "top_negative_drivers": [],
+    "updated_indicators": [
+      "USD/CNY"
+    ],
+    "stale_indicators": [
+      "美国 10 年期国债",
+      "美国 2 年期国债",
+      "美元指数",
+      "VIX"
+    ],
+    "missing_indicators": [
+      "cfets_rmb"
+    ],
+    "short_explanation": "基于1/6项有效指标，正向0项、负向0项。"
+  },
+  {
+    "dimension_id": "global_demand",
+    "dimension_name": "全球需求 / 外需",
+    "score": 0.0,
+    "label": "外需中性",
+    "confidence": "中",
+    "coverage": 1.0,
+    "freshness": 0.67,
+    "agreement": 0.33,
+    "top_positive_drivers": [
+      "OECD G20 综合领先指标改善",
+      "中国出口改善"
+    ],
+    "top_negative_drivers": [
+      "美国非农新增就业走弱",
+      "Brent 原油走弱"
+    ],
+    "updated_indicators": [],
+    "stale_indicators": [
+      "美国 ISM 制造业 PMI",
+      "美国 ISM 服务业 PMI",
+      "CPB 全球贸易量"
+    ],
+    "missing_indicators": [],
+    "short_explanation": "基于6/9项有效指标，正向2项、负向2项。"
+  },
+  {
+    "dimension_id": "china_production",
+    "dimension_name": "中国生产 / 景气",
+    "score": 0.33,
+    "label": "生产平稳",
+    "confidence": "中",
+    "coverage": 0.86,
+    "freshness": 1.0,
+    "agreement": 0.67,
+    "top_positive_drivers": [
+      "中国非制造业 PMI改善",
+      "中国出口改善"
+    ],
+    "top_negative_drivers": [],
+    "updated_indicators": [],
+    "stale_indicators": [],
+    "missing_indicators": [
+      "china_pmi_composite"
+    ],
+    "short_explanation": "基于6/7项有效指标，正向2项、负向0项。"
+  },
+  {
+    "dimension_id": "china_domestic_demand",
+    "dimension_name": "中国内需 / 居民需求",
+    "score": -0.5,
+    "label": "内需偏弱",
+    "confidence": "中",
+    "coverage": 0.67,
+    "freshness": 0.67,
+    "agreement": 0.5,
+    "top_positive_drivers": [],
+    "top_negative_drivers": [
+      "社会消费品零售走弱",
+      "固定资产投资走弱"
+    ],
+    "updated_indicators": [],
+    "stale_indicators": [
+      "沪深 300",
+      "恒生指数"
+    ],
+    "missing_indicators": [
+      "china_fai_manufacturing",
+      "china_fai_infrastructure",
+      "china_youth_unemployment"
+    ],
+    "short_explanation": "基于4/9项有效指标，正向0项、负向2项。"
+  },
+  {
+    "dimension_id": "credit_expansion",
+    "dimension_name": "信用扩张",
+    "score": 0.0,
+    "label": "信用中性 / 结构分化",
+    "confidence": "中",
+    "coverage": 0.43,
+    "freshness": 0.67,
+    "agreement": 1.0,
+    "top_positive_drivers": [],
+    "top_negative_drivers": [],
+    "updated_indicators": [],
+    "stale_indicators": [
+      "社会融资规模增量"
+    ],
+    "missing_indicators": [
+      "china_corp_long_loans",
+      "china_household_long_loans",
+      "china_gov_bonds",
+      "china_bill_financing"
+    ],
+    "short_explanation": "基于2/7项有效指标，正向0项、负向0项。"
+  },
+  {
+    "dimension_id": "real_estate_cycle",
+    "dimension_name": "地产周期",
+    "score": -1.0,
+    "label": "地产继续拖累",
+    "confidence": "低",
+    "coverage": 0.29,
+    "freshness": 0.5,
+    "agreement": 1.0,
+    "top_positive_drivers": [],
+    "top_negative_drivers": [
+      "70 城新房价格走弱"
+    ],
+    "updated_indicators": [],
+    "stale_indicators": [
+      "房地产景气指数"
+    ],
+    "missing_indicators": [
+      "china_property_sales",
+      "china_property_sales_value",
+      "china_property_investment",
+      "china_property_starts",
+      "china_household_long_loans"
+    ],
+    "short_explanation": "基于1/7项有效指标，正向0项、负向1项。"
+  },
+  {
+    "dimension_id": "price_pressure",
+    "dimension_name": "价格 / 通胀通缩压力",
+    "score": 0.2,
+    "label": "价格平稳 / 分化",
+    "confidence": "中",
+    "coverage": 1.0,
+    "freshness": 1.0,
+    "agreement": 0.4,
+    "top_positive_drivers": [
+      "中国 CPI改善",
+      "中国 PPI改善"
+    ],
+    "top_negative_drivers": [
+      "Brent 原油走弱"
+    ],
+    "updated_indicators": [],
+    "stale_indicators": [],
+    "missing_indicators": [],
+    "short_explanation": "基于5/5项有效指标，正向2项、负向1项。"
+  },
+  {
+    "dimension_id": "innovation_upgrade",
+    "dimension_name": "创新升级",
+    "score": 0.0,
+    "label": "创新升级平稳",
+    "confidence": "低",
+    "coverage": 0.62,
+    "freshness": 0.4,
+    "agreement": 1.0,
+    "top_positive_drivers": [],
+    "top_negative_drivers": [],
+    "updated_indicators": [],
+    "stale_indicators": [
+      "中国 R&D 经费强度",
+      "中国居民发明专利申请",
+      "高技术产品出口占比"
+    ],
+    "missing_indicators": [
+      "china_pct_patents",
+      "china_triadic_patents",
+      "china_mechanical_exports"
+    ],
+    "short_explanation": "基于2/8项有效指标，正向0项、负向0项。创新升级属于慢变量，仅在相关数据更新时重点解读。"
+  }
+]

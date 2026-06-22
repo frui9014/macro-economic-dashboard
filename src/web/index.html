@@ -26,6 +26,7 @@
     <nav class="tabs" aria-label="Dashboard 视图">
       <button class="tab active" data-tab="today" data-i18n="tabToday">当日数据</button>
       <button class="tab" data-tab="trends" data-i18n="tabTrends">时间变化</button>
+      <button class="tab" data-tab="analysis" data-i18n="tabAnalysis">分析判断</button>
     </nav>
 
     <section id="today" class="panel active">
@@ -109,6 +110,53 @@
           <p data-i18n="pendingHint">缺失不会被伪造或静默填充</p>
         </div>
         <div id="pending" class="pending-list"></div>
+      </section>
+    </section>
+
+    <section id="analysis" class="panel analysis-panel">
+      <section class="analysis-hero">
+        <div>
+          <p class="section-label" data-i18n="analysisEyebrow">RULE-BASED MACRO DIAGNOSIS</p>
+          <h2 id="analysis-summary">正在生成规则判断…</h2>
+          <div id="macro-states" class="state-tags"></div>
+        </div>
+        <div id="analysis-mode" class="analysis-mode"></div>
+      </section>
+      <p class="analysis-disclaimer" data-i18n="analysisDisclaimer">本页面基于公开宏观数据、固定规则打分和 GPT 辅助解读生成。本系统用于宏观学习和研究观察，不构成投资建议。</p>
+
+      <section>
+        <div class="section-heading"><h3 data-i18n="scoreCards">8 个维度打分</h3><p data-i18n="scoreHint">+1 顺风 · 0 中性 · -1 逆风</p></div>
+        <div id="analysis-dimensions" class="score-grid"></div>
+      </section>
+
+      <section>
+        <div class="section-heading"><h3 data-i18n="relationTitle">7 个组合关系</h3><p data-i18n="relationHint">跨维度共振与传导诊断</p></div>
+        <div class="relation-table-wrap"><table class="relation-table"><thead><tr><th data-i18n="relationName">关系</th><th data-i18n="conclusion">结论</th><th data-i18n="evidence">证据</th><th data-i18n="risk">风险提示</th><th data-i18n="confidence">置信度</th></tr></thead><tbody id="analysis-relations"></tbody></table></div>
+      </section>
+
+      <section>
+        <div class="section-heading"><h3 data-i18n="divergenceTitle">今日背离信号</h3><p data-i18n="divergenceHint">优先展示最值得复核的三条</p></div>
+        <div id="analysis-divergences" class="divergence-grid"></div>
+      </section>
+
+      <section class="analysis-two-column">
+        <article class="analysis-copy-card">
+          <p class="section-label" data-i18n="mainAnalysis">主体分析</p>
+          <p id="analysis-main"></p>
+          <div id="analysis-interpretations"></div>
+        </article>
+        <article class="watch-card">
+          <p class="section-label" data-i18n="watchlist">后续观察指标</p>
+          <ul id="analysis-watchlist"></ul>
+          <div class="quality-divider"></div>
+          <p class="section-label" data-i18n="dataQuality">数据质量</p>
+          <div id="analysis-quality"></div>
+        </article>
+      </section>
+
+      <section class="learning-note analysis-learning">
+        <p class="section-label" data-i18n="analysisLearning">今日宏观学习笔记</p>
+        <p id="analysis-learning-note"></p>
       </section>
     </section>
 
