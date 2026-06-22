@@ -14,3 +14,6 @@
 5. 文字清楚、克制、可复查。
 6. 创新升级是慢变量，不要每天过度解读。
 7. 只输出符合 macro_judgement.json 字段定义的合法 JSON，不输出 Markdown 代码围栏。
+8. 只有 can_enter_summary=true 的维度、关系和背离可以进入一句话总判断或主体结论；低置信度信号只能写入风险提示。
+9. 只能从 can_be_macro_state=true 的候选状态中选择宏观状态，不得将弱证据升级为确定性结论。
+10. observation_period 是数据所属期，released_at 是发布时间，fetched_at 是抓取时间；不得把“今天抓到旧数据”表述为“今天发布新数据”。

@@ -16,9 +16,21 @@ def detect_divergences(dimensions: list[dict[str, Any]], indicator_scores: list[
         return value if value is not None else 0.0
 
     def add(divergence_id: str, title: str, left: str, right: str, interpretation: str, watch: list[str]) -> None:
-        confidences = [dm.get(item, {}).get("confidence", "低") for item in (left, right) if item in dm]
-        severity = "高" if confidences and all(value in {"中", "高"} for value in confidences) else "中"
-        found.append({"divergence_id": divergence_id, "title": title, "severity": severity, "evidence": [dm[left]["label"]] + ([dm[right]["label"]] if right in dm else []), "interpretation": interpretation, "what_to_watch_next": watch})
+        dimension_ids = list(dict.fromkeys(item for item in (left, right) if item in dm))
+        confidences = [dm[item].get("confidence", "低") for item in dimension_ids]
+        qualified = bool(confidences and all(value in {"中", "高"} for value in confidences) and all(dm[item].get("can_be_macro_state") for item in dimension_ids))
+        evidence_quality = "strong" if qualified and all(value == "高" for value in confidences) else "medium" if qualified else "weak"
+        found.append({
+            "divergence_id": divergence_id,
+            "title": title if qualified else f"潜在背离：{title}",
+            "status": "confirmed" if qualified else "potential",
+            "severity": "高" if evidence_quality == "strong" else "中" if evidence_quality == "medium" else "低",
+            "evidence_quality": evidence_quality,
+            "can_enter_summary": qualified,
+            "evidence": [dm[item]["label"] for item in dimension_ids],
+            "interpretation": interpretation,
+            "what_to_watch_next": watch,
+        })
 
     if score("china_production") >= 0.5 and score("china_domestic_demand") <= -0.3:
         add("production_strong_demand_weak", "生产强，内需弱", "china_production", "china_domestic_demand", "生产端较强，但消费、进口和就业所代表的内需偏弱，可能呈现供给强、需求弱。", ["社会消费品零售", "进口", "就业"])

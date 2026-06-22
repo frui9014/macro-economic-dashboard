@@ -10,16 +10,21 @@ from typing import Any
 def rule_summary(payload: dict[str, Any]) -> str:
     states = payload.get("candidate_macro_states") or ["数据分化、暂难判断"]
     dimensions = payload.get("dimension_scores") or []
-    positives = [item["dimension_name"] for item in dimensions if item.get("score") is not None and item["score"] >= 0.5]
-    negatives = [item["dimension_name"] for item in dimensions if item.get("score") is not None and item["score"] <= -0.5]
+    eligible = [item for item in dimensions if item.get("can_enter_summary")]
+    positives = [item["dimension_name"] for item in eligible if item.get("score") is not None and item["score"] >= 0.5]
+    negatives = [item["dimension_name"] for item in eligible if item.get("score") is not None and item["score"] <= -0.5]
+    if not positives and not negatives:
+        return "多数关键维度证据不足或处于中性区间，当前暂难形成高置信度主判断。"
     parts = [f"当前更接近“{'、'.join(states)}”"]
     if positives:
         parts.append(f"主要支撑来自{'、'.join(positives[:2])}")
     if negatives:
         parts.append(f"主要约束来自{'、'.join(negatives[:2])}")
-    if not positives and not negatives:
-        parts.append("多数维度仍在中性区间")
     return "；".join(parts) + "。"
+
+
+def _weak_evidence_risks(payload: dict[str, Any]) -> list[str]:
+    return [f"{item['dimension_name']}虽出现方向性信号，但证据质量较弱，不进入主判断。" for item in payload.get("dimension_scores", []) if item.get("score") is not None and abs(item["score"]) >= 0.5 and not item.get("can_enter_summary")]
 
 
 def fallback_judgement(payload: dict[str, Any], reason: str = "not_configured") -> dict[str, Any]:
@@ -34,7 +39,7 @@ def fallback_judgement(payload: dict[str, Any], reason: str = "not_configured") 
         "top_divergences": [],
         "main_judgement": "未启用 GPT 解读，当前显示规则引擎分析结果。" if reason == "not_configured" else "GPT 调用失败，当前显示规则引擎分析结果。",
         "next_watchlist": _rule_watchlist(payload),
-        "risk_notes": ["当前报告未包含 GPT 自然语言解读。", "规则得分不构成投资建议。"],
+        "risk_notes": ["当前报告未包含 GPT 自然语言解读。", *_weak_evidence_risks(payload), "规则得分不构成投资建议。"],
         "data_confidence": data_confidence,
         "learning_note": "先观察信号是否跨频率共振，再判断单项变化是否代表趋势。",
         "gpt_enabled": False,
@@ -77,6 +82,10 @@ def generate_gpt_judgement(payload: dict[str, Any], prompts_root: Path) -> dict[
             result = json.loads(response.read().decode("utf-8"))
         content = result["choices"][0]["message"]["content"]
         judgement = json.loads(content)
+        valid_states = set(payload.get("candidate_macro_states", []))
+        judgement["one_sentence_summary"] = rule_summary(payload)
+        judgement["macro_state_labels"] = [item for item in judgement.get("macro_state_labels", []) if item in valid_states]
+        judgement["risk_notes"] = list(dict.fromkeys([*judgement.get("risk_notes", []), *_weak_evidence_risks(payload)]))
         judgement["gpt_enabled"] = True
         judgement["gpt_status"] = "ok"
         judgement["model"] = model
@@ -94,7 +103,7 @@ def render_markdown(payload: dict[str, Any], judgement: dict[str, Any]) -> str:
     risks = "\n".join(f"- {item}" for item in judgement.get("risk_notes", []))
     return f"""# 每日宏观分析判断
 
-> 生成时间：{payload.get('generated_at', '')}  
+> 生成时间：{payload.get('generated_at', '')}
 > 用于宏观学习和研究观察，不构成投资建议。
 
 ## 一句话总判断

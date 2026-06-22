@@ -100,6 +100,63 @@ class DashboardCalculationsTest(unittest.TestCase):
         self.assertFalse(result["gpt_enabled"])
         self.assertEqual(result["gpt_status"], "not_configured")
 
+    def test_low_confidence_real_estate_cannot_be_macro_state(self):
+        history = [{"date": f"2025-{month:02d}", "value": 100 - month} for month in range(1, 13)] + [{"date": "2026-01", "value": 70}]
+        indicators = [{"id": "china_property_sales", "name": "商品房销售面积", "frequency": "monthly", "status": "ok", "age_days": 10, "date": "2026-01", "value": 70, "history": history}]
+        scores = MODULE.score_indicators(indicators)
+        dimensions = MODULE.build_dimension_scores(indicators, scores, datetime(2026, 2, 15))
+        estate = next(item for item in dimensions if item["dimension_id"] == "real_estate_cycle")
+        states = MODULE.detect_macro_states(dimensions, scores, [])
+        self.assertEqual(estate["confidence"], "低")
+        self.assertEqual(estate["label"], "地产信号偏弱，但证据不足")
+        self.assertNotIn("地产拖累", [item["state_name"] for item in states])
+
+    def test_low_confidence_divergence_is_only_potential(self):
+        dimensions = [
+            {"dimension_id": "china_production", "label": "生产改善", "score": .8, "confidence": "高", "can_be_macro_state": True},
+            {"dimension_id": "china_domestic_demand", "label": "内需偏弱", "score": -.8, "confidence": "低", "can_be_macro_state": False},
+        ]
+        result = MODULE.detect_divergences(dimensions, [])
+        self.assertEqual(result[0]["status"], "potential")
+        self.assertNotEqual(result[0]["severity"], "高")
+        self.assertFalse(result[0]["can_enter_summary"])
+
+    def test_seasonal_credit_does_not_use_previous_month(self):
+        values = [100 + index for index in range(15)]
+        item = {"id": "china_tsf", "name": "社融", "frequency": "monthly", "status": "ok", "age_days": 10, "date": "2026-03", "value": values[-1], "previous_value": values[-2], "history": [{"date": str(index), "value": value} for index, value in enumerate(values)]}
+        result = MODULE.score_indicators([item])[0]
+        self.assertIn("same_period", result["comparison_method"])
+
+    def test_indicator_metadata_distinguishes_release_and_fetch(self):
+        now = datetime(2026, 6, 23, 18, 30, tzinfo=MODULE.BEIJING)
+        items = [{"id": "x", "date": "2026-05", "value": 2, "frequency": "monthly", "status": "ok"}]
+        previous = {"indicators": [{"id": "x", "date": "2026-04", "value": 1, "frequency": "monthly", "fetched_at": "old"}]}
+        MODULE.annotate_run_metadata(items, previous, [{"id": "x", "action": "updated", "status": "ok"}], now)
+        for field in ("observation_period", "released_at", "fetched_at", "value_changed_since_last_run"):
+            self.assertIn(field, items[0])
+        self.assertEqual(items[0]["observation_period"], "2026-05")
+        self.assertEqual(items[0]["released_at"], "2026-06-23")
+        self.assertTrue(items[0]["value_changed_since_last_run"])
+
+    def test_oil_can_contribute_differently_by_dimension(self):
+        history = [{"date": str(index), "value": 100 + (index % 2) * .1} for index in range(30)]
+        history[-1]["value"] = 120
+        item = {"id": "brent", "name": "Brent", "frequency": "daily", "status": "ok", "age_days": 0, "date": "2026-06-23", "value": 120, "five_change": 20, "twenty_change": 20, "history": history}
+        result = MODULE.score_indicators([item])[0]["dimension_contributions"]
+        self.assertIn("global_demand", result)
+        self.assertIn("price_pressure", result)
+        self.assertNotEqual(result["global_demand"], result["price_pressure"])
+
+    def test_credit_without_structure_is_not_called_effective(self):
+        def flow(indicator_id):
+            values = [100 + index * 5 for index in range(15)]
+            return {"id": indicator_id, "name": indicator_id, "frequency": "monthly", "status": "ok", "age_days": 5, "date": "2026-03", "value": values[-1], "history": [{"date": str(index), "value": value} for index, value in enumerate(values)]}
+        indicators = [flow("china_tsf"), flow("china_new_loans")]
+        dimensions = MODULE.build_dimension_scores(indicators, MODULE.score_indicators(indicators), datetime(2026, 4, 1))
+        credit = next(item for item in dimensions if item["dimension_id"] == "credit_expansion")
+        self.assertFalse(credit["effective_expansion"])
+        self.assertIn("结构待验证", credit["label"])
+
 
 class DashboardFrontendContractTest(unittest.TestCase):
     def test_trend_frequency_and_period_controls_exist(self):
@@ -126,6 +183,16 @@ class DashboardFrontendContractTest(unittest.TestCase):
         for target in ("analysis-dimensions", "analysis-relations", "analysis-divergences", "analysis-quality"):
             self.assertIn(f'id="{target}"', html)
         self.assertIn("function renderAnalysis()", app)
+
+    def test_analysis_page_explains_weak_stale_and_missing_evidence(self):
+        app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
+        for phrase in ("证据不足，不进入主判断", "数据较旧，仅作背景", "数据缺失，未参与打分"):
+            self.assertIn(phrase, app)
+
+    def test_prompt_has_evidence_hard_gates(self):
+        prompt = (WEB_ROOT.parents[1] / "prompts" / "macro_analysis_system.txt").read_text(encoding="utf-8")
+        for marker in ("can_enter_summary=true", "can_be_macro_state=true", "不得把“今天抓到旧数据”"):
+            self.assertIn(marker, prompt)
 
 
 if __name__ == "__main__":
