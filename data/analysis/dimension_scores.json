@@ -2,28 +2,27 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.35,
-    "label": "外部金融中性",
+    "score": -0.57,
+    "label": "外部金融逆风",
     "confidence": "中",
     "evidence_quality": "medium",
-    "can_enter_summary": false,
+    "can_enter_summary": true,
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.65,
+    "agreement": 0.57,
     "usable_core_indicators": 4,
     "expected_core_indicators": 4,
     "top_positive_drivers": [],
     "top_negative_drivers": [
       "美元指数走弱",
+      "VIX走弱",
       "美国 2 年期国债走弱"
     ],
     "updated_indicators": [
-      "美国 10 年期国债",
       "美元指数",
       "VIX",
-      "USD/CNY",
-      "美国 2 年期国债"
+      "USD/CNY"
     ],
     "stale_indicators": [],
     "missing_indicators": [
@@ -34,7 +33,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.02,
+    "score": -0.1,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -42,7 +41,7 @@
     "can_be_macro_state": true,
     "coverage": 1.0,
     "freshness": 0.78,
-    "agreement": 0.24,
+    "agreement": 0.12,
     "usable_core_indicators": 3,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
@@ -51,8 +50,8 @@
     ],
     "top_negative_drivers": [
       "CPB 全球贸易量走弱",
-      "美国非农新增就业走弱",
-      "Brent 原油走弱"
+      "铜走弱",
+      "美国非农新增就业走弱"
     ],
     "updated_indicators": [
       "铜",
@@ -117,7 +116,9 @@
       "固定资产投资走弱",
       "恒生指数走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "恒生指数"
+    ],
     "stale_indicators": [],
     "missing_indicators": [
       "china_youth_unemployment",
@@ -195,7 +196,7 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": 0.37,
+    "score": 0.2,
     "label": "价格平稳 / 分化",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -203,14 +204,16 @@
     "can_be_macro_state": true,
     "coverage": 1.0,
     "freshness": 1.0,
-    "agreement": 0.63,
+    "agreement": 0.46,
     "usable_core_indicators": 2,
     "expected_core_indicators": 2,
     "top_positive_drivers": [
       "中国 CPI改善",
       "工业增加值改善"
     ],
-    "top_negative_drivers": [],
+    "top_negative_drivers": [
+      "铜走弱"
+    ],
     "updated_indicators": [
       "Brent 原油",
       "铜"
