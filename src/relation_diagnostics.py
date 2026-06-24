@@ -23,6 +23,24 @@ def _evidence(*items: dict[str, Any]) -> list[str]:
     return evidence
 
 
+def _relation_type(*items: dict[str, Any]) -> str:
+    if not items or any(item.get("score") is None for item in items):
+        return "insufficient"
+    if any(item.get("coverage", 0) == 0 for item in items):
+        return "insufficient"
+    if all(CONFIDENCE_RANK.get(item.get("confidence", "低"), 0) >= 1 for item in items):
+        return "formal"
+    return "watch"
+
+
+def _relation_text(conclusion: str, relation_type: str) -> str:
+    if relation_type == "formal":
+        return conclusion
+    if relation_type == "watch":
+        return f"观察信号：{conclusion}；暂不作为主判断，仍需后续数据确认。"
+    return f"数据不足：{conclusion}，暂不能形成关系判断。"
+
+
 def build_relation_diagnostics(dimensions: list[dict[str, Any]], indicator_scores: list[dict[str, Any]]) -> list[dict[str, Any]]:
     dm = {item["dimension_id"]: item for item in dimensions}
     im = {item["indicator_id"]: item for item in indicator_scores}
@@ -30,7 +48,13 @@ def build_relation_diagnostics(dimensions: list[dict[str, Any]], indicator_score
 
     def add(relation_id: str, name: str, conclusion: str, used: list[dict[str, Any]], risk: str) -> None:
         confidence = _confidence(*used)
-        relations.append({"relation_id": relation_id, "relation_name": name, "conclusion": conclusion, "evidence": _evidence(*used), "risk_note": risk, "confidence": confidence, "evidence_quality": "strong" if confidence == "高" else "medium" if confidence == "中" else "weak", "can_enter_summary": confidence in {"中", "高"}})
+        relation_type = _relation_type(*used)
+        relations.append({
+            "relation_id": relation_id, "relation_name": name, "conclusion": _relation_text(conclusion, relation_type),
+            "relation_type": relation_type, "evidence": _evidence(*used), "risk_note": risk, "confidence": confidence,
+            "evidence_quality": "strong" if relation_type == "formal" and confidence == "高" else "medium" if relation_type == "formal" else "weak",
+            "can_enter_summary": relation_type == "formal",
+        })
 
     production, demand = dm["china_production"], dm["china_domestic_demand"]
     pair = (_state(production["score"]), _state(demand["score"]))
@@ -60,7 +84,8 @@ def build_relation_diagnostics(dimensions: list[dict[str, Any]], indicator_score
     pair = (_state(global_demand["score"]), export_state)
     conclusions = {(1, 1): "全球需求与中国出口共同走强，外需顺风", (-1, -1): "全球需求与中国出口共同走弱", (-1, 1): "中国份额、价格或产业优势可能形成支撑", (1, -1): "中国出口竞争力或结构面临压力"}
     relation_confidence = "低" if not exports or exports.get("indicator_score") is None else global_demand["confidence"]
-    relation = {"relation_id": "global_demand_vs_china_exports", "relation_name": "全球需求 vs 中国出口", "conclusion": conclusions.get(pair, "全球需求与中国出口尚未形成明确组合"), "evidence": _evidence(global_demand) + ([f"中国出口单项得分：{exports['indicator_score']}"] if exports else ["中国出口数据缺失"]), "risk_note": "出口还会受到价格、基数和贸易结构影响。", "confidence": relation_confidence, "evidence_quality": "strong" if relation_confidence == "高" else "medium" if relation_confidence == "中" else "weak", "can_enter_summary": relation_confidence in {"中", "高"}}
+    relation_type = "insufficient" if not exports or exports.get("data_status") in {"missing", "stale"} else "formal" if relation_confidence in {"中", "高"} else "watch"
+    relation = {"relation_id": "global_demand_vs_china_exports", "relation_name": "全球需求 vs 中国出口", "conclusion": _relation_text(conclusions.get(pair, "全球需求与中国出口尚未形成明确组合"), relation_type), "relation_type": relation_type, "evidence": _evidence(global_demand) + ([f"中国出口单项得分：{exports['indicator_score']}"] if exports else ["中国出口数据缺失"]), "risk_note": "出口还会受到价格、基数和贸易结构影响。", "confidence": relation_confidence, "evidence_quality": "strong" if relation_type == "formal" and relation_confidence == "高" else "medium" if relation_type == "formal" else "weak", "can_enter_summary": relation_type == "formal"}
     relations.append(relation)
 
     external = dm["external_financial_pressure"]
@@ -70,7 +95,8 @@ def build_relation_diagnostics(dimensions: list[dict[str, Any]], indicator_score
     pair = (_state(external["score"]), asset_state)
     conclusions = {(1, 1): "外部环境支持中国风险资产", (-1, -1): "外部压力与中国资产走弱共振", (-1, 1): "政策预期或中国内部因素可能形成支撑", (1, -1): "中国内部基本面可能仍弱"}
     confidence = "低" if len(asset_scores) < 2 else external["confidence"]
-    relations.append({"relation_id": "external_financial_pressure_vs_china_assets", "relation_name": "外部金融压力 vs 中国资产", "conclusion": conclusions.get(pair, "外部条件与中国资产信号分化"), "evidence": _evidence(external) + [f"中国资产合成方向：{asset_state}"], "risk_note": "市场价格反映预期，不能替代基本面数据。", "confidence": confidence, "evidence_quality": "strong" if confidence == "高" else "medium" if confidence == "中" else "weak", "can_enter_summary": confidence in {"中", "高"}})
+    relation_type = "insufficient" if len(asset_scores) < 1 else "formal" if confidence in {"中", "高"} else "watch"
+    relations.append({"relation_id": "external_financial_pressure_vs_china_assets", "relation_name": "外部金融压力 vs 中国资产", "conclusion": _relation_text(conclusions.get(pair, "外部条件与中国资产信号分化"), relation_type), "relation_type": relation_type, "evidence": _evidence(external) + [f"中国资产合成方向：{asset_state}"], "risk_note": "市场价格反映预期，不能替代基本面数据。", "confidence": confidence, "evidence_quality": "strong" if relation_type == "formal" and confidence == "高" else "medium" if relation_type == "formal" else "weak", "can_enter_summary": relation_type == "formal"})
 
     innovation = dm["innovation_upgrade"]
     hightech_ids = ("china_hightech_exports", "china_hightech_output", "china_hightech_investment")
@@ -80,5 +106,6 @@ def build_relation_diagnostics(dimensions: list[dict[str, Any]], indicator_score
     pair = (_state(innovation["score"]), conversion)
     conclusions = {(1, 1): "创新投入与产业、出口转化较好", (1, -1): "产业投入较强，但国际转化仍待验证", (-1, 1): "出口可能更多依赖既有制造优势", (-1, -1): "创新升级整体偏弱"}
     confidence = "低" if len(hightech) < 2 else innovation["confidence"]
-    relations.append({"relation_id": "innovation_vs_hightech_exports", "relation_name": "创新升级 vs 高技术出口", "conclusion": conclusions.get(pair, "创新投入与转化信号尚不充分"), "evidence": _evidence(innovation) + [f"高技术产业与出口合成方向：{conversion}"], "risk_note": "创新是慢变量，不宜根据单日或单月数据过度解读。", "confidence": confidence, "evidence_quality": "strong" if confidence == "高" else "medium" if confidence == "中" else "weak", "can_enter_summary": confidence in {"中", "高"}})
+    relation_type = "insufficient" if len(hightech) < 1 else "formal" if confidence in {"中", "高"} else "watch"
+    relations.append({"relation_id": "innovation_vs_hightech_exports", "relation_name": "创新升级 vs 高技术出口", "conclusion": _relation_text(conclusions.get(pair, "创新投入与转化信号尚不充分"), relation_type), "relation_type": relation_type, "evidence": _evidence(innovation) + [f"高技术产业与出口合成方向：{conversion}"], "risk_note": "创新是慢变量，不宜根据单日或单月数据过度解读。", "confidence": confidence, "evidence_quality": "strong" if relation_type == "formal" and confidence == "高" else "medium" if relation_type == "formal" else "weak", "can_enter_summary": relation_type == "formal"})
     return relations

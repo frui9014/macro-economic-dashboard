@@ -104,6 +104,10 @@ class DashboardCalculationsTest(unittest.TestCase):
                 "candidate_macro_states",
                 "important_data_updates",
                 "missing_or_stale_data",
+                "data_status_summary",
+                "history_coverage",
+                "confirmed_divergences",
+                "potential_divergences",
             },
         )
         for removed_key in ("indicator_scores", "raw_key_values_summary", "data_freshness", "generated_at", "purpose", "rule_summary"):
@@ -138,9 +142,40 @@ class DashboardCalculationsTest(unittest.TestCase):
             {"dimension_id": "china_domestic_demand", "label": "内需偏弱", "score": -.8, "confidence": "低", "can_be_macro_state": False},
         ]
         result = MODULE.detect_divergences(dimensions, [])
-        self.assertEqual(result[0]["status"], "potential")
+        self.assertEqual(result[0]["status"], "potential_divergence")
         self.assertNotEqual(result[0]["severity"], "高")
         self.assertFalse(result[0]["can_enter_summary"])
+
+    def test_current_valid_monthly_data_scores_without_today_update(self):
+        values = [100 + index * 2 for index in range(13)]
+        item = {"id": "china_retail", "name": "社零", "frequency": "monthly", "status": "ok", "age_days": 30, "date": "2026-05", "value": values[-1], "previous_value": values[-2], "history": [{"date": str(index), "value": value} for index, value in enumerate(values)], "value_changed_since_last_run": False}
+        result = MODULE.score_indicators([item])[0]
+        self.assertEqual(result["data_status"], "current_valid")
+        self.assertEqual(result["history_status"], "sufficient")
+        self.assertIsNotNone(result["indicator_score"])
+
+    def test_history_insufficient_is_not_missing(self):
+        item = {"id": "china_retail", "name": "社零", "frequency": "monthly", "status": "ok", "age_days": 20, "date": "2026-05", "value": 100, "history": [{"date": "2026-05", "value": 100}]}
+        result = MODULE.score_indicators([item])[0]
+        self.assertEqual(result["data_status"], "current_valid")
+        self.assertEqual(result["history_status"], "history_insufficient")
+        self.assertIsNone(result["indicator_score"])
+
+    def test_relation_types_include_watch_and_formal(self):
+        formal_dims = [
+            {"dimension_id": "china_production", "dimension_name": "生产", "label": "生产改善", "score": .8, "confidence": "中", "coverage": .8},
+            {"dimension_id": "china_domestic_demand", "dimension_name": "内需", "label": "内需偏弱", "score": -.1, "confidence": "中", "coverage": .8},
+            {"dimension_id": "credit_expansion", "dimension_name": "信用", "label": "信用中性", "score": 0, "confidence": "中", "coverage": .8},
+            {"dimension_id": "real_estate_cycle", "dimension_name": "地产", "label": "地产弱", "score": -.2, "confidence": "低", "coverage": .5},
+            {"dimension_id": "price_pressure", "dimension_name": "价格", "label": "价格平稳", "score": 0, "confidence": "中", "coverage": .8},
+            {"dimension_id": "global_demand", "dimension_name": "外需", "label": "外需中性", "score": 0, "confidence": "中", "coverage": .8},
+            {"dimension_id": "external_financial_pressure", "dimension_name": "外部", "label": "外部中性", "score": 0, "confidence": "中", "coverage": .8},
+            {"dimension_id": "innovation_upgrade", "dimension_name": "创新", "label": "创新弱", "score": -.2, "confidence": "低", "coverage": .5},
+        ]
+        relations = MODULE.build_relation_diagnostics(formal_dims, [{"indicator_id": "china_exports", "indicator_score": 0, "data_status": "current_valid"}, {"indicator_id": "csi300", "indicator_score": 0}, {"indicator_id": "hsi", "indicator_score": 0}])
+        types = {item["relation_type"] for item in relations}
+        self.assertIn("formal", types)
+        self.assertIn("watch", types)
 
     def test_seasonal_credit_does_not_use_previous_month(self):
         values = [100 + index for index in range(15)]
@@ -176,7 +211,7 @@ class DashboardCalculationsTest(unittest.TestCase):
         dimensions = MODULE.build_dimension_scores(indicators, MODULE.score_indicators(indicators), datetime(2026, 4, 1))
         credit = next(item for item in dimensions if item["dimension_id"] == "credit_expansion")
         self.assertFalse(credit["effective_expansion"])
-        self.assertIn("结构待验证", credit["label"])
+        self.assertIn("信用总量信号", credit["label"])
 
 
 class DashboardFrontendContractTest(unittest.TestCase):
@@ -207,7 +242,7 @@ class DashboardFrontendContractTest(unittest.TestCase):
 
     def test_analysis_page_explains_weak_stale_and_missing_evidence(self):
         app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
-        for phrase in ("证据不足，不进入主判断", "数据较旧，仅作背景", "数据缺失，未参与打分"):
+        for phrase in ("证据不足，不进入主判断", "数据较旧，仅作背景", "数据缺失，未参与打分", "确认背离", "潜在背离", "观察信号"):
             self.assertIn(phrase, app)
         self.assertIn("analysis.data_freshness", app)
 
@@ -227,7 +262,7 @@ class DashboardFrontendContractTest(unittest.TestCase):
 
     def test_prompt_has_evidence_hard_gates(self):
         prompt = (WEB_ROOT.parents[1] / "prompts" / "macro_analysis_system.txt").read_text(encoding="utf-8")
-        for marker in ("can_enter_summary=true", "can_be_macro_state=true", "不得把“今天抓到旧数据”"):
+        for marker in ("can_enter_summary=true", "can_be_macro_state=true", "不得把“今天抓到旧数据”", "relation_type=formal", "potential_divergence"):
             self.assertIn(marker, prompt)
 
 

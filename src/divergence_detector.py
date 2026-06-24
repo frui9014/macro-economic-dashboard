@@ -17,13 +17,21 @@ def detect_divergences(dimensions: list[dict[str, Any]], indicator_scores: list[
 
     def add(divergence_id: str, title: str, left: str, right: str, interpretation: str, watch: list[str]) -> None:
         dimension_ids = list(dict.fromkeys(item for item in (left, right) if item in dm))
+        if len(dimension_ids) >= 2:
+            gap = abs(score(dimension_ids[0]) - score(dimension_ids[1]))
+        else:
+            gap = 0.5
+        if gap < 0.5:
+            return
         confidences = [dm[item].get("confidence", "低") for item in dimension_ids]
-        qualified = bool(confidences and all(value in {"中", "高"} for value in confidences) and all(dm[item].get("can_be_macro_state") for item in dimension_ids))
+        qualified = bool(gap >= 0.8 and confidences and all(value in {"中", "高"} for value in confidences) and all(dm[item].get("can_be_macro_state") for item in dimension_ids))
         evidence_quality = "strong" if qualified and all(value == "高" for value in confidences) else "medium" if qualified else "weak"
         found.append({
             "divergence_id": divergence_id,
             "title": title if qualified else f"潜在背离：{title}",
-            "status": "confirmed" if qualified else "potential",
+            "status": "confirmed_divergence" if qualified else "potential_divergence",
+            "divergence_type": "confirmed_divergence" if qualified else "potential_divergence",
+            "score_gap": round(gap, 2),
             "severity": "高" if evidence_quality == "strong" else "中" if evidence_quality == "medium" else "低",
             "evidence_quality": evidence_quality,
             "can_enter_summary": qualified,
@@ -32,13 +40,13 @@ def detect_divergences(dimensions: list[dict[str, Any]], indicator_scores: list[
             "what_to_watch_next": watch,
         })
 
-    if score("china_production") >= 0.5 and score("china_domestic_demand") <= -0.3:
+    if score("china_production") >= 0.3 and score("china_domestic_demand") <= -0.2:
         add("production_strong_demand_weak", "生产强，内需弱", "china_production", "china_domestic_demand", "生产端较强，但消费、进口和就业所代表的内需偏弱，可能呈现供给强、需求弱。", ["社会消费品零售", "进口", "就业"])
-    if score("credit_expansion") >= 0.5 and score("china_domestic_demand") <= -0.3:
+    if score("credit_expansion") >= 0.3 and score("china_domestic_demand") <= -0.2:
         add("credit_strong_demand_weak", "信用改善但内需仍弱", "credit_expansion", "china_domestic_demand", "信用扩张尚未有效传导到居民消费和真实需求。", ["居民中长期贷款", "消费", "企业中长期贷款"])
-    if score("credit_expansion") >= 0.5 and score("real_estate_cycle") <= -0.3:
+    if score("credit_expansion") >= 0.3 and score("real_estate_cycle") <= -0.2:
         add("credit_strong_real_estate_weak", "信用改善但地产仍弱", "credit_expansion", "real_estate_cycle", "信用可能更多流向政府、基建或企业，居民资产负债表与地产链仍未修复。", ["居民中长期贷款", "商品房销售", "开发投资"])
-    if score("china_production") >= 0.5 and score("price_pressure") <= -0.3:
+    if score("china_production") >= 0.3 and score("price_pressure") <= -0.2:
         add("production_strong_price_weak", "生产强，价格弱", "china_production", "price_pressure", "生产有支撑但价格没有修复，呈现量强价弱，企业利润可能承压。", ["PPI", "工业利润", "产能利用率"])
     if indicator("china_exports") >= 0.5 and indicator("china_imports") <= -0.3:
         add("exports_strong_imports_weak", "出口强，进口弱", "global_demand", "china_domestic_demand", "外需或出口竞争力较强，但内需和生产进口需求不足。", ["出口数量与价格", "进口", "制造业新订单"])
@@ -55,4 +63,11 @@ def detect_divergences(dimensions: list[dict[str, Any]], indicator_scores: list[
         add("assets_strong_fundamentals_weak", "股市强但基本面弱", "china_domestic_demand", "real_estate_cycle", "市场上涨可能更多来自政策预期、流动性或风险偏好，而非基本面全面改善。", ["消费", "地产销售", "信用结构"])
     if max(indicator("china_hightech_investment"), indicator("china_rd")) >= 0.5 and indicator("china_hightech_exports") <= -0.3:
         add("innovation_input_strong_exports_weak", "创新投入强，但高技术出口弱", "innovation_upgrade", "global_demand", "产业投入较强，但国际竞争力转化仍需验证。", ["高技术出口占比", "PCT专利", "高技术制造业产出"])
+
+    if score("credit_expansion") <= -0.3 and score("price_pressure") >= 0.2:
+        add("credit_weak_price_stable", "信用偏弱但价格信号相对平稳", "credit_expansion", "price_pressure", "信用扩张偏弱，但价格维度尚未同步转弱，可能反映价格受供给、能源或基数因素支撑。", ["社融结构", "PPI", "CPI"])
+    if score("real_estate_cycle") <= -0.3 and score("price_pressure") >= 0.2:
+        add("real_estate_weak_price_stable", "地产偏弱但价格信号相对平稳", "real_estate_cycle", "price_pressure", "地产链偏弱与价格信号相对平稳并存，需区分地产拖累与工业品、能源价格的不同来源。", ["商品房销售", "开发投资", "PPI"])
+    if score("global_demand") >= 0.2 and score("china_domestic_demand") <= -0.2:
+        add("external_demand_better_than_domestic", "外需好于内需", "global_demand", "china_domestic_demand", "外需相关信号相对好于内需，可能意味着出口或海外周期对总需求形成支撑，但国内需求仍需验证。", ["出口", "进口", "社会消费品零售"])
     return found[:5]

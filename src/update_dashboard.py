@@ -463,6 +463,23 @@ def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[
     pending_missing = [item.get("name", "未知指标") for item in pending]
     freshness["missing_indicators"] = list(dict.fromkeys(pending_missing + dimension_missing))
     important_updates = [item for item in indicator_scores if item["indicator_name"] in freshness["new_updates_today"]]
+    data_status_summary = {
+        "new_update": sum(1 for item in indicator_scores if item.get("data_status") == "new_update"),
+        "current_valid": sum(1 for item in indicator_scores if item.get("data_status") == "current_valid"),
+        "stale": sum(1 for item in indicator_scores if item.get("data_status") == "stale"),
+        "missing": len(freshness["missing_indicators"]),
+        "history_insufficient": len(freshness.get("history_insufficient", [])),
+    }
+    history_coverage = {
+        item["dimension_id"]: {
+            "dimension_name": item["dimension_name"],
+            "history_coverage": item.get("history_coverage", 0),
+            "history_insufficient_indicators": item.get("history_insufficient_indicators", []),
+        }
+        for item in dimensions
+    }
+    confirmed_divergences = [item for item in divergences if item.get("divergence_type") == "confirmed_divergence"]
+    potential_divergences = [item for item in divergences if item.get("divergence_type") == "potential_divergence"]
     key_values = sorted(
         [item for item in indicator_scores if item.get("indicator_score") is not None],
         key=lambda item: (abs(item["indicator_score"]), -(item.get("age_days") or 0)),
@@ -473,10 +490,14 @@ def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[
         "generated_at": now.isoformat(timespec="seconds"),
         "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
         "data_freshness": freshness,
+        "data_status_summary": data_status_summary,
+        "history_coverage": history_coverage,
         "indicator_scores": indicator_scores,
         "dimension_scores": dimensions,
         "relation_diagnostics": relations,
         "detected_divergences": divergences,
+        "confirmed_divergences": confirmed_divergences,
+        "potential_divergences": potential_divergences,
         "candidate_macro_states": states,
         "candidate_macro_state_details": state_details,
         "important_data_updates": [{"indicator": item["indicator_name"], "date": item["date"], "score": item["indicator_score"]} for item in important_updates],
@@ -494,9 +515,13 @@ def build_gpt_payload(analysis_payload: dict[str, Any]) -> dict[str, Any]:
         "dimension_scores": analysis_payload.get("dimension_scores", []),
         "relation_diagnostics": analysis_payload.get("relation_diagnostics", []),
         "detected_divergences": analysis_payload.get("detected_divergences", []),
+        "confirmed_divergences": analysis_payload.get("confirmed_divergences", []),
+        "potential_divergences": analysis_payload.get("potential_divergences", []),
         "candidate_macro_states": analysis_payload.get("candidate_macro_states", []),
         "important_data_updates": analysis_payload.get("important_data_updates", []),
         "missing_or_stale_data": analysis_payload.get("missing_or_stale_data", []),
+        "data_status_summary": analysis_payload.get("data_status_summary", {}),
+        "history_coverage": analysis_payload.get("history_coverage", {}),
     }
 
 

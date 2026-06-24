@@ -39,7 +39,7 @@ python src/run_analysis.py
 
 本仓库只包含公开宏观经济与公开市场数据、Dashboard 程序和页面资源，不包含个人画像、研究院其他项目、私人信息或原始研究文档。
 
-程序不会把 API Key、Token、Cookie 或账号密码写入代码、JSON、前端页面或仓库。GPT 解读默认关闭；没有密钥时完整展示规则分析，并提示“未启用 GPT 解读，仅展示规则引擎分析结果”。GPT 只解释单独生成的最小化规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。Dashboard 内部 `analysis` 仍保留完整规则分析结构；`data/analysis/daily_macro_payload.json` 仅保留 `date`、`dimension_scores`、`relation_diagnostics`、`detected_divergences`、`candidate_macro_states`、`important_data_updates` 和 `missing_or_stale_data`，不包含完整指标分数、历史序列或原始值摘要。
+程序不会把 API Key、Token、Cookie 或账号密码写入代码、JSON、前端页面或仓库。GPT 解读默认关闭；没有密钥时完整展示规则分析，并提示“未启用 GPT 解读，仅展示规则引擎分析结果”。GPT 只解释单独生成的最小化规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。Dashboard 内部 `analysis` 仍保留完整规则分析结构；`data/analysis/daily_macro_payload.json` 保留维度、关系、背离、候选状态、重要更新、缺失/陈旧清单、数据状态摘要和历史覆盖摘要，不包含完整指标分数、历史序列或原始值摘要。
 
 ## 启用 GPT 解读
 
@@ -74,6 +74,8 @@ python src/run_analysis.py
 分析层将缺失指标记为 `null`，不以0代替；使用考虑正常发布滞后的新鲜度闸门（日频5天、周频21天、月度75天、季度160天、年度550天，个别来源可覆盖），陈旧数据仅作背景。
 
 一句话判断、宏观状态、背离和可选 GPT 均受证据硬闸门约束。只有置信度至少为“中”、绝对分数达到0.5且至少有2项核心指标有效的维度，才能进入主判断；低置信度信号仅作为风险提示。季节性流量优先比较上年同期和近3期趋势，不使用简单月环比。
+
+分析层区分 `new_update`、`current_valid`、`stale` 和 `missing`：日频数据有效期为3天，月度数据45天，季度数据120天，年度创新数据450天。维度置信度不只看今日是否更新，而综合有效指标覆盖、核心指标覆盖、方向一致性和历史覆盖。关系诊断分为 `formal`、`watch`、`insufficient`；背离分为 `confirmed_divergence` 和 `potential_divergence`，其中潜在背离不得进入确认结论。
 
 每项指标区分数据所属期、官方发布时间、系统抓取时间及本次是否变值；仅今天发布或本次数值变化的指标计入“今日新增”。
 

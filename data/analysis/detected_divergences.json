@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "divergence_id": "credit_weak_price_stable",
+    "title": "潜在背离：信用偏弱但价格信号相对平稳",
+    "status": "potential_divergence",
+    "divergence_type": "potential_divergence",
+    "score_gap": 0.82,
+    "severity": "低",
+    "evidence_quality": "weak",
+    "can_enter_summary": false,
+    "evidence": [
+      "信用偏弱",
+      "价格平稳 / 分化"
+    ],
+    "interpretation": "信用扩张偏弱，但价格维度尚未同步转弱，可能反映价格受供给、能源或基数因素支撑。",
+    "what_to_watch_next": [
+      "社融结构",
+      "PPI",
+      "CPI"
+    ]
+  },
+  {
+    "divergence_id": "real_estate_weak_price_stable",
+    "title": "潜在背离：地产偏弱但价格信号相对平稳",
+    "status": "potential_divergence",
+    "divergence_type": "potential_divergence",
+    "score_gap": 1.2,
+    "severity": "低",
+    "evidence_quality": "weak",
+    "can_enter_summary": false,
+    "evidence": [
+      "地产信号偏弱，但证据不足",
+      "价格平稳 / 分化"
+    ],
+    "interpretation": "地产链偏弱与价格信号相对平稳并存，需区分地产拖累与工业品、能源价格的不同来源。",
+    "what_to_watch_next": [
+      "商品房销售",
+      "开发投资",
+      "PPI"
+    ]
+  }
+]

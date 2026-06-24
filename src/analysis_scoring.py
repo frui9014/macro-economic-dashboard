@@ -6,10 +6,10 @@ from datetime import datetime
 from typing import Any
 
 
-# Analysis freshness includes the normal publication lag instead of treating the
-# observation period as the release date. Source-level overrides still win.
-ANALYSIS_FRESHNESS_DAYS = {"daily": 5, "weekly": 21, "monthly": 75, "quarterly": 160, "annual": 550}
-FRESHNESS_OVERRIDES = {"oecd_cli": 105, "global_trade": 135, "china_rd": 900, "china_patents": 900, "china_hightech_exports": 900}
+# Analysis validity is about whether the latest official observation is still
+# usable for judgement, not whether it was released today.
+ANALYSIS_VALIDITY_DAYS = {"daily": 3, "weekly": 21, "monthly": 45, "quarterly": 120, "annual": 450}
+HISTORY_REQUIREMENTS = {"daily": 20, "monthly": 12, "quarterly": 8, "annual": 3}
 
 ROLE_WEIGHTS = {"core": 1.0, "secondary": 0.6, "auxiliary": 0.3}
 CONFIDENCE_RANK = {"低": 0, "中": 1, "高": 2}
@@ -195,11 +195,22 @@ def score_indicators(indicators: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for item in indicators:
         frequency = item.get("frequency", "daily")
         age = item.get("age_days")
-        limit = int(item.get("analysis_freshness_limit_days", FRESHNESS_OVERRIDES.get(item.get("id"), item.get("freshness_limit_days", ANALYSIS_FRESHNESS_DAYS.get(frequency, 75)))))
-        stale = item.get("status") != "ok" or age is None or age > limit
+        limit = int(item.get("analysis_validity_days", ANALYSIS_VALIDITY_DAYS.get(frequency, 45)))
+        if item.get("status") == "failed" or item.get("value") is None:
+            data_status = "missing"
+        elif item.get("status") != "ok" or age is None or age > limit:
+            data_status = "stale"
+        elif item.get("released_at") == datetime.now().date().isoformat() or item.get("value_changed_since_last_run") is True:
+            data_status = "new_update"
+        else:
+            data_status = "current_valid"
+        history_count = len(_history_values(item))
+        history_required = HISTORY_REQUIREMENTS.get(frequency, 0)
+        history_status = "sufficient" if history_count >= history_required else "history_insufficient"
         direction, method = (_daily_direction(item) if frequency == "daily" else _low_frequency_direction(item))
-        contributions = {} if stale or direction is None else _dimension_contributions(item, direction)
-        base_score = None if stale or direction is None else (-direction if item.get("id") in INVERSE_IDS else direction)
+        usable_for_score = data_status in {"new_update", "current_valid"} and history_status == "sufficient" and direction is not None
+        contributions = {} if not usable_for_score else _dimension_contributions(item, direction)
+        base_score = None if not usable_for_score else (-direction if item.get("id") in INVERSE_IDS else direction)
         results.append({
             "indicator_id": item.get("id"), "indicator_name": item.get("name", item.get("id")),
             "value": item.get("value"), "frequency": frequency, "date": item.get("date"),
@@ -207,17 +218,19 @@ def score_indicators(indicators: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "fetched_at": item.get("fetched_at"), "value_changed_since_last_run": item.get("value_changed_since_last_run"),
             "source": item.get("source"), "base_change": None if direction is None else ("up" if direction > 0 else "down" if direction < 0 else "flat"),
             "comparison_method": method, "indicator_score": base_score, "dimension_contributions": contributions,
-            "status": "stale" if stale else "current", "age_days": age, "freshness_limit_days": limit,
+            "status": "current" if data_status in {"new_update", "current_valid"} else "stale",
+            "data_status": data_status, "history_status": history_status, "history_points": history_count,
+            "history_required": history_required, "age_days": age, "freshness_limit_days": limit,
         })
     return results
 
 
-def _confidence(coverage: float, freshness: float, agreement: float, usable_core: int) -> str:
-    if usable_core < 2:
+def _confidence(coverage: float, core_coverage: float, agreement: float, history_coverage: float, usable_core: int) -> str:
+    if usable_core < 1 or core_coverage < 0.34:
         return "低"
-    if coverage >= 0.6 and freshness >= 0.7 and agreement >= 0.7:
+    if coverage >= 0.65 and core_coverage >= 0.6 and agreement >= 0.7 and history_coverage >= 0.8 and usable_core >= 2:
         return "高"
-    if coverage >= 0.4 and freshness >= 0.5:
+    if coverage >= 0.4 and core_coverage >= 0.5 and history_coverage >= 0.6:
         return "中"
     return "低"
 
@@ -229,11 +242,12 @@ def _driver_text(item: dict[str, Any], contribution: int) -> str:
 def _credit_label(score: float | None, confidence: str, usable: dict[str, dict[str, Any]]) -> tuple[str, dict[str, Any]]:
     corp = usable.get("china_corp_long_loans", {}).get("contribution")
     household = usable.get("china_household_long_loans", {}).get("contribution")
+    gov = usable.get("china_gov_bonds", {}).get("contribution")
     bills = usable.get("china_bill_financing", {}).get("contribution")
-    structure_known = corp is not None and household is not None and bills is not None
-    effective = bool(score is not None and score >= 0.5 and confidence in {"中", "高"} and corp == 1 and household >= 0 and bills != 1)
+    structure_known = corp is not None and household is not None and gov is not None and bills is not None
+    effective = bool(score is not None and score >= 0.5 and confidence in {"中", "高"} and structure_known and corp == 1 and household >= 0 and bills != 1)
     if score is not None and score >= 0.5:
-        label = "信用有效扩张" if effective else "信用总量扩张，结构待验证"
+        label = "信用有效扩张" if effective else "信用总量信号偏强，结构待验证"
     elif score is not None and score <= -0.5:
         label = "信用偏弱"
     else:
@@ -247,7 +261,14 @@ def _estate_label(score: float | None, confidence: str, usable_core: int, usable
     sales = next((value for value in sales_values if value is not None), None)
     development = next((value for value in development_values if value is not None), None)
     price = usable.get("china_house_price", {}).get("contribution")
-    if sales == 1 and development == -1:
+    if usable_core < 2:
+        if score is not None and score <= -0.3:
+            label = "地产信号偏弱，但证据不足"
+        elif score is not None and score >= 0.3:
+            label = "地产信号偏稳，但证据不足"
+        else:
+            label = "地产信号偏稳，但证据不足"
+    elif sales == 1 and development == -1:
         label = "地产销售端边际改善，开发端仍弱"
     elif score is not None and score <= -0.5:
         label = "地产拖累" if confidence in {"中", "高"} and usable_core >= 2 else "地产信号偏弱，但证据不足"
@@ -264,11 +285,14 @@ def build_dimension_scores(indicators: list[dict[str, Any]], indicator_scores: l
     for dimension in DIMENSIONS:
         members = dimension["members"]
         present = [score_map[item_id] for item_id in members if item_id in score_map]
+        available_rows: list[dict[str, Any]] = []
         usable_rows: list[dict[str, Any]] = []
         for item_id, config in members.items():
             item = score_map.get(item_id)
             contribution = (item or {}).get("dimension_contributions", {}).get(dimension["id"])
-            if item and item["status"] == "current" and contribution is not None:
+            if item and item.get("data_status") in {"new_update", "current_valid"}:
+                available_rows.append({**item, **config, "contribution": contribution})
+            if item and item.get("data_status") in {"new_update", "current_valid"} and contribution is not None:
                 usable_rows.append({**item, **config, "contribution": contribution})
         usable = {item["indicator_id"]: item for item in usable_rows}
         weighted_total = sum(item["contribution"] * item["weight"] for item in usable_rows)
@@ -277,11 +301,15 @@ def build_dimension_scores(indicators: list[dict[str, Any]], indicator_scores: l
         direction = 1 if score is not None and score >= 0.5 else -1 if score is not None and score <= -0.5 else 0
         agreement_weight = sum(item["weight"] for item in usable_rows if item["contribution"] == direction)
         agreement = agreement_weight / weight_total if weight_total else 0
-        coverage = len(present) / len(members)
-        freshness = len(usable_rows) / len(present) if present else 0
+        coverage = len(available_rows) / len(members)
+        freshness = len(available_rows) / len(present) if present else 0
         usable_core = sum(1 for item in usable_rows if item["role"] == "core")
+        available_core = sum(1 for item in available_rows if item["role"] == "core")
         expected_core = sum(1 for item in members.values() if item["role"] == "core")
-        confidence = _confidence(coverage, freshness, agreement, usable_core)
+        core_coverage = available_core / expected_core if expected_core else 0
+        history_sufficient = sum(1 for item in available_rows if item.get("history_status") == "sufficient")
+        history_coverage = history_sufficient / len(available_rows) if available_rows else 0
+        confidence = _confidence(coverage, core_coverage, agreement, history_coverage, usable_core)
         label = "数据不足" if score is None else dimension["labels"][0 if direction > 0 else 2 if direction < 0 else 1]
         diagnostics: dict[str, Any] = {}
         if dimension["id"] == "credit_expansion":
@@ -297,24 +325,27 @@ def build_dimension_scores(indicators: list[dict[str, Any]], indicator_scores: l
             can_enter = False
         positive = [_driver_text(item, item["contribution"]) for item in usable_rows if item["contribution"] > 0][:3]
         negative = [_driver_text(item, item["contribution"]) for item in usable_rows if item["contribution"] < 0][:3]
-        stale = [item["indicator_name"] for item in present if item["status"] == "stale"]
-        missing = [item_id for item_id in members if item_id not in score_map]
+        stale = [item["indicator_name"] for item in present if item.get("data_status") == "stale"]
+        missing = [item_id for item_id in members if item_id not in score_map or score_map[item_id].get("data_status") == "missing"]
+        history_insufficient = [item["indicator_name"] for item in available_rows if item.get("history_status") == "history_insufficient"]
         output.append({
             "dimension_id": dimension["id"], "dimension_name": dimension["name"], "score": score, "label": label,
             "confidence": confidence, "evidence_quality": evidence_quality, "can_enter_summary": can_enter, "can_be_macro_state": can_state,
             "coverage": round(coverage, 2), "freshness": round(freshness, 2), "agreement": round(agreement, 2),
-            "usable_core_indicators": usable_core, "expected_core_indicators": expected_core,
+            "core_coverage": round(core_coverage, 2), "history_coverage": round(history_coverage, 2),
+            "usable_core_indicators": usable_core, "available_core_indicators": available_core, "expected_core_indicators": expected_core,
             "top_positive_drivers": positive, "top_negative_drivers": negative, "updated_indicators": updated,
-            "stale_indicators": stale, "missing_indicators": missing,
-            "short_explanation": f"按核心/次要/辅助权重计算；{usable_core}/{expected_core}项核心指标有效。",
+            "stale_indicators": stale, "missing_indicators": missing, "history_insufficient_indicators": history_insufficient,
+            "short_explanation": f"按核心/次要/辅助权重计算；{available_core}/{expected_core}项核心指标在有效期内，{usable_core}项可计算方向。",
             **diagnostics,
         })
     return output
 
 
 def build_data_freshness(indicator_scores: list[dict[str, Any]], generated_at: datetime) -> dict[str, list[str]]:
-    today = generated_at.date().isoformat()
-    new_updates = [item["indicator_name"] for item in indicator_scores if item["status"] == "current" and (item.get("released_at") == today or item.get("value_changed_since_last_run") is True)]
-    recent = [item["indicator_name"] for item in indicator_scores if item["status"] == "current" and item["indicator_name"] not in new_updates]
-    stale = [item["indicator_name"] for item in indicator_scores if item["status"] == "stale"]
-    return {"new_updates_today": new_updates, "recent_indicators": recent, "stale_indicators": stale, "missing_indicators": []}
+    new_updates = [item["indicator_name"] for item in indicator_scores if item.get("data_status") == "new_update"]
+    recent = [item["indicator_name"] for item in indicator_scores if item.get("data_status") == "current_valid"]
+    stale = [item["indicator_name"] for item in indicator_scores if item.get("data_status") == "stale"]
+    missing = [item["indicator_name"] for item in indicator_scores if item.get("data_status") == "missing"]
+    history_insufficient = [item["indicator_name"] for item in indicator_scores if item.get("history_status") == "history_insufficient" and item.get("data_status") in {"new_update", "current_valid"}]
+    return {"new_updates_today": new_updates, "recent_indicators": recent, "stale_indicators": stale, "missing_indicators": missing, "history_insufficient": history_insufficient}

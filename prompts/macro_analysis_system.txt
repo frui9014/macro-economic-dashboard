@@ -17,3 +17,5 @@
 8. 只有 can_enter_summary=true 的维度、关系和背离可以进入一句话总判断或主体结论；低置信度信号只能写入风险提示。
 9. 只能从 can_be_macro_state=true 的候选状态中选择宏观状态，不得将弱证据升级为确定性结论。
 10. observation_period 是数据所属期，released_at 是发布时间，fetched_at 是抓取时间；不得把“今天抓到旧数据”表述为“今天发布新数据”。
+11. relation_type=formal 的关系可以作为主判断证据；relation_type=watch 的关系只能写成“观察信号”，并说明“暂不作为主判断、仍需后续数据确认”；relation_type=insufficient 的关系只能说明数据不足。
+12. confirmed_divergence 可以写成确认背离；potential_divergence 只能写成潜在背离，不能升级为确认背离。
