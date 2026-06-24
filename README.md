@@ -39,7 +39,7 @@ python src/run_analysis.py
 
 本仓库只包含公开宏观经济与公开市场数据、Dashboard 程序和页面资源，不包含个人画像、研究院其他项目、私人信息或原始研究文档。
 
-程序不会把 API Key、Token、Cookie 或账号密码写入代码、JSON、前端页面或仓库。GPT 解读默认关闭；没有密钥时完整展示规则分析，并提示“未启用 GPT 解读，仅展示规则引擎分析结果”。GPT 只解释规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。
+程序不会把 API Key、Token、Cookie 或账号密码写入代码、JSON、前端页面或仓库。GPT 解读默认关闭；没有密钥时完整展示规则分析，并提示“未启用 GPT 解读，仅展示规则引擎分析结果”。GPT 只解释单独生成的最小化规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。Dashboard 内部 `analysis` 仍保留完整规则分析结构；`data/analysis/daily_macro_payload.json` 仅保留 `date`、`dimension_scores`、`relation_diagnostics`、`detected_divergences`、`candidate_macro_states`、`important_data_updates` 和 `missing_or_stale_data`，不包含完整指标分数、历史序列或原始值摘要。
 
 ## 启用 GPT 解读
 

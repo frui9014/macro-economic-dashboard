@@ -484,8 +484,20 @@ def build_analysis_payload(indicators: list[dict[str, Any]], pending: list[dict[
         "raw_key_values_summary": [{"indicator": item["indicator_name"], "date": item["date"], "value": item["value"], "score": item["indicator_score"]} for item in key_values],
     }
     payload["rule_summary"] = rule_summary(payload)
-    judgement = generate_gpt_judgement(payload, PROMPTS_ROOT)
+    judgement = generate_gpt_judgement(build_gpt_payload(payload), PROMPTS_ROOT)
     return payload, judgement
+
+
+def build_gpt_payload(analysis_payload: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "date": analysis_payload.get("date", ""),
+        "dimension_scores": analysis_payload.get("dimension_scores", []),
+        "relation_diagnostics": analysis_payload.get("relation_diagnostics", []),
+        "detected_divergences": analysis_payload.get("detected_divergences", []),
+        "candidate_macro_states": analysis_payload.get("candidate_macro_states", []),
+        "important_data_updates": analysis_payload.get("important_data_updates", []),
+        "missing_or_stale_data": analysis_payload.get("missing_or_stale_data", []),
+    }
 
 
 def assemble(force_all: bool = False, force_ids: set[str] | None = None) -> dict[str, Any]:
@@ -608,7 +620,7 @@ def write_outputs(payload: dict[str, Any], public_root: Path) -> None:
         "dimension_scores.json": analysis_payload["dimension_scores"],
         "relation_diagnostics.json": analysis_payload["relation_diagnostics"],
         "detected_divergences.json": analysis_payload["detected_divergences"],
-        "daily_macro_payload.json": analysis_payload,
+        "daily_macro_payload.json": build_gpt_payload(analysis_payload),
         "macro_judgement.json": payload["macro_judgement"],
     }
     for name, content in analysis_outputs.items():

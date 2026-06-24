@@ -19,11 +19,9 @@
       "VIX走弱"
     ],
     "updated_indicators": [
-      "美国 10 年期国债",
       "美元指数",
       "VIX",
-      "USD/CNY",
-      "美国 2 年期国债"
+      "USD/CNY"
     ],
     "stale_indicators": [],
     "missing_indicators": [

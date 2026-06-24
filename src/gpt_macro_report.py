@@ -103,7 +103,7 @@ def render_markdown(payload: dict[str, Any], judgement: dict[str, Any]) -> str:
     risks = "\n".join(f"- {item}" for item in judgement.get("risk_notes", []))
     return f"""# 每日宏观分析判断
 
-> 生成时间：{payload.get('generated_at', '')}
+> 日期：{payload.get('date', '')}
 > 用于宏观学习和研究观察，不构成投资建议。
 
 ## 一句话总判断

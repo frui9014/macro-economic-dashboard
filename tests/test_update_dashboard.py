@@ -89,6 +89,26 @@ class DashboardCalculationsTest(unittest.TestCase):
         self.assertEqual(len(payload["relation_diagnostics"]), 7)
         self.assertFalse(judgement["gpt_enabled"])
 
+    def test_daily_macro_payload_is_minimal_for_gpt(self):
+        analysis_payload, _ = MODULE.build_analysis_payload([], [], datetime(2026, 6, 23, tzinfo=MODULE.BEIJING))
+        self.assertIn("indicator_scores", analysis_payload)
+        self.assertIn("data_freshness", analysis_payload)
+        payload = MODULE.build_gpt_payload(analysis_payload)
+        self.assertEqual(
+            set(payload),
+            {
+                "date",
+                "dimension_scores",
+                "relation_diagnostics",
+                "detected_divergences",
+                "candidate_macro_states",
+                "important_data_updates",
+                "missing_or_stale_data",
+            },
+        )
+        for removed_key in ("indicator_scores", "raw_key_values_summary", "data_freshness", "generated_at", "purpose", "rule_summary"):
+            self.assertNotIn(removed_key, payload)
+
     def test_analysis_missing_is_not_scored_as_zero(self):
         scores = MODULE.score_indicators([{"id": "x", "name": "缺失", "frequency": "monthly", "status": "failed", "age_days": None}])
         self.assertIsNone(scores[0]["indicator_score"])
@@ -189,6 +209,7 @@ class DashboardFrontendContractTest(unittest.TestCase):
         app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
         for phrase in ("证据不足，不进入主判断", "数据较旧，仅作背景", "数据缺失，未参与打分"):
             self.assertIn(phrase, app)
+        self.assertIn("analysis.data_freshness", app)
 
     def test_frontend_never_calls_openai_api(self):
         for path in (WEB_ROOT / "app.js", WEB_ROOT / "index.html"):

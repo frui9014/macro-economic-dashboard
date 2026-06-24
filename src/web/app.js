@@ -212,7 +212,7 @@
   function renderAnalysis() {
     const analysis = data.analysis; const judgement = data.macro_judgement;
     if (!analysis || !judgement) { $("#analysis-summary").textContent = language === "zh" ? "分析数据尚未生成。" : "Analysis data have not been generated yet."; return; }
-    $("#analysis-summary").textContent = judgement.one_sentence_summary || analysis.rule_summary;
+    $("#analysis-summary").textContent = judgement.one_sentence_summary || analysis.rule_summary || "";
     $("#macro-states").innerHTML = (judgement.macro_state_labels?.length ? judgement.macro_state_labels : analysis.candidate_macro_states).map((item) => `<span class="state-tag">${escapeHtml(stateName(item))}</span>`).join("");
     $("#analysis-mode").textContent = judgement.gpt_enabled ? t("gptMode") : t("ruleMode");
     $("#analysis-dimensions").innerHTML = analysis.dimension_scores.map((item) => {
@@ -224,13 +224,14 @@
     $("#analysis-relations").innerHTML = analysis.relation_diagnostics.map((item) => `<tr class="${item.evidence_quality === "weak" ? "evidence-row-weak" : ""}"><td>${escapeHtml(relationName(item))}</td><td>${escapeHtml(item.conclusion)}${item.can_enter_summary ? "" : `<span class="table-evidence-note">${t("insufficientEvidence")}</span>`}</td><td>${escapeHtml(listText(item.evidence))}</td><td>${escapeHtml(item.risk_note)}</td><td>${escapeHtml(confidenceText(item.confidence))}</td></tr>`).join("");
     const divergences = analysis.detected_divergences.slice(0, 3);
     $("#analysis-divergences").innerHTML = divergences.length ? divergences.map((item) => `<article class="divergence-card"><div class="divergence-head"><h4>${escapeHtml(item.title)}</h4><span class="severity ${item.severity === "高" ? "high" : ""}">${escapeHtml(item.severity)}</span></div><p>${escapeHtml(item.interpretation)}</p><div class="divergence-watch">${t("watchlist")} · ${escapeHtml(listText(item.what_to_watch_next))}</div></article>`).join("") : `<div class="empty-analysis">${t("noDivergence")}</div>`;
-    $("#analysis-main").textContent = judgement.main_judgement || analysis.rule_summary;
+    $("#analysis-main").textContent = judgement.main_judgement || analysis.rule_summary || "";
     const interpretations = judgement.dimension_interpretations || [];
     $("#analysis-interpretations").innerHTML = interpretations.slice(0, 4).map((item) => `<div class="analysis-interpretation"><strong>${escapeHtml(language === "en" ? (ANALYSIS_DIMENSION_NAMES[item.dimension_id] || item.dimension_name) : item.dimension_name)}</strong><p>${escapeHtml(item.interpretation)}</p></div>`).join("");
     const watchlist = judgement.next_watchlist || [];
     $("#analysis-watchlist").innerHTML = (watchlist.length ? watchlist : [language === "zh" ? "等待下一批关键数据更新" : "Wait for the next key data releases"]).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
     const freshness = analysis.data_freshness;
-    $("#analysis-quality").innerHTML = `<div class="quality-row"><span>${t("currentData")}</span><strong>${freshness.new_updates_today.length + freshness.recent_indicators.length}</strong></div><div class="quality-row"><span>${t("staleCount")}</span><strong>${freshness.stale_indicators.length}</strong></div><div class="quality-row"><span>${t("missingCount")}</span><strong>${freshness.missing_indicators.length}</strong></div><div class="quality-row"><span>${t("confidence")}</span><strong>${escapeHtml(confidenceText(judgement.data_confidence))}</strong></div>`;
+    if (freshness) $("#analysis-quality").innerHTML = `<div class="quality-row"><span>${t("currentData")}</span><strong>${freshness.new_updates_today.length + freshness.recent_indicators.length}</strong></div><div class="quality-row"><span>${t("staleCount")}</span><strong>${freshness.stale_indicators.length}</strong></div><div class="quality-row"><span>${t("missingCount")}</span><strong>${freshness.missing_indicators.length}</strong></div><div class="quality-row"><span>${t("confidence")}</span><strong>${escapeHtml(confidenceText(judgement.data_confidence))}</strong></div>`;
+    else { const missingOrStale = analysis.missing_or_stale_data || []; $("#analysis-quality").innerHTML = `<div class="quality-row"><span>${t("currentData")}</span><strong>${(analysis.important_data_updates || []).length}</strong></div><div class="quality-row"><span>${t("staleCount")} / ${t("missingCount")}</span><strong>${missingOrStale.length}</strong></div><div class="quality-row"><span>${t("confidence")}</span><strong>${escapeHtml(confidenceText(judgement.data_confidence))}</strong></div>`; }
     $("#analysis-learning-note").textContent = judgement.learning_note || (language === "zh" ? "先观察信号是否跨频率共振，再判断单项变化是否代表趋势。" : "Look for cross-frequency confirmation before treating one move as a trend.");
   }
 
