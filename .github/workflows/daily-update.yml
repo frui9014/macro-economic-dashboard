@@ -47,7 +47,7 @@ jobs:
       - name: Fetch data and build static dashboard
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
         run: python src/update_dashboard.py --output public
 
       - name: Commit updated snapshot

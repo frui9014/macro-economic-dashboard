@@ -99,6 +99,7 @@ class DashboardCalculationsTest(unittest.TestCase):
             result = MODULE.generate_gpt_judgement({"dimension_scores": [], "candidate_macro_states": []}, MODULE.PROMPTS_ROOT)
         self.assertFalse(result["gpt_enabled"])
         self.assertEqual(result["gpt_status"], "not_configured")
+        self.assertEqual(result["main_judgement"], "未启用 GPT 解读，仅展示规则引擎分析结果。")
 
     def test_low_confidence_real_estate_cannot_be_macro_state(self):
         history = [{"date": f"2025-{month:02d}", "value": 100 - month} for month in range(1, 13)] + [{"date": "2026-01", "value": 70}]
@@ -188,6 +189,20 @@ class DashboardFrontendContractTest(unittest.TestCase):
         app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
         for phrase in ("证据不足，不进入主判断", "数据较旧，仅作背景", "数据缺失，未参与打分"):
             self.assertIn(phrase, app)
+
+    def test_frontend_never_calls_openai_api(self):
+        for path in (WEB_ROOT / "app.js", WEB_ROOT / "index.html"):
+            content = path.read_text(encoding="utf-8")
+            self.assertNotIn("api.openai.com", content)
+            self.assertNotIn("OPENAI_API_KEY", content)
+
+    def test_gpt_security_configuration_is_documented(self):
+        project_root = WEB_ROOT.parents[1]
+        readme = (project_root / "README.md").read_text(encoding="utf-8")
+        gitignore = (project_root / ".gitignore").read_text(encoding="utf-8")
+        for marker in ("Settings → Secrets and variables → Actions", "OPENAI_API_KEY", "OPENAI_MODEL", "macro_judgement.json"):
+            self.assertIn(marker, readme)
+        self.assertIn(".env", gitignore)
 
     def test_prompt_has_evidence_hard_gates(self):
         prompt = (WEB_ROOT.parents[1] / "prompts" / "macro_analysis_system.txt").read_text(encoding="utf-8")

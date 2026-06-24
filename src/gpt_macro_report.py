@@ -37,7 +37,7 @@ def fallback_judgement(payload: dict[str, Any], reason: str = "not_configured") 
         "dimension_interpretations": [],
         "key_relation_interpretations": [],
         "top_divergences": [],
-        "main_judgement": "未启用 GPT 解读，当前显示规则引擎分析结果。" if reason == "not_configured" else "GPT 调用失败，当前显示规则引擎分析结果。",
+        "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。" if reason == "not_configured" else "GPT 调用失败，当前显示规则引擎分析结果。",
         "next_watchlist": _rule_watchlist(payload),
         "risk_notes": ["当前报告未包含 GPT 自然语言解读。", *_weak_evidence_risks(payload), "规则得分不构成投资建议。"],
         "data_confidence": data_confidence,

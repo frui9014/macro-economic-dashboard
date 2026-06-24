@@ -39,7 +39,37 @@ python src/run_analysis.py
 
 本仓库只包含公开宏观经济与公开市场数据、Dashboard 程序和页面资源，不包含个人画像、研究院其他项目、私人信息或原始研究文档。
 
-程序不会把 API Key、Token、Cookie 或账号密码写入代码和 JSON。GPT 解读默认关闭；没有密钥时完整展示规则分析。若需启用，只在 Repository Secret `OPENAI_API_KEY` 中配置密钥，可在 Repository Variable `OPENAI_MODEL` 中指定模型。GPT 只解释规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。
+程序不会把 API Key、Token、Cookie 或账号密码写入代码、JSON、前端页面或仓库。GPT 解读默认关闭；没有密钥时完整展示规则分析，并提示“未启用 GPT 解读，仅展示规则引擎分析结果”。GPT 只解释规则输入包，不得修改分数、标签或置信度；调用失败不会中断页面更新。
+
+## 启用 GPT 解读
+
+云端启用方式：
+
+1. 打开 GitHub 仓库 `Settings → Secrets and variables → Actions`。
+2. 进入 `Secrets`，新增 `OPENAI_API_KEY`，值填写你的 OpenAI API Key。
+3. 可选：继续在 `Secrets` 中新增 `OPENAI_MODEL`，例如 `gpt-4.1-mini`；如果不设置，程序默认使用 `gpt-4.1-mini`。
+4. 保存后，手动运行一次 GitHub Actions，或等待每天北京时间 18:30 自动运行。
+
+本地启用方式：
+
+```powershell
+$env:OPENAI_API_KEY="你的 OpenAI API Key"
+$env:OPENAI_MODEL="gpt-4.1-mini"
+python src/run_analysis.py
+```
+
+如果不设置 `OPENAI_API_KEY`，程序不会报错，会生成 fallback `data/analysis/macro_judgement.json`，页面继续展示规则引擎分析。确认结果时，打开 `data/analysis/macro_judgement.json`：
+
+- `gpt_enabled: true` 且 `gpt_status: "ok"`：GPT 解读已生成。
+- `gpt_enabled: false` 且 `gpt_status: "not_configured"`：未配置 API Key，使用 fallback。
+- `gpt_enabled: false` 且 `gpt_status: "api_failed"`：已配置但调用失败，使用 fallback。
+
+安全检查：
+
+- `.gitignore` 已包含 `.env` 和 `.env.*`。
+- 不提交 `.env`。
+- 不在 `src/web/app.js`、`index.html` 或任何前端文件中调用 OpenAI API。
+- GPT 调用只允许发生在 GitHub Actions 或本地 Python 脚本中。
 
 分析层将缺失指标记为 `null`，不以0代替；使用考虑正常发布滞后的新鲜度闸门（日频5天、周频21天、月度75天、季度160天、年度550天，个别来源可覆盖），陈旧数据仅作背景。
 

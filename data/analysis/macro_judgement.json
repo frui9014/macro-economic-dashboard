@@ -7,7 +7,7 @@
   "dimension_interpretations": [],
   "key_relation_interpretations": [],
   "top_divergences": [],
-  "main_judgement": "未启用 GPT 解读，当前显示规则引擎分析结果。",
+  "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
   "next_watchlist": [
     "美国 ISM 制造业 PMI",
     "房地产景气指数",
