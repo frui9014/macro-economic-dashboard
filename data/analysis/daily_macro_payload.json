@@ -1,12 +1,15 @@
 {
   "date": "2026-06-24",
-  "generated_at": "2026-06-24T01:28:44+08:00",
+  "generated_at": "2026-06-24T22:41:21+08:00",
   "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
   "data_freshness": {
     "new_updates_today": [
       "USD/CNY",
       "恒生指数",
+      "沪深 300",
       "中国 10 年期国债",
+      "美国 10 年期国债",
+      "美国 2 年期国债",
       "Brent 原油",
       "VIX",
       "美元指数",
@@ -28,15 +31,12 @@
       "新增人民币贷款",
       "社会消费品零售",
       "社会融资规模增量",
-      "沪深 300",
       "CPB 全球贸易量",
       "OECD G20 综合领先指标",
       "美国 CPI",
       "美国失业率",
       "美国核心 CPI",
       "美国非农新增就业",
-      "美国 10 年期国债",
-      "美国 2 年期国债",
       "高技术产业投资",
       "高技术产品出口占比",
       "高技术制造业增加值"
@@ -427,12 +427,12 @@
     {
       "indicator_id": "usdcny",
       "indicator_name": "USD/CNY",
-      "value": 6.7797,
+      "value": 6.7999,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / 公开外汇行情",
       "base_change": "flat",
@@ -442,18 +442,18 @@
         "external_financial_pressure": 0
       },
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "hsi",
       "indicator_name": "恒生指数",
-      "value": 23768.519531,
+      "value": 23412.179688,
       "frequency": "daily",
-      "date": "2026-06-22",
-      "observation_period": "2026-06-22",
-      "released_at": "2026-06-22",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / 恒生指数公司",
       "base_change": "down",
@@ -463,19 +463,19 @@
         "china_domestic_demand": -1
       },
       "status": "current",
-      "age_days": 2,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "csi300",
       "indicator_name": "沪深 300",
-      "value": 4941.600098,
+      "value": 4943.019531,
       "frequency": "daily",
-      "date": "2026-06-18",
-      "observation_period": "2026-06-18",
-      "released_at": "2026-06-18",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
-      "value_changed_since_last_run": false,
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
+      "value_changed_since_last_run": true,
       "source": "Yahoo Finance / 中证指数",
       "base_change": "up",
       "comparison_method": "5d_20d_direction",
@@ -484,18 +484,18 @@
         "china_domestic_demand": 1
       },
       "status": "current",
-      "age_days": 6,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "china10y",
       "indicator_name": "中国 10 年期国债",
-      "value": 1.7437,
+      "value": 1.7454,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "中债 / AkShare",
       "base_change": null,
@@ -503,7 +503,7 @@
       "indicator_score": null,
       "dimension_contributions": {},
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
@@ -514,7 +514,7 @@
       "date": "2026-03-01",
       "observation_period": "2026-03",
       "released_at": null,
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": false,
       "source": "荷兰经济政策分析局 CPB",
       "base_change": "down",
@@ -535,7 +535,7 @@
       "date": "2026-05",
       "observation_period": "2026-05",
       "released_at": null,
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": false,
       "source": "OECD SDMX",
       "base_change": "up",
@@ -688,13 +688,13 @@
     {
       "indicator_id": "us10y",
       "indicator_name": "美国 10 年期国债",
-      "value": 4.51,
+      "value": 4.5,
       "frequency": "daily",
-      "date": "2026-06-22",
-      "observation_period": "2026-06-22",
-      "released_at": "2026-06-22",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
-      "value_changed_since_last_run": false,
+      "date": "2026-06-23",
+      "observation_period": "2026-06-23",
+      "released_at": "2026-06-23",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
+      "value_changed_since_last_run": true,
       "source": "U.S. Department of the Treasury",
       "base_change": "flat",
       "comparison_method": "5d_20d_direction",
@@ -703,39 +703,39 @@
         "external_financial_pressure": 0
       },
       "status": "current",
-      "age_days": 2,
+      "age_days": 1,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "us2y",
       "indicator_name": "美国 2 年期国债",
-      "value": 4.24,
+      "value": 4.16,
       "frequency": "daily",
-      "date": "2026-06-22",
-      "observation_period": "2026-06-22",
-      "released_at": "2026-06-22",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
-      "value_changed_since_last_run": false,
+      "date": "2026-06-23",
+      "observation_period": "2026-06-23",
+      "released_at": "2026-06-23",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
+      "value_changed_since_last_run": true,
       "source": "U.S. Department of the Treasury",
-      "base_change": "up",
+      "base_change": "flat",
       "comparison_method": "5d_20d_direction",
-      "indicator_score": -1,
+      "indicator_score": 0,
       "dimension_contributions": {
-        "external_financial_pressure": -1
+        "external_financial_pressure": 0
       },
       "status": "current",
-      "age_days": 2,
+      "age_days": 1,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "brent",
       "indicator_name": "Brent 原油",
-      "value": 77.150002,
+      "value": 73.800003,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / ICE Brent",
       "base_change": "down",
@@ -746,18 +746,18 @@
         "price_pressure": 0
       },
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "vix",
       "indicator_name": "VIX",
-      "value": 18.809999,
+      "value": 18.83,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / CBOE",
       "base_change": "up",
@@ -767,18 +767,18 @@
         "external_financial_pressure": -1
       },
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "dxy",
       "indicator_name": "美元指数",
-      "value": 101.400002,
+      "value": 101.666,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / ICE DXY",
       "base_change": "up",
@@ -788,18 +788,18 @@
         "external_financial_pressure": -1
       },
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
       "indicator_id": "copper",
       "indicator_name": "铜",
-      "value": 6.1515,
+      "value": 5.993,
       "frequency": "daily",
-      "date": "2026-06-23",
-      "observation_period": "2026-06-23",
-      "released_at": "2026-06-23",
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "date": "2026-06-24",
+      "observation_period": "2026-06-24",
+      "released_at": "2026-06-24",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": true,
       "source": "Yahoo Finance / COMEX",
       "base_change": "down",
@@ -810,7 +810,7 @@
         "price_pressure": -1
       },
       "status": "current",
-      "age_days": 1,
+      "age_days": 0,
       "freshness_limit_days": 7
     },
     {
@@ -840,7 +840,7 @@
       "date": "2021",
       "observation_period": "2021",
       "released_at": null,
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": false,
       "source": "世界银行 / WIPO",
       "base_change": "up",
@@ -878,7 +878,7 @@
       "date": "2024",
       "observation_period": "2024",
       "released_at": null,
-      "fetched_at": "2026-06-24T01:28:44+08:00",
+      "fetched_at": "2026-06-24T22:41:21+08:00",
       "value_changed_since_last_run": false,
       "source": "世界银行 / 海关总署",
       "base_change": "down",
@@ -915,11 +915,11 @@
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.57,
-      "label": "外部金融逆风",
+      "score": -0.43,
+      "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
-      "can_enter_summary": true,
+      "can_enter_summary": false,
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
@@ -929,13 +929,14 @@
       "top_positive_drivers": [],
       "top_negative_drivers": [
         "美元指数走弱",
-        "VIX走弱",
-        "美国 2 年期国债走弱"
+        "VIX走弱"
       ],
       "updated_indicators": [
+        "美国 10 年期国债",
         "美元指数",
         "VIX",
-        "USD/CNY"
+        "USD/CNY",
+        "美国 2 年期国债"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -1030,6 +1031,7 @@
         "恒生指数走弱"
       ],
       "updated_indicators": [
+        "沪深 300",
         "恒生指数"
       ],
       "stale_indicators": [],
@@ -1238,7 +1240,7 @@
       "relation_name": "外部金融压力 vs 中国资产",
       "conclusion": "外部条件与中国资产信号分化",
       "evidence": [
-        "外部金融压力：外部金融逆风（-0.57）",
+        "外部金融压力：外部金融中性（-0.43）",
         "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -1262,15 +1264,13 @@
   ],
   "detected_divergences": [],
   "candidate_macro_states": [
-    "外部逆风"
+    "数据分化、暂难判断"
   ],
   "candidate_macro_state_details": [
     {
-      "state_id": "external_headwind",
-      "state_name": "外部逆风",
-      "supporting_dimensions": [
-        "external_financial_pressure"
-      ],
+      "state_id": "mixed_data",
+      "state_name": "数据分化、暂难判断",
+      "supporting_dimensions": [],
       "evidence_quality": "medium",
       "can_be_macro_state": true
     }
@@ -1278,37 +1278,52 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-06-23",
+      "date": "2026-06-24",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-06-22",
+      "date": "2026-06-24",
       "score": -1
     },
     {
+      "indicator": "沪深 300",
+      "date": "2026-06-24",
+      "score": 1
+    },
+    {
       "indicator": "中国 10 年期国债",
-      "date": "2026-06-23",
+      "date": "2026-06-24",
       "score": null
     },
     {
-      "indicator": "Brent 原油",
+      "indicator": "美国 10 年期国债",
       "date": "2026-06-23",
+      "score": 0
+    },
+    {
+      "indicator": "美国 2 年期国债",
+      "date": "2026-06-23",
+      "score": 0
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-06-24",
       "score": -1
     },
     {
       "indicator": "VIX",
-      "date": "2026-06-23",
+      "date": "2026-06-24",
       "score": -1
     },
     {
       "indicator": "美元指数",
-      "date": "2026-06-23",
+      "date": "2026-06-24",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-06-23",
+      "date": "2026-06-24",
       "score": -1
     }
   ],
@@ -1340,46 +1355,40 @@
   ],
   "raw_key_values_summary": [
     {
-      "indicator": "Brent 原油",
-      "date": "2026-06-23",
-      "value": 77.150002,
-      "score": -1
-    },
-    {
-      "indicator": "VIX",
-      "date": "2026-06-23",
-      "value": 18.809999,
-      "score": -1
-    },
-    {
-      "indicator": "美元指数",
-      "date": "2026-06-23",
-      "value": 101.400002,
-      "score": -1
-    },
-    {
-      "indicator": "铜",
-      "date": "2026-06-23",
-      "value": 6.1515,
-      "score": -1
-    },
-    {
       "indicator": "恒生指数",
-      "date": "2026-06-22",
-      "value": 23768.519531,
-      "score": -1
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-06-22",
-      "value": 4.24,
+      "date": "2026-06-24",
+      "value": 23412.179688,
       "score": -1
     },
     {
       "indicator": "沪深 300",
-      "date": "2026-06-18",
-      "value": 4941.600098,
+      "date": "2026-06-24",
+      "value": 4943.019531,
       "score": 1
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-06-24",
+      "value": 73.800003,
+      "score": -1
+    },
+    {
+      "indicator": "VIX",
+      "date": "2026-06-24",
+      "value": 18.83,
+      "score": -1
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-06-24",
+      "value": 101.666,
+      "score": -1
+    },
+    {
+      "indicator": "铜",
+      "date": "2026-06-24",
+      "value": 5.993,
+      "score": -1
     },
     {
       "indicator": "70 城新房价格",
@@ -1410,7 +1419,13 @@
       "date": "2026年05月份",
       "value": 27.4,
       "score": 1
+    },
+    {
+      "indicator": "中国非制造业 PMI",
+      "date": "2026年05月份",
+      "value": 50.1,
+      "score": 1
     }
   ],
-  "rule_summary": "当前更接近“外部逆风”；主要约束来自外部金融压力、信用扩张。"
+  "rule_summary": "当前更接近“数据分化、暂难判断”；主要约束来自信用扩张。"
 }

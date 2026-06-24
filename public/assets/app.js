@@ -28,7 +28,7 @@
       analysisEyebrow: "规则化宏观诊断", analysisDisclaimer: "本页面基于公开宏观数据、固定规则打分和 GPT 辅助解读生成。本系统用于宏观学习和研究观察，不构成投资建议。",
       scoreCards: "8 个维度打分", scoreHint: "+1 顺风 · 0 中性 · -1 逆风", relationTitle: "7 个组合关系", relationHint: "跨维度共振与传导诊断",
       relationName: "关系", conclusion: "结论", evidence: "证据", risk: "风险提示", confidence: "置信度", divergenceTitle: "今日背离信号", divergenceHint: "优先展示最值得复核的三条",
-      mainAnalysis: "主体分析", watchlist: "后续观察指标", dataQuality: "数据质量", analysisLearning: "今日宏观学习笔记", positiveDriver: "正向", negativeDriver: "拖累", none: "暂无", currentData: "有效", staleCount: "陈旧", missingCount: "缺失", ruleMode: "规则分析 · GPT 未启用", gptMode: "规则分析 + GPT 解读", noDivergence: "暂未检测到达到阈值的重要背离。", insufficientEvidence: "证据不足，不进入主判断", staleBackground: "数据较旧，仅作背景", missingExcluded: "数据缺失，未参与打分", totalSignal: "总量", structureSignal: "结构", effectiveCredit: "有效扩张", salesSide: "销售端", developmentSide: "开发端", priceSide: "价格端", evidenceQuality: "证据质量", yes: "是", no: "否"
+      mainAnalysis: "主体分析", watchlist: "后续观察指标", dataQuality: "数据质量", analysisLearning: "今日宏观学习笔记", positiveDriver: "正向", negativeDriver: "拖累", none: "暂无", currentData: "有效", staleCount: "陈旧", missingCount: "缺失", ruleMode: "未启用 GPT 解读，仅展示规则引擎分析结果", gptMode: "规则分析 + GPT 解读", noDivergence: "暂未检测到达到阈值的重要背离。", insufficientEvidence: "证据不足，不进入主判断", staleBackground: "数据较旧，仅作背景", missingExcluded: "数据缺失，未参与打分", totalSignal: "总量", structureSignal: "结构", effectiveCredit: "有效扩张", salesSide: "销售端", developmentSide: "开发端", priceSide: "价格端", evidenceQuality: "证据质量", yes: "是", no: "否"
     },
     en: {
       title: "Macro Observatory", tabToday: "Today", tabTrends: "Trends", tabAnalysis: "Analysis", todayView: "Today’s Macro View",
