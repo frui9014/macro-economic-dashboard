@@ -23,8 +23,7 @@
     ],
     "updated_indicators": [
       "美元指数",
-      "VIX",
-      "USD/CNY"
+      "VIX"
     ],
     "stale_indicators": [],
     "missing_indicators": [
@@ -132,9 +131,7 @@
       "固定资产投资走弱",
       "恒生指数走弱"
     ],
-    "updated_indicators": [
-      "恒生指数"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "沪深 300"
     ],

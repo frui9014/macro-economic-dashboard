@@ -25,8 +25,7 @@
       ],
       "updated_indicators": [
         "美元指数",
-        "VIX",
-        "USD/CNY"
+        "VIX"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -134,9 +133,7 @@
         "固定资产投资走弱",
         "恒生指数走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
         "沪深 300"
       ],
@@ -491,11 +488,6 @@
       "score": 0
     },
     {
-      "indicator": "恒生指数",
-      "date": "2026-06-23",
-      "score": -1
-    },
-    {
       "indicator": "中国 10 年期国债",
       "date": "2026-06-24",
       "score": null
@@ -552,8 +544,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 7,
-    "current_valid": 23,
+    "new_update": 6,
+    "current_valid": 24,
     "stale": 11,
     "missing": 17,
     "history_insufficient": 3
