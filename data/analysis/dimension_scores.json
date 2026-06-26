@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.35,
+    "score": -0.22,
     "label": "外部金融中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -10,16 +10,18 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.65,
+    "agreement": 0.35,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
-    "top_positive_drivers": [],
+    "top_positive_drivers": [
+      "美国 10 年期国债改善"
+    ],
     "top_negative_drivers": [
       "美元指数走弱",
-      "美国 2 年期国债走弱"
+      "VIX走弱"
     ],
     "updated_indicators": [
       "美国 10 年期国债",

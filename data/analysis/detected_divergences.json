@@ -1,5 +1,24 @@
 [
   {
+    "divergence_id": "yield_down_vix_up",
+    "title": "潜在背离：美债下行但 VIX 上行",
+    "status": "potential_divergence",
+    "divergence_type": "potential_divergence",
+    "score_gap": 0.5,
+    "severity": "低",
+    "evidence_quality": "weak",
+    "can_enter_summary": false,
+    "evidence": [
+      "外部金融中性"
+    ],
+    "interpretation": "收益率下行可能是避险或衰退交易，而非单纯宽松交易。",
+    "what_to_watch_next": [
+      "美国就业",
+      "信用利差",
+      "VIX"
+    ]
+  },
+  {
     "divergence_id": "credit_weak_price_stable",
     "title": "潜在背离：信用偏弱但价格信号相对平稳",
     "status": "potential_divergence",
