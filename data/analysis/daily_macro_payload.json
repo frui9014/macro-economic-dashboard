@@ -4,7 +4,7 @@
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.22,
+      "score": -0.43,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -12,7 +12,7 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.35,
+      "agreement": 0.13,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
@@ -23,7 +23,8 @@
       ],
       "top_negative_drivers": [
         "美元指数走弱",
-        "VIX走弱"
+        "VIX走弱",
+        "USD/CNY走弱"
       ],
       "updated_indicators": [
         "美国 10 年期国债",
@@ -377,7 +378,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（-0.22）",
+        "外部金融压力：外部金融中性（-0.43）",
         "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -529,27 +530,22 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-06-26",
-      "score": 0
-    },
-    {
-      "indicator": "恒生指数",
-      "date": "2026-06-25",
+      "date": "2026-06-27",
       "score": -1
     },
     {
-      "indicator": "中国 10 年期国债",
+      "indicator": "恒生指数",
       "date": "2026-06-26",
-      "score": null
+      "score": -1
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-06-25",
+      "date": "2026-06-26",
       "score": 1
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-06-25",
+      "date": "2026-06-26",
       "score": 0
     },
     {
@@ -604,8 +600,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 9,
-    "current_valid": 21,
+    "new_update": 8,
+    "current_valid": 22,
     "stale": 11,
     "missing": 17,
     "history_insufficient": 3
