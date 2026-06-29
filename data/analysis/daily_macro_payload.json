@@ -1,40 +1,39 @@
 {
-  "date": "2026-06-28",
+  "date": "2026-06-30",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.43,
+      "score": 0.0,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
       "can_enter_summary": false,
       "can_be_macro_state": true,
-      "coverage": 0.83,
-      "freshness": 1.0,
-      "agreement": 0.13,
-      "core_coverage": 1.0,
+      "coverage": 0.5,
+      "freshness": 0.6,
+      "agreement": 1.0,
+      "core_coverage": 0.75,
       "history_coverage": 1.0,
-      "usable_core_indicators": 4,
-      "available_core_indicators": 4,
+      "usable_core_indicators": 3,
+      "available_core_indicators": 3,
       "expected_core_indicators": 4,
-      "top_positive_drivers": [
-        "美国 10 年期国债改善"
-      ],
-      "top_negative_drivers": [
-        "美元指数走弱",
-        "VIX走弱",
-        "USD/CNY走弱"
-      ],
+      "top_positive_drivers": [],
+      "top_negative_drivers": [],
       "updated_indicators": [
+        "美元指数",
+        "VIX",
         "USD/CNY"
       ],
-      "stale_indicators": [],
+      "stale_indicators": [
+        "美国 10 年期国债",
+        "美国 2 年期国债"
+      ],
       "missing_indicators": [
         "cfets_rmb"
       ],
       "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；4/4项核心指标在有效期内，4项可计算方向。"
+      "short_explanation": "按核心/次要/辅助权重计算；3/4项核心指标在有效期内，3项可计算方向。"
     },
     {
       "dimension_id": "global_demand",
@@ -113,17 +112,17 @@
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": -0.37,
+      "score": -0.23,
       "label": "内需平稳",
       "confidence": "中",
       "evidence_quality": "medium",
       "can_enter_summary": false,
       "can_be_macro_state": true,
-      "coverage": 0.67,
-      "freshness": 1.0,
+      "coverage": 0.44,
+      "freshness": 0.67,
       "agreement": 0.0,
       "core_coverage": 1.0,
-      "history_coverage": 0.83,
+      "history_coverage": 0.75,
       "usable_core_indicators": 2,
       "available_core_indicators": 3,
       "expected_core_indicators": 3,
@@ -132,13 +131,13 @@
       ],
       "top_negative_drivers": [
         "社会消费品零售走弱",
-        "固定资产投资走弱",
-        "沪深 300走弱"
+        "固定资产投资走弱"
       ],
-      "updated_indicators": [
-        "沪深 300"
+      "updated_indicators": [],
+      "stale_indicators": [
+        "沪深 300",
+        "恒生指数"
       ],
-      "stale_indicators": [],
       "missing_indicators": [
         "china_youth_unemployment",
         "china_fai_manufacturing",
@@ -302,7 +301,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产平稳（0.23）",
-        "中国内需 / 居民需求：内需平稳（-0.37）"
+        "中国内需 / 居民需求：内需平稳（-0.23）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
       "confidence": "中",
@@ -316,7 +315,7 @@
       "relation_type": "watch",
       "evidence": [
         "信用扩张：信用偏弱（-0.62）",
-        "中国内需 / 居民需求：内需平稳（-0.37）"
+        "中国内需 / 居民需求：内需平稳（-0.23）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -344,7 +343,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产平稳（0.23）",
-        "中国内需 / 居民需求：内需平稳（-0.37）",
+        "中国内需 / 居民需求：内需平稳（-0.23）",
         "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
@@ -369,16 +368,16 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "外部条件与中国资产信号分化",
-      "relation_type": "formal",
+      "conclusion": "数据不足：外部条件与中国资产信号分化，暂不能形成关系判断。",
+      "relation_type": "insufficient",
       "evidence": [
-        "外部金融压力：外部金融中性（-0.43）",
-        "中国资产合成方向：-1"
+        "外部金融压力：外部金融中性（0.0）",
+        "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
-      "confidence": "中",
-      "evidence_quality": "medium",
-      "can_enter_summary": true
+      "confidence": "低",
+      "evidence_quality": "weak",
+      "can_enter_summary": false
     },
     {
       "relation_id": "innovation_vs_hightech_exports",
@@ -396,25 +395,6 @@
     }
   ],
   "detected_divergences": [
-    {
-      "divergence_id": "yield_down_vix_up",
-      "title": "潜在背离：美债下行但 VIX 上行",
-      "status": "potential_divergence",
-      "divergence_type": "potential_divergence",
-      "score_gap": 0.5,
-      "severity": "低",
-      "evidence_quality": "weak",
-      "can_enter_summary": false,
-      "evidence": [
-        "外部金融中性"
-      ],
-      "interpretation": "收益率下行可能是避险或衰退交易，而非单纯宽松交易。",
-      "what_to_watch_next": [
-        "美国就业",
-        "信用利差",
-        "VIX"
-      ]
-    },
     {
       "divergence_id": "credit_weak_price_stable",
       "title": "潜在背离：信用偏弱但价格信号相对平稳",
@@ -458,25 +438,6 @@
   ],
   "confirmed_divergences": [],
   "potential_divergences": [
-    {
-      "divergence_id": "yield_down_vix_up",
-      "title": "潜在背离：美债下行但 VIX 上行",
-      "status": "potential_divergence",
-      "divergence_type": "potential_divergence",
-      "score_gap": 0.5,
-      "severity": "低",
-      "evidence_quality": "weak",
-      "can_enter_summary": false,
-      "evidence": [
-        "外部金融中性"
-      ],
-      "interpretation": "收益率下行可能是避险或衰退交易，而非单纯宽松交易。",
-      "what_to_watch_next": [
-        "美国就业",
-        "信用利差",
-        "VIX"
-      ]
-    },
     {
       "divergence_id": "credit_weak_price_stable",
       "title": "潜在背离：信用偏弱但价格信号相对平稳",
@@ -524,22 +485,32 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-06-28",
-      "score": -1
+      "date": "2026-06-29",
+      "score": 0
     },
     {
-      "indicator": "沪深 300",
-      "date": "2026-06-26",
-      "score": -1
+      "indicator": "中国 10 年期国债",
+      "date": "2026-06-29",
+      "score": null
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-06-26",
+      "date": "2026-06-29",
       "score": -1
     },
     {
+      "indicator": "VIX",
+      "date": "2026-06-29",
+      "score": 0
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-06-29",
+      "score": 0
+    },
+    {
       "indicator": "铜",
-      "date": "2026-06-26",
+      "date": "2026-06-29",
       "score": -1
     }
   ],
@@ -547,10 +518,14 @@
     "中国贸易差额",
     "房地产景气指数",
     "社会融资规模增量",
+    "恒生指数",
+    "沪深 300",
     "CPB 全球贸易量",
     "美国 ISM 制造业 PMI",
     "美国 ISM 服务业 PMI",
     "美国核心 PCE",
+    "美国 10 年期国债",
+    "美国 2 年期国债",
     "中国 R&D 经费强度",
     "中国居民发明专利申请",
     "高技术产品出口占比",
@@ -573,9 +548,9 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 4,
-    "current_valid": 27,
-    "stale": 10,
+    "new_update": 6,
+    "current_valid": 21,
+    "stale": 14,
     "missing": 17,
     "history_insufficient": 3
   },
@@ -599,7 +574,7 @@
     },
     "china_domestic_demand": {
       "dimension_name": "中国内需 / 居民需求",
-      "history_coverage": 0.83,
+      "history_coverage": 0.75,
       "history_insufficient_indicators": [
         "城镇调查失业率"
       ]

@@ -9,12 +9,11 @@
   "top_divergences": [],
   "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
   "next_watchlist": [
-    "美国就业",
-    "信用利差",
-    "VIX",
     "社融结构",
     "PPI",
-    "CPI"
+    "CPI",
+    "商品房销售",
+    "开发投资"
   ],
   "risk_notes": [
     "当前报告未包含 GPT 自然语言解读。",

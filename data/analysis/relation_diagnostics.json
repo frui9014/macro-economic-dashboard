@@ -6,7 +6,7 @@
     "relation_type": "formal",
     "evidence": [
       "中国生产 / 景气：生产平稳（0.23）",
-      "中国内需 / 居民需求：内需平稳（-0.37）"
+      "中国内需 / 居民需求：内需平稳（-0.23）"
     ],
     "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
     "confidence": "中",
@@ -20,7 +20,7 @@
     "relation_type": "watch",
     "evidence": [
       "信用扩张：信用偏弱（-0.62）",
-      "中国内需 / 居民需求：内需平稳（-0.37）"
+      "中国内需 / 居民需求：内需平稳（-0.23）"
     ],
     "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
     "confidence": "低",
@@ -48,7 +48,7 @@
     "relation_type": "formal",
     "evidence": [
       "中国生产 / 景气：生产平稳（0.23）",
-      "中国内需 / 居民需求：内需平稳（-0.37）",
+      "中国内需 / 居民需求：内需平稳（-0.23）",
       "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
     ],
     "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
@@ -73,16 +73,16 @@
   {
     "relation_id": "external_financial_pressure_vs_china_assets",
     "relation_name": "外部金融压力 vs 中国资产",
-    "conclusion": "外部条件与中国资产信号分化",
-    "relation_type": "formal",
+    "conclusion": "数据不足：外部条件与中国资产信号分化，暂不能形成关系判断。",
+    "relation_type": "insufficient",
     "evidence": [
-      "外部金融压力：外部金融中性（-0.43）",
-      "中国资产合成方向：-1"
+      "外部金融压力：外部金融中性（0.0）",
+      "中国资产合成方向：0"
     ],
     "risk_note": "市场价格反映预期，不能替代基本面数据。",
-    "confidence": "中",
-    "evidence_quality": "medium",
-    "can_enter_summary": true
+    "confidence": "低",
+    "evidence_quality": "weak",
+    "can_enter_summary": false
   },
   {
     "relation_id": "innovation_vs_hightech_exports",
