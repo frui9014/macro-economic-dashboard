@@ -1,7 +1,7 @@
 {
-  "one_sentence_summary": "多数关键维度证据不足或处于中性区间，当前暂难形成高置信度主判断。",
+  "one_sentence_summary": "当前更接近“供给强、需求弱”；主要支撑来自中国生产 / 景气。",
   "macro_state_labels": [
-    "数据分化、暂难判断"
+    "供给强、需求弱"
   ],
   "overall_tone": "中性",
   "dimension_interpretations": [],
@@ -9,11 +9,12 @@
   "top_divergences": [],
   "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
   "next_watchlist": [
+    "社会消费品零售",
+    "进口",
+    "就业",
     "社融结构",
     "PPI",
-    "CPI",
-    "商品房销售",
-    "开发投资"
+    "CPI"
   ],
   "risk_notes": [
     "当前报告未包含 GPT 自然语言解读。",

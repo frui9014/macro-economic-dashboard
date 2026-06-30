@@ -2,41 +2,42 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": 0.0,
+    "score": 0.22,
     "label": "外部金融中性",
-    "confidence": "中",
-    "evidence_quality": "medium",
+    "confidence": "高",
+    "evidence_quality": "strong",
     "can_enter_summary": false,
     "can_be_macro_state": true,
-    "coverage": 0.5,
-    "freshness": 0.6,
-    "agreement": 1.0,
-    "core_coverage": 0.75,
+    "coverage": 0.83,
+    "freshness": 1.0,
+    "agreement": 0.78,
+    "core_coverage": 1.0,
     "history_coverage": 1.0,
-    "usable_core_indicators": 3,
-    "available_core_indicators": 3,
+    "usable_core_indicators": 4,
+    "available_core_indicators": 4,
     "expected_core_indicators": 4,
-    "top_positive_drivers": [],
+    "top_positive_drivers": [
+      "美国 10 年期国债改善"
+    ],
     "top_negative_drivers": [],
     "updated_indicators": [
+      "美国 10 年期国债",
       "美元指数",
       "VIX",
-      "USD/CNY"
-    ],
-    "stale_indicators": [
-      "美国 10 年期国债",
+      "USD/CNY",
       "美国 2 年期国债"
     ],
+    "stale_indicators": [],
     "missing_indicators": [
       "cfets_rmb"
     ],
     "history_insufficient_indicators": [],
-    "short_explanation": "按核心/次要/辅助权重计算；3/4项核心指标在有效期内，3项可计算方向。"
+    "short_explanation": "按核心/次要/辅助权重计算；4/4项核心指标在有效期内，4项可计算方向。"
   },
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.12,
+    "score": 0.27,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -44,7 +45,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.15,
+    "agreement": 0.29,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -55,7 +56,6 @@
       "中国出口改善"
     ],
     "top_negative_drivers": [
-      "铜走弱",
       "美国非农新增就业走弱",
       "Brent 原油走弱"
     ],
@@ -75,15 +75,15 @@
   {
     "dimension_id": "china_production",
     "dimension_name": "中国生产 / 景气",
-    "score": 0.23,
-    "label": "生产平稳",
-    "confidence": "中",
-    "evidence_quality": "medium",
-    "can_enter_summary": false,
+    "score": 0.74,
+    "label": "生产景气改善",
+    "confidence": "高",
+    "evidence_quality": "strong",
+    "can_enter_summary": true,
     "can_be_macro_state": true,
     "coverage": 0.86,
     "freshness": 1.0,
-    "agreement": 0.26,
+    "agreement": 0.74,
     "core_coverage": 1.0,
     "history_coverage": 0.83,
     "usable_core_indicators": 3,
@@ -91,13 +91,14 @@
     "expected_core_indicators": 3,
     "top_positive_drivers": [
       "工业增加值改善",
-      "中国出口改善",
-      "中国非制造业 PMI改善"
+      "中国制造业 PMI改善",
+      "中国出口改善"
     ],
-    "top_negative_drivers": [
-      "中国制造业 PMI走弱"
+    "top_negative_drivers": [],
+    "updated_indicators": [
+      "中国制造业 PMI",
+      "中国非制造业 PMI"
     ],
-    "updated_indicators": [],
     "stale_indicators": [],
     "missing_indicators": [
       "china_pmi_composite"
@@ -110,17 +111,17 @@
   {
     "dimension_id": "china_domestic_demand",
     "dimension_name": "中国内需 / 居民需求",
-    "score": -0.23,
+    "score": -0.31,
     "label": "内需平稳",
     "confidence": "中",
     "evidence_quality": "medium",
     "can_enter_summary": false,
     "can_be_macro_state": true,
-    "coverage": 0.44,
-    "freshness": 0.67,
+    "coverage": 0.56,
+    "freshness": 0.83,
     "agreement": 0.0,
     "core_coverage": 1.0,
-    "history_coverage": 0.75,
+    "history_coverage": 0.8,
     "usable_core_indicators": 2,
     "available_core_indicators": 3,
     "expected_core_indicators": 3,
@@ -129,12 +130,14 @@
     ],
     "top_negative_drivers": [
       "社会消费品零售走弱",
-      "固定资产投资走弱"
+      "固定资产投资走弱",
+      "恒生指数走弱"
     ],
-    "updated_indicators": [],
-    "stale_indicators": [
-      "沪深 300",
+    "updated_indicators": [
       "恒生指数"
+    ],
+    "stale_indicators": [
+      "沪深 300"
     ],
     "missing_indicators": [
       "china_youth_unemployment",
@@ -224,7 +227,7 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": 0.2,
+    "score": 0.37,
     "label": "价格平稳 / 分化",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -232,7 +235,7 @@
     "can_be_macro_state": true,
     "coverage": 1.0,
     "freshness": 1.0,
-    "agreement": 0.46,
+    "agreement": 0.63,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -242,9 +245,7 @@
       "中国 CPI改善",
       "工业增加值改善"
     ],
-    "top_negative_drivers": [
-      "铜走弱"
-    ],
+    "top_negative_drivers": [],
     "updated_indicators": [
       "Brent 原油",
       "铜"
