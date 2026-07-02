@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.0,
+      "score": -0.13,
       "label": "外部金融中性",
       "confidence": "高",
       "evidence_quality": "strong",
@@ -12,14 +12,16 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 1.0,
+      "agreement": 0.87,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
       "top_positive_drivers": [],
-      "top_negative_drivers": [],
+      "top_negative_drivers": [
+        "美国 2 年期国债走弱"
+      ],
       "updated_indicators": [
         "美国 10 年期国债",
         "美元指数",
@@ -37,7 +39,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.34,
+      "score": 0.41,
       "label": "外需中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -45,7 +47,7 @@
       "can_be_macro_state": true,
       "coverage": 0.67,
       "freshness": 0.67,
-      "agreement": 0.37,
+      "agreement": 0.15,
       "core_coverage": 0.5,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -53,13 +55,17 @@
       "expected_core_indicators": 4,
       "top_positive_drivers": [
         "OECD G20 综合领先指标改善",
-        "中国出口改善"
+        "中国出口改善",
+        "美国失业率改善"
       ],
       "top_negative_drivers": [
-        "美国非农新增就业走弱"
+        "美国非农新增就业走弱",
+        "Brent 原油走弱"
       ],
       "updated_indicators": [
         "铜",
+        "美国非农新增就业",
+        "美国失业率",
         "Brent 原油"
       ],
       "stale_indicators": [
@@ -129,9 +135,7 @@
         "固定资产投资走弱",
         "恒生指数走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
         "沪深 300"
       ],
@@ -352,7 +356,7 @@
       "conclusion": "全球需求与中国出口尚未形成明确组合",
       "relation_type": "formal",
       "evidence": [
-        "全球需求 / 外需：外需中性（0.34）",
+        "全球需求 / 外需：外需中性（0.41）",
         "中国出口单项得分：1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -366,7 +370,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（0.0）",
+        "外部金融压力：外部金融中性（-0.13）",
         "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -455,7 +459,7 @@
       "title": "潜在背离：外需好于内需",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 0.65,
+      "score_gap": 0.72,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -539,7 +543,7 @@
       "title": "潜在背离：外需好于内需",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 0.65,
+      "score_gap": 0.72,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -560,58 +564,53 @@
   ],
   "important_data_updates": [
     {
-      "indicator": "中国制造业 PMI",
-      "date": "2026年06月份",
-      "score": 1
-    },
-    {
-      "indicator": "中国非制造业 PMI",
-      "date": "2026年06月份",
-      "score": 1
-    },
-    {
       "indicator": "USD/CNY",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "score": 0
     },
     {
-      "indicator": "恒生指数",
-      "date": "2026-06-30",
-      "score": -1
-    },
-    {
       "indicator": "中国 10 年期国债",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "score": null
     },
     {
+      "indicator": "美国失业率",
+      "date": "2026-06-01",
+      "score": 1
+    },
+    {
+      "indicator": "美国非农新增就业",
+      "date": "2026-06-01",
+      "score": -1
+    },
+    {
       "indicator": "美国 10 年期国债",
-      "date": "2026-06-30",
+      "date": "2026-07-01",
       "score": 0
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-06-30",
-      "score": 0
-    },
-    {
-      "indicator": "Brent 原油",
       "date": "2026-07-01",
       "score": -1
     },
     {
+      "indicator": "Brent 原油",
+      "date": "2026-07-02",
+      "score": -1
+    },
+    {
       "indicator": "VIX",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "score": 0
     },
     {
       "indicator": "铜",
-      "date": "2026-07-01",
+      "date": "2026-07-02",
       "score": 0
     }
   ],
@@ -646,8 +645,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 11,
-    "current_valid": 19,
+    "new_update": 10,
+    "current_valid": 20,
     "stale": 11,
     "missing": 17,
     "history_insufficient": 3
