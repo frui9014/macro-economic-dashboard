@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.13,
+    "score": 0.0,
     "label": "外部金融中性",
     "confidence": "高",
     "evidence_quality": "strong",
@@ -10,16 +10,14 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.87,
+    "agreement": 1.0,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
     "top_positive_drivers": [],
-    "top_negative_drivers": [
-      "美国 2 年期国债走弱"
-    ],
+    "top_negative_drivers": [],
     "updated_indicators": [
       "美国 10 年期国债",
       "美元指数",
@@ -37,7 +35,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.41,
+    "score": 0.49,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -45,7 +43,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.15,
+    "agreement": 0.22,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -57,13 +55,10 @@
       "美国失业率改善"
     ],
     "top_negative_drivers": [
-      "美国非农新增就业走弱",
-      "Brent 原油走弱"
+      "美国非农新增就业走弱"
     ],
     "updated_indicators": [
       "铜",
-      "美国非农新增就业",
-      "美国失业率",
       "Brent 原油"
     ],
     "stale_indicators": [
@@ -133,7 +128,9 @@
       "固定资产投资走弱",
       "恒生指数走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "恒生指数"
+    ],
     "stale_indicators": [
       "沪深 300"
     ],

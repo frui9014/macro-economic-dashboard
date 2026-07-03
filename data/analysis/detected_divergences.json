@@ -61,13 +61,13 @@
   },
   {
     "divergence_id": "external_demand_better_than_domestic",
-    "title": "潜在背离：外需好于内需",
-    "status": "potential_divergence",
-    "divergence_type": "potential_divergence",
-    "score_gap": 0.72,
-    "severity": "低",
-    "evidence_quality": "weak",
-    "can_enter_summary": false,
+    "title": "外需好于内需",
+    "status": "confirmed_divergence",
+    "divergence_type": "confirmed_divergence",
+    "score_gap": 0.8,
+    "severity": "中",
+    "evidence_quality": "medium",
+    "can_enter_summary": true,
     "evidence": [
       "外需中性",
       "内需平稳"
