@@ -21,11 +21,9 @@
       "top_positive_drivers": [],
       "top_negative_drivers": [],
       "updated_indicators": [
-        "美国 10 年期国债",
         "美元指数",
         "VIX",
-        "USD/CNY",
-        "美国 2 年期国债"
+        "USD/CNY"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -108,7 +106,7 @@
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": -0.31,
+      "score": -0.21,
       "label": "内需平稳",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -116,7 +114,7 @@
       "can_be_macro_state": true,
       "coverage": 0.56,
       "freshness": 0.83,
-      "agreement": 0.0,
+      "agreement": 0.1,
       "core_coverage": 1.0,
       "history_coverage": 0.8,
       "usable_core_indicators": 2,
@@ -127,8 +125,7 @@
       ],
       "top_negative_drivers": [
         "社会消费品零售走弱",
-        "固定资产投资走弱",
-        "恒生指数走弱"
+        "固定资产投资走弱"
       ],
       "updated_indicators": [
         "恒生指数"
@@ -297,7 +294,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产景气改善（0.74）",
-        "中国内需 / 居民需求：内需平稳（-0.31）"
+        "中国内需 / 居民需求：内需平稳（-0.21）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
       "confidence": "中",
@@ -311,7 +308,7 @@
       "relation_type": "watch",
       "evidence": [
         "信用扩张：信用偏弱（-0.62）",
-        "中国内需 / 居民需求：内需平稳（-0.31）"
+        "中国内需 / 居民需求：内需平稳（-0.21）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -339,7 +336,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产景气改善（0.74）",
-        "中国内需 / 居民需求：内需平稳（-0.31）",
+        "中国内需 / 居民需求：内需平稳（-0.21）",
         "价格 / 通胀通缩压力：价格平稳 / 分化（0.37）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
@@ -368,7 +365,7 @@
       "relation_type": "watch",
       "evidence": [
         "外部金融压力：外部金融中性（0.0）",
-        "中国资产合成方向：-1"
+        "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
       "confidence": "低",
@@ -396,7 +393,7 @@
       "title": "生产强，内需弱",
       "status": "confirmed_divergence",
       "divergence_type": "confirmed_divergence",
-      "score_gap": 1.05,
+      "score_gap": 0.95,
       "severity": "中",
       "evidence_quality": "medium",
       "can_enter_summary": true,
@@ -453,13 +450,13 @@
     },
     {
       "divergence_id": "external_demand_better_than_domestic",
-      "title": "外需好于内需",
-      "status": "confirmed_divergence",
-      "divergence_type": "confirmed_divergence",
-      "score_gap": 0.8,
-      "severity": "中",
-      "evidence_quality": "medium",
-      "can_enter_summary": true,
+      "title": "潜在背离：外需好于内需",
+      "status": "potential_divergence",
+      "divergence_type": "potential_divergence",
+      "score_gap": 0.7,
+      "severity": "低",
+      "evidence_quality": "weak",
+      "can_enter_summary": false,
       "evidence": [
         "外需中性",
         "内需平稳"
@@ -478,7 +475,7 @@
       "title": "生产强，内需弱",
       "status": "confirmed_divergence",
       "divergence_type": "confirmed_divergence",
-      "score_gap": 1.05,
+      "score_gap": 0.95,
       "severity": "中",
       "evidence_quality": "medium",
       "can_enter_summary": true,
@@ -491,26 +488,6 @@
         "社会消费品零售",
         "进口",
         "就业"
-      ]
-    },
-    {
-      "divergence_id": "external_demand_better_than_domestic",
-      "title": "外需好于内需",
-      "status": "confirmed_divergence",
-      "divergence_type": "confirmed_divergence",
-      "score_gap": 0.8,
-      "severity": "中",
-      "evidence_quality": "medium",
-      "can_enter_summary": true,
-      "evidence": [
-        "外需中性",
-        "内需平稳"
-      ],
-      "interpretation": "外需相关信号相对好于内需，可能意味着出口或海外周期对总需求形成支撑，但国内需求仍需验证。",
-      "what_to_watch_next": [
-        "出口",
-        "进口",
-        "社会消费品零售"
       ]
     }
   ],
@@ -554,45 +531,40 @@
         "开发投资",
         "PPI"
       ]
+    },
+    {
+      "divergence_id": "external_demand_better_than_domestic",
+      "title": "潜在背离：外需好于内需",
+      "status": "potential_divergence",
+      "divergence_type": "potential_divergence",
+      "score_gap": 0.7,
+      "severity": "低",
+      "evidence_quality": "weak",
+      "can_enter_summary": false,
+      "evidence": [
+        "外需中性",
+        "内需平稳"
+      ],
+      "interpretation": "外需相关信号相对好于内需，可能意味着出口或海外周期对总需求形成支撑，但国内需求仍需验证。",
+      "what_to_watch_next": [
+        "出口",
+        "进口",
+        "社会消费品零售"
+      ]
     }
   ],
   "candidate_macro_states": [
-    "供给强、需求弱"
+    "数据分化、暂难判断"
   ],
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-07-03",
+      "date": "2026-07-04",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-07-02",
-      "score": -1
-    },
-    {
-      "indicator": "中国 10 年期国债",
       "date": "2026-07-03",
-      "score": null
-    },
-    {
-      "indicator": "美国失业率",
-      "date": "2026-06-01",
-      "score": 1
-    },
-    {
-      "indicator": "美国非农新增就业",
-      "date": "2026-06-01",
-      "score": -1
-    },
-    {
-      "indicator": "美国 10 年期国债",
-      "date": "2026-07-02",
-      "score": 0
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-07-02",
       "score": 0
     },
     {
@@ -602,7 +574,7 @@
     },
     {
       "indicator": "VIX",
-      "date": "2026-07-03",
+      "date": "2026-07-02",
       "score": 0
     },
     {
@@ -647,8 +619,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 11,
-    "current_valid": 19,
+    "new_update": 6,
+    "current_valid": 24,
     "stale": 11,
     "missing": 17,
     "history_insufficient": 3
