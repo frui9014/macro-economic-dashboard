@@ -20,7 +20,6 @@
     "top_negative_drivers": [],
     "updated_indicators": [
       "美元指数",
-      "VIX",
       "USD/CNY"
     ],
     "stale_indicators": [],
@@ -55,10 +54,7 @@
     "top_negative_drivers": [
       "美国非农新增就业走弱"
     ],
-    "updated_indicators": [
-      "铜",
-      "Brent 原油"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
       "CPB 全球贸易量",
@@ -104,17 +100,17 @@
   {
     "dimension_id": "china_domestic_demand",
     "dimension_name": "中国内需 / 居民需求",
-    "score": -0.21,
+    "score": -0.28,
     "label": "内需平稳",
     "confidence": "中",
     "evidence_quality": "medium",
     "can_enter_summary": false,
     "can_be_macro_state": true,
-    "coverage": 0.56,
-    "freshness": 0.83,
-    "agreement": 0.1,
+    "coverage": 0.67,
+    "freshness": 1.0,
+    "agreement": 0.09,
     "core_coverage": 1.0,
-    "history_coverage": 0.8,
+    "history_coverage": 0.83,
     "usable_core_indicators": 2,
     "available_core_indicators": 3,
     "expected_core_indicators": 3,
@@ -123,14 +119,13 @@
     ],
     "top_negative_drivers": [
       "社会消费品零售走弱",
-      "固定资产投资走弱"
+      "固定资产投资走弱",
+      "沪深 300走弱"
     ],
     "updated_indicators": [
-      "恒生指数"
-    ],
-    "stale_indicators": [
       "沪深 300"
     ],
+    "stale_indicators": [],
     "missing_indicators": [
       "china_youth_unemployment",
       "china_fai_manufacturing",
@@ -238,10 +233,7 @@
       "工业增加值改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [
-      "Brent 原油",
-      "铜"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [],
     "missing_indicators": [],
     "history_insufficient_indicators": [],
