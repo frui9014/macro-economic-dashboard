@@ -4,7 +4,7 @@
     "title": "生产强，内需弱",
     "status": "confirmed_divergence",
     "divergence_type": "confirmed_divergence",
-    "score_gap": 0.97,
+    "score_gap": 0.95,
     "severity": "中",
     "evidence_quality": "medium",
     "can_enter_summary": true,
@@ -57,26 +57,6 @@
       "商品房销售",
       "开发投资",
       "PPI"
-    ]
-  },
-  {
-    "divergence_id": "external_demand_better_than_domestic",
-    "title": "潜在背离：外需好于内需",
-    "status": "potential_divergence",
-    "divergence_type": "potential_divergence",
-    "score_gap": 0.72,
-    "severity": "低",
-    "evidence_quality": "weak",
-    "can_enter_summary": false,
-    "evidence": [
-      "外需中性",
-      "内需平稳"
-    ],
-    "interpretation": "外需相关信号相对好于内需，可能意味着出口或海外周期对总需求形成支撑，但国内需求仍需验证。",
-    "what_to_watch_next": [
-      "出口",
-      "进口",
-      "社会消费品零售"
     ]
   }
 ]
