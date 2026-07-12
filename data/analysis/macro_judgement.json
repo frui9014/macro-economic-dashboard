@@ -9,10 +9,10 @@
   "top_divergences": [],
   "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
   "next_watchlist": [
-    "社会消费品零售",
-    "进口",
-    "就业",
-    "出口"
+    "美国 ISM 制造业 PMI",
+    "社会融资规模增量",
+    "房地产景气指数",
+    "中国 R&D 经费强度"
   ],
   "risk_notes": [
     "当前报告未包含 GPT 自然语言解读。",
