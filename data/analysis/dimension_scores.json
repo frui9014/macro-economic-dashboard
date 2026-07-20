@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": 0.0,
+    "score": -0.22,
     "label": "外部金融中性",
     "confidence": "高",
     "evidence_quality": "strong",
@@ -10,15 +10,19 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 1.0,
+    "agreement": 0.78,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
     "top_positive_drivers": [],
-    "top_negative_drivers": [],
+    "top_negative_drivers": [
+      "VIX走弱"
+    ],
     "updated_indicators": [
+      "美元指数",
+      "VIX",
       "USD/CNY"
     ],
     "stale_indicators": [],
@@ -31,7 +35,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.24,
+    "score": 0.32,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -39,7 +43,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.46,
+    "agreement": 0.39,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -47,13 +51,15 @@
     "expected_core_indicators": 4,
     "top_positive_drivers": [
       "中国出口改善",
-      "美国失业率改善"
+      "美国失业率改善",
+      "Brent 原油改善"
     ],
     "top_negative_drivers": [
       "美国非农新增就业走弱"
     ],
     "updated_indicators": [
-      "铜"
+      "铜",
+      "Brent 原油"
     ],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
@@ -125,7 +131,8 @@
       "沪深 300走弱"
     ],
     "updated_indicators": [
-      "沪深 300"
+      "沪深 300",
+      "恒生指数"
     ],
     "stale_indicators": [
       "城镇调查失业率"
@@ -216,7 +223,7 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": -0.09,
+    "score": 0.09,
     "label": "价格平稳 / 分化",
     "confidence": "高",
     "evidence_quality": "strong",
@@ -224,7 +231,7 @@
     "can_be_macro_state": true,
     "coverage": 1.0,
     "freshness": 1.0,
-    "agreement": 0.74,
+    "agreement": 0.91,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -233,10 +240,9 @@
     "top_positive_drivers": [
       "工业增加值改善"
     ],
-    "top_negative_drivers": [
-      "Brent 原油走弱"
-    ],
+    "top_negative_drivers": [],
     "updated_indicators": [
+      "Brent 原油",
       "铜"
     ],
     "stale_indicators": [],

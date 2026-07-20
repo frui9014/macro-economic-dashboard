@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-19",
+  "date": "2026-07-20",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.0,
+      "score": -0.22,
       "label": "外部金融中性",
       "confidence": "高",
       "evidence_quality": "strong",
@@ -12,15 +12,19 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 1.0,
+      "agreement": 0.78,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
       "top_positive_drivers": [],
-      "top_negative_drivers": [],
+      "top_negative_drivers": [
+        "VIX走弱"
+      ],
       "updated_indicators": [
+        "美元指数",
+        "VIX",
         "USD/CNY"
       ],
       "stale_indicators": [],
@@ -33,7 +37,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.24,
+      "score": 0.32,
       "label": "外需中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -41,7 +45,7 @@
       "can_be_macro_state": true,
       "coverage": 0.67,
       "freshness": 0.67,
-      "agreement": 0.46,
+      "agreement": 0.39,
       "core_coverage": 0.5,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -49,13 +53,15 @@
       "expected_core_indicators": 4,
       "top_positive_drivers": [
         "中国出口改善",
-        "美国失业率改善"
+        "美国失业率改善",
+        "Brent 原油改善"
       ],
       "top_negative_drivers": [
         "美国非农新增就业走弱"
       ],
       "updated_indicators": [
-        "铜"
+        "铜",
+        "Brent 原油"
       ],
       "stale_indicators": [
         "美国 ISM 制造业 PMI",
@@ -127,7 +133,8 @@
         "沪深 300走弱"
       ],
       "updated_indicators": [
-        "沪深 300"
+        "沪深 300",
+        "恒生指数"
       ],
       "stale_indicators": [
         "城镇调查失业率"
@@ -218,7 +225,7 @@
     {
       "dimension_id": "price_pressure",
       "dimension_name": "价格 / 通胀通缩压力",
-      "score": -0.09,
+      "score": 0.09,
       "label": "价格平稳 / 分化",
       "confidence": "高",
       "evidence_quality": "strong",
@@ -226,7 +233,7 @@
       "can_be_macro_state": true,
       "coverage": 1.0,
       "freshness": 1.0,
-      "agreement": 0.74,
+      "agreement": 0.91,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -235,10 +242,9 @@
       "top_positive_drivers": [
         "工业增加值改善"
       ],
-      "top_negative_drivers": [
-        "Brent 原油走弱"
-      ],
+      "top_negative_drivers": [],
       "updated_indicators": [
+        "Brent 原油",
         "铜"
       ],
       "stale_indicators": [],
@@ -333,7 +339,7 @@
       "evidence": [
         "中国生产 / 景气：生产平稳（0.49）",
         "中国内需 / 居民需求：内需改善（0.81）",
-        "价格 / 通胀通缩压力：价格平稳 / 分化（-0.09）"
+        "价格 / 通胀通缩压力：价格平稳 / 分化（0.09）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
       "confidence": "中",
@@ -346,7 +352,7 @@
       "conclusion": "全球需求与中国出口尚未形成明确组合",
       "relation_type": "formal",
       "evidence": [
-        "全球需求 / 外需：外需中性（0.24）",
+        "全球需求 / 外需：外需中性（0.32）",
         "中国出口单项得分：1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -360,7 +366,7 @@
       "conclusion": "外部条件与中国资产信号分化",
       "relation_type": "formal",
       "evidence": [
-        "外部金融压力：外部金融中性（0.0）",
+        "外部金融压力：外部金融中性（-0.22）",
         "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -392,17 +398,42 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-07-19",
+      "date": "2026-07-20",
       "score": 0
     },
     {
+      "indicator": "恒生指数",
+      "date": "2026-07-20",
+      "score": 1
+    },
+    {
       "indicator": "沪深 300",
-      "date": "2026-07-17",
+      "date": "2026-07-20",
       "score": -1
     },
     {
+      "indicator": "中国 10 年期国债",
+      "date": "2026-07-20",
+      "score": null
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-07-20",
+      "score": 1
+    },
+    {
+      "indicator": "VIX",
+      "date": "2026-07-20",
+      "score": -1
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-07-20",
+      "score": 0
+    },
+    {
       "indicator": "铜",
-      "date": "2026-07-17",
+      "date": "2026-07-20",
       "score": 0
     }
   ],
@@ -441,8 +472,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 3,
-    "current_valid": 23,
+    "new_update": 8,
+    "current_valid": 18,
     "stale": 15,
     "missing": 17,
     "history_insufficient": 0
