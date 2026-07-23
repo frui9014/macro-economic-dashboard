@@ -62,7 +62,7 @@
     "conclusion": "全球需求与中国出口尚未形成明确组合",
     "relation_type": "formal",
     "evidence": [
-      "全球需求 / 外需：外需中性（0.39）",
+      "全球需求 / 外需：外需中性（0.46）",
       "中国出口单项得分：1"
     ],
     "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -76,12 +76,12 @@
     "conclusion": "外部条件与中国资产信号分化",
     "relation_type": "formal",
     "evidence": [
-      "外部金融压力：外部金融中性（0.0）",
+      "外部金融压力：外部金融中性（-0.35）",
       "中国资产合成方向：1"
     ],
     "risk_note": "市场价格反映预期，不能替代基本面数据。",
-    "confidence": "高",
-    "evidence_quality": "strong",
+    "confidence": "中",
+    "evidence_quality": "medium",
     "can_enter_summary": true
   },
   {
