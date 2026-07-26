@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-25",
+  "date": "2026-07-26",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -24,11 +24,8 @@
         "美国 2 年期国债走弱"
       ],
       "updated_indicators": [
-        "美国 10 年期国债",
         "美元指数",
-        "VIX",
-        "USD/CNY",
-        "美国 2 年期国债"
+        "USD/CNY"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -63,8 +60,7 @@
         "美国非农新增就业走弱"
       ],
       "updated_indicators": [
-        "铜",
-        "Brent 原油"
+        "铜"
       ],
       "stale_indicators": [
         "美国 ISM 制造业 PMI",
@@ -246,7 +242,6 @@
       ],
       "top_negative_drivers": [],
       "updated_indicators": [
-        "Brent 原油",
         "铜"
       ],
       "stale_indicators": [],
@@ -442,37 +437,17 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-07-25",
+      "date": "2026-07-26",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-07-23",
-      "score": 1
-    },
-    {
-      "indicator": "美国 10 年期国债",
-      "date": "2026-07-24",
-      "score": -1
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-07-24",
-      "score": -1
-    },
-    {
-      "indicator": "Brent 原油",
       "date": "2026-07-24",
       "score": 1
-    },
-    {
-      "indicator": "VIX",
-      "date": "2026-07-23",
-      "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "score": 0
     },
     {
@@ -517,8 +492,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 8,
-    "current_valid": 17,
+    "new_update": 4,
+    "current_valid": 21,
     "stale": 16,
     "missing": 17,
     "history_insufficient": 0
