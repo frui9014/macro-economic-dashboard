@@ -2,10 +2,10 @@
   {
     "relation_id": "production_vs_domestic_demand",
     "relation_name": "生产 vs 内需",
-    "conclusion": "生产与内需共同改善，接近真复苏",
+    "conclusion": "生产与内需信号尚未形成明确共振",
     "relation_type": "formal",
     "evidence": [
-      "中国生产 / 景气：生产景气改善（1.0）",
+      "中国生产 / 景气：生产平稳（0.1）",
       "中国内需 / 居民需求：内需改善（0.81）"
     ],
     "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
@@ -47,7 +47,7 @@
     "conclusion": "增长与价格信号分化",
     "relation_type": "formal",
     "evidence": [
-      "中国生产 / 景气：生产景气改善（1.0）",
+      "中国生产 / 景气：生产平稳（0.1）",
       "中国内需 / 居民需求：内需改善（0.81）",
       "价格 / 通胀通缩压力：价格平稳 / 分化（0.26）"
     ],
