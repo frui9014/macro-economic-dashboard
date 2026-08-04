@@ -1,10 +1,10 @@
 {
-  "date": "2026-08-03",
+  "date": "2026-08-04",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.22,
+      "score": 0.43,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -12,7 +12,7 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.35,
+      "agreement": 0.57,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
@@ -22,13 +22,13 @@
         "美元指数改善",
         "USD/CNY改善"
       ],
-      "top_negative_drivers": [
-        "美国 10 年期国债走弱"
-      ],
+      "top_negative_drivers": [],
       "updated_indicators": [
+        "美国 10 年期国债",
         "美元指数",
         "VIX",
-        "USD/CNY"
+        "USD/CNY",
+        "美国 2 年期国债"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -40,7 +40,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.32,
+      "score": 0.39,
       "label": "外需中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -48,7 +48,7 @@
       "can_be_macro_state": true,
       "coverage": 0.67,
       "freshness": 0.67,
-      "agreement": 0.24,
+      "agreement": 0.32,
       "core_coverage": 0.5,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -60,8 +60,7 @@
         "美国失业率改善"
       ],
       "top_negative_drivers": [
-        "美国非农新增就业走弱",
-        "Brent 原油走弱"
+        "美国非农新增就业走弱"
       ],
       "updated_indicators": [
         "铜",
@@ -358,7 +357,7 @@
       "conclusion": "全球需求与中国出口尚未形成明确组合",
       "relation_type": "formal",
       "evidence": [
-        "全球需求 / 外需：外需中性（0.32）",
+        "全球需求 / 外需：外需中性（0.39）",
         "中国出口单项得分：1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -372,7 +371,7 @@
       "conclusion": "外部条件与中国资产信号分化",
       "relation_type": "formal",
       "evidence": [
-        "外部金融压力：外部金融中性（0.22）",
+        "外部金融压力：外部金融中性（0.43）",
         "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -446,42 +445,52 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": 1
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": 1
     },
     {
       "indicator": "沪深 300",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": -1
     },
     {
       "indicator": "中国 10 年期国债",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": null
     },
     {
-      "indicator": "Brent 原油",
+      "indicator": "美国 10 年期国债",
       "date": "2026-08-03",
+      "score": 0
+    },
+    {
+      "indicator": "美国 2 年期国债",
+      "date": "2026-08-03",
+      "score": 0
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-08-04",
       "score": 0
     },
     {
       "indicator": "VIX",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": 1
     },
     {
       "indicator": "铜",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "score": 1
     }
   ],
@@ -521,8 +530,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 8,
-    "current_valid": 17,
+    "new_update": 10,
+    "current_valid": 15,
     "stale": 16,
     "missing": 17,
     "history_insufficient": 0
