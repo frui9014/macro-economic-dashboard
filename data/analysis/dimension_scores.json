@@ -38,7 +38,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.39,
+    "score": 0.32,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -46,7 +46,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.32,
+    "agreement": 0.24,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -58,7 +58,8 @@
       "美国失业率改善"
     ],
     "top_negative_drivers": [
-      "美国非农新增就业走弱"
+      "美国非农新增就业走弱",
+      "Brent 原油走弱"
     ],
     "updated_indicators": [
       "铜",
@@ -112,7 +113,7 @@
   {
     "dimension_id": "china_domestic_demand",
     "dimension_name": "中国内需 / 居民需求",
-    "score": 0.81,
+    "score": 0.72,
     "label": "内需改善",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -120,7 +121,7 @@
     "can_be_macro_state": true,
     "coverage": 0.56,
     "freshness": 0.83,
-    "agreement": 0.91,
+    "agreement": 0.81,
     "core_coverage": 0.67,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
