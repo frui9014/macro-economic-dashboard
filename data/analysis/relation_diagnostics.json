@@ -76,12 +76,12 @@
     "conclusion": "外部条件与中国资产信号分化",
     "relation_type": "formal",
     "evidence": [
-      "外部金融压力：外部金融中性（0.43）",
+      "外部金融压力：外部金融中性（0.22）",
       "中国资产合成方向：-1"
     ],
     "risk_note": "市场价格反映预期，不能替代基本面数据。",
-    "confidence": "中",
-    "evidence_quality": "medium",
+    "confidence": "高",
+    "evidence_quality": "strong",
     "can_enter_summary": true
   },
   {
