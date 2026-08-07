@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": 0.22,
+    "score": 0.0,
     "label": "外部金融中性",
     "confidence": "高",
     "evidence_quality": "strong",
@@ -10,15 +10,13 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.78,
+    "agreement": 1.0,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
-    "top_positive_drivers": [
-      "USD/CNY改善"
-    ],
+    "top_positive_drivers": [],
     "top_negative_drivers": [],
     "updated_indicators": [
       "美国 10 年期国债",
@@ -37,7 +35,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.32,
+    "score": -0.17,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -52,15 +50,16 @@
     "available_core_indicators": 2,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
-      "中国出口改善",
       "铜改善",
       "美国失业率改善"
     ],
     "top_negative_drivers": [
+      "中国出口走弱",
       "美国非农新增就业走弱",
       "Brent 原油走弱"
     ],
     "updated_indicators": [
+      "中国出口",
       "铜",
       "Brent 原油"
     ],
@@ -76,7 +75,7 @@
   {
     "dimension_id": "china_production",
     "dimension_name": "中国生产 / 景气",
-    "score": 0.1,
+    "score": -0.31,
     "label": "生产平稳",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -91,14 +90,16 @@
     "available_core_indicators": 2,
     "expected_core_indicators": 3,
     "top_positive_drivers": [
-      "工业增加值改善",
-      "中国出口改善"
+      "工业增加值改善"
     ],
     "top_negative_drivers": [
       "中国制造业 PMI走弱",
+      "中国出口走弱",
       "中国非制造业 PMI走弱"
     ],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "中国出口"
+    ],
     "stale_indicators": [
       "中国实际 GDP 增速",
       "高技术制造业增加值"
@@ -112,15 +113,15 @@
   {
     "dimension_id": "china_domestic_demand",
     "dimension_name": "中国内需 / 居民需求",
-    "score": 0.72,
-    "label": "内需改善",
+    "score": 0.19,
+    "label": "内需平稳",
     "confidence": "中",
     "evidence_quality": "medium",
-    "can_enter_summary": true,
+    "can_enter_summary": false,
     "can_be_macro_state": true,
     "coverage": 0.56,
     "freshness": 0.83,
-    "agreement": 0.81,
+    "agreement": 0.19,
     "core_coverage": 0.67,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -128,13 +129,13 @@
     "expected_core_indicators": 3,
     "top_positive_drivers": [
       "社会消费品零售改善",
-      "中国进口改善",
       "固定资产投资改善"
     ],
     "top_negative_drivers": [
-      "沪深 300走弱"
+      "中国进口走弱"
     ],
     "updated_indicators": [
+      "中国进口",
       "沪深 300",
       "恒生指数"
     ],
