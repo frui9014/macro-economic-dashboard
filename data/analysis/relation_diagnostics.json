@@ -16,10 +16,10 @@
   {
     "relation_id": "credit_vs_domestic_demand",
     "relation_name": "信用 vs 内需",
-    "conclusion": "数据不足：信用与内需结构分化或处于中性区间，暂不能形成关系判断。",
-    "relation_type": "insufficient",
+    "conclusion": "观察信号：信用与内需结构分化或处于中性区间；暂不作为主判断，仍需后续数据确认。",
+    "relation_type": "watch",
     "evidence": [
-      "信用扩张：信用中性 / 结构分化（None）",
+      "信用扩张：信用偏弱（-1.0）",
       "中国内需 / 居民需求：内需平稳（0.21）"
     ],
     "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
@@ -30,10 +30,10 @@
   {
     "relation_id": "credit_vs_real_estate",
     "relation_name": "信用 vs 地产",
-    "conclusion": "数据不足：信用与地产均未形成明确方向，暂不能形成关系判断。",
-    "relation_type": "insufficient",
+    "conclusion": "观察信号：地产与融资需求均弱；暂不作为主判断，仍需后续数据确认。",
+    "relation_type": "watch",
     "evidence": [
-      "信用扩张：信用中性 / 结构分化（None）",
+      "信用扩张：信用偏弱（-1.0）",
       "地产周期：地产信号偏弱，但证据不足（-1.0）"
     ],
     "risk_note": "缺少贷款结构时，不能确认资金最终流向。",
@@ -62,7 +62,7 @@
     "conclusion": "全球需求与中国出口尚未形成明确组合",
     "relation_type": "formal",
     "evidence": [
-      "全球需求 / 外需：外需中性（-0.17）",
+      "全球需求 / 外需：外需中性（-0.24）",
       "中国出口单项得分：-1"
     ],
     "risk_note": "出口还会受到价格、基数和贸易结构影响。",
