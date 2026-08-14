@@ -9,12 +9,9 @@
   "top_divergences": [],
   "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
   "next_watchlist": [
-    "美国 ISM 制造业 PMI",
-    "工业增加值",
-    "社会消费品零售",
-    "社会融资规模增量",
-    "70 城新房价格",
-    "中国 R&D 经费强度"
+    "社融结构",
+    "PPI",
+    "CPI"
   ],
   "risk_notes": [
     "当前报告未包含 GPT 自然语言解读。",
