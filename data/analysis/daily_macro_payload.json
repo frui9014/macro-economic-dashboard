@@ -1,10 +1,10 @@
 {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.0,
+      "score": 0.22,
       "label": "外部金融中性",
       "confidence": "高",
       "evidence_quality": "strong",
@@ -12,13 +12,15 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 1.0,
+      "agreement": 0.78,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
-      "top_positive_drivers": [],
+      "top_positive_drivers": [
+        "美元指数改善"
+      ],
       "top_negative_drivers": [],
       "updated_indicators": [
         "美国 10 年期国债",
@@ -116,7 +118,7 @@
       "can_enter_summary": false,
       "can_be_macro_state": true,
       "coverage": 0.44,
-      "freshness": 0.67,
+      "freshness": 0.8,
       "agreement": 0.1,
       "core_coverage": 0.67,
       "history_coverage": 1.0,
@@ -134,13 +136,13 @@
         "恒生指数"
       ],
       "stale_indicators": [
-        "城镇调查失业率",
-        "沪深 300"
+        "城镇调查失业率"
       ],
       "missing_indicators": [
         "china_youth_unemployment",
         "china_fai_manufacturing",
-        "china_fai_infrastructure"
+        "china_fai_infrastructure",
+        "csi300"
       ],
       "history_insufficient_indicators": [],
       "short_explanation": "按核心/次要/辅助权重计算；2/3项核心指标在有效期内，2项可计算方向。"
@@ -366,7 +368,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（0.0）",
+        "外部金融压力：外部金融中性（0.22）",
         "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -480,47 +482,47 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": 0
     },
     {
       "indicator": "中国 10 年期国债",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": null
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-08-17",
+      "date": "2026-08-18",
       "score": 0
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-08-17",
+      "date": "2026-08-18",
       "score": 0
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": 0
     },
     {
       "indicator": "VIX",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-08-18",
-      "score": 0
+      "date": "2026-08-19",
+      "score": 1
     },
     {
       "indicator": "铜",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "score": 0
     }
   ],
@@ -530,7 +532,6 @@
     "城镇调查失业率",
     "房地产景气指数",
     "社会融资规模增量",
-    "沪深 300",
     "CPB 全球贸易量",
     "OECD G20 综合领先指标",
     "美国 ISM 制造业 PMI",
@@ -547,6 +548,7 @@
     "china_youth_unemployment",
     "china_fai_manufacturing",
     "china_fai_infrastructure",
+    "csi300",
     "china_corp_long_loans",
     "china_household_long_loans",
     "china_gov_bonds",
@@ -562,8 +564,8 @@
   "data_status_summary": {
     "new_update": 9,
     "current_valid": 16,
-    "stale": 16,
-    "missing": 17,
+    "stale": 15,
+    "missing": 18,
     "history_insufficient": 0
   },
   "history_coverage": {
