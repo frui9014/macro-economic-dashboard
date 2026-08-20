@@ -1,5 +1,25 @@
 [
   {
+    "divergence_id": "assets_strong_fundamentals_weak",
+    "title": "潜在背离：股市强但基本面弱",
+    "status": "potential_divergence",
+    "divergence_type": "potential_divergence",
+    "score_gap": 0.62,
+    "severity": "低",
+    "evidence_quality": "weak",
+    "can_enter_summary": false,
+    "evidence": [
+      "内需平稳",
+      "地产信号偏弱，但证据不足"
+    ],
+    "interpretation": "市场上涨可能更多来自政策预期、流动性或风险偏好，而非基本面全面改善。",
+    "what_to_watch_next": [
+      "消费",
+      "地产销售",
+      "信用结构"
+    ]
+  },
+  {
     "divergence_id": "credit_weak_price_stable",
     "title": "潜在背离：信用偏弱但价格信号相对平稳",
     "status": "potential_divergence",
