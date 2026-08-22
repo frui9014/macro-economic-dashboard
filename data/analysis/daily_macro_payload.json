@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-22",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -135,9 +135,7 @@
         "社会消费品零售走弱",
         "中国进口走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
         "城镇调查失业率"
       ],
@@ -525,27 +523,17 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-08-21",
+      "date": "2026-08-22",
       "score": 1
-    },
-    {
-      "indicator": "恒生指数",
-      "date": "2026-08-21",
-      "score": 1
-    },
-    {
-      "indicator": "中国 10 年期国债",
-      "date": "2026-08-21",
-      "score": null
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "score": 0
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-08-20",
+      "date": "2026-08-21",
       "score": 0
     },
     {
@@ -605,8 +593,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 9,
-    "current_valid": 16,
+    "new_update": 7,
+    "current_valid": 18,
     "stale": 15,
     "missing": 18,
     "history_insufficient": 0
