@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -486,52 +486,52 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": -1
     },
     {
       "indicator": "沪深 300",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": -1
     },
     {
       "indicator": "中国 10 年期国债",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": null
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-09-01",
+      "date": "2026-09-02",
       "score": -1
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-09-01",
+      "date": "2026-09-02",
       "score": -1
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": 1
     },
     {
       "indicator": "VIX",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": 0
     },
     {
       "indicator": "铜",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "score": 0
     }
   ],
