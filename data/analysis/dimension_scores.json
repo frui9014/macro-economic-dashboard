@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.35,
+    "score": 0.09,
     "label": "外部金融中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -10,13 +10,16 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.65,
+    "agreement": 0.22,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
-    "top_positive_drivers": [],
+    "top_positive_drivers": [
+      "美元指数改善",
+      "USD/CNY改善"
+    ],
     "top_negative_drivers": [
       "美国 10 年期国债走弱",
       "美国 2 年期国债走弱"
@@ -38,7 +41,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": -0.23,
+    "score": 0.16,
     "label": "外需中性",
     "confidence": "低",
     "evidence_quality": "weak",
@@ -53,15 +56,17 @@
     "available_core_indicators": 1,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
-      "美国失业率改善",
+      "铜改善",
+      "美国非农新增就业改善",
       "Brent 原油改善"
     ],
     "top_negative_drivers": [
-      "中国出口走弱",
-      "美国非农新增就业走弱"
+      "中国出口走弱"
     ],
     "updated_indicators": [
       "铜",
+      "美国非农新增就业",
+      "美国失业率",
       "Brent 原油"
     ],
     "stale_indicators": [
@@ -112,7 +117,7 @@
   {
     "dimension_id": "china_domestic_demand",
     "dimension_name": "中国内需 / 居民需求",
-    "score": -0.62,
+    "score": -0.53,
     "label": "内需偏弱",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -120,7 +125,7 @@
     "can_be_macro_state": true,
     "coverage": 0.56,
     "freshness": 0.83,
-    "agreement": 0.81,
+    "agreement": 0.72,
     "core_coverage": 0.67,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -227,7 +232,7 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": 0.2,
+    "score": 0.37,
     "label": "价格平稳 / 分化",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -235,14 +240,15 @@
     "can_be_macro_state": true,
     "coverage": 1.0,
     "freshness": 1.0,
-    "agreement": 0.63,
+    "agreement": 0.46,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
     "available_core_indicators": 2,
     "expected_core_indicators": 2,
     "top_positive_drivers": [
-      "中国 PPI改善"
+      "中国 PPI改善",
+      "铜改善"
     ],
     "top_negative_drivers": [
       "工业增加值走弱"
