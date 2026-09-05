@@ -1,31 +1,27 @@
 {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.09,
+      "score": 0.22,
       "label": "外部金融中性",
-      "confidence": "中",
-      "evidence_quality": "medium",
+      "confidence": "高",
+      "evidence_quality": "strong",
       "can_enter_summary": false,
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.22,
+      "agreement": 0.78,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
       "top_positive_drivers": [
-        "美元指数改善",
-        "USD/CNY改善"
+        "美元指数改善"
       ],
-      "top_negative_drivers": [
-        "美国 10 年期国债走弱",
-        "美国 2 年期国债走弱"
-      ],
+      "top_negative_drivers": [],
       "updated_indicators": [
         "美国 10 年期国债",
         "美元指数",
@@ -43,7 +39,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.16,
+      "score": -0.03,
       "label": "外需中性",
       "confidence": "低",
       "evidence_quality": "weak",
@@ -51,14 +47,13 @@
       "can_be_macro_state": false,
       "coverage": 0.56,
       "freshness": 0.56,
-      "agreement": 0.19,
+      "agreement": 0.39,
       "core_coverage": 0.25,
       "history_coverage": 1.0,
       "usable_core_indicators": 1,
       "available_core_indicators": 1,
       "expected_core_indicators": 4,
       "top_positive_drivers": [
-        "铜改善",
         "美国非农新增就业改善",
         "Brent 原油改善"
       ],
@@ -67,8 +62,6 @@
       ],
       "updated_indicators": [
         "铜",
-        "美国非农新增就业",
-        "美国失业率",
         "Brent 原油"
       ],
       "stale_indicators": [
@@ -119,15 +112,15 @@
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": -0.53,
-      "label": "内需偏弱",
+      "score": -0.48,
+      "label": "内需平稳",
       "confidence": "中",
       "evidence_quality": "medium",
-      "can_enter_summary": true,
+      "can_enter_summary": false,
       "can_be_macro_state": true,
-      "coverage": 0.56,
-      "freshness": 0.83,
-      "agreement": 0.72,
+      "coverage": 0.44,
+      "freshness": 0.67,
+      "agreement": 0.1,
       "core_coverage": 0.67,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -138,15 +131,12 @@
       ],
       "top_negative_drivers": [
         "社会消费品零售走弱",
-        "中国进口走弱",
-        "沪深 300走弱"
+        "中国进口走弱"
       ],
-      "updated_indicators": [
-        "沪深 300",
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
-        "城镇调查失业率"
+        "城镇调查失业率",
+        "沪深 300"
       ],
       "missing_indicators": [
         "china_youth_unemployment",
@@ -234,7 +224,7 @@
     {
       "dimension_id": "price_pressure",
       "dimension_name": "价格 / 通胀通缩压力",
-      "score": 0.37,
+      "score": 0.2,
       "label": "价格平稳 / 分化",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -242,15 +232,14 @@
       "can_be_macro_state": true,
       "coverage": 1.0,
       "freshness": 1.0,
-      "agreement": 0.46,
+      "agreement": 0.63,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
       "available_core_indicators": 2,
       "expected_core_indicators": 2,
       "top_positive_drivers": [
-        "中国 PPI改善",
-        "铜改善"
+        "中国 PPI改善"
       ],
       "top_negative_drivers": [
         "工业增加值走弱"
@@ -308,7 +297,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产平稳（-0.21）",
-        "中国内需 / 居民需求：内需偏弱（-0.53）"
+        "中国内需 / 居民需求：内需平稳（-0.48）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
       "confidence": "中",
@@ -322,7 +311,7 @@
       "relation_type": "watch",
       "evidence": [
         "信用扩张：信用中性 / 结构分化（-0.37）",
-        "中国内需 / 居民需求：内需偏弱（-0.53）"
+        "中国内需 / 居民需求：内需平稳（-0.48）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -350,8 +339,8 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产平稳（-0.21）",
-        "中国内需 / 居民需求：内需偏弱（-0.53）",
-        "价格 / 通胀通缩压力：价格平稳 / 分化（0.37）"
+        "中国内需 / 居民需求：内需平稳（-0.48）",
+        "价格 / 通胀通缩压力：价格平稳 / 分化（0.2）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
       "confidence": "中",
@@ -364,7 +353,7 @@
       "conclusion": "观察信号：全球需求与中国出口尚未形成明确组合；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "全球需求 / 外需：外需中性（0.16）",
+        "全球需求 / 外需：外需中性（-0.03）",
         "中国出口单项得分：-1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -375,16 +364,16 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "外部条件与中国资产信号分化",
-      "relation_type": "formal",
+      "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（0.09）",
-        "中国资产合成方向：-1"
+        "外部金融压力：外部金融中性（0.22）",
+        "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
-      "confidence": "中",
-      "evidence_quality": "medium",
-      "can_enter_summary": true
+      "confidence": "低",
+      "evidence_quality": "weak",
+      "can_enter_summary": false
     },
     {
       "relation_id": "innovation_vs_hightech_exports",
@@ -407,7 +396,7 @@
       "title": "潜在背离：信用偏弱但价格信号相对平稳",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 0.74,
+      "score_gap": 0.57,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -427,7 +416,7 @@
       "title": "潜在背离：地产偏弱但价格信号相对平稳",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 1.37,
+      "score_gap": 1.2,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -450,7 +439,7 @@
       "title": "潜在背离：信用偏弱但价格信号相对平稳",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 0.74,
+      "score_gap": 0.57,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -470,7 +459,7 @@
       "title": "潜在背离：地产偏弱但价格信号相对平稳",
       "status": "potential_divergence",
       "divergence_type": "potential_divergence",
-      "score_gap": 1.37,
+      "score_gap": 1.2,
       "severity": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
@@ -492,43 +481,18 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-09-04",
-      "score": 1
-    },
-    {
-      "indicator": "恒生指数",
-      "date": "2026-09-04",
+      "date": "2026-09-05",
       "score": 0
-    },
-    {
-      "indicator": "沪深 300",
-      "date": "2026-09-04",
-      "score": -1
-    },
-    {
-      "indicator": "中国 10 年期国债",
-      "date": "2026-09-04",
-      "score": null
-    },
-    {
-      "indicator": "美国失业率",
-      "date": "2026-08-01",
-      "score": 0
-    },
-    {
-      "indicator": "美国非农新增就业",
-      "date": "2026-08-01",
-      "score": 1
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-09-03",
-      "score": -1
+      "date": "2026-09-04",
+      "score": 0
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-09-03",
-      "score": -1
+      "date": "2026-09-04",
+      "score": 0
     },
     {
       "indicator": "Brent 原油",
@@ -548,7 +512,7 @@
     {
       "indicator": "铜",
       "date": "2026-09-04",
-      "score": 1
+      "score": 0
     }
   ],
   "missing_or_stale_data": [
@@ -557,6 +521,7 @@
     "城镇调查失业率",
     "房地产景气指数",
     "社会融资规模增量",
+    "沪深 300",
     "CPB 全球贸易量",
     "OECD G20 综合领先指标",
     "美国 ISM 制造业 PMI",
@@ -586,9 +551,9 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 12,
-    "current_valid": 14,
-    "stale": 15,
+    "new_update": 7,
+    "current_valid": 18,
+    "stale": 16,
     "missing": 17,
     "history_insufficient": 0
   },
