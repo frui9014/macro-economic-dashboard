@@ -1,10 +1,10 @@
 {
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.0,
+      "score": -0.35,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -12,17 +12,19 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.57,
+      "agreement": 0.22,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
       "top_positive_drivers": [
-        "美元指数改善"
+        "USD/CNY改善"
       ],
       "top_negative_drivers": [
-        "VIX走弱"
+        "美国 10 年期国债走弱",
+        "VIX走弱",
+        "美国 2 年期国债走弱"
       ],
       "updated_indicators": [
         "美国 10 年期国债",
@@ -371,7 +373,7 @@
       "conclusion": "外部条件与中国资产信号分化",
       "relation_type": "formal",
       "evidence": [
-        "外部金融压力：外部金融中性（0.0）",
+        "外部金融压力：外部金融中性（-0.35）",
         "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -485,52 +487,62 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-09-10",
-      "score": 0
+      "date": "2026-09-11",
+      "score": 1
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "score": -1
     },
     {
       "indicator": "沪深 300",
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "score": -1
     },
     {
       "indicator": "中国 10 年期国债",
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "score": null
     },
     {
-      "indicator": "美国 10 年期国债",
-      "date": "2026-09-09",
-      "score": 0
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-09-09",
-      "score": 0
-    },
-    {
-      "indicator": "Brent 原油",
-      "date": "2026-09-10",
+      "indicator": "美国 CPI",
+      "date": "2026-08-01",
       "score": 1
     },
     {
-      "indicator": "VIX",
+      "indicator": "美国核心 CPI",
+      "date": "2026-08-01",
+      "score": 0
+    },
+    {
+      "indicator": "美国 10 年期国债",
       "date": "2026-09-10",
       "score": -1
     },
     {
-      "indicator": "美元指数",
+      "indicator": "美国 2 年期国债",
       "date": "2026-09-10",
+      "score": -1
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-09-11",
       "score": 1
     },
     {
+      "indicator": "VIX",
+      "date": "2026-09-11",
+      "score": -1
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-09-11",
+      "score": 0
+    },
+    {
       "indicator": "铜",
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "score": 0
     }
   ],
@@ -568,8 +580,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 10,
-    "current_valid": 17,
+    "new_update": 12,
+    "current_valid": 15,
     "stale": 14,
     "missing": 17,
     "history_insufficient": 0
