@@ -23,11 +23,7 @@
       "美国 2 年期国债走弱"
     ],
     "updated_indicators": [
-      "美国 10 年期国债",
-      "美元指数",
-      "VIX",
-      "USD/CNY",
-      "美国 2 年期国债"
+      "USD/CNY"
     ],
     "stale_indicators": [],
     "missing_indicators": [
@@ -39,7 +35,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.32,
+    "score": 0.46,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -47,7 +43,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.39,
+    "agreement": 0.54,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -58,12 +54,9 @@
       "美国非农新增就业改善",
       "Brent 原油改善"
     ],
-    "top_negative_drivers": [
-      "铜走弱"
-    ],
+    "top_negative_drivers": [],
     "updated_indicators": [
-      "铜",
-      "Brent 原油"
+      "铜"
     ],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
@@ -223,7 +216,7 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": 0.12,
+    "score": 0.31,
     "label": "价格平稳 / 分化",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -231,7 +224,7 @@
     "can_be_macro_state": true,
     "coverage": 0.8,
     "freshness": 0.8,
-    "agreement": 0.5,
+    "agreement": 0.69,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -240,11 +233,8 @@
     "top_positive_drivers": [
       "中国 CPI改善"
     ],
-    "top_negative_drivers": [
-      "铜走弱"
-    ],
+    "top_negative_drivers": [],
     "updated_indicators": [
-      "Brent 原油",
       "铜"
     ],
     "stale_indicators": [
