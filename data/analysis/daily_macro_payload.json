@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.0,
-      "label": "外部金融中性",
+      "score": -0.57,
+      "label": "外部金融逆风",
       "confidence": "中",
       "evidence_quality": "medium",
-      "can_enter_summary": false,
+      "can_enter_summary": true,
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
@@ -18,11 +18,11 @@
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
-      "top_positive_drivers": [
-        "VIX改善"
-      ],
+      "top_positive_drivers": [],
       "top_negative_drivers": [
-        "美元指数走弱"
+        "美国 10 年期国债走弱",
+        "美元指数走弱",
+        "美国 2 年期国债走弱"
       ],
       "updated_indicators": [
         "美国 10 年期国债",
@@ -41,7 +41,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.61,
+      "score": 0.71,
       "label": "外需顺风",
       "confidence": "低",
       "evidence_quality": "weak",
@@ -60,9 +60,7 @@
         "铜改善",
         "美国非农新增就业改善"
       ],
-      "top_negative_drivers": [
-        "Brent 原油走弱"
-      ],
+      "top_negative_drivers": [],
       "updated_indicators": [
         "铜",
         "Brent 原油"
@@ -358,7 +356,7 @@
       "conclusion": "观察信号：全球需求与中国出口共同走强，外需顺风；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "全球需求 / 外需：外需顺风（0.61）",
+        "全球需求 / 外需：外需顺风（0.71）",
         "中国出口单项得分：1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -372,7 +370,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（0.0）",
+        "外部金融压力：外部金融逆风（-0.57）",
         "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -441,52 +439,53 @@
     }
   ],
   "candidate_macro_states": [
+    "外部逆风",
     "数据分化、暂难判断"
   ],
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-09-23",
+      "date": "2026-09-24",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-09-23",
+      "date": "2026-09-24",
       "score": 0
     },
     {
       "indicator": "中国 10 年期国债",
-      "date": "2026-09-23",
+      "date": "2026-09-24",
       "score": null
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-09-22",
-      "score": 0
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-09-22",
-      "score": 0
-    },
-    {
-      "indicator": "Brent 原油",
-      "date": "2026-09-23",
-      "score": 0
-    },
-    {
-      "indicator": "VIX",
-      "date": "2026-09-23",
-      "score": 1
-    },
-    {
-      "indicator": "美元指数",
       "date": "2026-09-23",
       "score": -1
     },
     {
-      "indicator": "铜",
+      "indicator": "美国 2 年期国债",
       "date": "2026-09-23",
+      "score": -1
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-09-24",
+      "score": 0
+    },
+    {
+      "indicator": "VIX",
+      "date": "2026-09-24",
+      "score": 0
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-09-24",
+      "score": -1
+    },
+    {
+      "indicator": "铜",
+      "date": "2026-09-24",
       "score": 1
     }
   ],
