@@ -59,10 +59,10 @@
   {
     "relation_id": "global_demand_vs_china_exports",
     "relation_name": "全球需求 vs 中国出口",
-    "conclusion": "全球需求与中国出口尚未形成明确组合",
+    "conclusion": "全球需求与中国出口共同走强，外需顺风",
     "relation_type": "formal",
     "evidence": [
-      "全球需求 / 外需：外需中性（0.46）",
+      "全球需求 / 外需：外需顺风（0.54）",
       "中国出口单项得分：1"
     ],
     "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -73,10 +73,10 @@
   {
     "relation_id": "external_financial_pressure_vs_china_assets",
     "relation_name": "外部金融压力 vs 中国资产",
-    "conclusion": "观察信号：外部压力与中国资产走弱共振；暂不作为主判断，仍需后续数据确认。",
+    "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
     "relation_type": "watch",
     "evidence": [
-      "外部金融压力：外部金融逆风（-0.57）",
+      "外部金融压力：外部金融中性（-0.43）",
       "中国资产合成方向：-1"
     ],
     "risk_note": "市场价格反映预期，不能替代基本面数据。",
