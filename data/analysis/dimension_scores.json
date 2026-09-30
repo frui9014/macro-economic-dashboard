@@ -74,7 +74,7 @@
   {
     "dimension_id": "china_production",
     "dimension_name": "中国生产 / 景气",
-    "score": 0.9,
+    "score": 1.0,
     "label": "生产景气改善",
     "confidence": "高",
     "evidence_quality": "strong",
@@ -82,7 +82,7 @@
     "can_be_macro_state": true,
     "coverage": 0.71,
     "freshness": 0.83,
-    "agreement": 0.9,
+    "agreement": 1.0,
     "core_coverage": 0.67,
     "history_coverage": 0.8,
     "usable_core_indicators": 2,
@@ -94,7 +94,10 @@
       "中国出口改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [],
+    "updated_indicators": [
+      "中国制造业 PMI",
+      "中国非制造业 PMI"
+    ],
     "stale_indicators": [
       "中国实际 GDP 增速"
     ],
