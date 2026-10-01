@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.57,
+    "score": -0.65,
     "label": "外部金融逆风",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -10,7 +10,7 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.57,
+    "agreement": 0.65,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
@@ -20,7 +20,7 @@
     "top_negative_drivers": [
       "美国 10 年期国债走弱",
       "美元指数走弱",
-      "美国 2 年期国债走弱"
+      "VIX走弱"
     ],
     "updated_indicators": [
       "美国 10 年期国债",
@@ -39,7 +39,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.39,
+    "score": 0.32,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -47,7 +47,7 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.61,
+    "agreement": 0.54,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
@@ -57,7 +57,9 @@
       "中国出口改善",
       "美国非农新增就业改善"
     ],
-    "top_negative_drivers": [],
+    "top_negative_drivers": [
+      "Brent 原油走弱"
+    ],
     "updated_indicators": [
       "铜",
       "Brent 原油"
@@ -94,10 +96,7 @@
       "中国出口改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [
-      "中国制造业 PMI",
-      "中国非制造业 PMI"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "中国实际 GDP 增速"
     ],
