@@ -2,15 +2,15 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.65,
-    "label": "外部金融逆风",
+    "score": -0.43,
+    "label": "外部金融中性",
     "confidence": "中",
     "evidence_quality": "medium",
-    "can_enter_summary": true,
+    "can_enter_summary": false,
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.65,
+    "agreement": 0.57,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
@@ -19,8 +19,7 @@
     "top_positive_drivers": [],
     "top_negative_drivers": [
       "美国 10 年期国债走弱",
-      "美元指数走弱",
-      "VIX走弱"
+      "美元指数走弱"
     ],
     "updated_indicators": [
       "美国 10 年期国债",
@@ -39,7 +38,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.32,
+    "score": -0.05,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -47,21 +46,23 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.54,
+    "agreement": 0.46,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
     "available_core_indicators": 2,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
-      "中国出口改善",
-      "美国非农新增就业改善"
+      "中国出口改善"
     ],
     "top_negative_drivers": [
-      "Brent 原油走弱"
+      "美国非农新增就业走弱",
+      "美国失业率走弱"
     ],
     "updated_indicators": [
       "铜",
+      "美国非农新增就业",
+      "美国失业率",
       "Brent 原油"
     ],
     "stale_indicators": [
@@ -133,9 +134,7 @@
       "社会消费品零售走弱",
       "恒生指数走弱"
     ],
-    "updated_indicators": [
-      "恒生指数"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [],
     "missing_indicators": [
       "china_youth_unemployment",

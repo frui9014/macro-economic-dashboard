@@ -1,18 +1,18 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.65,
-      "label": "外部金融逆风",
+      "score": -0.43,
+      "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
-      "can_enter_summary": true,
+      "can_enter_summary": false,
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.65,
+      "agreement": 0.57,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
@@ -21,8 +21,7 @@
       "top_positive_drivers": [],
       "top_negative_drivers": [
         "美国 10 年期国债走弱",
-        "美元指数走弱",
-        "VIX走弱"
+        "美元指数走弱"
       ],
       "updated_indicators": [
         "美国 10 年期国债",
@@ -41,7 +40,7 @@
     {
       "dimension_id": "global_demand",
       "dimension_name": "全球需求 / 外需",
-      "score": 0.32,
+      "score": -0.05,
       "label": "外需中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -49,21 +48,23 @@
       "can_be_macro_state": true,
       "coverage": 0.67,
       "freshness": 0.67,
-      "agreement": 0.54,
+      "agreement": 0.46,
       "core_coverage": 0.5,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
       "available_core_indicators": 2,
       "expected_core_indicators": 4,
       "top_positive_drivers": [
-        "中国出口改善",
-        "美国非农新增就业改善"
+        "中国出口改善"
       ],
       "top_negative_drivers": [
-        "Brent 原油走弱"
+        "美国非农新增就业走弱",
+        "美国失业率走弱"
       ],
       "updated_indicators": [
         "铜",
+        "美国非农新增就业",
+        "美国失业率",
         "Brent 原油"
       ],
       "stale_indicators": [
@@ -135,9 +136,7 @@
         "社会消费品零售走弱",
         "恒生指数走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [],
       "missing_indicators": [
         "china_youth_unemployment",
@@ -356,7 +355,7 @@
       "conclusion": "全球需求与中国出口尚未形成明确组合",
       "relation_type": "formal",
       "evidence": [
-        "全球需求 / 外需：外需中性（0.32）",
+        "全球需求 / 外需：外需中性（-0.05）",
         "中国出口单项得分：1"
       ],
       "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -367,10 +366,10 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "观察信号：外部压力与中国资产走弱共振；暂不作为主判断，仍需后续数据确认。",
+      "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融逆风（-0.65）",
+        "外部金融压力：外部金融中性（-0.43）",
         "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -439,57 +438,52 @@
     }
   ],
   "candidate_macro_states": [
-    "外部逆风"
+    "数据分化、暂难判断"
   ],
   "important_data_updates": [
     {
-      "indicator": "中国制造业 PMI",
-      "date": "2026年09月份",
-      "score": 1
-    },
-    {
-      "indicator": "中国非制造业 PMI",
-      "date": "2026年09月份",
-      "score": 1
-    },
-    {
       "indicator": "USD/CNY",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "score": 0
     },
     {
-      "indicator": "恒生指数",
-      "date": "2026-09-30",
+      "indicator": "美国失业率",
+      "date": "2026-09-01",
+      "score": -1
+    },
+    {
+      "indicator": "美国非农新增就业",
+      "date": "2026-09-01",
       "score": -1
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "score": -1
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "score": 0
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "score": 0
     },
     {
       "indicator": "VIX",
-      "date": "2026-10-01",
-      "score": -1
+      "date": "2026-10-02",
+      "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-10-01",
+      "date": "2026-10-02",
       "score": 0
     }
   ],
@@ -525,8 +519,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 10,
-    "current_valid": 19,
+    "new_update": 9,
+    "current_valid": 20,
     "stale": 11,
     "missing": 18,
     "history_insufficient": 3
