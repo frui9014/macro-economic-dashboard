@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.43,
+      "score": 0.0,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -18,9 +18,10 @@
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
-      "top_positive_drivers": [],
+      "top_positive_drivers": [
+        "VIX改善"
+      ],
       "top_negative_drivers": [
-        "美国 10 年期国债走弱",
         "美元指数走弱"
       ],
       "updated_indicators": [
@@ -62,6 +63,7 @@
         "美国失业率走弱"
       ],
       "updated_indicators": [
+        "OECD G20 综合领先指标",
         "铜",
         "Brent 原油"
       ],
@@ -369,7 +371,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（-0.43）",
+        "外部金融压力：外部金融中性（0.0）",
         "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -443,42 +445,47 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "score": -1
+    },
+    {
+      "indicator": "OECD G20 综合领先指标",
+      "date": "2026-09",
+      "score": 0
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-10-05",
-      "score": -1
+      "date": "2026-10-06",
+      "score": 0
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-10-05",
+      "date": "2026-10-06",
       "score": 0
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-10-06",
-      "score": 0
+      "date": "2026-10-07",
+      "score": -1
     },
     {
       "indicator": "VIX",
-      "date": "2026-10-06",
-      "score": 0
+      "date": "2026-10-07",
+      "score": 1
     },
     {
       "indicator": "美元指数",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "score": 0
     }
   ],
@@ -515,8 +522,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 8,
-    "current_valid": 20,
+    "new_update": 9,
+    "current_valid": 19,
     "stale": 12,
     "missing": 18,
     "history_insufficient": 3
