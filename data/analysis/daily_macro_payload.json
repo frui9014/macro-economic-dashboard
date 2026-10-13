@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -116,29 +116,30 @@
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": null,
-      "label": "数据不足",
+      "score": 0.0,
+      "label": "内需平稳",
       "confidence": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
       "can_be_macro_state": false,
-      "coverage": 0.0,
-      "freshness": 0.0,
-      "agreement": 0,
+      "coverage": 0.11,
+      "freshness": 0.2,
+      "agreement": 1.0,
       "core_coverage": 0.0,
-      "history_coverage": 0,
+      "history_coverage": 1.0,
       "usable_core_indicators": 0,
       "available_core_indicators": 0,
       "expected_core_indicators": 3,
       "top_positive_drivers": [],
       "top_negative_drivers": [],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "恒生指数"
+      ],
       "stale_indicators": [
         "社会消费品零售",
         "中国进口",
         "城镇调查失业率",
-        "固定资产投资",
-        "恒生指数"
+        "固定资产投资"
       ],
       "missing_indicators": [
         "china_youth_unemployment",
@@ -297,11 +298,11 @@
     {
       "relation_id": "production_vs_domestic_demand",
       "relation_name": "生产 vs 内需",
-      "conclusion": "数据不足：生产与内需信号尚未形成明确共振，暂不能形成关系判断。",
-      "relation_type": "insufficient",
+      "conclusion": "观察信号：生产与内需信号尚未形成明确共振；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
         "中国生产 / 景气：生产景气改善（1.0）",
-        "中国内需 / 居民需求：数据不足（None）"
+        "中国内需 / 居民需求：内需平稳（0.0）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
       "confidence": "低",
@@ -315,7 +316,7 @@
       "relation_type": "insufficient",
       "evidence": [
         "信用扩张：信用中性 / 结构分化（None）",
-        "中国内需 / 居民需求：数据不足（None）"
+        "中国内需 / 居民需求：内需平稳（0.0）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -339,11 +340,11 @@
     {
       "relation_id": "growth_vs_price",
       "relation_name": "增长 vs 价格",
-      "conclusion": "数据不足：增长与价格信号分化，暂不能形成关系判断。",
-      "relation_type": "insufficient",
+      "conclusion": "观察信号：增长与价格共同修复，接近健康复苏；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
         "中国生产 / 景气：生产景气改善（1.0）",
-        "中国内需 / 居民需求：数据不足（None）",
+        "中国内需 / 居民需求：内需平稳（0.0）",
         "价格 / 通胀通缩压力：价格温和修复（0.5）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
@@ -368,8 +369,8 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "数据不足：外部条件与中国资产信号分化，暂不能形成关系判断。",
-      "relation_type": "insufficient",
+      "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
         "外部金融压力：外部金融中性（0.0）",
         "中国资产合成方向：0"
@@ -403,32 +404,37 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "score": 1
     },
     {
-      "indicator": "中国 10 年期国债",
+      "indicator": "恒生指数",
       "date": "2026-10-12",
+      "score": 0
+    },
+    {
+      "indicator": "中国 10 年期国债",
+      "date": "2026-10-13",
       "score": null
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "score": 0
     },
     {
       "indicator": "VIX",
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "score": 1
     }
   ],
@@ -448,7 +454,6 @@
     "新增人民币贷款",
     "社会消费品零售",
     "社会融资规模增量",
-    "恒生指数",
     "CPB 全球贸易量",
     "美国 CPI",
     "美国 ISM 制造业 PMI",
@@ -482,9 +487,9 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 6,
+    "new_update": 7,
     "current_valid": 5,
-    "stale": 29,
+    "stale": 28,
     "missing": 18,
     "history_insufficient": 0
   },
@@ -506,7 +511,7 @@
     },
     "china_domestic_demand": {
       "dimension_name": "中国内需 / 居民需求",
-      "history_coverage": 0,
+      "history_coverage": 1.0,
       "history_insufficient_indicators": []
     },
     "credit_expansion": {
