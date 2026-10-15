@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-10-14T23:17:20+08:00",
-    "generated_label": "2026-10-14 23:17",
+    "generated_at": "2026-10-15T23:10:02+08:00",
+    "generated_label": "2026-10-15 23:10",
     "timezone": "Asia/Shanghai",
     "scheduled_time": "18:30",
     "status": "partial",
-    "error_count": 1,
+    "error_count": 2,
     "indicator_count": 40,
     "registered_count": 42,
     "scan_count": 30,
@@ -325,11 +325,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-01T00:27:24+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-15",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -594,11 +594,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-09",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -867,7 +867,7 @@
       "released_at": "2026-09-09",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1136,7 +1136,7 @@
       "released_at": "2026-09-09",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1403,9 +1403,9 @@
       "observation_period": "2026-09",
       "fetched_at": "2026-10-14T23:17:20+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1674,7 +1674,7 @@
       "released_at": "2026-10-01",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -1939,11 +1939,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-Q1",
-      "fetched_at": "2026-10-01T00:27:24+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-07-16",
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 200,
+      "age_days": 201,
       "freshness_limit_days": 160,
       "eligible_for_signal": false
     },
@@ -2212,7 +2212,7 @@
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 412,
+      "age_days": 413,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -2479,9 +2479,9 @@
       "observation_period": "2026-09",
       "fetched_at": "2026-10-14T23:17:20+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -2750,7 +2750,7 @@
       "released_at": "2026-10-01",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3015,11 +3015,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-15",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3048,11 +3048,11 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-16",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3317,11 +3317,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-15",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -3586,11 +3586,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2025-12",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 290,
+      "age_days": 291,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -3855,11 +3855,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-09",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -4124,11 +4124,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-15",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -4393,11 +4393,11 @@
       "status": "ok",
       "source_url": "#",
       "observation_period": "2026-04",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 169,
+      "age_days": 170,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -4405,13 +4405,13 @@
       "id": "usdcny",
       "name": "USD/CNY",
       "group": "中国市场",
-      "value": 6.6867,
+      "value": 6.6804,
       "unit": "人民币/美元",
       "decimals": 4,
-      "date": "2026-10-14",
-      "day_change": -0.0792,
-      "five_change": -0.2655,
-      "twenty_change": -0.3651,
+      "date": "2026-10-15",
+      "day_change": -0.1733,
+      "five_change": -0.3595,
+      "twenty_change": -0.3817,
       "change_unit": "%",
       "direction": "down",
       "reason": "数值上升表示人民币对美元走弱，需结合美元指数共同判断。",
@@ -4421,10 +4421,6 @@
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-13",
-          "value": 7.1
-        },
         {
           "date": "2025-10-14",
           "value": 7.1384
@@ -5458,14 +5454,18 @@
           "value": 6.692
         },
         {
-          "date": "2026-10-14",
-          "value": 6.6867
+          "date": "2026-10-13",
+          "value": 6.692
+        },
+        {
+          "date": "2026-10-15",
+          "value": 6.6804
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -5476,13 +5476,13 @@
       "id": "hsi",
       "name": "恒生指数",
       "group": "中国市场",
-      "value": 24314.169922,
+      "value": 24062.720703,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-10-14",
-      "day_change": -0.1275,
-      "five_change": 0.7612,
-      "twenty_change": -1.4313,
+      "date": "2026-10-15",
+      "day_change": -1.0342,
+      "five_change": 1.1643,
+      "twenty_change": -2.6344,
       "change_unit": "%",
       "direction": "down",
       "reason": "同时受中国增长预期和全球美元流动性影响。",
@@ -5492,10 +5492,6 @@
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-14",
-          "value": 25441.349609
-        },
         {
           "date": "2025-10-15",
           "value": 25910.599609
@@ -6479,12 +6475,16 @@
         {
           "date": "2026-10-14",
           "value": 24314.169922
+        },
+        {
+          "date": "2026-10-15",
+          "value": 24062.720703
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -6502,16 +6502,12 @@
       "unit_en": "%",
       "source": "中债 / AkShare",
       "source_en": "ChinaBond / AkShare",
-      "value": 1.6516,
-      "date": "2026-10-14",
-      "previous_value": 1.6654,
+      "value": 1.6601,
+      "date": "2026-10-15",
+      "previous_value": 1.6516,
       "forecast": null,
       "decimals": 2,
       "history": [
-        {
-          "date": "2025-09-23",
-          "value": 1.877
-        },
         {
           "date": "2025-09-24",
           "value": 1.9022
@@ -7547,13 +7543,17 @@
         {
           "date": "2026-10-14",
           "value": 1.6516
+        },
+        {
+          "date": "2026-10-15",
+          "value": 1.6601
         }
       ],
       "status": "ok",
       "source_url": "#",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -7822,11 +7822,11 @@
       "source_url": "https://www.cpb.nl/system/files/cpbmedia/CPB-world-trade-monitor-july-2026.xlsx",
       "freshness_limit_days": 120,
       "observation_period": "2026-07",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-25",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 78,
+      "age_days": 79,
       "eligible_for_signal": true
     },
     {
@@ -8090,11 +8090,11 @@
       "status": "ok",
       "source_url": "https://sdmx.oecd.org/public/rest/v1/data/OECD.SDD.STES,DSD_STES@DF_CLI,4.1/G20.M.LI.IX._Z.AA.IX._Z.H?startPeriod=2018-01",
       "observation_period": "2026-09",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-08",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -8295,11 +8295,11 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "observation_period": "2026-09",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -8568,7 +8568,7 @@
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 381,
+      "age_days": 382,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -8837,7 +8837,7 @@
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 381,
+      "age_days": 382,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -9090,7 +9090,7 @@
       "released_at": "2026-10-03",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -9291,11 +9291,11 @@
       "status": "ok",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
       "observation_period": "2026-09",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-14",
-      "value_changed_since_last_run": true,
+      "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -9564,7 +9564,7 @@
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 412,
+      "age_days": 413,
       "freshness_limit_days": 75,
       "eligible_for_signal": false
     },
@@ -9817,7 +9817,7 @@
       "released_at": "2026-10-03",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 16,
+      "age_days": 17,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -9825,13 +9825,13 @@
       "id": "us10y",
       "name": "美国 10 年期国债",
       "group": "全球利率",
-      "value": 5.21,
+      "value": 5.19,
       "unit": "%",
       "decimals": 2,
-      "date": "2026-10-13",
-      "day_change": -3.0,
-      "five_change": -10.0,
-      "twenty_change": 24.0,
+      "date": "2026-10-14",
+      "day_change": -2.0,
+      "five_change": -8.0,
+      "twenty_change": 19.0,
       "change_unit": "bp",
       "direction": "down",
       "reason": "美国国债收益率是全球资产定价和美元金融条件的重要锚。",
@@ -10624,12 +10624,16 @@
         {
           "date": "2026-10-13",
           "value": 5.21
+        },
+        {
+          "date": "2026-10-14",
+          "value": 5.19
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-13",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-13",
+      "observation_period": "2026-10-14",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-14",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 1,
@@ -10640,17 +10644,17 @@
       "id": "us2y",
       "name": "美国 2 年期国债",
       "group": "全球利率",
-      "value": 4.79,
+      "value": 4.82,
       "unit": "%",
       "decimals": 2,
-      "date": "2026-10-13",
-      "day_change": -1.0,
-      "five_change": -5.0,
-      "twenty_change": 14.0,
+      "date": "2026-10-14",
+      "day_change": 3.0,
+      "five_change": 3.0,
+      "twenty_change": 15.0,
       "change_unit": "bp",
-      "direction": "down",
+      "direction": "up",
       "reason": "美国国债收益率是全球资产定价和美元金融条件的重要锚。",
-      "consequence": "若持续回落，全球金融条件可能边际缓和，但也可能反映增长担忧。",
+      "consequence": "若持续上行，融资成本和风险资产估值压力可能增加。",
       "source": "U.S. Department of the Treasury",
       "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
       "frequency": "daily",
@@ -11439,12 +11443,16 @@
         {
           "date": "2026-10-13",
           "value": 4.79
+        },
+        {
+          "date": "2026-10-14",
+          "value": 4.82
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-13",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-13",
+      "observation_period": "2026-10-14",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-14",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 1,
@@ -11455,26 +11463,22 @@
       "id": "brent",
       "name": "Brent 原油",
       "group": "全球市场",
-      "value": 106.089996,
+      "value": 105.400002,
       "unit": "美元/桶",
       "decimals": 2,
-      "date": "2026-10-14",
-      "day_change": 0.3785,
-      "five_change": 5.8782,
-      "twenty_change": 0.2457,
+      "date": "2026-10-15",
+      "day_change": -0.6223,
+      "five_change": 1.074,
+      "twenty_change": 0.5533,
       "change_unit": "%",
-      "direction": "up",
+      "direction": "down",
       "reason": "油价同时受全球需求、供给约束和地缘事件影响。",
-      "consequence": "若持续上升，能源通胀和企业成本压力可能增加。",
+      "consequence": "若持续下降，通胀压力可能缓解，但也需排查需求走弱。",
       "source": "Yahoo Finance / ICE Brent",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/BZ%3DF?range=1y&interval=1d&events=history",
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-14",
-          "value": 62.389999
-        },
         {
           "date": "2025-10-15",
           "value": 61.91
@@ -12477,13 +12481,17 @@
         },
         {
           "date": "2026-10-14",
-          "value": 106.089996
+          "value": 106.059998
+        },
+        {
+          "date": "2026-10-15",
+          "value": 105.400002
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -12494,13 +12502,13 @@
       "id": "vix",
       "name": "VIX",
       "group": "全球市场",
-      "value": 15.83,
+      "value": 17.030001,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-10-14",
-      "day_change": 3.6673,
-      "five_change": 4.9735,
-      "twenty_change": -10.6155,
+      "date": "2026-10-15",
+      "day_change": 0.9484,
+      "five_change": 10.5127,
+      "twenty_change": 10.2979,
       "change_unit": "%",
       "direction": "up",
       "reason": "VIX 反映美股期权隐含波动和全球避险温度。",
@@ -12510,10 +12518,6 @@
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-14",
-          "value": 20.809999
-        },
         {
           "date": "2025-10-15",
           "value": 20.639999
@@ -13524,13 +13528,17 @@
         },
         {
           "date": "2026-10-14",
-          "value": 15.83
+          "value": 16.870001
+        },
+        {
+          "date": "2026-10-15",
+          "value": 17.030001
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -13541,26 +13549,22 @@
       "id": "dxy",
       "name": "美元指数",
       "group": "全球市场",
-      "value": 102.910004,
+      "value": 102.132004,
       "unit": "点",
       "decimals": 2,
-      "date": "2026-10-14",
-      "day_change": 0.7144,
-      "five_change": 0.6553,
-      "twenty_change": 2.592,
+      "date": "2026-10-15",
+      "day_change": -0.4076,
+      "five_change": -0.0078,
+      "twenty_change": 1.9078,
       "change_unit": "%",
-      "direction": "up",
+      "direction": "down",
       "reason": "美元走强通常收紧非美经济体的金融条件。",
-      "consequence": "若持续走强，人民币与新兴市场资产通常面临更大外部压力。",
+      "consequence": "若持续回落，非美资产和跨境流动性压力可能缓解。",
       "source": "Yahoo Finance / ICE DXY",
       "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1y&interval=1d&events=history",
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-14",
-          "value": 99.050003
-        },
         {
           "date": "2025-10-15",
           "value": 98.790001
@@ -14563,13 +14567,17 @@
         },
         {
           "date": "2026-10-14",
-          "value": 102.910004
+          "value": 102.550003
+        },
+        {
+          "date": "2026-10-15",
+          "value": 102.132004
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -14580,13 +14588,13 @@
       "id": "copper",
       "name": "铜",
       "group": "全球市场",
-      "value": 6.6725,
+      "value": 6.561,
       "unit": "美分/磅",
       "decimals": 2,
-      "date": "2026-10-14",
-      "day_change": -0.0824,
-      "five_change": 1.1521,
-      "twenty_change": 3.7472,
+      "date": "2026-10-15",
+      "day_change": -0.7638,
+      "five_change": 0.6443,
+      "twenty_change": -0.3872,
       "change_unit": "%",
       "direction": "down",
       "reason": "铜价常被用于观察全球制造业与基建需求预期。",
@@ -14596,10 +14604,6 @@
       "frequency": "daily",
       "frequency_en": "Daily",
       "history": [
-        {
-          "date": "2025-10-14",
-          "value": 4.9805
-        },
         {
           "date": "2025-10-15",
           "value": 4.972
@@ -15602,13 +15606,17 @@
         },
         {
           "date": "2026-10-14",
-          "value": 6.6725
+          "value": 6.6115
+        },
+        {
+          "date": "2026-10-15",
+          "value": 6.561
         }
       ],
       "status": "ok",
-      "observation_period": "2026-10-14",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
-      "released_at": "2026-10-14",
+      "observation_period": "2026-10-15",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
+      "released_at": "2026-10-15",
       "value_changed_since_last_run": true,
       "freshness_status": "current",
       "age_days": 0,
@@ -15748,11 +15756,11 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=100",
       "observation_period": "2023",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "stale",
-      "age_days": 1018,
+      "age_days": 1019,
       "freshness_limit_days": 900,
       "eligible_for_signal": false
     },
@@ -15937,11 +15945,11 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/IP.PAT.RESD?format=json&per_page=100",
       "observation_period": "2024",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-10-10",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 652,
+      "age_days": 653,
       "freshness_limit_days": 900,
       "eligible_for_signal": true
     },
@@ -15970,11 +15978,11 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-16",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     },
@@ -16071,11 +16079,11 @@
       "status": "ok",
       "source_url": "https://api.worldbank.org/v2/country/CHN/indicator/TX.VAL.TECH.MF.ZS?format=json&per_page=100",
       "observation_period": "2024",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": null,
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 652,
+      "age_days": 653,
       "freshness_limit_days": 900,
       "eligible_for_signal": true
     },
@@ -16104,11 +16112,11 @@
       "status": "ok",
       "source_url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965307.html",
       "observation_period": "2026-08",
-      "fetched_at": "2026-10-14T23:17:20+08:00",
+      "fetched_at": "2026-10-15T23:10:02+08:00",
       "released_at": "2026-09-16",
       "value_changed_since_last_run": false,
       "freshness_status": "current",
-      "age_days": 47,
+      "age_days": 48,
       "freshness_limit_days": 75,
       "eligible_for_signal": true
     }
@@ -16121,7 +16129,7 @@
     },
     {
       "title": "美元—人民币联动",
-      "signal": "联动分化",
+      "signal": "外部压力缓和",
       "analysis": "美元与 USD/CNY 同向上升时，人民币走弱更可能包含全球美元因素；若二者分化，应更多检查中国自身预期与跨境资金因素。"
     },
     {
@@ -16135,6 +16143,10 @@
     {
       "source": "沪深 300",
       "error": "沪深 300 有效观测不足"
+    },
+    {
+      "source": "美国 PCE 价格指数",
+      "error": "The read operation timed out"
     }
   ],
   "pending": [
@@ -16151,14 +16163,14 @@
       "action": "updated",
       "reason": "daily",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_gdp",
-      "action": "kept",
-      "reason": "outside_release_window",
+      "action": "updated",
+      "reason": "release_window",
       "status": "ok",
-      "last_attempt": ""
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_pmi_man",
@@ -16179,35 +16191,35 @@
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_retail",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_fai",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_property",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_house_price",
-      "action": "kept",
-      "reason": "outside_release_window",
+      "action": "updated",
+      "reason": "release_window",
       "status": "ok",
-      "last_attempt": ""
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_cpi",
@@ -16228,49 +16240,49 @@
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_m2",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_new_loans",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_exports",
-      "action": "updated",
-      "reason": "release_window",
+      "action": "kept",
+      "reason": "outside_release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": ""
     },
     {
       "id": "china_imports",
-      "action": "updated",
-      "reason": "release_window",
+      "action": "kept",
+      "reason": "outside_release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": ""
     },
     {
       "id": "china_trade_balance",
-      "action": "updated",
-      "reason": "release_window",
+      "action": "kept",
+      "reason": "outside_release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": ""
     },
     {
       "id": "china_unemployment",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "us_nonfarm",
@@ -16291,21 +16303,21 @@
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "us_core_cpi",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "us_pce",
-      "action": "kept",
-      "reason": "same_day_failure_backoff",
+      "action": "failed",
+      "reason": "retry_after_failure",
       "status": "failed",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "us_core_pce",
@@ -16333,66 +16345,60 @@
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "global_trade",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_rd",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_patents",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_hightech_exports",
       "action": "updated",
       "reason": "unknown_calendar_daily_check",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_hightech_output",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     },
     {
       "id": "china_hightech_investment",
       "action": "updated",
       "reason": "release_window",
       "status": "ok",
-      "last_attempt": "2026-10-14"
+      "last_attempt": "2026-10-15"
     }
   ],
   "analysis": {
-    "date": "2026-10-14",
-    "generated_at": "2026-10-14T23:17:20+08:00",
+    "date": "2026-10-15",
+    "generated_at": "2026-10-15T23:10:02+08:00",
     "purpose": "基于公开宏观数据生成每日宏观观察报告，不做投资建议",
     "data_freshness": {
       "new_updates_today": [
-        "M2 增速",
-        "中国出口",
-        "中国进口",
-        "新增人民币贷款",
         "USD/CNY",
         "恒生指数",
         "中国 10 年期国债",
-        "美国 CPI",
-        "美国核心 CPI",
         "美国 10 年期国债",
         "美国 2 年期国债",
         "Brent 原油",
@@ -16401,10 +16407,16 @@
         "铜"
       ],
       "recent_indicators": [
+        "M2 增速",
+        "中国出口",
         "中国制造业 PMI",
+        "中国进口",
         "中国非制造业 PMI",
+        "新增人民币贷款",
         "OECD G20 综合领先指标",
+        "美国 CPI",
         "美国失业率",
+        "美国核心 CPI",
         "美国非农新增就业"
       ],
       "stale_indicators": [
@@ -16452,8 +16464,8 @@
       "history_insufficient": []
     },
     "data_status_summary": {
-      "new_update": 15,
-      "current_valid": 5,
+      "new_update": 9,
+      "current_valid": 11,
       "stale": 20,
       "missing": 18,
       "history_insufficient": 0
@@ -16509,7 +16521,7 @@
         "date": "2026-08-01",
         "observation_period": "2026-08",
         "released_at": "2026-09-15",
-        "fetched_at": "2026-10-01T00:27:24+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "flat",
@@ -16521,7 +16533,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16532,8 +16544,8 @@
         "date": "2026年09月份",
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "fetched_at": "2026-10-15T23:10:02+08:00",
+        "value_changed_since_last_run": false,
         "source": "中国人民银行 / AkShare",
         "base_change": "down",
         "comparison_method": "yoy_rate_change_and_3_period_trend",
@@ -16542,11 +16554,11 @@
           "credit_expansion": -1
         },
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16569,7 +16581,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16592,7 +16604,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16604,7 +16616,7 @@
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
         "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "value_changed_since_last_run": false,
         "source": "海关总署 / AkShare",
         "base_change": "up",
         "comparison_method": "yoy_rate_change_and_3_period_trend",
@@ -16614,11 +16626,11 @@
           "china_production": 1
         },
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16643,7 +16655,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16654,7 +16666,7 @@
         "date": "2026年第1-2季度",
         "observation_period": "2026-Q1",
         "released_at": "2026-07-16",
-        "fetched_at": "2026-10-01T00:27:24+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "down",
@@ -16666,7 +16678,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 8,
-        "age_days": 200,
+        "age_days": 201,
         "freshness_limit_days": 120
       },
       {
@@ -16689,7 +16701,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 412,
+        "age_days": 413,
         "freshness_limit_days": 45
       },
       {
@@ -16701,7 +16713,7 @@
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
         "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "value_changed_since_last_run": false,
         "source": "海关总署 / AkShare",
         "base_change": "up",
         "comparison_method": "yoy_rate_change_and_3_period_trend",
@@ -16710,11 +16722,11 @@
           "china_domestic_demand": 1
         },
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16739,7 +16751,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16750,7 +16762,7 @@
         "date": "2026年08月份",
         "observation_period": "2026-08",
         "released_at": "2026-09-15",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "up",
@@ -16762,7 +16774,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16773,7 +16785,7 @@
         "date": "2026-08-01",
         "observation_period": "2026-08",
         "released_at": "2026-09-16",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局",
         "base_change": null,
@@ -16785,7 +16797,7 @@
         "history_status": "history_insufficient",
         "history_points": 1,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16796,7 +16808,7 @@
         "date": "2026年08月份",
         "observation_period": "2026-08",
         "released_at": "2026-09-15",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "up",
@@ -16808,7 +16820,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16819,7 +16831,7 @@
         "date": "2025-12-01",
         "observation_period": "2025-12",
         "released_at": null,
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "down",
@@ -16831,7 +16843,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 290,
+        "age_days": 291,
         "freshness_limit_days": 45
       },
       {
@@ -16842,8 +16854,8 @@
         "date": "2026年09月份",
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "fetched_at": "2026-10-15T23:10:02+08:00",
+        "value_changed_since_last_run": false,
         "source": "中国人民银行 / AkShare",
         "base_change": "down",
         "comparison_method": "same_period_yoy_and_3m_average",
@@ -16852,11 +16864,11 @@
           "credit_expansion": -1
         },
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -16867,7 +16879,7 @@
         "date": "2026年08月份",
         "observation_period": "2026-08",
         "released_at": "2026-09-15",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局 / AkShare",
         "base_change": "down",
@@ -16879,7 +16891,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -16890,7 +16902,7 @@
         "date": "202604",
         "observation_period": "2026-04",
         "released_at": null,
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "中国人民银行 / AkShare",
         "base_change": "down",
@@ -16902,25 +16914,25 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 169,
+        "age_days": 170,
         "freshness_limit_days": 45
       },
       {
         "indicator_id": "usdcny",
         "indicator_name": "USD/CNY",
-        "value": 6.6867,
+        "value": 6.6804,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / 公开外汇行情",
-        "base_change": "flat",
+        "base_change": "down",
         "comparison_method": "5d_20d_direction",
-        "indicator_score": 0,
+        "indicator_score": 1,
         "dimension_contributions": {
-          "external_financial_pressure": 0
+          "external_financial_pressure": 1
         },
         "status": "current",
         "data_status": "new_update",
@@ -16933,12 +16945,12 @@
       {
         "indicator_id": "hsi",
         "indicator_name": "恒生指数",
-        "value": 24314.169922,
+        "value": 24062.720703,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / 恒生指数公司",
         "base_change": "flat",
@@ -16958,12 +16970,12 @@
       {
         "indicator_id": "china10y",
         "indicator_name": "中国 10 年期国债",
-        "value": 1.6516,
+        "value": 1.6601,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "中债 / AkShare",
         "base_change": null,
@@ -16986,7 +16998,7 @@
         "date": "2026-07-01",
         "observation_period": "2026-07",
         "released_at": "2026-09-25",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "荷兰经济政策分析局 CPB",
         "base_change": "up",
@@ -16998,7 +17010,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 78,
+        "age_days": 79,
         "freshness_limit_days": 45
       },
       {
@@ -17009,7 +17021,7 @@
         "date": "2026-09",
         "observation_period": "2026-09",
         "released_at": "2026-10-08",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "OECD SDMX",
         "base_change": "flat",
@@ -17023,7 +17035,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -17034,19 +17046,19 @@
         "date": "2026-09-01",
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "fetched_at": "2026-10-15T23:10:02+08:00",
+        "value_changed_since_last_run": false,
         "source": "美国劳工统计局 BLS",
         "base_change": "up",
         "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 1,
         "dimension_contributions": {},
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 44,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -17069,7 +17081,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 381,
+        "age_days": 382,
         "freshness_limit_days": 45
       },
       {
@@ -17092,7 +17104,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 381,
+        "age_days": 382,
         "freshness_limit_days": 45
       },
       {
@@ -17117,7 +17129,7 @@
         "history_status": "sufficient",
         "history_points": 56,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -17128,19 +17140,19 @@
         "date": "2026-09-01",
         "observation_period": "2026-09",
         "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
-        "value_changed_since_last_run": true,
+        "fetched_at": "2026-10-15T23:10:02+08:00",
+        "value_changed_since_last_run": false,
         "source": "美国劳工统计局 BLS",
         "base_change": "flat",
         "comparison_method": "yoy_rate_change_and_3_period_trend",
         "indicator_score": 0,
         "dimension_contributions": {},
         "status": "current",
-        "data_status": "new_update",
+        "data_status": "current_valid",
         "history_status": "sufficient",
         "history_points": 44,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
@@ -17163,7 +17175,7 @@
         "history_status": "sufficient",
         "history_points": 60,
         "history_required": 12,
-        "age_days": 412,
+        "age_days": 413,
         "freshness_limit_days": 45
       },
       {
@@ -17188,18 +17200,18 @@
         "history_status": "sufficient",
         "history_points": 56,
         "history_required": 12,
-        "age_days": 16,
+        "age_days": 17,
         "freshness_limit_days": 45
       },
       {
         "indicator_id": "us10y",
         "indicator_name": "美国 10 年期国债",
-        "value": 5.21,
+        "value": 5.19,
         "frequency": "daily",
-        "date": "2026-10-13",
-        "observation_period": "2026-10-13",
-        "released_at": "2026-10-13",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-14",
+        "observation_period": "2026-10-14",
+        "released_at": "2026-10-14",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "U.S. Department of the Treasury",
         "base_change": "flat",
@@ -17211,7 +17223,7 @@
         "status": "current",
         "data_status": "new_update",
         "history_status": "sufficient",
-        "history_points": 196,
+        "history_points": 197,
         "history_required": 20,
         "age_days": 1,
         "freshness_limit_days": 3
@@ -17219,12 +17231,12 @@
       {
         "indicator_id": "us2y",
         "indicator_name": "美国 2 年期国债",
-        "value": 4.79,
+        "value": 4.82,
         "frequency": "daily",
-        "date": "2026-10-13",
-        "observation_period": "2026-10-13",
-        "released_at": "2026-10-13",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-14",
+        "observation_period": "2026-10-14",
+        "released_at": "2026-10-14",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "U.S. Department of the Treasury",
         "base_change": "flat",
@@ -17236,7 +17248,7 @@
         "status": "current",
         "data_status": "new_update",
         "history_status": "sufficient",
-        "history_points": 196,
+        "history_points": 197,
         "history_required": 20,
         "age_days": 1,
         "freshness_limit_days": 3
@@ -17244,19 +17256,19 @@
       {
         "indicator_id": "brent",
         "indicator_name": "Brent 原油",
-        "value": 106.089996,
+        "value": 105.400002,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / ICE Brent",
         "base_change": "flat",
         "comparison_method": "5d_20d_direction",
         "indicator_score": 0,
         "dimension_contributions": {
-          "global_demand": 1,
+          "global_demand": 0,
           "price_pressure": 0
         },
         "status": "current",
@@ -17270,19 +17282,19 @@
       {
         "indicator_id": "vix",
         "indicator_name": "VIX",
-        "value": 15.83,
+        "value": 17.030001,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / CBOE",
-        "base_change": "flat",
+        "base_change": "up",
         "comparison_method": "5d_20d_direction",
-        "indicator_score": 0,
+        "indicator_score": -1,
         "dimension_contributions": {
-          "external_financial_pressure": 0
+          "external_financial_pressure": -1
         },
         "status": "current",
         "data_status": "new_update",
@@ -17295,19 +17307,19 @@
       {
         "indicator_id": "dxy",
         "indicator_name": "美元指数",
-        "value": 102.910004,
+        "value": 102.132004,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / ICE DXY",
-        "base_change": "up",
+        "base_change": "flat",
         "comparison_method": "5d_20d_direction",
-        "indicator_score": -1,
+        "indicator_score": 0,
         "dimension_contributions": {
-          "external_financial_pressure": -1
+          "external_financial_pressure": 0
         },
         "status": "current",
         "data_status": "new_update",
@@ -17320,20 +17332,20 @@
       {
         "indicator_id": "copper",
         "indicator_name": "铜",
-        "value": 6.6725,
+        "value": 6.561,
         "frequency": "daily",
-        "date": "2026-10-14",
-        "observation_period": "2026-10-14",
-        "released_at": "2026-10-14",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "date": "2026-10-15",
+        "observation_period": "2026-10-15",
+        "released_at": "2026-10-15",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": true,
         "source": "Yahoo Finance / COMEX",
-        "base_change": "up",
+        "base_change": "flat",
         "comparison_method": "5d_20d_direction",
-        "indicator_score": 1,
+        "indicator_score": 0,
         "dimension_contributions": {
-          "global_demand": 1,
-          "price_pressure": 1
+          "global_demand": 0,
+          "price_pressure": 0
         },
         "status": "current",
         "data_status": "new_update",
@@ -17351,7 +17363,7 @@
         "date": "2023",
         "observation_period": "2023",
         "released_at": null,
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "世界银行 / 国家统计局",
         "base_change": "up",
@@ -17363,7 +17375,7 @@
         "history_status": "sufficient",
         "history_points": 28,
         "history_required": 3,
-        "age_days": 1018,
+        "age_days": 1019,
         "freshness_limit_days": 450
       },
       {
@@ -17374,7 +17386,7 @@
         "date": "2024",
         "observation_period": "2024",
         "released_at": "2026-10-10",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "世界银行 / WIPO",
         "base_change": "up",
@@ -17386,7 +17398,7 @@
         "history_status": "sufficient",
         "history_points": 40,
         "history_required": 3,
-        "age_days": 652,
+        "age_days": 653,
         "freshness_limit_days": 450
       },
       {
@@ -17397,7 +17409,7 @@
         "date": "2026-08-01",
         "observation_period": "2026-08",
         "released_at": "2026-09-16",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局",
         "base_change": null,
@@ -17409,7 +17421,7 @@
         "history_status": "history_insufficient",
         "history_points": 1,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       },
       {
@@ -17420,7 +17432,7 @@
         "date": "2024",
         "observation_period": "2024",
         "released_at": null,
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "世界银行 / 海关总署",
         "base_change": "down",
@@ -17432,7 +17444,7 @@
         "history_status": "sufficient",
         "history_points": 18,
         "history_required": 3,
-        "age_days": 652,
+        "age_days": 653,
         "freshness_limit_days": 450
       },
       {
@@ -17443,7 +17455,7 @@
         "date": "2026-08-01",
         "observation_period": "2026-08",
         "released_at": "2026-09-16",
-        "fetched_at": "2026-10-14T23:17:20+08:00",
+        "fetched_at": "2026-10-15T23:10:02+08:00",
         "value_changed_since_last_run": false,
         "source": "国家统计局",
         "base_change": null,
@@ -17455,7 +17467,7 @@
         "history_status": "history_insufficient",
         "history_points": 1,
         "history_required": 12,
-        "age_days": 47,
+        "age_days": 48,
         "freshness_limit_days": 45
       }
     ],
@@ -17463,23 +17475,25 @@
       {
         "dimension_id": "external_financial_pressure",
         "dimension_name": "外部金融压力",
-        "score": -0.22,
+        "score": 0.0,
         "label": "外部金融中性",
-        "confidence": "高",
-        "evidence_quality": "strong",
+        "confidence": "中",
+        "evidence_quality": "medium",
         "can_enter_summary": false,
         "can_be_macro_state": true,
         "coverage": 0.83,
         "freshness": 1.0,
-        "agreement": 0.78,
+        "agreement": 0.57,
         "core_coverage": 1.0,
         "history_coverage": 1.0,
         "usable_core_indicators": 4,
         "available_core_indicators": 4,
         "expected_core_indicators": 4,
-        "top_positive_drivers": [],
+        "top_positive_drivers": [
+          "USD/CNY改善"
+        ],
         "top_negative_drivers": [
-          "美元指数走弱"
+          "VIX走弱"
         ],
         "updated_indicators": [
           "美国 10 年期国债",
@@ -17498,7 +17512,7 @@
       {
         "dimension_id": "global_demand",
         "dimension_name": "全球需求 / 外需",
-        "score": 0.17,
+        "score": -0.05,
         "label": "外需中性",
         "confidence": "中",
         "evidence_quality": "medium",
@@ -17506,23 +17520,20 @@
         "can_be_macro_state": true,
         "coverage": 0.67,
         "freshness": 0.67,
-        "agreement": 0.24,
+        "agreement": 0.46,
         "core_coverage": 0.5,
         "history_coverage": 1.0,
         "usable_core_indicators": 2,
         "available_core_indicators": 2,
         "expected_core_indicators": 4,
         "top_positive_drivers": [
-          "中国出口改善",
-          "铜改善",
-          "Brent 原油改善"
+          "中国出口改善"
         ],
         "top_negative_drivers": [
           "美国非农新增就业走弱",
           "美国失业率走弱"
         ],
         "updated_indicators": [
-          "中国出口",
           "铜",
           "Brent 原油"
         ],
@@ -17558,9 +17569,7 @@
           "中国非制造业 PMI改善"
         ],
         "top_negative_drivers": [],
-        "updated_indicators": [
-          "中国出口"
-        ],
+        "updated_indicators": [],
         "stale_indicators": [
           "工业增加值",
           "中国实际 GDP 增速",
@@ -17594,7 +17603,6 @@
         ],
         "top_negative_drivers": [],
         "updated_indicators": [
-          "中国进口",
           "恒生指数"
         ],
         "stale_indicators": [
@@ -17633,10 +17641,7 @@
           "新增人民币贷款走弱",
           "M2 增速走弱"
         ],
-        "updated_indicators": [
-          "新增人民币贷款",
-          "M2 增速"
-        ],
+        "updated_indicators": [],
         "stale_indicators": [
           "社会融资规模增量"
         ],
@@ -17692,23 +17697,21 @@
       {
         "dimension_id": "price_pressure",
         "dimension_name": "价格 / 通胀通缩压力",
-        "score": 0.5,
-        "label": "价格温和修复",
+        "score": 0.0,
+        "label": "价格平稳 / 分化",
         "confidence": "低",
         "evidence_quality": "weak",
         "can_enter_summary": false,
         "can_be_macro_state": false,
         "coverage": 0.4,
         "freshness": 0.4,
-        "agreement": 0.5,
+        "agreement": 1.0,
         "core_coverage": 0.0,
         "history_coverage": 1.0,
         "usable_core_indicators": 0,
         "available_core_indicators": 0,
         "expected_core_indicators": 2,
-        "top_positive_drivers": [
-          "铜改善"
-        ],
+        "top_positive_drivers": [],
         "top_negative_drivers": [],
         "updated_indicators": [
           "Brent 原油",
@@ -17805,12 +17808,12 @@
       {
         "relation_id": "growth_vs_price",
         "relation_name": "增长 vs 价格",
-        "conclusion": "观察信号：增长与价格共同修复，接近健康复苏；暂不作为主判断，仍需后续数据确认。",
+        "conclusion": "观察信号：增长与价格信号分化；暂不作为主判断，仍需后续数据确认。",
         "relation_type": "watch",
         "evidence": [
           "中国生产 / 景气：生产景气改善（1.0）",
           "中国内需 / 居民需求：内需改善（0.77）",
-          "价格 / 通胀通缩压力：价格温和修复（0.5）"
+          "价格 / 通胀通缩压力：价格平稳 / 分化（0.0）"
         ],
         "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
         "confidence": "低",
@@ -17823,7 +17826,7 @@
         "conclusion": "全球需求与中国出口尚未形成明确组合",
         "relation_type": "formal",
         "evidence": [
-          "全球需求 / 外需：外需中性（0.17）",
+          "全球需求 / 外需：外需中性（-0.05）",
           "中国出口单项得分：1"
         ],
         "risk_note": "出口还会受到价格、基数和贸易结构影响。",
@@ -17837,7 +17840,7 @@
         "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
         "relation_type": "watch",
         "evidence": [
-          "外部金融压力：外部金融中性（-0.22）",
+          "外部金融压力：外部金融中性（0.0）",
           "中国资产合成方向：0"
         ],
         "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -17860,51 +17863,9 @@
         "can_enter_summary": false
       }
     ],
-    "detected_divergences": [
-      {
-        "divergence_id": "credit_weak_price_stable",
-        "title": "潜在背离：信用偏弱但价格信号相对平稳",
-        "status": "potential_divergence",
-        "divergence_type": "potential_divergence",
-        "score_gap": 1.5,
-        "severity": "低",
-        "evidence_quality": "weak",
-        "can_enter_summary": false,
-        "evidence": [
-          "信用偏弱",
-          "价格温和修复"
-        ],
-        "interpretation": "信用扩张偏弱，但价格维度尚未同步转弱，可能反映价格受供给、能源或基数因素支撑。",
-        "what_to_watch_next": [
-          "社融结构",
-          "PPI",
-          "CPI"
-        ]
-      }
-    ],
+    "detected_divergences": [],
     "confirmed_divergences": [],
-    "potential_divergences": [
-      {
-        "divergence_id": "credit_weak_price_stable",
-        "title": "潜在背离：信用偏弱但价格信号相对平稳",
-        "status": "potential_divergence",
-        "divergence_type": "potential_divergence",
-        "score_gap": 1.5,
-        "severity": "低",
-        "evidence_quality": "weak",
-        "can_enter_summary": false,
-        "evidence": [
-          "信用偏弱",
-          "价格温和修复"
-        ],
-        "interpretation": "信用扩张偏弱，但价格维度尚未同步转弱，可能反映价格受供给、能源或基数因素支撑。",
-        "what_to_watch_next": [
-          "社融结构",
-          "PPI",
-          "CPI"
-        ]
-      }
-    ],
+    "potential_divergences": [],
     "candidate_macro_states": [
       "数据分化、暂难判断"
     ],
@@ -17919,79 +17880,49 @@
     ],
     "important_data_updates": [
       {
-        "indicator": "M2 增速",
-        "date": "2026年09月份",
-        "score": -1
-      },
-      {
-        "indicator": "中国出口",
-        "date": "2026年09月份",
-        "score": 1
-      },
-      {
-        "indicator": "中国进口",
-        "date": "2026年09月份",
-        "score": 1
-      },
-      {
-        "indicator": "新增人民币贷款",
-        "date": "2026年09月份",
-        "score": -1
-      },
-      {
         "indicator": "USD/CNY",
-        "date": "2026-10-14",
-        "score": 0
+        "date": "2026-10-15",
+        "score": 1
       },
       {
         "indicator": "恒生指数",
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "score": 0
       },
       {
         "indicator": "中国 10 年期国债",
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "score": null
       },
       {
-        "indicator": "美国 CPI",
-        "date": "2026-09-01",
-        "score": 1
-      },
-      {
-        "indicator": "美国核心 CPI",
-        "date": "2026-09-01",
-        "score": 0
-      },
-      {
         "indicator": "美国 10 年期国债",
-        "date": "2026-10-13",
+        "date": "2026-10-14",
         "score": 0
       },
       {
         "indicator": "美国 2 年期国债",
-        "date": "2026-10-13",
+        "date": "2026-10-14",
         "score": 0
       },
       {
         "indicator": "Brent 原油",
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "score": 0
       },
       {
         "indicator": "VIX",
-        "date": "2026-10-14",
-        "score": 0
-      },
-      {
-        "indicator": "美元指数",
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "score": -1
       },
       {
+        "indicator": "美元指数",
+        "date": "2026-10-15",
+        "score": 0
+      },
+      {
         "indicator": "铜",
-        "date": "2026-10-14",
-        "score": 1
+        "date": "2026-10-15",
+        "score": 0
       }
     ],
     "missing_or_stale_data": [
@@ -18036,16 +17967,16 @@
     ],
     "raw_key_values_summary": [
       {
-        "indicator": "美元指数",
-        "date": "2026-10-14",
-        "value": 102.910004,
-        "score": -1
+        "indicator": "USD/CNY",
+        "date": "2026-10-15",
+        "value": 6.6804,
+        "score": 1
       },
       {
-        "indicator": "铜",
-        "date": "2026-10-14",
-        "value": 6.6725,
-        "score": 1
+        "indicator": "VIX",
+        "date": "2026-10-15",
+        "value": 17.030001,
+        "score": -1
       },
       {
         "indicator": "M2 增速",
@@ -18102,9 +18033,9 @@
         "score": -1
       },
       {
-        "indicator": "USD/CNY",
-        "date": "2026-10-14",
-        "value": 6.6867,
+        "indicator": "恒生指数",
+        "date": "2026-10-15",
+        "value": 24062.720703,
         "score": 0
       }
     ],
@@ -18121,16 +18052,18 @@
     "top_divergences": [],
     "main_judgement": "未启用 GPT 解读，仅展示规则引擎分析结果。",
     "next_watchlist": [
-      "社融结构",
-      "PPI",
-      "CPI"
+      "美国 ISM 制造业 PMI",
+      "工业增加值",
+      "社会消费品零售",
+      "社会融资规模增量",
+      "70 城新房价格",
+      "中国 PPI"
     ],
     "risk_notes": [
       "当前报告未包含 GPT 自然语言解读。",
       "中国生产 / 景气虽出现方向性信号，但证据质量较弱，不进入主判断。",
       "中国内需 / 居民需求虽出现方向性信号，但证据质量较弱，不进入主判断。",
       "信用扩张虽出现方向性信号，但证据质量较弱，不进入主判断。",
-      "价格 / 通胀通缩压力虽出现方向性信号，但证据质量较弱，不进入主判断。",
       "规则得分不构成投资建议。"
     ],
     "data_confidence": "低",

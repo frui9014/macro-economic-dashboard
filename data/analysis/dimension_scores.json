@@ -2,23 +2,25 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": -0.22,
+    "score": 0.0,
     "label": "外部金融中性",
-    "confidence": "高",
-    "evidence_quality": "strong",
+    "confidence": "中",
+    "evidence_quality": "medium",
     "can_enter_summary": false,
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.78,
+    "agreement": 0.57,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
-    "top_positive_drivers": [],
+    "top_positive_drivers": [
+      "USD/CNY改善"
+    ],
     "top_negative_drivers": [
-      "美元指数走弱"
+      "VIX走弱"
     ],
     "updated_indicators": [
       "美国 10 年期国债",
@@ -37,7 +39,7 @@
   {
     "dimension_id": "global_demand",
     "dimension_name": "全球需求 / 外需",
-    "score": 0.17,
+    "score": -0.05,
     "label": "外需中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -45,23 +47,20 @@
     "can_be_macro_state": true,
     "coverage": 0.67,
     "freshness": 0.67,
-    "agreement": 0.24,
+    "agreement": 0.46,
     "core_coverage": 0.5,
     "history_coverage": 1.0,
     "usable_core_indicators": 2,
     "available_core_indicators": 2,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
-      "中国出口改善",
-      "铜改善",
-      "Brent 原油改善"
+      "中国出口改善"
     ],
     "top_negative_drivers": [
       "美国非农新增就业走弱",
       "美国失业率走弱"
     ],
     "updated_indicators": [
-      "中国出口",
       "铜",
       "Brent 原油"
     ],
@@ -97,9 +96,7 @@
       "中国非制造业 PMI改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [
-      "中国出口"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "工业增加值",
       "中国实际 GDP 增速",
@@ -133,7 +130,6 @@
     ],
     "top_negative_drivers": [],
     "updated_indicators": [
-      "中国进口",
       "恒生指数"
     ],
     "stale_indicators": [
@@ -172,10 +168,7 @@
       "新增人民币贷款走弱",
       "M2 增速走弱"
     ],
-    "updated_indicators": [
-      "新增人民币贷款",
-      "M2 增速"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "社会融资规模增量"
     ],
@@ -231,23 +224,21 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": 0.5,
-    "label": "价格温和修复",
+    "score": 0.0,
+    "label": "价格平稳 / 分化",
     "confidence": "低",
     "evidence_quality": "weak",
     "can_enter_summary": false,
     "can_be_macro_state": false,
     "coverage": 0.4,
     "freshness": 0.4,
-    "agreement": 0.5,
+    "agreement": 1.0,
     "core_coverage": 0.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 0,
     "available_core_indicators": 0,
     "expected_core_indicators": 2,
-    "top_positive_drivers": [
-      "铜改善"
-    ],
+    "top_positive_drivers": [],
     "top_negative_drivers": [],
     "updated_indicators": [
       "Brent 原油",
