@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27",
+  "date": "2026-10-29",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -136,9 +136,7 @@
       "top_negative_drivers": [
         "恒生指数走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
         "社会消费品零售",
         "城镇调查失业率",
@@ -450,47 +448,42 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "score": 1
     },
     {
-      "indicator": "恒生指数",
-      "date": "2026-10-27",
-      "score": -1
-    },
-    {
       "indicator": "中国 10 年期国债",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "score": null
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "score": 1
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-10-26",
+      "date": "2026-10-27",
       "score": 1
     },
     {
       "indicator": "Brent 原油",
-      "date": "2026-10-27",
-      "score": 0
+      "date": "2026-10-28",
+      "score": 1
     },
     {
       "indicator": "VIX",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "score": 0
     },
     {
       "indicator": "美元指数",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-10-27",
+      "date": "2026-10-28",
       "score": 1
     }
   ],
@@ -535,8 +528,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 9,
-    "current_valid": 11,
+    "new_update": 8,
+    "current_valid": 12,
     "stale": 20,
     "missing": 18,
     "history_insufficient": 0
