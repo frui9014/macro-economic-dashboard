@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": 0.13,
+      "score": 0.0,
       "label": "外部金融中性",
       "confidence": "中",
       "evidence_quality": "medium",
@@ -12,15 +12,14 @@
       "can_be_macro_state": true,
       "coverage": 0.83,
       "freshness": 1.0,
-      "agreement": 0.43,
+      "agreement": 0.57,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 4,
       "available_core_indicators": 4,
       "expected_core_indicators": 4,
       "top_positive_drivers": [
-        "美国 10 年期国债改善",
-        "美国 2 年期国债改善"
+        "美国 10 年期国债改善"
       ],
       "top_negative_drivers": [
         "VIX走弱"
@@ -67,8 +66,6 @@
       ],
       "updated_indicators": [
         "铜",
-        "美国非农新增就业",
-        "美国失业率",
         "Brent 原油"
       ],
       "stale_indicators": [
@@ -233,37 +230,39 @@
     {
       "dimension_id": "price_pressure",
       "dimension_name": "价格 / 通胀通缩压力",
-      "score": -1.0,
-      "label": "通缩压力或成本压力",
-      "confidence": "低",
-      "evidence_quality": "weak",
+      "score": -0.06,
+      "label": "价格平稳 / 分化",
+      "confidence": "中",
+      "evidence_quality": "medium",
       "can_enter_summary": false,
-      "can_be_macro_state": false,
-      "coverage": 0.4,
-      "freshness": 0.4,
-      "agreement": 1.0,
-      "core_coverage": 0.0,
+      "can_be_macro_state": true,
+      "coverage": 0.8,
+      "freshness": 0.8,
+      "agreement": 0.31,
+      "core_coverage": 1.0,
       "history_coverage": 1.0,
-      "usable_core_indicators": 0,
-      "available_core_indicators": 0,
+      "usable_core_indicators": 2,
+      "available_core_indicators": 2,
       "expected_core_indicators": 2,
-      "top_positive_drivers": [],
+      "top_positive_drivers": [
+        "中国 CPI改善"
+      ],
       "top_negative_drivers": [
         "Brent 原油走弱",
         "铜走弱"
       ],
       "updated_indicators": [
+        "中国 PPI",
+        "中国 CPI",
         "Brent 原油",
         "铜"
       ],
       "stale_indicators": [
-        "中国 PPI",
-        "中国 CPI",
         "工业增加值"
       ],
       "missing_indicators": [],
       "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；0/2项核心指标在有效期内，0项可计算方向。"
+      "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标在有效期内，2项可计算方向。"
     },
     {
       "dimension_id": "innovation_upgrade",
@@ -352,7 +351,7 @@
       "evidence": [
         "中国生产 / 景气：生产平稳（-0.37）",
         "中国内需 / 居民需求：内需改善（1.0）",
-        "价格 / 通胀通缩压力：通缩压力或成本压力（-1.0）"
+        "价格 / 通胀通缩压力：价格平稳 / 分化（-0.06）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
       "confidence": "低",
@@ -379,7 +378,7 @@
       "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
       "relation_type": "watch",
       "evidence": [
-        "外部金融压力：外部金融中性（0.13）",
+        "外部金融压力：外部金融中性（0.0）",
         "中国资产合成方向：1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
@@ -450,19 +449,24 @@
   ],
   "important_data_updates": [
     {
+      "indicator": "中国 CPI",
+      "date": "2026年09月份",
+      "score": 1
+    },
+    {
+      "indicator": "中国 PPI",
+      "date": "2026年09月份",
+      "score": 1
+    },
+    {
       "indicator": "USD/CNY",
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "score": 0
     },
     {
       "indicator": "恒生指数",
-      "date": "2026-11-05",
-      "score": 1
-    },
-    {
-      "indicator": "中国 10 年期国债",
       "date": "2026-11-06",
-      "score": null
+      "score": 1
     },
     {
       "indicator": "美国失业率",
@@ -476,13 +480,13 @@
     },
     {
       "indicator": "美国 10 年期国债",
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "score": 1
     },
     {
       "indicator": "美国 2 年期国债",
-      "date": "2026-11-05",
-      "score": 1
+      "date": "2026-11-06",
+      "score": 0
     },
     {
       "indicator": "Brent 原油",
@@ -507,8 +511,6 @@
   ],
   "missing_or_stale_data": [
     "70 城新房价格",
-    "中国 CPI",
-    "中国 PPI",
     "中国实际 GDP 增速",
     "中国贸易差额",
     "固定资产投资",
@@ -546,9 +548,9 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 11,
-    "current_valid": 9,
-    "stale": 20,
+    "new_update": 12,
+    "current_valid": 10,
+    "stale": 18,
     "missing": 18,
     "history_insufficient": 0
   },

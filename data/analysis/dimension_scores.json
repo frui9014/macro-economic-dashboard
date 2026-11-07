@@ -2,7 +2,7 @@
   {
     "dimension_id": "external_financial_pressure",
     "dimension_name": "外部金融压力",
-    "score": 0.13,
+    "score": 0.0,
     "label": "外部金融中性",
     "confidence": "中",
     "evidence_quality": "medium",
@@ -10,15 +10,14 @@
     "can_be_macro_state": true,
     "coverage": 0.83,
     "freshness": 1.0,
-    "agreement": 0.43,
+    "agreement": 0.57,
     "core_coverage": 1.0,
     "history_coverage": 1.0,
     "usable_core_indicators": 4,
     "available_core_indicators": 4,
     "expected_core_indicators": 4,
     "top_positive_drivers": [
-      "美国 10 年期国债改善",
-      "美国 2 年期国债改善"
+      "美国 10 年期国债改善"
     ],
     "top_negative_drivers": [
       "VIX走弱"
@@ -65,8 +64,6 @@
     ],
     "updated_indicators": [
       "铜",
-      "美国非农新增就业",
-      "美国失业率",
       "Brent 原油"
     ],
     "stale_indicators": [
@@ -231,37 +228,39 @@
   {
     "dimension_id": "price_pressure",
     "dimension_name": "价格 / 通胀通缩压力",
-    "score": -1.0,
-    "label": "通缩压力或成本压力",
-    "confidence": "低",
-    "evidence_quality": "weak",
+    "score": -0.06,
+    "label": "价格平稳 / 分化",
+    "confidence": "中",
+    "evidence_quality": "medium",
     "can_enter_summary": false,
-    "can_be_macro_state": false,
-    "coverage": 0.4,
-    "freshness": 0.4,
-    "agreement": 1.0,
-    "core_coverage": 0.0,
+    "can_be_macro_state": true,
+    "coverage": 0.8,
+    "freshness": 0.8,
+    "agreement": 0.31,
+    "core_coverage": 1.0,
     "history_coverage": 1.0,
-    "usable_core_indicators": 0,
-    "available_core_indicators": 0,
+    "usable_core_indicators": 2,
+    "available_core_indicators": 2,
     "expected_core_indicators": 2,
-    "top_positive_drivers": [],
+    "top_positive_drivers": [
+      "中国 CPI改善"
+    ],
     "top_negative_drivers": [
       "Brent 原油走弱",
       "铜走弱"
     ],
     "updated_indicators": [
+      "中国 PPI",
+      "中国 CPI",
       "Brent 原油",
       "铜"
     ],
     "stale_indicators": [
-      "中国 PPI",
-      "中国 CPI",
       "工业增加值"
     ],
     "missing_indicators": [],
     "history_insufficient_indicators": [],
-    "short_explanation": "按核心/次要/辅助权重计算；0/2项核心指标在有效期内，0项可计算方向。"
+    "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标在有效期内，2项可计算方向。"
   },
   {
     "dimension_id": "innovation_upgrade",
