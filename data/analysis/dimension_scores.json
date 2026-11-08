@@ -23,11 +23,7 @@
       "VIX走弱"
     ],
     "updated_indicators": [
-      "美国 10 年期国债",
-      "美元指数",
-      "VIX",
-      "USD/CNY",
-      "美国 2 年期国债"
+      "USD/CNY"
     ],
     "stale_indicators": [],
     "missing_indicators": [
@@ -63,8 +59,7 @@
       "Brent 原油走弱"
     ],
     "updated_indicators": [
-      "铜",
-      "Brent 原油"
+      "铜"
     ],
     "stale_indicators": [
       "美国 ISM 制造业 PMI",
@@ -133,9 +128,7 @@
       "恒生指数改善"
     ],
     "top_negative_drivers": [],
-    "updated_indicators": [
-      "恒生指数"
-    ],
+    "updated_indicators": [],
     "stale_indicators": [
       "社会消费品零售",
       "城镇调查失业率",
@@ -250,9 +243,6 @@
       "铜走弱"
     ],
     "updated_indicators": [
-      "中国 PPI",
-      "中国 CPI",
-      "Brent 原油",
       "铜"
     ],
     "stale_indicators": [
