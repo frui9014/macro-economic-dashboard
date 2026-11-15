@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -24,11 +24,7 @@
         "美国 2 年期国债走弱"
       ],
       "updated_indicators": [
-        "美国 10 年期国债",
-        "美元指数",
-        "VIX",
-        "USD/CNY",
-        "美国 2 年期国债"
+        "USD/CNY"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -64,8 +60,7 @@
         "铜走弱"
       ],
       "updated_indicators": [
-        "铜",
-        "Brent 原油"
+        "铜"
       ],
       "stale_indicators": [
         "美国 ISM 制造业 PMI",
@@ -134,9 +129,7 @@
       "top_negative_drivers": [
         "恒生指数走弱"
       ],
-      "updated_indicators": [
-        "恒生指数"
-      ],
+      "updated_indicators": [],
       "stale_indicators": [
         "社会消费品零售",
         "城镇调查失业率",
@@ -247,7 +240,6 @@
         "铜走弱"
       ],
       "updated_indicators": [
-        "Brent 原油",
         "铜"
       ],
       "stale_indicators": [
@@ -402,49 +394,9 @@
   ],
   "important_data_updates": [
     {
-      "indicator": "M2 增速",
-      "date": "2026年10月份",
-      "score": -1
-    },
-    {
-      "indicator": "新增人民币贷款",
-      "date": "2026年10月份",
-      "score": 0
-    },
-    {
       "indicator": "USD/CNY",
-      "date": "2026-11-14",
+      "date": "2026-11-15",
       "score": 0
-    },
-    {
-      "indicator": "恒生指数",
-      "date": "2026-11-13",
-      "score": -1
-    },
-    {
-      "indicator": "美国 10 年期国债",
-      "date": "2026-11-13",
-      "score": 0
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-11-13",
-      "score": -1
-    },
-    {
-      "indicator": "Brent 原油",
-      "date": "2026-11-13",
-      "score": -1
-    },
-    {
-      "indicator": "VIX",
-      "date": "2026-11-13",
-      "score": 0
-    },
-    {
-      "indicator": "美元指数",
-      "date": "2026-11-13",
-      "score": -1
     },
     {
       "indicator": "铜",
@@ -491,8 +443,8 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 10,
-    "current_valid": 12,
+    "new_update": 2,
+    "current_valid": 20,
     "stale": 18,
     "missing": 18,
     "history_insufficient": 0
