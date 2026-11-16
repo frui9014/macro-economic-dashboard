@@ -1,37 +1,42 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
       "dimension_name": "外部金融压力",
-      "score": -0.35,
-      "label": "外部金融中性",
+      "score": -0.67,
+      "label": "外部金融逆风",
       "confidence": "中",
       "evidence_quality": "medium",
-      "can_enter_summary": false,
+      "can_enter_summary": true,
       "can_be_macro_state": true,
-      "coverage": 0.83,
-      "freshness": 1.0,
-      "agreement": 0.65,
-      "core_coverage": 1.0,
+      "coverage": 0.5,
+      "freshness": 0.6,
+      "agreement": 0.67,
+      "core_coverage": 0.75,
       "history_coverage": 1.0,
-      "usable_core_indicators": 4,
-      "available_core_indicators": 4,
+      "usable_core_indicators": 3,
+      "available_core_indicators": 3,
       "expected_core_indicators": 4,
       "top_positive_drivers": [],
       "top_negative_drivers": [
         "美元指数走弱",
-        "美国 2 年期国债走弱"
+        "VIX走弱"
       ],
       "updated_indicators": [
+        "美元指数",
+        "VIX",
         "USD/CNY"
       ],
-      "stale_indicators": [],
+      "stale_indicators": [
+        "美国 10 年期国债",
+        "美国 2 年期国债"
+      ],
       "missing_indicators": [
         "cfets_rmb"
       ],
       "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；4/4项核心指标在有效期内，4项可计算方向。"
+      "short_explanation": "按核心/次要/辅助权重计算；3/4项核心指标在有效期内，3项可计算方向。"
     },
     {
       "dimension_id": "global_demand",
@@ -60,7 +65,8 @@
         "铜走弱"
       ],
       "updated_indicators": [
-        "铜"
+        "铜",
+        "Brent 原油"
       ],
       "stale_indicators": [
         "美国 ISM 制造业 PMI",
@@ -76,64 +82,68 @@
       "dimension_name": "中国生产 / 景气",
       "score": -1.0,
       "label": "生产走弱",
-      "confidence": "低",
-      "evidence_quality": "weak",
-      "can_enter_summary": false,
-      "can_be_macro_state": false,
-      "coverage": 0.43,
-      "freshness": 0.5,
+      "confidence": "高",
+      "evidence_quality": "strong",
+      "can_enter_summary": true,
+      "can_be_macro_state": true,
+      "coverage": 0.71,
+      "freshness": 0.83,
       "agreement": 1.0,
-      "core_coverage": 0.33,
-      "history_coverage": 1.0,
-      "usable_core_indicators": 1,
-      "available_core_indicators": 1,
+      "core_coverage": 0.67,
+      "history_coverage": 0.8,
+      "usable_core_indicators": 2,
+      "available_core_indicators": 2,
       "expected_core_indicators": 3,
       "top_positive_drivers": [],
       "top_negative_drivers": [
+        "工业增加值走弱",
         "中国制造业 PMI走弱",
-        "中国出口走弱",
-        "中国非制造业 PMI走弱"
+        "中国出口走弱"
       ],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "工业增加值"
+      ],
       "stale_indicators": [
-        "工业增加值",
-        "中国实际 GDP 增速",
-        "高技术制造业增加值"
+        "中国实际 GDP 增速"
       ],
       "missing_indicators": [
         "china_pmi_composite"
       ],
-      "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；1/3项核心指标在有效期内，1项可计算方向。"
+      "history_insufficient_indicators": [
+        "高技术制造业增加值"
+      ],
+      "short_explanation": "按核心/次要/辅助权重计算；2/3项核心指标在有效期内，2项可计算方向。"
     },
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": 0.54,
-      "label": "内需改善",
-      "confidence": "低",
-      "evidence_quality": "weak",
+      "score": -0.23,
+      "label": "内需平稳",
+      "confidence": "中",
+      "evidence_quality": "medium",
       "can_enter_summary": false,
-      "can_be_macro_state": false,
-      "coverage": 0.22,
-      "freshness": 0.4,
-      "agreement": 0.77,
-      "core_coverage": 0.33,
-      "history_coverage": 1.0,
-      "usable_core_indicators": 1,
-      "available_core_indicators": 1,
+      "can_be_macro_state": true,
+      "coverage": 0.44,
+      "freshness": 0.8,
+      "agreement": 0.0,
+      "core_coverage": 1.0,
+      "history_coverage": 0.75,
+      "usable_core_indicators": 2,
+      "available_core_indicators": 3,
       "expected_core_indicators": 3,
       "top_positive_drivers": [
         "中国进口改善"
       ],
       "top_negative_drivers": [
-        "恒生指数走弱"
+        "社会消费品零售走弱",
+        "固定资产投资走弱"
       ],
-      "updated_indicators": [],
-      "stale_indicators": [
+      "updated_indicators": [
         "社会消费品零售",
-        "城镇调查失业率",
         "固定资产投资"
+      ],
+      "stale_indicators": [
+        "恒生指数"
       ],
       "missing_indicators": [
         "china_youth_unemployment",
@@ -141,8 +151,10 @@
         "china_fai_infrastructure",
         "csi300"
       ],
-      "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；1/3项核心指标在有效期内，1项可计算方向。"
+      "history_insufficient_indicators": [
+        "城镇调查失业率"
+      ],
+      "short_explanation": "按核心/次要/辅助权重计算；3/3项核心指标在有效期内，2项可计算方向。"
     },
     {
       "dimension_id": "credit_expansion",
@@ -184,25 +196,26 @@
     {
       "dimension_id": "real_estate_cycle",
       "dimension_name": "地产周期",
-      "score": null,
+      "score": 0.0,
       "label": "地产信号偏稳，但证据不足",
       "confidence": "低",
       "evidence_quality": "weak",
       "can_enter_summary": false,
       "can_be_macro_state": false,
-      "coverage": 0.0,
-      "freshness": 0.0,
-      "agreement": 0,
+      "coverage": 0.14,
+      "freshness": 0.5,
+      "agreement": 1.0,
       "core_coverage": 0.0,
-      "history_coverage": 0,
+      "history_coverage": 1.0,
       "usable_core_indicators": 0,
       "available_core_indicators": 0,
       "expected_core_indicators": 4,
       "top_positive_drivers": [],
       "top_negative_drivers": [],
-      "updated_indicators": [],
+      "updated_indicators": [
+        "70 城新房价格"
+      ],
       "stale_indicators": [
-        "70 城新房价格",
         "房地产景气指数"
       ],
       "missing_indicators": [
@@ -221,15 +234,15 @@
     {
       "dimension_id": "price_pressure",
       "dimension_name": "价格 / 通胀通缩压力",
-      "score": -0.19,
+      "score": -0.26,
       "label": "价格平稳 / 分化",
       "confidence": "高",
       "evidence_quality": "strong",
       "can_enter_summary": false,
       "can_be_macro_state": true,
-      "coverage": 0.8,
-      "freshness": 0.8,
-      "agreement": 0.81,
+      "coverage": 1.0,
+      "freshness": 1.0,
+      "agreement": 0.74,
       "core_coverage": 1.0,
       "history_coverage": 1.0,
       "usable_core_indicators": 2,
@@ -237,14 +250,15 @@
       "expected_core_indicators": 2,
       "top_positive_drivers": [],
       "top_negative_drivers": [
-        "铜走弱"
+        "铜走弱",
+        "工业增加值走弱"
       ],
       "updated_indicators": [
-        "铜"
-      ],
-      "stale_indicators": [
+        "Brent 原油",
+        "铜",
         "工业增加值"
       ],
+      "stale_indicators": [],
       "missing_indicators": [],
       "history_insufficient_indicators": [],
       "short_explanation": "按核心/次要/辅助权重计算；2/2项核心指标在有效期内，2项可计算方向。"
@@ -258,21 +272,19 @@
       "evidence_quality": "weak",
       "can_enter_summary": false,
       "can_be_macro_state": false,
-      "coverage": 0.0,
-      "freshness": 0.0,
+      "coverage": 0.25,
+      "freshness": 0.4,
       "agreement": 0,
-      "core_coverage": 0.0,
-      "history_coverage": 0,
+      "core_coverage": 0.67,
+      "history_coverage": 0.0,
       "usable_core_indicators": 0,
-      "available_core_indicators": 0,
+      "available_core_indicators": 2,
       "expected_core_indicators": 3,
       "top_positive_drivers": [],
       "top_negative_drivers": [],
       "updated_indicators": [],
       "stale_indicators": [
         "中国 R&D 经费强度",
-        "高技术制造业增加值",
-        "高技术产业投资",
         "高技术产品出口占比",
         "中国居民发明专利申请"
       ],
@@ -281,24 +293,27 @@
         "china_pct_patents",
         "china_triadic_patents"
       ],
-      "history_insufficient_indicators": [],
-      "short_explanation": "按核心/次要/辅助权重计算；0/3项核心指标在有效期内，0项可计算方向。"
+      "history_insufficient_indicators": [
+        "高技术制造业增加值",
+        "高技术产业投资"
+      ],
+      "short_explanation": "按核心/次要/辅助权重计算；2/3项核心指标在有效期内，0项可计算方向。"
     }
   ],
   "relation_diagnostics": [
     {
       "relation_id": "production_vs_domestic_demand",
       "relation_name": "生产 vs 内需",
-      "conclusion": "观察信号：消费托底但生产尚未跟上；暂不作为主判断，仍需后续数据确认。",
-      "relation_type": "watch",
+      "conclusion": "生产与内需信号尚未形成明确共振",
+      "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产走弱（-1.0）",
-        "中国内需 / 居民需求：内需改善（0.54）"
+        "中国内需 / 居民需求：内需平稳（-0.23）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
-      "confidence": "低",
-      "evidence_quality": "weak",
-      "can_enter_summary": false
+      "confidence": "中",
+      "evidence_quality": "medium",
+      "can_enter_summary": true
     },
     {
       "relation_id": "credit_vs_domestic_demand",
@@ -307,7 +322,7 @@
       "relation_type": "watch",
       "evidence": [
         "信用扩张：信用中性 / 结构分化（-0.37）",
-        "中国内需 / 居民需求：内需改善（0.54）"
+        "中国内需 / 居民需求：内需平稳（-0.23）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -317,11 +332,11 @@
     {
       "relation_id": "credit_vs_real_estate",
       "relation_name": "信用 vs 地产",
-      "conclusion": "数据不足：信用与地产均未形成明确方向，暂不能形成关系判断。",
-      "relation_type": "insufficient",
+      "conclusion": "观察信号：信用与地产均未形成明确方向；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
         "信用扩张：信用中性 / 结构分化（-0.37）",
-        "地产周期：地产信号偏稳，但证据不足（None）"
+        "地产周期：地产信号偏稳，但证据不足（0.0）"
       ],
       "risk_note": "缺少贷款结构时，不能确认资金最终流向。",
       "confidence": "低",
@@ -331,17 +346,17 @@
     {
       "relation_id": "growth_vs_price",
       "relation_name": "增长 vs 价格",
-      "conclusion": "观察信号：增长与价格信号分化；暂不作为主判断，仍需后续数据确认。",
-      "relation_type": "watch",
+      "conclusion": "增长与价格信号分化",
+      "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产走弱（-1.0）",
-        "中国内需 / 居民需求：内需改善（0.54）",
-        "价格 / 通胀通缩压力：价格平稳 / 分化（-0.19）"
+        "中国内需 / 居民需求：内需平稳（-0.23）",
+        "价格 / 通胀通缩压力：价格平稳 / 分化（-0.26）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
-      "confidence": "低",
-      "evidence_quality": "weak",
-      "can_enter_summary": false
+      "confidence": "中",
+      "evidence_quality": "medium",
+      "can_enter_summary": true
     },
     {
       "relation_id": "global_demand_vs_china_exports",
@@ -360,11 +375,11 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
-      "relation_type": "watch",
+      "conclusion": "数据不足：外部条件与中国资产信号分化，暂不能形成关系判断。",
+      "relation_type": "insufficient",
       "evidence": [
-        "外部金融压力：外部金融中性（-0.35）",
-        "中国资产合成方向：-1"
+        "外部金融压力：外部金融逆风（-0.67）",
+        "中国资产合成方向：0"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
       "confidence": "低",
@@ -390,39 +405,90 @@
   "confirmed_divergences": [],
   "potential_divergences": [],
   "candidate_macro_states": [
-    "数据分化、暂难判断"
+    "外部逆风"
   ],
   "important_data_updates": [
     {
-      "indicator": "USD/CNY",
-      "date": "2026-11-15",
+      "indicator": "70 城新房价格",
+      "date": "2026-10-01",
       "score": 0
     },
     {
-      "indicator": "铜",
-      "date": "2026-11-13",
+      "indicator": "固定资产投资",
+      "date": "2026年10月份",
       "score": -1
+    },
+    {
+      "indicator": "城镇调查失业率",
+      "date": "2026-10-01",
+      "score": null
+    },
+    {
+      "indicator": "工业增加值",
+      "date": "2026年10月份",
+      "score": -1
+    },
+    {
+      "indicator": "社会消费品零售",
+      "date": "2026年10月份",
+      "score": -1
+    },
+    {
+      "indicator": "USD/CNY",
+      "date": "2026-11-16",
+      "score": 0
+    },
+    {
+      "indicator": "中国 10 年期国债",
+      "date": "2026-11-16",
+      "score": null
+    },
+    {
+      "indicator": "Brent 原油",
+      "date": "2026-11-16",
+      "score": 0
+    },
+    {
+      "indicator": "VIX",
+      "date": "2026-11-16",
+      "score": -1
+    },
+    {
+      "indicator": "美元指数",
+      "date": "2026-11-16",
+      "score": -1
+    },
+    {
+      "indicator": "铜",
+      "date": "2026-11-16",
+      "score": -1
+    },
+    {
+      "indicator": "高技术产业投资",
+      "date": "2026-10-01",
+      "score": null
+    },
+    {
+      "indicator": "高技术制造业增加值",
+      "date": "2026-10-01",
+      "score": null
     }
   ],
   "missing_or_stale_data": [
-    "70 城新房价格",
     "中国实际 GDP 增速",
     "中国贸易差额",
-    "固定资产投资",
-    "城镇调查失业率",
-    "工业增加值",
     "房地产景气指数",
-    "社会消费品零售",
     "社会融资规模增量",
+    "恒生指数",
     "CPB 全球贸易量",
     "美国 ISM 制造业 PMI",
     "美国 ISM 服务业 PMI",
     "美国核心 PCE",
+    "美国 10 年期国债",
+    "美国 2 年期国债",
     "中国 R&D 经费强度",
     "中国居民发明专利申请",
-    "高技术产业投资",
     "高技术产品出口占比",
-    "高技术制造业增加值",
     "美国 PCE 价格指数",
     "cfets_rmb",
     "china_pmi_composite",
@@ -443,11 +509,11 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 2,
-    "current_valid": 20,
-    "stale": 18,
+    "new_update": 13,
+    "current_valid": 13,
+    "stale": 14,
     "missing": 18,
-    "history_insufficient": 0
+    "history_insufficient": 3
   },
   "history_coverage": {
     "external_financial_pressure": {
@@ -462,13 +528,17 @@
     },
     "china_production": {
       "dimension_name": "中国生产 / 景气",
-      "history_coverage": 1.0,
-      "history_insufficient_indicators": []
+      "history_coverage": 0.8,
+      "history_insufficient_indicators": [
+        "高技术制造业增加值"
+      ]
     },
     "china_domestic_demand": {
       "dimension_name": "中国内需 / 居民需求",
-      "history_coverage": 1.0,
-      "history_insufficient_indicators": []
+      "history_coverage": 0.75,
+      "history_insufficient_indicators": [
+        "城镇调查失业率"
+      ]
     },
     "credit_expansion": {
       "dimension_name": "信用扩张",
@@ -477,7 +547,7 @@
     },
     "real_estate_cycle": {
       "dimension_name": "地产周期",
-      "history_coverage": 0,
+      "history_coverage": 1.0,
       "history_insufficient_indicators": []
     },
     "price_pressure": {
@@ -487,8 +557,11 @@
     },
     "innovation_upgrade": {
       "dimension_name": "创新升级",
-      "history_coverage": 0,
-      "history_insufficient_indicators": []
+      "history_coverage": 0.0,
+      "history_insufficient_indicators": [
+        "高技术制造业增加值",
+        "高技术产业投资"
+      ]
     }
   }
 }
