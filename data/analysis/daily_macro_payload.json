@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "dimension_scores": [
     {
       "dimension_id": "external_financial_pressure",
@@ -27,11 +27,9 @@
         "VIX走弱"
       ],
       "updated_indicators": [
-        "美国 10 年期国债",
         "美元指数",
         "VIX",
-        "USD/CNY",
-        "美国 2 年期国债"
+        "USD/CNY"
       ],
       "stale_indicators": [],
       "missing_indicators": [
@@ -117,17 +115,17 @@
     {
       "dimension_id": "china_domestic_demand",
       "dimension_name": "中国内需 / 居民需求",
-      "score": -0.23,
+      "score": -0.31,
       "label": "内需平稳",
       "confidence": "中",
       "evidence_quality": "medium",
       "can_enter_summary": false,
       "can_be_macro_state": true,
-      "coverage": 0.44,
-      "freshness": 0.8,
+      "coverage": 0.56,
+      "freshness": 1.0,
       "agreement": 0.0,
       "core_coverage": 1.0,
-      "history_coverage": 0.75,
+      "history_coverage": 0.8,
       "usable_core_indicators": 2,
       "available_core_indicators": 3,
       "expected_core_indicators": 3,
@@ -136,12 +134,13 @@
       ],
       "top_negative_drivers": [
         "社会消费品零售走弱",
-        "固定资产投资走弱"
+        "固定资产投资走弱",
+        "恒生指数走弱"
       ],
-      "updated_indicators": [],
-      "stale_indicators": [
+      "updated_indicators": [
         "恒生指数"
       ],
+      "stale_indicators": [],
       "missing_indicators": [
         "china_youth_unemployment",
         "china_fai_manufacturing",
@@ -302,7 +301,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产走弱（-1.0）",
-        "中国内需 / 居民需求：内需平稳（-0.23）"
+        "中国内需 / 居民需求：内需平稳（-0.31）"
       ],
       "risk_note": "中性区间不等于没有变化，需结合最新月度数据。",
       "confidence": "中",
@@ -316,7 +315,7 @@
       "relation_type": "watch",
       "evidence": [
         "信用扩张：信用中性 / 结构分化（-0.37）",
-        "中国内需 / 居民需求：内需平稳（-0.23）"
+        "中国内需 / 居民需求：内需平稳（-0.31）"
       ],
       "risk_note": "社融总量改善不必然代表居民与企业融资需求改善。",
       "confidence": "低",
@@ -344,7 +343,7 @@
       "relation_type": "formal",
       "evidence": [
         "中国生产 / 景气：生产走弱（-1.0）",
-        "中国内需 / 居民需求：内需平稳（-0.23）",
+        "中国内需 / 居民需求：内需平稳（-0.31）",
         "价格 / 通胀通缩压力：价格平稳 / 分化（-0.26）"
       ],
       "risk_note": "价格变化需区分需求修复与供给、能源冲击。",
@@ -369,11 +368,11 @@
     {
       "relation_id": "external_financial_pressure_vs_china_assets",
       "relation_name": "外部金融压力 vs 中国资产",
-      "conclusion": "数据不足：外部条件与中国资产信号分化，暂不能形成关系判断。",
-      "relation_type": "insufficient",
+      "conclusion": "观察信号：外部条件与中国资产信号分化；暂不作为主判断，仍需后续数据确认。",
+      "relation_type": "watch",
       "evidence": [
         "外部金融压力：外部金融中性（-0.09）",
-        "中国资产合成方向：0"
+        "中国资产合成方向：-1"
       ],
       "risk_note": "市场价格反映预期，不能替代基本面数据。",
       "confidence": "低",
@@ -444,42 +443,37 @@
   "important_data_updates": [
     {
       "indicator": "USD/CNY",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "score": 0
     },
     {
-      "indicator": "中国 10 年期国债",
+      "indicator": "恒生指数",
       "date": "2026-11-23",
+      "score": -1
+    },
+    {
+      "indicator": "中国 10 年期国债",
+      "date": "2026-11-24",
       "score": null
     },
     {
-      "indicator": "美国 10 年期国债",
-      "date": "2026-11-23",
-      "score": 1
-    },
-    {
-      "indicator": "美国 2 年期国债",
-      "date": "2026-11-23",
-      "score": 1
-    },
-    {
       "indicator": "Brent 原油",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "score": -1
     },
     {
       "indicator": "VIX",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "score": -1
     },
     {
       "indicator": "美元指数",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "score": -1
     },
     {
       "indicator": "铜",
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "score": -1
     }
   ],
@@ -488,7 +482,6 @@
     "中国贸易差额",
     "房地产景气指数",
     "社会融资规模增量",
-    "恒生指数",
     "CPB 全球贸易量",
     "美国 ISM 制造业 PMI",
     "美国 ISM 服务业 PMI",
@@ -516,9 +509,9 @@
     "china_triadic_patents"
   ],
   "data_status_summary": {
-    "new_update": 8,
-    "current_valid": 20,
-    "stale": 12,
+    "new_update": 7,
+    "current_valid": 22,
+    "stale": 11,
     "missing": 18,
     "history_insufficient": 3
   },
@@ -542,7 +535,7 @@
     },
     "china_domestic_demand": {
       "dimension_name": "中国内需 / 居民需求",
-      "history_coverage": 0.75,
+      "history_coverage": 0.8,
       "history_insufficient_indicators": [
         "城镇调查失业率"
       ]
